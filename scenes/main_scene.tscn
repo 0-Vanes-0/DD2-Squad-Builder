@@ -1,0 +1,655 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2ktq8osijub2"]
+
+[ext_resource type="Theme" uid="uid://mi0cw2k5bhje" path="res://resources/default_theme.tres" id="1_pw63i"]
+[ext_resource type="Script" uid="uid://cpm3iqqo7lebm" path="res://scenes/main_scene.gd" id="1_w2twt"]
+[ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/menu_tab_bar.gd" id="3_7ykc4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2twt"]
+content_margin_left = 104.0
+content_margin_right = 104.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ykc4"]
+content_margin_left = 104.0
+content_margin_right = 104.0
+bg_color = Color(0.13019812, 0.13019812, 0.13019809, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw63i"]
+content_margin_left = 104.0
+content_margin_right = 104.0
+bg_color = Color(0.9490196, 0.52156866, 0.17254902, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w2twt"]
+
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pw63i")
+script = ExtResource("1_w2twt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06667293, 0.06667293, 0.06667292, 1)
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 768
+dragging_enabled = false
+dragger_visibility = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="LeftVBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="ButtonsHBox" type="HBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ImportButton" type="Button" parent="HSplitContainer/MarginContainer/LeftVBox/ButtonsHBox"]
+layout_mode = 2
+text = "   Import   "
+
+[node name="ExportButton" type="Button" parent="HSplitContainer/MarginContainer/LeftVBox/ButtonsHBox"]
+layout_mode = 2
+text = "   Export   "
+
+[node name="HeroesHBox" type="HBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Rank4VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Skills" type="GridContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="ColorRect5" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Rank3VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank3VBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Rank2VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank2VBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Rank1VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank1VBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/MarginContainer/LeftVBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center]Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight BlightBlight Blight Blight Blight[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="RightVBox" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="TabBar" type="TabBar" parent="HSplitContainer/RightVBox" node_paths=PackedStringArray("tab_container")]
+layout_mode = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_w2twt")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_7ykc4")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_pw63i")
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_w2twt")
+current_tab = 0
+tab_alignment = 1
+scrolling_enabled = false
+scroll_to_selected = false
+select_with_rmb = true
+tab_count = 2
+tab_0/title = "Heroes"
+tab_1/title = "Skills"
+script = ExtResource("3_7ykc4")
+tab_container = NodePath("../TabContainer")
+
+[node name="TabContainer" type="TabContainer" parent="HSplitContainer/RightVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 1
+tabs_visible = false
+
+[node name="Heroes" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Heroes"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect5" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect6" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect7" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect8" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect9" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect10" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect11" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect12" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect13" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect14" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect15" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect16" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect17" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect18" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect19" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect20" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect21" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect22" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect23" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect24" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect25" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect26" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect27" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect28" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect29" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect30" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect31" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect32" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect33" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect34" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect35" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect36" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect37" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect38" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect39" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect40" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect41" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect42" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect43" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect44" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect45" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect46" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect47" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect48" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect49" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect50" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect51" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect52" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect53" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect54" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect55" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect56" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect57" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="ColorRect58" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Skills" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="Rank1HBox" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox"]
+layout_mode = 2
+columns = 4
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect5" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect6" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect7" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect8" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect9" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect10" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect11" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank1HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="Rank2HBox" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox"]
+layout_mode = 2
+columns = 4
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect5" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect6" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect7" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect8" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect9" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect10" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect11" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="Rank3HBox" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox"]
+layout_mode = 2
+columns = 4
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect5" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect6" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect7" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect8" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect9" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect10" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect11" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="Rank4HBox" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox"]
+layout_mode = 2
+columns = 4
+
+[node name="ColorRect" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect5" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect6" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect7" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect8" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect9" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect10" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="ColorRect11" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[connection signal="tab_selected" from="HSplitContainer/RightVBox/TabBar" to="." method="_on_tab_bar_tab_selected"]

@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="DD2 Squad Builder"
+run/main_scene="uid://c2ktq8osijub2"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -18,6 +19,21 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "orange",
+"res://resources/": "yellow",
+"res://scenes/": "green",
+"res://src/": "blue"
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
