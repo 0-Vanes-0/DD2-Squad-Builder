@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="DD2 Squad Builder"
+config/version="1.0"
 run/main_scene="uid://c2ktq8osijub2"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://b8wm135ghenfp"
 
 [display]
 
