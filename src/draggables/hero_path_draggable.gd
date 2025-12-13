@@ -1,9 +1,12 @@
 class_name HeroPathDraggable
 extends AspectRatioContainer
 
-var hero_path: Data.HeroesPaths
+signal hero_dropped(from_rank: int, to_rank: int)
+
 @export var is_slot := false
+@export var rank_number := 0
 @export var texture_rect: TextureRect
+var hero_path: Data.HeroesPaths
 
 
 static func create(hero_path: Data.HeroesPaths) -> HeroPathDraggable:
@@ -31,24 +34,32 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	control.add_child(drag_preview)
 	self.set_drag_preview(control)
 	return { 
-			"hero_path": hero_path, 
+			"hero_path": hero_path,
+			"rank_number": rank_number,
 			"texture": texture_rect.texture, 
-			"slot_ref": self if is_slot else null 
+			"slot_ref": self if is_slot else null,
 	}
 
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
-	if is_slot:
-		return data.has("hero_path") and data["hero_path"] != Data.HeroesPaths.NONE
+	if data is Dictionary:
+		if is_slot:
+			return data.has("hero_path") and data["hero_path"] != Data.HeroesPaths.NONE
 	return false
 
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if data is Dictionary:
-		if data.has("slot_ref") and data["slot_ref"] != null:
-			var slot_ref := data["slot_ref"] as HeroPathDraggable
-			slot_ref.hero_path = self.hero_path
-			slot_ref.texture_rect.texture = self.texture_rect.texture
-		
-		hero_path = data["hero_path"] if data.has("hero_path") else Data.HeroesPaths.NONE
-		texture_rect.texture = data["texture"] if data.has("texture") else null
+		if data.has("hero_path"):
+			if data["slot_ref"] != null:
+				var slot_ref := data["slot_ref"] as HeroPathDraggable
+				slot_ref.hero_path = hero_path
+				slot_ref.texture_rect.texture = texture_rect.texture
+			
+			hero_path = data["hero_path"]
+			texture_rect.texture = data["texture"]
+
+			if is_slot:
+				hero_dropped.emit(data["rank_number"], rank_number)
+			else:
+				hero_dropped.emit(0, rank_number)

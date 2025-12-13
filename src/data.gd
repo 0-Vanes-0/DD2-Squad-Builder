@@ -80,8 +80,52 @@ var heroes_textures: Dictionary[HeroesPaths, Texture2D] = {
 	HeroesPaths.V3: preload("res://assets/portraits/V3.png"),
 }
 
+@export var skills_textures: Dictionary[String, Array] = {
+	"P": [],
+	"G": [],
+	"W": [],
+	"M": [],
+	"H": [],
+	"J": [],
+	"L": [],
+	"O": [],
+	"R": [],
+	"V": [],
+	"F": [],
+	"D": [],
+	"C": [],
+	"A": [],
+	"B": [],
+}
 @export var hero_path_draggable_scene: PackedScene
+@export var skill_draggable_scene: PackedScene
+
+var dict: Dictionary = {
+	"rank1": {
+		"hero_path": HeroesPaths.NONE,
+		"skills": [-1, -1, -1, -1, -1],
+	},
+	"rank2": {
+		"hero_path": HeroesPaths.NONE,
+		"skills": [-1, -1, -1, -1, -1],
+	},
+	"rank3": {
+		"hero_path": HeroesPaths.NONE,
+		"skills": [-1, -1, -1, -1, -1],
+	},
+	"rank4": {
+		"hero_path": HeroesPaths.NONE,
+		"skills": [-1, -1, -1, -1, -1],
+	},
+}
 
 
 func _ready() -> void:
-	assert(hero_path_draggable_scene)
+	assert(hero_path_draggable_scene and skill_draggable_scene)
+	for hero in skills_textures.keys():
+		for v in skills_textures[hero]:
+			assert(v is Texture2D, "All skills_textures entries must be Texture2D")
+
+
+func get_skill_texture(hero: String, skill_number: int) -> Texture2D:	
+	return skills_textures[hero][skill_number] as Texture2D

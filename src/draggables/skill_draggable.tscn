@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://kyd0io8ylhhl"]
+
+[ext_resource type="Script" uid="uid://db38bq7k5bfdv" path="res://src/draggables/skill_draggable.gd" id="1_mkqbr"]
+[ext_resource type="Texture2D" uid="uid://cba4amwubq344" path="res://assets/skills/Skill_NONE.png" id="1_u5j1s"]
+
+[node name="SkillDraggable" type="AspectRatioContainer" node_paths=PackedStringArray("texture_rect")]
+stretch_mode = 1
+script = ExtResource("1_mkqbr")
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_u5j1s")
+expand_mode = 1
+stretch_mode = 4
