@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b04e0rh25wgcs"]
+
+[ext_resource type="Script" uid="uid://ceylcxlv0jh8j" path="res://scenes/hero_path_draggable.gd" id="1_bbchm"]
+[ext_resource type="Texture2D" uid="uid://rw8s6l4qfrdv" path="res://assets/portraits/P3.png" id="2_abkbr"]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" node_paths=PackedStringArray("texture_rect")]
+size_flags_horizontal = 3
+size_flags_vertical = 8
+ratio = 1.5
+stretch_mode = 0
+script = ExtResource("1_bbchm")
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_abkbr")
+expand_mode = 1
