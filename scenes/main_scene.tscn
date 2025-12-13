@@ -1,14 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2ktq8osijub2"]
+[gd_scene load_steps=13 format=3 uid="uid://c2ktq8osijub2"]
 
 [ext_resource type="Theme" uid="uid://mi0cw2k5bhje" path="res://resources/default_theme.tres" id="1_pw63i"]
 [ext_resource type="Script" uid="uid://cpm3iqqo7lebm" path="res://scenes/main_scene.gd" id="1_w2twt"]
 [ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/menu_tab_bar.gd" id="3_7ykc4"]
-[ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/clear_button.gd" id="3_c16ls"]
-[ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/copy_button.gd" id="4_18nlu"]
-[ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/paste_button.gd" id="5_6wevv"]
-[ext_resource type="Script" uid="uid://bmmtxw6oq3mas" path="res://src/save_button.gd" id="6_6wevv"]
-[ext_resource type="Script" uid="uid://7ulxeqlfiw2k" path="res://src/hero_path_slot.gd" id="7_c1pb6"]
+[ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/buttons/clear_button.gd" id="3_c16ls"]
+[ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/buttons/copy_button.gd" id="4_18nlu"]
+[ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/buttons/paste_button.gd" id="5_6wevv"]
+[ext_resource type="Script" uid="uid://bmmtxw6oq3mas" path="res://src/buttons/save_button.gd" id="6_6wevv"]
+[ext_resource type="Script" uid="uid://44iiuuiwrbxx" path="res://src/rank_box.gd" id="7_e1cbu"]
 [ext_resource type="Script" uid="uid://bliqyflsjbkfm" path="res://src/notification_panel.gd" id="8_18nlu"]
+[ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="8_mngbo"]
+[ext_resource type="Texture2D" uid="uid://cba4amwubq344" path="res://assets/skills/Skill_NONE.png" id="10_mngbo"]
+[ext_resource type="Script" uid="uid://2r5pkv2bfa4d" path="res://src/slots/skill_slot.gd" id="11_4w45t"]
 
 [node name="MainScene" type="Control" node_paths=PackedStringArray("tab_container", "heroes_table")]
 layout_mode = 3
@@ -58,10 +61,14 @@ layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="ClearButton" type="Button" parent="HSplitContainer/MarginContainer/LeftVBox/ButtonsHBox"]
+[node name="ClearButton" type="Button" parent="HSplitContainer/MarginContainer/LeftVBox/ButtonsHBox" node_paths=PackedStringArray("rank4_box", "rank3_box", "rank2_box", "rank1_box")]
 layout_mode = 2
 text = "   Clear   "
 script = ExtResource("3_c16ls")
+rank4_box = NodePath("../../HeroesHBox/Rank4VBox")
+rank3_box = NodePath("../../HeroesHBox/Rank3VBox")
+rank2_box = NodePath("../../HeroesHBox/Rank2VBox")
+rank1_box = NodePath("../../HeroesHBox/Rank1VBox")
 
 [node name="CopyButton" type="Button" parent="HSplitContainer/MarginContainer/LeftVBox/ButtonsHBox"]
 layout_mode = 2
@@ -83,59 +90,86 @@ layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Rank4VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox"]
+[node name="Rank4VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable")]
 layout_mode = 2
 theme_override_constants/separation = 20
+script = ExtResource("7_e1cbu")
+hero_path_draggable = NodePath("HeroPathDraggable")
 
-[node name="HeroPathSlot" type="TextureRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox"]
+[node name="HeroPathDraggable" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox" instance=ExtResource("8_mngbo")]
 custom_minimum_size = Vector2(120, 80)
 layout_mode = 2
-script = ExtResource("7_c1pb6")
+is_slot = true
 
 [node name="Skills" type="GridContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="ColorRect" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
+[node name="SkillSlot1" type="TextureRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+texture = ExtResource("10_mngbo")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("11_4w45t")
 
-[node name="ColorRect2" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
+[node name="SkillSlot2" type="TextureRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+texture = ExtResource("10_mngbo")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="ColorRect3" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
+[node name="SkillSlot3" type="TextureRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+texture = ExtResource("10_mngbo")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="ColorRect4" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
+[node name="SkillSlot4" type="TextureRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+texture = ExtResource("10_mngbo")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="ColorRect5" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
+[node name="SkillSlot5" type="TextureRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+texture = ExtResource("10_mngbo")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="Rank3VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox"]
+[node name="Rank3VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable")]
 layout_mode = 2
+script = ExtResource("7_e1cbu")
+hero_path_draggable = NodePath("HeroPathDraggable")
 
-[node name="ColorRect" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank3VBox"]
-custom_minimum_size = Vector2(100, 100)
+[node name="HeroPathDraggable" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank3VBox" instance=ExtResource("8_mngbo")]
+custom_minimum_size = Vector2(120, 80)
 layout_mode = 2
+is_slot = true
 
-[node name="Rank2VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox"]
+[node name="Rank2VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable")]
 layout_mode = 2
+script = ExtResource("7_e1cbu")
+hero_path_draggable = NodePath("HeroPathDraggable")
 
-[node name="ColorRect" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank2VBox"]
-custom_minimum_size = Vector2(100, 100)
+[node name="HeroPathDraggable" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank2VBox" instance=ExtResource("8_mngbo")]
+custom_minimum_size = Vector2(120, 80)
 layout_mode = 2
+is_slot = true
 
-[node name="Rank1VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox"]
+[node name="Rank1VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable")]
 layout_mode = 2
+script = ExtResource("7_e1cbu")
+hero_path_draggable = NodePath("HeroPathDraggable")
 
-[node name="ColorRect" type="ColorRect" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank1VBox"]
-custom_minimum_size = Vector2(100, 100)
+[node name="HeroPathDraggable" parent="HSplitContainer/MarginContainer/LeftVBox/HeroesHBox/Rank1VBox" instance=ExtResource("8_mngbo")]
+custom_minimum_size = Vector2(120, 80)
 layout_mode = 2
+is_slot = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/MarginContainer/LeftVBox"]
 layout_mode = 2

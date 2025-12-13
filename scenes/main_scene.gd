@@ -13,7 +13,7 @@ func _ready() -> void:
 		node.queue_free()
 	
 	for value in Data.HeroesPaths.values():
-		if value == Data.HeroesPaths.D0: # DELETE LATER
-			return
+		if value == Data.HeroesPaths.NONE:
+			continue
 		var hero_path_draggable := HeroPathDraggable.create(value)
 		heroes_table.add_child(hero_path_draggable)

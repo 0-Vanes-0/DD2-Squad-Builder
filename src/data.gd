@@ -20,7 +20,7 @@ enum HeroesPaths {
 }
 
 var heroes_textures: Dictionary[HeroesPaths, Texture2D] = {
-	HeroesPaths.NONE: preload("res://assets/icon.png"),
+	HeroesPaths.NONE: preload("res://assets/portraits/NONE.png"),
 	HeroesPaths.A0: preload("res://assets/portraits/A0.png"),
 	HeroesPaths.A1: preload("res://assets/portraits/A1.png"),
 	HeroesPaths.A2: preload("res://assets/portraits/A2.png"),
@@ -80,4 +80,8 @@ var heroes_textures: Dictionary[HeroesPaths, Texture2D] = {
 	HeroesPaths.V3: preload("res://assets/portraits/V3.png"),
 }
 
-var hero_path_draggable_scene := preload("res://scenes/hero_path_draggable.tscn") as PackedScene
+@export var hero_path_draggable_scene: PackedScene
+
+
+func _ready() -> void:
+	assert(hero_path_draggable_scene)
