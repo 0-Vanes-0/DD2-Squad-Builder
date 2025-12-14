@@ -20,15 +20,6 @@ func _ready() -> void:
 		assert(rank_box)
 	tab_container.current_tab = 0
 	
-	for node in heroes_table.get_children():
-		node.queue_free()
-	
-	for value in Data.HeroesPaths.values():
-		if value == Data.HeroesPaths.NONE:
-			continue
-		var hero_path_draggable := HeroPathDraggable.create(value)
-		heroes_table.add_child(hero_path_draggable)
-	
 	for rank_box: RankBox in rank_boxes.values():
 		rank_box.hero_path_draggable.hero_dropped.connect(
 				func(from_rank: int):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c2ktq8osijub2"]
+[gd_scene load_steps=15 format=3 uid="uid://c2ktq8osijub2"]
 
 [ext_resource type="Theme" uid="uid://mi0cw2k5bhje" path="res://resources/default_theme.tres" id="1_pw63i"]
 [ext_resource type="Script" uid="uid://cpm3iqqo7lebm" path="res://scenes/main_scene.gd" id="1_w2twt"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://kyd0io8ylhhl" path="res://src/draggables/skill_draggable.tscn" id="9_e1cbu"]
 [ext_resource type="Script" uid="uid://xfbr4tvv7qkf" path="res://src/properties_label.gd" id="10_4w45t"]
 [ext_resource type="Script" uid="uid://bo7er32dyytal" path="res://scenes/skills_menu.gd" id="11_mngbo"]
+[ext_resource type="Script" uid="uid://b8erljir6ou1d" path="res://scenes/heroes_menu.gd" id="12_r6p65"]
 
 [node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "heroes_table", "split_container", "rank_boxes")]
 layout_mode = 3
@@ -327,16 +328,18 @@ tab_container = NodePath("../TabContainer")
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
-current_tab = 1
+current_tab = 2
 tabs_visible = false
 
-[node name="Heroes" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer"]
+[node name="Heroes" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" node_paths=PackedStringArray("heroes_table")]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
+script = ExtResource("12_r6p65")
+heroes_table = NodePath("ScrollContainer/HBoxContainer/HeroesGrid")
 metadata/_tab_index = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Heroes"]
@@ -357,6 +360,7 @@ theme_override_constants/v_separation = 20
 columns = 4
 
 [node name="Skills" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" node_paths=PackedStringArray("main_scene", "no_skills_label", "rank1_grid", "rank2_grid", "rank3_grid", "rank4_grid")]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -422,7 +426,6 @@ layout_mode = 2
 columns = 4
 
 [node name="SavedSquads" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
