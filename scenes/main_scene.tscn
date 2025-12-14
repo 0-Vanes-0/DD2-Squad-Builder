@@ -30,10 +30,10 @@ tab_bar = NodePath("HSplitContainer/RightVBox/TabBar")
 tab_container = NodePath("HSplitContainer/RightVBox/TabContainer")
 split_container = NodePath("HSplitContainer")
 rank_boxes = {
-1: NodePath("HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox"),
-2: NodePath("HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox"),
-3: NodePath("HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox"),
-4: NodePath("HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox")
+1: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox"),
+2: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox"),
+3: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox"),
+4: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox")
 }
 skills_menu = NodePath("HSplitContainer/RightVBox/TabContainer/Skills")
 notification_panel = NodePath("NotificationPanel")
@@ -60,219 +60,215 @@ split_offset = 768
 dragging_enabled = false
 dragger_visibility = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer"]
+[node name="LeftMarginContainer" type="MarginContainer" parent="HSplitContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 
-[node name="LeftScrollContainer" type="ScrollContainer" parent="HSplitContainer/MarginContainer"]
+[node name="LeftScrollContainer" type="ScrollContainer" parent="HSplitContainer/LeftMarginContainer"]
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="LeftVBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer"]
+[node name="LeftVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="Empty" type="Control" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox"]
+[node name="Empty" type="Control" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox"]
 layout_mode = 2
 
-[node name="ButtonsHBox" type="HBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox"]
+[node name="ButtonsHBox" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox"]
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="ClearButton" type="Button" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" node_paths=PackedStringArray("main_scene")]
+[node name="ClearButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
 text = "   Clear   "
 script = ExtResource("3_c16ls")
 main_scene = NodePath("../../../../../..")
 
-[node name="CopyButton" type="Button" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox"]
+[node name="CopyButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox"]
 layout_mode = 2
 disabled = true
 text = "   Copy   "
 script = ExtResource("4_18nlu")
 
-[node name="PasteButton" type="Button" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox"]
+[node name="PasteButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox"]
 layout_mode = 2
 disabled = true
 text = "   Paste   "
 script = ExtResource("5_6wevv")
 
-[node name="SaveButton" type="Button" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" node_paths=PackedStringArray("main_scene")]
+[node name="SaveButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
 text = "   Save   "
 script = ExtResource("6_6wevv")
 main_scene = NodePath("../../../../../..")
 
-[node name="HeroesHBox" type="HBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox"]
+[node name="HeroesHBox" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Rank4VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
+[node name="Rank4VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
 layout_mode = 2
-theme_override_constants/separation = 10
 script = ExtResource("7_e1cbu")
 rank = 4
 hero_path_draggable = NodePath("HeroPathDraggable")
 skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5")]
 
-[node name="HeroPathDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox" instance=ExtResource("8_mngbo")]
+[node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox" instance=ExtResource("8_mngbo")]
 layout_mode = 2
 is_slot = true
 rank_number = 4
 
-[node name="Skills" type="GridContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox"]
+[node name="Skills" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
-[node name="SkillDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable2" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable2" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable3" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable3" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable4" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable4" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable5" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable5" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="Rank3VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
+[node name="Rank3VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
 layout_mode = 2
-theme_override_constants/separation = 10
 script = ExtResource("7_e1cbu")
 rank = 3
 hero_path_draggable = NodePath("HeroPathDraggable")
 skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5")]
 
-[node name="HeroPathDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox" instance=ExtResource("8_mngbo")]
+[node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox" instance=ExtResource("8_mngbo")]
 layout_mode = 2
 is_slot = true
 rank_number = 3
 
-[node name="Skills" type="GridContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox"]
+[node name="Skills" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
-[node name="SkillDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable2" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable2" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable3" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable3" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable4" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable4" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable5" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable5" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="Rank2VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
+[node name="Rank2VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
 layout_mode = 2
-theme_override_constants/separation = 10
 script = ExtResource("7_e1cbu")
 rank = 2
 hero_path_draggable = NodePath("HeroPathDraggable")
 skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5")]
 
-[node name="HeroPathDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox" instance=ExtResource("8_mngbo")]
+[node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox" instance=ExtResource("8_mngbo")]
 layout_mode = 2
 is_slot = true
 rank_number = 2
 
-[node name="Skills" type="GridContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox"]
+[node name="Skills" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
-[node name="SkillDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable2" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable2" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable3" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable3" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable4" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable4" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable5" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable5" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="Rank1VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
+[node name="Rank1VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
 layout_mode = 2
-theme_override_constants/separation = 10
 script = ExtResource("7_e1cbu")
 rank = 1
 hero_path_draggable = NodePath("HeroPathDraggable")
 skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5")]
 
-[node name="HeroPathDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox" instance=ExtResource("8_mngbo")]
+[node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox" instance=ExtResource("8_mngbo")]
 layout_mode = 2
 is_slot = true
 rank_number = 1
 
-[node name="Skills" type="GridContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox"]
+[node name="Skills" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
-[node name="SkillDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable2" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable2" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable3" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable3" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable4" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable4" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="SkillDraggable5" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
+[node name="SkillDraggable5" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
 is_slot = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox"]
 layout_mode = 2
 alignment = 1
 
-[node name="PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HBoxContainer"]
+[node name="PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -559,10 +555,10 @@ layout_mode = 2
 text = "  Copied!  "
 
 [connection signal="resized" from="." to="." method="_on_resized"]
-[connection signal="pressed" from="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" to="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" method="_on_pressed"]
-[connection signal="pressed" from="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/CopyButton" to="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/CopyButton" method="_on_pressed"]
-[connection signal="pressed" from="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/PasteButton" to="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/PasteButton" method="_on_pressed"]
-[connection signal="pressed" from="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" to="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" method="_on_pressed"]
+[connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" method="_on_pressed"]
+[connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/CopyButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/CopyButton" method="_on_pressed"]
+[connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/PasteButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/PasteButton" method="_on_pressed"]
+[connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" method="_on_pressed"]
 [connection signal="tab_selected" from="HSplitContainer/RightVBox/TabBar" to="HSplitContainer/RightVBox/TabBar" method="_on_tab_selected"]
 [connection signal="visibility_changed" from="HSplitContainer/RightVBox/TabContainer/Skills" to="HSplitContainer/RightVBox/TabContainer/Skills" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="HSplitContainer/RightVBox/TabContainer/SavedSquads" to="HSplitContainer/RightVBox/TabContainer/SavedSquads" method="_on_visibility_changed"]
