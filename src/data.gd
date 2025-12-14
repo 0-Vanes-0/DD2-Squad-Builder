@@ -96,24 +96,25 @@ var heroes_textures: Dictionary[HeroesPaths, Texture2D] = {
 	"C": [],
 	"A": [],
 	"B": [],
+	"-": [preload("res://assets/skills/Skill_NONE.png")],
 }
 @export var hero_path_draggable_scene: PackedScene
 @export var skill_draggable_scene: PackedScene
 
 var dict: Dictionary = {
-	"rank1": {
+	1: {
 		"hero_path": HeroesPaths.NONE,
 		"skills": [-1, -1, -1, -1, -1],
 	},
-	"rank2": {
+	2: {
 		"hero_path": HeroesPaths.NONE,
 		"skills": [-1, -1, -1, -1, -1],
 	},
-	"rank3": {
+	3: {
 		"hero_path": HeroesPaths.NONE,
 		"skills": [-1, -1, -1, -1, -1],
 	},
-	"rank4": {
+	4: {
 		"hero_path": HeroesPaths.NONE,
 		"skills": [-1, -1, -1, -1, -1],
 	},
@@ -127,5 +128,13 @@ func _ready() -> void:
 			assert(v is Texture2D, "All skills_textures entries must be Texture2D")
 
 
-func get_skill_texture(hero: String, skill_number: int) -> Texture2D:	
+func get_skill_texture(hero_path: Data.HeroesPaths, skill_number: int) -> Texture2D:
+	if hero_path == Data.HeroesPaths.NONE or skill_number == -1:
+		return skills_textures["-"][0] as Texture2D
+	
+	var hero: String = Data.hero_path_to_hero(hero_path)
 	return skills_textures[hero][skill_number] as Texture2D
+
+
+func hero_path_to_hero(hero_path: Data.HeroesPaths) -> String:
+	return (Data.HeroesPaths.keys()[hero_path] as String).substr(0, 1)
