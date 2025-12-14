@@ -2,6 +2,7 @@ class_name MainScene
 extends Control
 
 @export_group("Required Chilren")
+@export var tab_bar: MenuTabBar
 @export var tab_container: TabContainer
 @export var heroes_table: GridContainer
 @export var split_container: HSplitContainer
@@ -14,7 +15,7 @@ extends Control
 
 
 func _ready() -> void:
-	assert(tab_container and heroes_table and split_container)
+	assert(tab_bar and tab_container and heroes_table and split_container)
 	for rank_box in rank_boxes.values():
 		assert(rank_box)
 	tab_container.current_tab = 0
@@ -34,9 +35,10 @@ func _ready() -> void:
 					# If dropped from another rank box:
 					if from_rank > 0:
 						if from_rank != rank_box.rank:
-							var temp: Array[int] = rank_boxes[from_rank].get_skills()
-							rank_boxes[from_rank].set_skills(rank_box.get_skills(), rank_box.hero_path_draggable.hero_path)
-							rank_box.set_skills(temp, rank_boxes[from_rank].hero_path_draggable.hero_path)
+							# NOTE: Hero paths are already changed!!!
+							var temp_skills := rank_boxes[from_rank].get_skills()
+							rank_boxes[from_rank].set_skills(rank_box.get_skills(), rank_boxes[from_rank].hero_path_draggable.hero_path)
+							rank_box.set_skills(temp_skills, rank_box.hero_path_draggable.hero_path)
 					
 					# If dropped from heroes table:
 					else:
@@ -45,7 +47,9 @@ func _ready() -> void:
 						var hero_from_data := Data.hero_path_to_hero(hero_path_from_data)
 						var hero_dropped := Data.hero_path_to_hero(hero_path_dropped)
 						if hero_from_data != hero_dropped:
-							rank_box.set_skills([-1, -1, -1, -1, -1], Data.HeroesPaths.NONE)
+							rank_box.set_skills([-1, -1, -1, -1, -1], hero_path_dropped)
+						else:
+							rank_box.set_skills(rank_box.get_skills(), hero_path_dropped)
 					
 					update_heroes_in_data()
 		)

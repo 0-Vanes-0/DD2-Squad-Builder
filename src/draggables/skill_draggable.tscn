@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cba4amwubq344" path="res://assets/skills/Skill_NONE.png" id="1_u5j1s"]
 
 [node name="TextureRect" type="TextureRect"]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(100, 100)
 texture = ExtResource("1_u5j1s")
 expand_mode = 1
 stretch_mode = 4

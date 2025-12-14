@@ -80,23 +80,23 @@ var heroes_textures: Dictionary[HeroesPaths, Texture2D] = {
 	HeroesPaths.V3: preload("res://assets/portraits/V3.png"),
 }
 
-@export var skills_textures: Dictionary[String, Array] = {
-	"P": [],
-	"G": [],
-	"W": [],
-	"M": [],
-	"H": [],
-	"J": [],
-	"L": [],
-	"O": [],
-	"R": [],
-	"V": [],
-	"F": [],
-	"D": [],
-	"C": [],
-	"A": [],
-	"B": [],
-	"-": [preload("res://assets/skills/Skill_NONE.png")],
+@export var skills_textures: Dictionary[String, HeroSkillsTextures] = {
+	"P": null,
+	"G": null,
+	"W": null,
+	"M": null,
+	"H": null,
+	"J": null,
+	"L": null,
+	"O": null,
+	"R": null,
+	"V": null,
+	"F": null,
+	"D": null,
+	"C": null,
+	"A": null,
+	"B": null,
+	"-": null,
 }
 @export var hero_path_draggable_scene: PackedScene
 @export var skill_draggable_scene: PackedScene
@@ -123,17 +123,16 @@ var dict: Dictionary = {
 
 func _ready() -> void:
 	assert(hero_path_draggable_scene and skill_draggable_scene)
-	for hero in skills_textures.keys():
-		for v in skills_textures[hero]:
-			assert(v is Texture2D, "All skills_textures entries must be Texture2D")
+	for hst in skills_textures.values():
+		assert(hst is HeroSkillsTextures, "All skills_textures values must be HeroSkillsTextures")
 
 
 func get_skill_texture(hero_path: Data.HeroesPaths, skill_number: int) -> Texture2D:
 	if hero_path == Data.HeroesPaths.NONE or skill_number == -1:
-		return skills_textures["-"][0] as Texture2D
+		return skills_textures["-"].skills[0]
 	
 	var hero: String = Data.hero_path_to_hero(hero_path)
-	return skills_textures[hero][skill_number] as Texture2D
+	return skills_textures[hero].skills[skill_number]
 
 
 func hero_path_to_hero(hero_path: Data.HeroesPaths) -> String:

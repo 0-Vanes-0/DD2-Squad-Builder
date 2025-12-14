@@ -13,5 +13,7 @@ func _on_pressed() -> void:
 		rank_box.hero_path_draggable.hero_path = Data.HeroesPaths.NONE
 		rank_box.hero_path_draggable.texture = Data.heroes_textures[Data.HeroesPaths.NONE]
 		rank_box.set_skills([-1, -1, -1, -1, -1], Data.HeroesPaths.NONE)
+		main_scene.tab_container.current_tab = 0
+		main_scene.tab_bar.current_tab = 0
 	
 	main_scene.update_heroes_in_data()
