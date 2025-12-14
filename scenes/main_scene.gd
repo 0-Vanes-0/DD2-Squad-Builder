@@ -4,7 +4,6 @@ extends Control
 @export_group("Required Chilren")
 @export var tab_bar: MenuTabBar
 @export var tab_container: TabContainer
-@export var heroes_table: GridContainer
 @export var split_container: HSplitContainer
 @export var rank_boxes: Dictionary[int, RankBox] = {
 	1: null,
@@ -12,18 +11,30 @@ extends Control
 	3: null,
 	4: null,
 }
+@export var skills_menu: SkillsMenu
 @export var notification_panel: NotificationPanel
 @export var popup_panel: MyPopupPanel
 
 
 func _ready() -> void:
-	assert(tab_bar and tab_container and heroes_table and split_container and popup_panel and notification_panel)
+	assert(tab_bar and tab_container and split_container and popup_panel and skills_menu and notification_panel and popup_panel)
 	for rank_box in rank_boxes.values():
 		assert(rank_box)
 	tab_bar.current_tab = 0
 	tab_container.current_tab = 0
 	
 	for rank_box: RankBox in rank_boxes.values():
+		rank_box.hero_path_draggable.is_unique = (
+				func(hero_path: Data.HeroesPaths) -> bool:
+					var hero := Data.hero_path_to_hero(hero_path)
+					var rank_box_hero := Data.hero_path_to_hero(rank_box.hero_path_draggable.hero_path)
+					return hero == rank_box_hero or rank_boxes.values().all(
+							func(rb: RankBox) -> bool:
+								var rb_hero := Data.hero_path_to_hero(rb.hero_path_draggable.hero_path)
+								return hero != rb_hero 
+					)
+		)
+
 		rank_box.hero_path_draggable.hero_dropped.connect(
 				func(from_rank: int):
 					# If dropped from another rank box:
@@ -33,6 +44,11 @@ func _ready() -> void:
 							var temp_skills := rank_boxes[from_rank].get_skills()
 							rank_boxes[from_rank].set_skills(rank_box.get_skills(), rank_boxes[from_rank].hero_path_draggable.hero_path)
 							rank_box.set_skills(temp_skills, rank_box.hero_path_draggable.hero_path)
+							
+							for skill in rank_box.skills:
+								skill.show()
+							for skill in rank_boxes[from_rank].skills:
+								skill.visible = rank_boxes[from_rank].hero_path_draggable.hero_path != Data.HeroesPaths.NONE
 					
 					# If dropped from heroes table:
 					else:
@@ -44,6 +60,9 @@ func _ready() -> void:
 							rank_box.set_skills([-1, -1, -1, -1, -1], hero_path_dropped)
 						else:
 							rank_box.set_skills(rank_box.get_skills(), hero_path_dropped)
+						
+						for skill in rank_box.skills:
+							skill.show()
 					
 					update_heroes_in_data()
 		)
@@ -70,3 +89,5 @@ func update_heroes_in_data():
 		var rank := rank_box.rank
 		Data.dict[rank]["hero_path"] = rank_box.hero_path_draggable.hero_path
 		Data.dict[rank]["skills"] = rank_box.get_skills()
+	
+	skills_menu.visibility_changed.emit()

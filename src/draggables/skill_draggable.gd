@@ -29,7 +29,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 
 	var drag_preview := TextureRect.new()
 	drag_preview.texture = self.texture
-	drag_preview.scale = Vector2.ONE / 4
+	drag_preview.scale = Vector2.ONE / 5
 	drag_preview.position = (Vector2.UP + Vector2.LEFT) * drag_preview.texture.get_size() * drag_preview.scale / 2
 	var control := Control.new()
 	control.add_child(drag_preview)
@@ -57,7 +57,7 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if data is Dictionary:
 		if data.has("skill_number"):
-			assert(not is_unique.is_null(), "is_unique must be set if it's slot!")
+			assert(not is_unique.is_null(), "is_unique() must be set if it's slot!")
 			if is_unique.call(data["skill_number"]) == true or data["slot_ref"] != null:
 				if data["slot_ref"] != null:
 					var slot_ref := data["slot_ref"] as SkillDraggable

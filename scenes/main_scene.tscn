@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://bu72kudpuaeqo" path="res://scenes/saved_squads.gd" id="14_6u1mn"]
 [ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
 
-[node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "heroes_table", "split_container", "rank_boxes", "notification_panel", "popup_panel")]
+[node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "skills_menu", "notification_panel", "popup_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,6 @@ theme = ExtResource("1_pw63i")
 script = ExtResource("1_w2twt")
 tab_bar = NodePath("HSplitContainer/RightVBox/TabBar")
 tab_container = NodePath("HSplitContainer/RightVBox/TabContainer")
-heroes_table = NodePath("HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer/HBoxContainer/HeroesGrid")
 split_container = NodePath("HSplitContainer")
 rank_boxes = {
 1: NodePath("HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox"),
@@ -36,6 +35,7 @@ rank_boxes = {
 3: NodePath("HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox"),
 4: NodePath("HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox")
 }
+skills_menu = NodePath("HSplitContainer/RightVBox/TabContainer/Skills")
 notification_panel = NodePath("NotificationPanel")
 popup_panel = NodePath("PopupPanel")
 
@@ -72,7 +72,7 @@ horizontal_scroll_mode = 0
 [node name="LeftVBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 40
+theme_override_constants/separation = 30
 
 [node name="Empty" type="Control" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox"]
 layout_mode = 2
@@ -114,7 +114,7 @@ alignment = 1
 
 [node name="Rank4VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 script = ExtResource("7_e1cbu")
 rank = 4
 hero_path_draggable = NodePath("HeroPathDraggable")
@@ -128,40 +128,32 @@ rank_number = 4
 [node name="Skills" type="GridContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 
 [node name="SkillDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable2" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable3" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable4" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable5" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="Rank3VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 script = ExtResource("7_e1cbu")
 rank = 3
 hero_path_draggable = NodePath("HeroPathDraggable")
@@ -175,40 +167,32 @@ rank_number = 3
 [node name="Skills" type="GridContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 
 [node name="SkillDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable2" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable3" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable4" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable5" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="Rank2VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 script = ExtResource("7_e1cbu")
 rank = 2
 hero_path_draggable = NodePath("HeroPathDraggable")
@@ -222,40 +206,32 @@ rank_number = 2
 [node name="Skills" type="GridContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 
 [node name="SkillDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable2" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable3" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable4" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable5" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="Rank1VBox" type="VBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 script = ExtResource("7_e1cbu")
 rank = 1
 hero_path_draggable = NodePath("HeroPathDraggable")
@@ -269,35 +245,27 @@ rank_number = 1
 [node name="Skills" type="GridContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 
 [node name="SkillDraggable" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable2" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable3" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable4" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="SkillDraggable5" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 is_slot = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox"]
@@ -308,7 +276,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[center]Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight Blight BlightBlight Blight Blight Blight[/center]"
+text = "[center]No squad info yet.[/center]"
 fit_content = true
 scroll_active = false
 script = ExtResource("10_4w45t")
@@ -414,6 +382,8 @@ alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank2HBox"]
 layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Rank3HBox" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer"]
@@ -422,6 +392,8 @@ alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank3HBox"]
 layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Rank4HBox" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer"]
@@ -430,6 +402,8 @@ alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer/Rank4HBox"]
 layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="SavedSquads" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" node_paths=PackedStringArray("v_box", "no_squads_label")]

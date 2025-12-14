@@ -10,7 +10,14 @@ func _ready() -> void:
 	assert(hero_path_draggable)
 	for skill in skills:
 		assert(skill)
-		skill.is_unique = func(dropped_skill_number: int) -> bool: return skills.all( func(s: SkillDraggable): return s.skill_number != dropped_skill_number )
+		skill.is_unique = (
+				func(dropped_skill_number: int) -> bool: 
+					return skills.all(
+							func(s: SkillDraggable):
+								return s.skill_number != dropped_skill_number
+					)
+		)
+		skill.hide()
 
 
 func get_skills() -> Array[int]:

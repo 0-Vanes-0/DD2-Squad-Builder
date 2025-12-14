@@ -6,6 +6,7 @@ signal hero_dropped(from_rank: int)
 @export var is_slot := false
 @export var rank_number := 0
 var hero_path: Data.HeroesPaths = Data.HeroesPaths.NONE
+var is_unique := Callable()
 
 
 static func create(hero_path: Data.HeroesPaths) -> HeroPathDraggable:
@@ -13,6 +14,11 @@ static func create(hero_path: Data.HeroesPaths) -> HeroPathDraggable:
 	hero_path_draggable.hero_path = hero_path
 	hero_path_draggable.texture = Data.heroes_textures[hero_path]
 	return hero_path_draggable
+
+
+func _ready() -> void:
+	if not is_slot:
+		is_unique = func() -> bool: return true
 
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
@@ -44,15 +50,17 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if data is Dictionary:
 		if data.has("hero_path"):
-			if data["slot_ref"] != null:
-				var slot_ref := data["slot_ref"] as HeroPathDraggable
-				slot_ref.hero_path = hero_path
-				slot_ref.texture = self.texture
-			
-			hero_path = data["hero_path"]
-			self.texture = data["texture"]
+			assert(not is_unique.is_null(), "is_unique() must be set if it's slot!")
+			if is_unique.call(data["hero_path"]) == true or data["slot_ref"] != null:
+				if data["slot_ref"] != null:
+					var slot_ref := data["slot_ref"] as HeroPathDraggable
+					slot_ref.hero_path = hero_path
+					slot_ref.texture = self.texture
+				
+				hero_path = data["hero_path"]
+				self.texture = data["texture"]
 
-			if is_slot:
-				hero_dropped.emit(data["rank_number"])
-			else:
-				hero_dropped.emit(0)
+				if is_slot:
+					hero_dropped.emit(data["rank_number"])
+				else:
+					hero_dropped.emit(0)
