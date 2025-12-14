@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ceylcxlv0jh8j" path="res://src/draggables/hero_path_draggable.gd" id="1_bbchm"]
 [ext_resource type="Texture2D" uid="uid://yk6k2sdv775b" path="res://assets/portraits/NONE.png" id="2_07o3n"]
 
-[node name="TextureRect" type="TextureRect"]
+[node name="HeroPathDraggable" type="TextureRect"]
 custom_minimum_size = Vector2(120, 80)
 texture = ExtResource("2_07o3n")
 expand_mode = 1

@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://142k2sfw4ijc"]
+
+[ext_resource type="Script" uid="uid://curqrnxbs01ie" path="res://scenes/squad_box.gd" id="1_r3140"]
+[ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="2_k0cq7"]
+
+[node name="SquadBox" type="VBoxContainer" node_paths=PackedStringArray("squad_name_label", "rank1_hpd", "rank2_hpd", "rank3_hpd", "rank4_hpd")]
+theme_override_constants/separation = 20
+script = ExtResource("1_r3140")
+squad_name_label = NodePath("SquadNameLabel")
+rank1_hpd = NodePath("HBoxContainer/TextureRect4")
+rank2_hpd = NodePath("HBoxContainer/TextureRect3")
+rank3_hpd = NodePath("HBoxContainer/TextureRect2")
+rank4_hpd = NodePath("HBoxContainer/TextureRect")
+
+[node name="SquadNameLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Squad Name"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" parent="HBoxContainer" instance=ExtResource("2_k0cq7")]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect2" parent="HBoxContainer" instance=ExtResource("2_k0cq7")]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect3" parent="HBoxContainer" instance=ExtResource("2_k0cq7")]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect4" parent="HBoxContainer" instance=ExtResource("2_k0cq7")]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="InspectButton" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+disabled = true
+text = "  Inspect  "
+
+[node name="CopyButton" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
+text = "     Copy     "
+
+[node name="RenameButton" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "  Rename  "
+
+[node name="DeleteButton" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "  Delete  "
+
+[connection signal="pressed" from="HBoxContainer2/InspectButton" to="." method="_on_inspect_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/CopyButton" to="." method="_on_copy_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/RenameButton" to="." method="_on_rename_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/DeleteButton" to="." method="_on_delete_button_pressed"]

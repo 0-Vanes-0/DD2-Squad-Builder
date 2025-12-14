@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2ktq8osijub2"]
+[gd_scene load_steps=17 format=3 uid="uid://c2ktq8osijub2"]
 
 [ext_resource type="Theme" uid="uid://mi0cw2k5bhje" path="res://resources/default_theme.tres" id="1_pw63i"]
 [ext_resource type="Script" uid="uid://cpm3iqqo7lebm" path="res://scenes/main_scene.gd" id="1_w2twt"]
@@ -14,8 +14,10 @@
 [ext_resource type="Script" uid="uid://xfbr4tvv7qkf" path="res://src/properties_label.gd" id="10_4w45t"]
 [ext_resource type="Script" uid="uid://bo7er32dyytal" path="res://scenes/skills_menu.gd" id="11_mngbo"]
 [ext_resource type="Script" uid="uid://b8erljir6ou1d" path="res://scenes/heroes_menu.gd" id="12_r6p65"]
+[ext_resource type="Script" uid="uid://bu72kudpuaeqo" path="res://scenes/saved_squads.gd" id="14_6u1mn"]
+[ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
 
-[node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "heroes_table", "split_container", "rank_boxes")]
+[node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "heroes_table", "split_container", "rank_boxes", "notification_panel", "popup_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,6 +36,8 @@ rank_boxes = {
 3: NodePath("HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox"),
 4: NodePath("HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox")
 }
+notification_panel = NodePath("NotificationPanel")
+popup_panel = NodePath("PopupPanel")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -86,18 +90,21 @@ main_scene = NodePath("../../../../../..")
 
 [node name="CopyButton" type="Button" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox"]
 layout_mode = 2
+disabled = true
 text = "   Copy   "
 script = ExtResource("4_18nlu")
 
 [node name="PasteButton" type="Button" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox"]
 layout_mode = 2
+disabled = true
 text = "   Paste   "
 script = ExtResource("5_6wevv")
 
-[node name="SaveButton" type="Button" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox"]
+[node name="SaveButton" type="Button" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
 text = "   Save   "
 script = ExtResource("6_6wevv")
+main_scene = NodePath("../../../../../..")
 
 [node name="HeroesHBox" type="HBoxContainer" parent="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox"]
 layout_mode = 2
@@ -425,12 +432,15 @@ alignment = 1
 layout_mode = 2
 columns = 4
 
-[node name="SavedSquads" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer"]
+[node name="SavedSquads" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" node_paths=PackedStringArray("v_box", "no_squads_label")]
 layout_mode = 2
-theme_override_constants/margin_left = 24
+theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
+theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 24
+script = ExtResource("14_6u1mn")
+v_box = NodePath("ScrollContainer/VBoxContainer")
+no_squads_label = NodePath("ScrollContainer/VBoxContainer/NoSquadsLabel")
 metadata/_tab_index = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads"]
@@ -442,48 +452,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SquadBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer"]
+[node name="NoSquadsLabel" type="Label" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer/SquadBox"]
-layout_mode = 2
-text = "Squad Name"
+text = "No squads.
+Drag & drop heroes to the slots on the left,
+drag & drop all 5 skills for each one,
+and press Save!"
 horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer/SquadBox"]
-layout_mode = 2
-alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer/SquadBox/HBoxContainer"]
-custom_minimum_size = Vector2(90, 60)
-layout_mode = 2
-
-[node name="ColorRect2" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer/SquadBox/HBoxContainer"]
-custom_minimum_size = Vector2(90, 60)
-layout_mode = 2
-
-[node name="ColorRect3" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer/SquadBox/HBoxContainer"]
-custom_minimum_size = Vector2(90, 60)
-layout_mode = 2
-
-[node name="ColorRect4" type="ColorRect" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer/SquadBox/HBoxContainer"]
-custom_minimum_size = Vector2(90, 60)
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer/SquadBox"]
-layout_mode = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="InspectButton" type="Button" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer/SquadBox/HBoxContainer2"]
-layout_mode = 2
-text = "   Inspect   "
-
-[node name="CopyButton" type="Button" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer/SquadBox/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "   Copy   "
+autowrap_mode = 3
 
 [node name="Info" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer"]
 visible = false
@@ -544,7 +520,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5019608)
 
-[node name="PopupPanel" type="PopupPanel" parent="."]
+[node name="PopupPanel" type="PopupPanel" parent="." node_paths=PackedStringArray("color_rect", "message_label", "line_edit", "ok_button")]
 transparent_bg = false
 oversampling_override = 1.0
 title = "Saving squad..."
@@ -553,6 +529,11 @@ size = Vector2i(360, 240)
 borderless = false
 always_on_top = true
 transparent = false
+script = ExtResource("15_01n6w")
+color_rect = NodePath("../Dialogues")
+message_label = NodePath("MarginContainer/VBoxContainer/MessageLabel")
+line_edit = NodePath("MarginContainer/VBoxContainer/LineEdit")
+ok_button = NodePath("MarginContainer/VBoxContainer/HBoxContainer/OkButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupPanel"]
 offset_left = 4.0
@@ -569,21 +550,32 @@ layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
+[node name="MessageLabel" type="Label" parent="PopupPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Some text"
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="LineEdit" type="LineEdit" parent="PopupPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-placeholder_text = "Enter squad's name..."
+placeholder_text = "Enter some info..."
 alignment = 1
 max_length = 32
 
-[node name="Button" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="OkButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "  OK  "
 
 [node name="NotificationPanel" type="PanelContainer" parent="." node_paths=PackedStringArray("label")]
 layout_mode = 1
+offset_top = -40.0
 offset_right = 75.0
-offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("8_18nlu")
 label = NodePath("Label")
@@ -599,3 +591,7 @@ text = "  Copied!  "
 [connection signal="pressed" from="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" to="HSplitContainer/MarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" method="_on_pressed"]
 [connection signal="tab_selected" from="HSplitContainer/RightVBox/TabBar" to="HSplitContainer/RightVBox/TabBar" method="_on_tab_selected"]
 [connection signal="visibility_changed" from="HSplitContainer/RightVBox/TabContainer/Skills" to="HSplitContainer/RightVBox/TabContainer/Skills" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="HSplitContainer/RightVBox/TabContainer/SavedSquads" to="HSplitContainer/RightVBox/TabContainer/SavedSquads" method="_on_visibility_changed"]
+[connection signal="close_requested" from="PopupPanel" to="PopupPanel" method="_on_close_requested"]
+[connection signal="popup_hide" from="PopupPanel" to="PopupPanel" method="_on_popup_hide"]
+[connection signal="pressed" from="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer/OkButton" to="PopupPanel" method="_on_ok_button_pressed"]

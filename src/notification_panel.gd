@@ -1,12 +1,7 @@
 class_name NotificationPanel
 extends PanelContainer
 
-const DURATION := 2.0 # seconds
-const Messages: Dictionary[String, String] = {
-	"copy": "Squad copied!",
-	"paste_error": "Wrong squad data in clipboard.",
-
-}
+const DURATION_PER_CHARACTER := 0.1 # seconds
 @export var label: Label
 
 
@@ -17,11 +12,11 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	var mouse_pos := get_viewport().get_mouse_position()
-	self.position = mouse_pos
+	self.position = mouse_pos + Vector2.UP * self.size
 
 
-func show_message(message_key: String):
-	label.text = Messages.get(message_key, "...")
+func show_message(message: String):
+	label.text = " " + message + " "
 	self.show()
-	await get_tree().create_timer(DURATION).timeout
+	await get_tree().create_timer(DURATION_PER_CHARACTER * message.length()).timeout
 	self.hide()

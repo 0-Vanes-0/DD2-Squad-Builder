@@ -118,6 +118,7 @@ var dict: Dictionary = {
 		"hero_path": HeroesPaths.NONE,
 		"skills": [-1, -1, -1, -1, -1],
 	},
+	"squad_name": "",
 }
 
 

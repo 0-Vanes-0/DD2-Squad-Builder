@@ -12,12 +12,15 @@ extends Control
 	3: null,
 	4: null,
 }
+@export var notification_panel: NotificationPanel
+@export var popup_panel: MyPopupPanel
 
 
 func _ready() -> void:
-	assert(tab_bar and tab_container and heroes_table and split_container)
+	assert(tab_bar and tab_container and heroes_table and split_container and popup_panel and notification_panel)
 	for rank_box in rank_boxes.values():
 		assert(rank_box)
+	tab_bar.current_tab = 0
 	tab_container.current_tab = 0
 	
 	for rank_box: RankBox in rank_boxes.values():
@@ -47,6 +50,14 @@ func _ready() -> void:
 
 		for skill_draggable in rank_box.skills:
 			skill_draggable.skill_dropped.connect( func(): update_heroes_in_data() )
+	
+	popup_panel.save_requested.connect(
+			func(squad_name: String):
+				print("Saved squad: %s" % squad_name)
+				Data.dict["squad_name"] = squad_name
+				tab_bar.current_tab = 2
+				tab_container.current_tab = 2
+	) # TODO: Implement save squad.
 
 
 func _on_resized() -> void:
