@@ -12,6 +12,7 @@ extends Control
 	4: null,
 }
 @export var skills_menu: SkillsMenu
+@export var saved_squads_menu: SavedSquadsMenu
 @export var notification_panel: NotificationPanel
 @export var popup_panel: MyPopupPanel
 
@@ -76,6 +77,9 @@ func _ready() -> void:
 				Data.dict["squad_name"] = squad_name
 				tab_bar.current_tab = 2
 				tab_container.current_tab = 2
+
+				var squad_box := SquadBox.create()
+				saved_squads_menu.add_child(squad_box)
 	) # TODO: Implement save squad.
 
 

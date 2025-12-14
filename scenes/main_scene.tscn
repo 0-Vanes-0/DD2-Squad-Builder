@@ -282,7 +282,7 @@ layout_mode = 2
 
 [node name="TabBar" type="TabBar" parent="HSplitContainer/RightVBox" node_paths=PackedStringArray("tab_container")]
 layout_mode = 2
-current_tab = 0
+current_tab = 2
 tab_alignment = 1
 scrolling_enabled = false
 scroll_to_selected = false
@@ -509,7 +509,7 @@ ok_button = NodePath("MarginContainer/VBoxContainer/HBoxContainer/OkButton")
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 236.0
+offset_bottom = 391.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10

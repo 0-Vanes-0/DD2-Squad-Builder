@@ -9,6 +9,19 @@ extends VBoxContainer
 @export var rank4_hpd: HeroPathDraggable
 
 var main_scene: MainScene
+var squad_data: Dictionary = {}
+
+
+static func create() -> SquadBox:
+	var squad_box := Data.squad_box.instantiate() as SquadBox
+	squad_box.squad_data = Data.dict.duplicate(true)
+	var dict := squad_box.squad_data
+	squad_box.squad_name_label.text = dict["squad_name"] as String
+	squad_box.rank1_hpd.texture = Data.heroes_textures[dict[1]["hero_path"] as Data.HeroesPaths]
+	squad_box.rank2_hpd.texture = Data.heroes_textures[dict[2]["hero_path"] as Data.HeroesPaths]
+	squad_box.rank3_hpd.texture = Data.heroes_textures[dict[3]["hero_path"] as Data.HeroesPaths]
+	squad_box.rank4_hpd.texture = Data.heroes_textures[dict[4]["hero_path"] as Data.HeroesPaths]
+	return squad_box
 
 
 func _ready() -> void:
