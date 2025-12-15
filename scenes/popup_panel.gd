@@ -6,7 +6,7 @@ enum MessageType {
 }
 
 signal save_requested(squad_name: String)
-signal rename_requested(squad_name: String)
+signal rename_requested(from_squad_name: String, to_squad_name: String)
 signal delete_requested(squad_name: String)
 
 @export var color_rect: ColorRect
@@ -35,6 +35,7 @@ func show_panel(type: MessageType, arg := "") -> void:
 			line_edit.show()
 
 		MessageType.RENAME_SQUAD:
+			squad_name = arg
 			self.title = "Renaming squad..."
 			message_label.text = ""
 			line_edit.show()
@@ -73,7 +74,10 @@ func _on_ok_button_pressed() -> void:
 			if line_edit.text.strip_edges() == "":
 				message_label.text = "Squad name cannot be empty!"
 				return
-			rename_requested.emit(line_edit.text)
+			if line_edit.text.strip_edges() == squad_name:
+				message_label.text = "Squad name is same as previous!"
+				return
+			rename_requested.emit(squad_name, line_edit.text)
 			close_requested.emit()
 		
 		MessageType.DELETE_SQUAD:

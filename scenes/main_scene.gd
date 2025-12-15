@@ -75,12 +75,13 @@ func _ready() -> void:
 			func(squad_name: String):
 				print("Saved squad: %s" % squad_name)
 				Data.dict["squad_name"] = squad_name
+				var user_data := SaveLoad.load_data()
+				user_data[squad_name] = Data.dict.duplicate(true)
+				SaveLoad.save_data(user_data)
+				await get_tree().process_frame
 				tab_bar.current_tab = 2
 				tab_container.current_tab = 2
-
-				var squad_box := SquadBox.create(Data.dict)
-				saved_squads_menu.add_child(squad_box)
-	) # TODO: Implement save squad.
+	)
 
 
 func _on_resized() -> void:

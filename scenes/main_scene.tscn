@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://bu72kudpuaeqo" path="res://scenes/saved_squads.gd" id="14_6u1mn"]
 [ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
 
-[node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "skills_menu", "notification_panel", "popup_panel")]
+[node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,6 +36,7 @@ rank_boxes = {
 4: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox")
 }
 skills_menu = NodePath("HSplitContainer/RightVBox/TabContainer/Skills")
+saved_squads_menu = NodePath("HSplitContainer/RightVBox/TabContainer/SavedSquads")
 notification_panel = NodePath("NotificationPanel")
 popup_panel = NodePath("PopupPanel")
 
@@ -402,14 +403,14 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="SavedSquads" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" node_paths=PackedStringArray("v_box", "no_squads_label")]
+[node name="SavedSquads" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" node_paths=PackedStringArray("vbox", "no_squads_label")]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 24
 script = ExtResource("14_6u1mn")
-v_box = NodePath("ScrollContainer/VBoxContainer")
+vbox = NodePath("ScrollContainer/VBoxContainer/SquadsVBox")
 no_squads_label = NodePath("ScrollContainer/VBoxContainer/NoSquadsLabel")
 metadata/_tab_index = 2
 
@@ -421,6 +422,7 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 0
 
 [node name="NoSquadsLabel" type="Label" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -430,6 +432,9 @@ drag & drop all 5 skills for each one,
 and press Save!"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="SquadsVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="Info" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer"]
 visible = false

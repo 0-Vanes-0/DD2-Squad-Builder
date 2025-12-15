@@ -13,13 +13,13 @@ var squad_data: Dictionary = {}
 
 
 static func create(dict: Dictionary) -> SquadBox:
-	var squad_box := preload("res://scenes/squad_box.tscn").instantiate() as SquadBox # for some reason can't create @export in Data
+	var squad_box := preload("res://scenes/squad_box.tscn").instantiate() as SquadBox # For some reason can't create @export in Data
 	squad_box.squad_data = dict.duplicate(true)
-	squad_box.squad_name_label.text = squad_box.squad_data["squad_name"] as String
-	squad_box.rank1_hpd.texture = Data.heroes_textures[squad_box.squad_data[1]["hero_path"] as Data.HeroesPaths]
-	squad_box.rank2_hpd.texture = Data.heroes_textures[squad_box.squad_data[2]["hero_path"] as Data.HeroesPaths]
-	squad_box.rank3_hpd.texture = Data.heroes_textures[squad_box.squad_data[3]["hero_path"] as Data.HeroesPaths]
-	squad_box.rank4_hpd.texture = Data.heroes_textures[squad_box.squad_data[4]["hero_path"] as Data.HeroesPaths]
+	squad_box.squad_name_label.text = dict["squad_name"] as String
+	squad_box.rank1_hpd.texture = Data.heroes_textures[dict["1"]["hero_path"] as Data.HeroesPaths]
+	squad_box.rank2_hpd.texture = Data.heroes_textures[dict["2"]["hero_path"] as Data.HeroesPaths]
+	squad_box.rank3_hpd.texture = Data.heroes_textures[dict["3"]["hero_path"] as Data.HeroesPaths]
+	squad_box.rank4_hpd.texture = Data.heroes_textures[dict["4"]["hero_path"] as Data.HeroesPaths]
 	return squad_box
 
 
@@ -33,13 +33,24 @@ func _ready() -> void:
 	main_scene = get_tree().current_scene as MainScene
 	assert(main_scene)
 	main_scene.popup_panel.rename_requested.connect(
-			func(squad_name: String):
-				print("Renamed squad to: %s" % squad_name)
-				squad_name_label.text = squad_name
+			func(from_squad_name: String, to_squad_name: String):
+				if from_squad_name != to_squad_name:
+					print("Renamed squad %s to: %s" % [from_squad_name, to_squad_name])
+					squad_name_label.text = to_squad_name
+
+					var user_data := SaveLoad.load_data()
+					user_data[to_squad_name] = squad_data.duplicate(true)
+					user_data[to_squad_name]["squad_name"] = to_squad_name
+					assert(user_data.erase(from_squad_name))
+					SaveLoad.save_data(user_data)
 	)
 	main_scene.popup_panel.delete_requested.connect(
 			func(squad_name: String):
 				print("Deleted squad: %s" % squad_name)
+				var user_data := SaveLoad.load_data()
+				assert(user_data.erase(squad_name))
+				SaveLoad.save_data(user_data)
+				
 				self.queue_free()
 	)
 

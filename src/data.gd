@@ -121,6 +121,11 @@ var dict: Dictionary = {
 	"squad_name": "",
 }
 
+var settings: Dictionary
+var DEFAULT_SETTINGS := {
+	"language": "eng",
+}
+
 
 func _ready() -> void:
 	assert(hero_path_draggable_scene and skill_draggable_scene)
