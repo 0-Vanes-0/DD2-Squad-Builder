@@ -171,24 +171,39 @@
 [ext_resource type="Texture2D" uid="uid://dt48tkrsqinfx" path="res://assets/skills/B/Skill_icon_bh_uppercut.png" id="166_2oa5s"]
 [ext_resource type="Texture2D" uid="uid://306pphx5t3bg" path="res://assets/skills/B/Skill_icon_bh_bodyguard.png" id="167_3ch6k"]
 
-[sub_resource type="Resource" id="Resource_f6n7w"]
+[sub_resource type="Resource" id="Resource_4vye1"]
 script = ExtResource("2_xxa4v")
-skills = Array[Texture2D]([ExtResource("3_1hqj8"), ExtResource("4_1cvi3"), ExtResource("5_1cvi3"), ExtResource("6_6g088"), ExtResource("7_1g5t1"), ExtResource("8_40agq"), ExtResource("9_d4hph"), ExtResource("10_tp6mg"), ExtResource("11_mtqwm"), ExtResource("12_uv7c5"), ExtResource("13_8bx03")])
+skills = Array[Texture2D]([ExtResource("2_kfl4w")])
+metadata/_custom_type_script = "uid://cjbqwx47ormi4"
+
+[sub_resource type="Resource" id="Resource_h28iw"]
+script = ExtResource("2_xxa4v")
+skills = Array[Texture2D]([ExtResource("146_1l3eb"), ExtResource("147_o8188"), ExtResource("148_4voyo"), ExtResource("149_a804f"), ExtResource("150_afax1"), ExtResource("151_lnxiv"), ExtResource("152_twjfu"), ExtResource("153_obuwh"), ExtResource("154_v8tgq"), ExtResource("155_ohk41"), ExtResource("156_3htgj")])
+metadata/_custom_type_script = "uid://cjbqwx47ormi4"
+
+[sub_resource type="Resource" id="Resource_rrbge"]
+script = ExtResource("2_xxa4v")
+skills = Array[Texture2D]([ExtResource("157_3htgj"), ExtResource("158_wt24c"), ExtResource("159_rpej7"), ExtResource("160_aox4l"), ExtResource("161_klbwn"), ExtResource("162_rt0x2"), ExtResource("163_am4yj"), ExtResource("164_mx68j"), ExtResource("165_05ewn"), ExtResource("166_2oa5s"), ExtResource("167_3ch6k")])
+metadata/_custom_type_script = "uid://cjbqwx47ormi4"
+
+[sub_resource type="Resource" id="Resource_rnif6"]
+script = ExtResource("2_xxa4v")
+skills = Array[Texture2D]([ExtResource("135_0f4bl"), ExtResource("136_hn2jm"), ExtResource("137_0yt65"), ExtResource("138_utu8u"), ExtResource("139_5s8a7"), ExtResource("140_w6cp2"), ExtResource("141_ew4jn"), ExtResource("142_cwrf6"), ExtResource("143_jl5xi"), ExtResource("144_jrtdd"), ExtResource("145_1l3eb")])
+metadata/_custom_type_script = "uid://cjbqwx47ormi4"
+
+[sub_resource type="Resource" id="Resource_1sdtg"]
+script = ExtResource("2_xxa4v")
+skills = Array[Texture2D]([ExtResource("124_ehmbu"), ExtResource("125_k8lxh"), ExtResource("126_sqcql"), ExtResource("127_gf6nm"), ExtResource("128_f4xot"), ExtResource("129_c3gmj"), ExtResource("130_rd2mt"), ExtResource("131_5as2v"), ExtResource("132_o61ak"), ExtResource("133_plvrw"), ExtResource("134_0f4bl")])
+metadata/_custom_type_script = "uid://cjbqwx47ormi4"
+
+[sub_resource type="Resource" id="Resource_8bx03"]
+script = ExtResource("2_xxa4v")
+skills = Array[Texture2D]([ExtResource("113_dlic0"), ExtResource("114_w7ssp"), ExtResource("115_w7ssp"), ExtResource("116_odrjl"), ExtResource("117_dnsdg"), ExtResource("118_toh8b"), ExtResource("119_qwo8x"), ExtResource("120_m6pnt"), ExtResource("121_vh5ek"), ExtResource("115_dh328"), ExtResource("123_hdxhy")])
 metadata/_custom_type_script = "uid://cjbqwx47ormi4"
 
 [sub_resource type="Resource" id="Resource_1hqj8"]
 script = ExtResource("2_xxa4v")
 skills = Array[Texture2D]([ExtResource("14_1sdtg"), ExtResource("15_rnif6"), ExtResource("16_h28iw"), ExtResource("17_rrbge"), ExtResource("18_4vye1"), ExtResource("19_4akau"), ExtResource("20_5aliq"), ExtResource("21_tfknt"), ExtResource("22_sareo"), ExtResource("23_6b2hk"), ExtResource("24_g83nq")])
-metadata/_custom_type_script = "uid://cjbqwx47ormi4"
-
-[sub_resource type="Resource" id="Resource_1cvi3"]
-script = ExtResource("2_xxa4v")
-skills = Array[Texture2D]([ExtResource("25_g83nq"), ExtResource("26_gb20v"), ExtResource("27_rw40c"), ExtResource("28_81h45"), ExtResource("29_6p27b"), ExtResource("30_6p27b"), ExtResource("31_v5o8u"), ExtResource("32_0lkss"), ExtResource("33_cqg0s"), ExtResource("34_jp53y"), ExtResource("35_b0xj1")])
-metadata/_custom_type_script = "uid://cjbqwx47ormi4"
-
-[sub_resource type="Resource" id="Resource_6g088"]
-script = ExtResource("2_xxa4v")
-skills = Array[Texture2D]([ExtResource("36_b0xj1"), ExtResource("37_5nn2m"), ExtResource("38_kg8pd"), ExtResource("39_el4td"), ExtResource("40_3io6j"), ExtResource("41_1jkhr"), ExtResource("42_x402v"), ExtResource("43_qjjtb"), ExtResource("44_b40vi"), ExtResource("45_kdrlt"), ExtResource("46_tbgdm")])
 metadata/_custom_type_script = "uid://cjbqwx47ormi4"
 
 [sub_resource type="Resource" id="Resource_1g5t1"]
@@ -206,9 +221,19 @@ script = ExtResource("2_xxa4v")
 skills = Array[Texture2D]([ExtResource("69_3n4vy"), ExtResource("70_lurng"), ExtResource("71_bq2vx"), ExtResource("72_bo3be"), ExtResource("73_jinf4"), ExtResource("74_lf7ma"), ExtResource("75_a52vx"), ExtResource("76_6o4ps"), ExtResource("77_n7g21"), ExtResource("78_h507s"), ExtResource("79_fqxhi")])
 metadata/_custom_type_script = "uid://cjbqwx47ormi4"
 
+[sub_resource type="Resource" id="Resource_6g088"]
+script = ExtResource("2_xxa4v")
+skills = Array[Texture2D]([ExtResource("36_b0xj1"), ExtResource("37_5nn2m"), ExtResource("38_kg8pd"), ExtResource("39_el4td"), ExtResource("40_3io6j"), ExtResource("41_1jkhr"), ExtResource("42_x402v"), ExtResource("43_qjjtb"), ExtResource("44_b40vi"), ExtResource("45_kdrlt"), ExtResource("46_tbgdm")])
+metadata/_custom_type_script = "uid://cjbqwx47ormi4"
+
 [sub_resource type="Resource" id="Resource_tp6mg"]
 script = ExtResource("2_xxa4v")
 skills = Array[Texture2D]([ExtResource("80_fqxhi"), ExtResource("81_0s8fb"), ExtResource("82_fitgq"), ExtResource("83_2gqji"), ExtResource("84_6r3ur"), ExtResource("85_gd0aj"), ExtResource("86_shq6b"), ExtResource("87_wok0r"), ExtResource("88_72myy"), ExtResource("89_s8bf7"), ExtResource("90_ntkkw")])
+metadata/_custom_type_script = "uid://cjbqwx47ormi4"
+
+[sub_resource type="Resource" id="Resource_f6n7w"]
+script = ExtResource("2_xxa4v")
+skills = Array[Texture2D]([ExtResource("3_1hqj8"), ExtResource("4_1cvi3"), ExtResource("5_1cvi3"), ExtResource("6_6g088"), ExtResource("7_1g5t1"), ExtResource("8_40agq"), ExtResource("9_d4hph"), ExtResource("10_tp6mg"), ExtResource("11_mtqwm"), ExtResource("12_uv7c5"), ExtResource("13_8bx03")])
 metadata/_custom_type_script = "uid://cjbqwx47ormi4"
 
 [sub_resource type="Resource" id="Resource_mtqwm"]
@@ -221,34 +246,9 @@ script = ExtResource("2_xxa4v")
 skills = Array[Texture2D]([ExtResource("102_whtyw"), ExtResource("103_wnhfi"), ExtResource("104_gc1td"), ExtResource("105_gc1td"), ExtResource("106_pkcer"), ExtResource("107_q4ir0"), ExtResource("108_8pj7l"), ExtResource("109_lmvti"), ExtResource("110_15dul"), ExtResource("111_4yk3m"), ExtResource("112_dlic0")])
 metadata/_custom_type_script = "uid://cjbqwx47ormi4"
 
-[sub_resource type="Resource" id="Resource_8bx03"]
+[sub_resource type="Resource" id="Resource_1cvi3"]
 script = ExtResource("2_xxa4v")
-skills = Array[Texture2D]([ExtResource("113_dlic0"), ExtResource("114_w7ssp"), ExtResource("115_w7ssp"), ExtResource("116_odrjl"), ExtResource("117_dnsdg"), ExtResource("118_toh8b"), ExtResource("119_qwo8x"), ExtResource("120_m6pnt"), ExtResource("121_vh5ek"), ExtResource("115_dh328"), ExtResource("123_hdxhy")])
-metadata/_custom_type_script = "uid://cjbqwx47ormi4"
-
-[sub_resource type="Resource" id="Resource_1sdtg"]
-script = ExtResource("2_xxa4v")
-skills = Array[Texture2D]([ExtResource("124_ehmbu"), ExtResource("125_k8lxh"), ExtResource("126_sqcql"), ExtResource("127_gf6nm"), ExtResource("128_f4xot"), ExtResource("129_c3gmj"), ExtResource("130_rd2mt"), ExtResource("131_5as2v"), ExtResource("132_o61ak"), ExtResource("133_plvrw"), ExtResource("134_0f4bl")])
-metadata/_custom_type_script = "uid://cjbqwx47ormi4"
-
-[sub_resource type="Resource" id="Resource_rnif6"]
-script = ExtResource("2_xxa4v")
-skills = Array[Texture2D]([ExtResource("135_0f4bl"), ExtResource("136_hn2jm"), ExtResource("137_0yt65"), ExtResource("138_utu8u"), ExtResource("139_5s8a7"), ExtResource("140_w6cp2"), ExtResource("141_ew4jn"), ExtResource("142_cwrf6"), ExtResource("143_jl5xi"), ExtResource("144_jrtdd"), ExtResource("145_1l3eb")])
-metadata/_custom_type_script = "uid://cjbqwx47ormi4"
-
-[sub_resource type="Resource" id="Resource_h28iw"]
-script = ExtResource("2_xxa4v")
-skills = Array[Texture2D]([ExtResource("146_1l3eb"), ExtResource("147_o8188"), ExtResource("148_4voyo"), ExtResource("149_a804f"), ExtResource("150_afax1"), ExtResource("151_lnxiv"), ExtResource("152_twjfu"), ExtResource("153_obuwh"), ExtResource("154_v8tgq"), ExtResource("155_ohk41"), ExtResource("156_3htgj")])
-metadata/_custom_type_script = "uid://cjbqwx47ormi4"
-
-[sub_resource type="Resource" id="Resource_rrbge"]
-script = ExtResource("2_xxa4v")
-skills = Array[Texture2D]([ExtResource("157_3htgj"), ExtResource("158_wt24c"), ExtResource("159_rpej7"), ExtResource("160_aox4l"), ExtResource("161_klbwn"), ExtResource("162_rt0x2"), ExtResource("163_am4yj"), ExtResource("164_mx68j"), ExtResource("165_05ewn"), ExtResource("166_2oa5s"), ExtResource("167_3ch6k")])
-metadata/_custom_type_script = "uid://cjbqwx47ormi4"
-
-[sub_resource type="Resource" id="Resource_4vye1"]
-script = ExtResource("2_xxa4v")
-skills = Array[Texture2D]([ExtResource("2_kfl4w")])
+skills = Array[Texture2D]([ExtResource("25_g83nq"), ExtResource("26_gb20v"), ExtResource("27_rw40c"), ExtResource("28_81h45"), ExtResource("29_6p27b"), ExtResource("30_6p27b"), ExtResource("31_v5o8u"), ExtResource("32_0lkss"), ExtResource("33_cqg0s"), ExtResource("34_jp53y"), ExtResource("35_b0xj1")])
 metadata/_custom_type_script = "uid://cjbqwx47ormi4"
 
 [node name="Data" type="Node"]

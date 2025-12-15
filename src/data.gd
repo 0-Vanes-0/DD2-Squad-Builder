@@ -100,7 +100,6 @@ var heroes_textures: Dictionary[HeroesPaths, Texture2D] = {
 }
 @export var hero_path_draggable_scene: PackedScene
 @export var skill_draggable_scene: PackedScene
-@export var squad_box_scene: PackedScene
 
 var dict: Dictionary = {
 	1: {
@@ -124,7 +123,7 @@ var dict: Dictionary = {
 
 
 func _ready() -> void:
-	assert(hero_path_draggable_scene and skill_draggable_scene and squad_box_scene)
+	assert(hero_path_draggable_scene and skill_draggable_scene)
 	for hst in skills_textures.values():
 		assert(hst is HeroSkillsTextures, "All skills_textures values must be HeroSkillsTextures")
 

@@ -78,7 +78,7 @@ func _ready() -> void:
 				tab_bar.current_tab = 2
 				tab_container.current_tab = 2
 
-				var squad_box := SquadBox.create()
+				var squad_box := SquadBox.create(Data.dict)
 				saved_squads_menu.add_child(squad_box)
 	) # TODO: Implement save squad.
 
