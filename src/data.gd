@@ -104,19 +104,19 @@ var heroes_textures: Dictionary[HeroesPaths, Texture2D] = {
 var current_squad: Dictionary = {
 	"1": {
 		"hero_path": HeroesPaths.NONE,
-		"skills": [-1, -1, -1, -1, -1],
+		"skills": [-1, -1, -1, -1, -1, -1, -1, -1, -1],
 	},
 	"2": {
 		"hero_path": HeroesPaths.NONE,
-		"skills": [-1, -1, -1, -1, -1],
+		"skills": [-1, -1, -1, -1, -1, -1, -1, -1, -1],
 	},
 	"3": {
 		"hero_path": HeroesPaths.NONE,
-		"skills": [-1, -1, -1, -1, -1],
+		"skills": [-1, -1, -1, -1, -1, -1, -1, -1, -1],
 	},
 	"4": {
 		"hero_path": HeroesPaths.NONE,
-		"skills": [-1, -1, -1, -1, -1],
+		"skills": [-1, -1, -1, -1, -1, -1, -1, -1, -1],
 	},
 	"squad_name": "",
 }
@@ -143,3 +143,14 @@ func get_skill_texture(hero_path: Data.HeroesPaths, skill_number: int) -> Textur
 
 func hero_path_to_hero(hero_path: Data.HeroesPaths) -> String:
 	return (Data.HeroesPaths.keys()[hero_path] as String).substr(0, 1)
+
+
+func is_abomination(hero_path: Data.HeroesPaths) -> bool:
+	return hero_path_to_hero(hero_path) == "A"
+
+
+func get_empty_skills() -> Array[int]:
+	var array: Array[int] = []
+	array.resize(9)
+	array.fill(-1)
+	return array

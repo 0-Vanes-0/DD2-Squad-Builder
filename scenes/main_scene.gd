@@ -38,18 +38,16 @@ func _ready() -> void:
 
 		rank_box.hero_path_draggable.hero_dropped.connect(
 				func(from_rank: int):
+					# NOTE: Hero paths are already changed!!!
+
 					# If dropped from another rank box:
 					if from_rank > 0:
 						if from_rank != rank_box.rank:
-							# NOTE: Hero paths are already changed!!!
+							var from_rank_box := rank_boxes[from_rank]
 							var temp_skills := rank_boxes[from_rank].get_skills()
-							rank_boxes[from_rank].set_skills(rank_box.get_skills(), rank_boxes[from_rank].hero_path_draggable.hero_path)
+							from_rank_box.set_skills(rank_box.get_skills(), from_rank_box.hero_path_draggable.hero_path)
 							rank_box.set_skills(temp_skills, rank_box.hero_path_draggable.hero_path)
-							
-							for skill in rank_box.skills:
-								skill.show()
-							for skill in rank_boxes[from_rank].skills:
-								skill.visible = rank_boxes[from_rank].hero_path_draggable.hero_path != Data.HeroesPaths.NONE
+							from_rank_box.update_skills_visibility()
 					
 					# If dropped from heroes table:
 					else:
@@ -58,13 +56,11 @@ func _ready() -> void:
 						var hero_from_data := Data.hero_path_to_hero(hero_path_from_data)
 						var hero_dropped := Data.hero_path_to_hero(hero_path_dropped)
 						if hero_from_data != hero_dropped:
-							rank_box.set_skills([-1, -1, -1, -1, -1], hero_path_dropped)
+							rank_box.set_skills(Data.get_empty_skills(), hero_path_dropped)
 						else:
 							rank_box.set_skills(rank_box.get_skills(), hero_path_dropped)
 						
-						for skill in rank_box.skills:
-							skill.show()
-					
+					rank_box.update_skills_visibility()
 					update_heroes_in_data()
 		)
 
@@ -78,7 +74,7 @@ func _ready() -> void:
 				var user_data := SaveLoad.load_data()
 				user_data[squad_name] = Data.current_squad.duplicate(true)
 				SaveLoad.save_data(user_data)
-				
+
 				await get_tree().process_frame
 				if tab_bar.current_tab == 2:
 					saved_squads_menu.show()
@@ -121,7 +117,6 @@ func paste_squad_data(data: Variant):
 		skills.assign(squad_data[key]["skills"])
 		rank_box.hero_path_draggable.set_hero_path(hp)
 		rank_box.set_skills(skills, hp)
-		for skill in rank_box.skills:
-			skill.show()
+		rank_box.update_skills_visibility()
 	
 	Data.current_squad = squad_data

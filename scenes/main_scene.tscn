@@ -114,15 +114,17 @@ size_flags_vertical = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Rank4VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
+[node name="Rank4VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "grid", "skills")]
 layout_mode = 2
 script = ExtResource("7_e1cbu")
 rank = 4
 hero_path_draggable = NodePath("HeroPathDraggable")
-skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5")]
+grid = NodePath("Skills")
+skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5"), NodePath("Skills/SkillDraggable6"), NodePath("Skills/SkillDraggable7"), NodePath("Skills/SkillDraggable8"), NodePath("Skills/SkillDraggable9")]
 
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox" instance=ExtResource("8_mngbo")]
 layout_mode = 2
+stretch_mode = 5
 is_slot = true
 rank_number = 4
 
@@ -131,6 +133,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
+columns = 2
 
 [node name="SkillDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
@@ -152,15 +155,33 @@ is_slot = true
 layout_mode = 2
 is_slot = true
 
-[node name="Rank3VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
+[node name="SkillDraggable6" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable7" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable8" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable9" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="Rank3VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "grid", "skills")]
 layout_mode = 2
 script = ExtResource("7_e1cbu")
 rank = 3
 hero_path_draggable = NodePath("HeroPathDraggable")
-skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5")]
+grid = NodePath("Skills")
+skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5"), NodePath("Skills/SkillDraggable6"), NodePath("Skills/SkillDraggable7"), NodePath("Skills/SkillDraggable8"), NodePath("Skills/SkillDraggable9")]
 
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox" instance=ExtResource("8_mngbo")]
 layout_mode = 2
+stretch_mode = 5
 is_slot = true
 rank_number = 3
 
@@ -169,6 +190,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
+columns = 2
 
 [node name="SkillDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
@@ -190,15 +212,33 @@ is_slot = true
 layout_mode = 2
 is_slot = true
 
-[node name="Rank2VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
+[node name="SkillDraggable6" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable7" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable8" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable9" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="Rank2VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "grid", "skills")]
 layout_mode = 2
 script = ExtResource("7_e1cbu")
 rank = 2
 hero_path_draggable = NodePath("HeroPathDraggable")
-skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5")]
+grid = NodePath("Skills")
+skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5"), NodePath("Skills/SkillDraggable6"), NodePath("Skills/SkillDraggable7"), NodePath("Skills/SkillDraggable8"), NodePath("Skills/SkillDraggable9")]
 
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox" instance=ExtResource("8_mngbo")]
 layout_mode = 2
+stretch_mode = 5
 is_slot = true
 rank_number = 2
 
@@ -207,6 +247,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
+columns = 2
 
 [node name="SkillDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
@@ -228,15 +269,33 @@ is_slot = true
 layout_mode = 2
 is_slot = true
 
-[node name="Rank1VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "skills")]
+[node name="SkillDraggable6" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable7" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable8" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable9" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="Rank1VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" node_paths=PackedStringArray("hero_path_draggable", "grid", "skills")]
 layout_mode = 2
 script = ExtResource("7_e1cbu")
 rank = 1
 hero_path_draggable = NodePath("HeroPathDraggable")
-skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5")]
+grid = NodePath("Skills")
+skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5"), NodePath("Skills/SkillDraggable6"), NodePath("Skills/SkillDraggable7"), NodePath("Skills/SkillDraggable8"), NodePath("Skills/SkillDraggable9")]
 
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox" instance=ExtResource("8_mngbo")]
 layout_mode = 2
+stretch_mode = 5
 is_slot = true
 rank_number = 1
 
@@ -245,6 +304,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
+columns = 2
 
 [node name="SkillDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
 layout_mode = 2
@@ -266,11 +326,27 @@ is_slot = true
 layout_mode = 2
 is_slot = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox"]
+[node name="SkillDraggable6" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable7" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable8" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="SkillDraggable9" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/Skills" instance=ExtResource("9_e1cbu")]
+layout_mode = 2
+is_slot = true
+
+[node name="BottomHBox" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox"]
 layout_mode = 2
 alignment = 1
 
-[node name="PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HBoxContainer"]
+[node name="PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -469,9 +545,9 @@ text = "[center][wave][url=issues][color=royal_blue]Report issue/suggestion[/col
 [fill]
 • This web utility helps to build a squad for [color=yellow][url=Steam][shake]Darkest Dungeon 2[/shake][/url][/color] and to share it with anybody.[/fill]
 E.g. someone asks: 
-[color=gray][i]\"Recommend me a broken comp for K3\"[/i][/color] 
+[center][color=gray][i]\"Recommend me a broken comp for K3\"[/i][/color][/center]
 and instead of writing
-[tornado radius=3][color=gray]\"PD Physician, Jester Wanderer, BH, Leper Monarch\"[/color][/tornado] 
+[center][tornado radius=3][color=gray]\"PD Physician, Jester Wanderer, BH, Leper Monarch\"[/color][/tornado][/center]
 [fill]you can just send [b]squad code[/b] that also includes chosen skills for each hero. The one who asked will just copy-paste it here to see heroes and skills.
 
 • Skills order doesn't matter here. However, I recommend to sort them by upgrade (mastering) priority: skill on the top must be upgraded ASAP, skill on the on the bottom has the least importance.

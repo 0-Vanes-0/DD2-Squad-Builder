@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://db38bq7k5bfdv" path="res://src/draggables/skill_draggable.gd" id="1_mkqbr"]
 [ext_resource type="Texture2D" uid="uid://cba4amwubq344" path="res://assets/skills/Skill_NONE.png" id="1_u5j1s"]
 
-[node name="TextureRect" type="TextureRect"]
+[node name="SkillDraggable" type="TextureRect"]
 custom_minimum_size = Vector2(80, 80)
 texture = ExtResource("1_u5j1s")
 expand_mode = 1

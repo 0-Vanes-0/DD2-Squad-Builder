@@ -9,16 +9,19 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	var heroes: Array[Data.HeroesPaths] = []
-	var skill_numbers: Array[int] = []
-	for rankbox: RankBox in main_scene.rank_boxes.values():
-		heroes.append(rankbox.hero_path_draggable.hero_path)
-		for skill in rankbox.skills:
-			skill_numbers.append(skill.skill_number)
+	var is_ok := true
 
-	var is_heroes_filled := heroes.all( func(hp): return hp != Data.HeroesPaths.NONE )
-	var is_skills_filled := skill_numbers.all( func(sn): return sn != -1 )
-	if is_heroes_filled and is_skills_filled:
+	var heroes_skills: Dictionary[Data.HeroesPaths, Array] = {}
+	for rankbox: RankBox in main_scene.rank_boxes.values():
+		if rankbox.hero_path_draggable.hero_path == Data.HeroesPaths.NONE:
+			is_ok = false
+			break
+		heroes_skills[rankbox.hero_path_draggable.hero_path] = []
+		for i in rankbox.skills.size():
+			var skill := rankbox.skills[i]
+			heroes_skills[rankbox.hero_path_draggable.hero_path].append(skill.skill_number)
+		
+	if is_ok:
 		main_scene.popup_panel.show_panel(MyPopupPanel.MessageType.SAVE_SQUAD, Data.current_squad["squad_name"])
 	else:
 		main_scene.notification_panel.show_message("Heroes and/or skills not filled!")
