@@ -67,6 +67,9 @@ func _on_ok_button_pressed() -> void:
 			if line_edit.text.strip_edges() == "":
 				message_label.text = "Squad name cannot be empty!"
 				return
+			if line_edit.text.contains("|"):
+				message_label.text = "The symbol | is prohibited due to its usage in codes."
+				return
 			save_requested.emit(line_edit.text)
 			close_requested.emit()
 		
@@ -76,6 +79,9 @@ func _on_ok_button_pressed() -> void:
 				return
 			if line_edit.text.strip_edges() == squad_name:
 				message_label.text = "Squad name is same as previous!"
+				return
+			if line_edit.text.contains("|"):
+				message_label.text = "The symbol | is prohibited due to its usage in codes."
 				return
 			rename_requested.emit(squad_name, line_edit.text)
 			close_requested.emit()

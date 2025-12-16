@@ -50,7 +50,6 @@ text = "  Inspect  "
 [node name="CopyButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-disabled = true
 text = "     Copy     "
 
 [node name="RenameButton" type="Button" parent="HBoxContainer2"]

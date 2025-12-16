@@ -60,7 +60,9 @@ func _on_inspect_button_pressed() -> void:
 
 
 func _on_copy_button_pressed() -> void:
-	pass # TODO: Copy squad to clipboard
+	var code := SquadCode.encode_squad(squad_data)
+	DisplayServer.clipboard_set(code)
+	main_scene.notification_panel.show_message("Copied!")
 
 
 func _on_rename_button_pressed() -> void:

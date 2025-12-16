@@ -90,11 +90,11 @@ text = "   Clear   "
 script = ExtResource("3_c16ls")
 main_scene = NodePath("../../../../../..")
 
-[node name="CopyButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox"]
+[node name="CopyButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
-disabled = true
 text = "   Copy   "
 script = ExtResource("4_18nlu")
+main_scene = NodePath("../../../../../..")
 
 [node name="PasteButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox"]
 layout_mode = 2
@@ -464,9 +464,14 @@ focus_mode = 2
 bbcode_enabled = true
 text = "[center][wave][url=issues][color=royal_blue]Report issue/suggestion[/color][/url][/wave][/center]
 
-USAGE
+[font_size=24]USAGE[/font_size]
 [fill]
-• This web utility helps to build a squad for [color=yellow][url=Steam][shake]Darkest Dungeon 2[/shake][/url][/color] and to share it with anybody. E.g. someone asks: [color=gray][i]\"Recommend me a broken comp for K3\"[/i][/color] and instead of writing [tornado radius=3][color=gray]\"PD Physician, Jester Wanderer, BH, Leper Monarch\"[/color][/tornado] you can just send [b]squad code[/b] that also includes chosen skills for each hero. The one who asked will just copy-paste it here to see heroes and skills. 
+• This web utility helps to build a squad for [color=yellow][url=Steam][shake]Darkest Dungeon 2[/shake][/url][/color] and to share it with anybody.[/fill]
+E.g. someone asks: 
+[color=gray][i]\"Recommend me a broken comp for K3\"[/i][/color] 
+and instead of writing
+[tornado radius=3][color=gray]\"PD Physician, Jester Wanderer, BH, Leper Monarch\"[/color][/tornado] 
+[fill]you can just send [b]squad code[/b] that also includes chosen skills for each hero. The one who asked will just copy-paste it here to see heroes and skills.
 
 • Skills order doesn't matter here. However, I recommend to sort them by upgrade (mastering) priority: skill on the top must be upgraded ASAP, skill on the on the bottom has the least importance.
 
@@ -480,7 +485,7 @@ USAGE
 
 • If you've found some bug or if you want to suggest some functional/visual changes — click [url=issues][color=royal_blue]Report issue/suggestion[/color][/url].
 [/fill]
-CREDITS
+[font_size=24]CREDITS[/font_size]
 
 RedHook — Darkest Dungeon 2 itself, its images and mechanics.
 
