@@ -39,21 +39,28 @@ static func encode_squad(data: Dictionary) -> String:
 
 static func decode_squad(text: String) -> Dictionary:
 	var pipe_index := text.find("|")
-	var code := text if pipe_index == -1 else text.substr(0, pipe_index)
-	var name := "" if pipe_index == -1 else text.substr(pipe_index + 1).uri_decode()
+	if pipe_index == -1:
+		return {}
+	
+	var code := text.substr(0, pipe_index)
+	var name := "" if text.length() == pipe_index + 1 else text.substr(pipe_index + 1).uri_decode()
 
 	var out: Dictionary = { "squad_name": name }
 
 	var index := 0
-	for slot in [1, 2, 3, 4]:
-		assert(index < code.length())
+	for slot in ["1", "2", "3", "4"]:
+		if not index < code.length():
+			return {}
+		
 		var hero_path := _b64_value(code[index])
 		index += 1
 
 		var count := 9 if _needs_9_skills(hero_path) else 5
 		var skill_len := 6 if count == 9 else 3
 
-		assert(index + skill_len <= code.length())
+		if not index + skill_len <= code.length():
+			return {}
+		
 		var skills_text := code.substr(index, skill_len)
 		index += skill_len
 
@@ -64,6 +71,8 @@ static func decode_squad(text: String) -> Dictionary:
 			"hero_path": hero_path,
 			"skills": skills
 		}
+	
+	_validate_squad(out, code.length())
 
 	return out
 
@@ -113,3 +122,82 @@ static func _needs_9_skills(hero_path: Data.HeroesPaths) -> bool:
 		or hero_path == Data.HeroesPaths.A2
 		or hero_path == Data.HeroesPaths.A3
 	)
+
+
+static func _validate_squad(out: Dictionary, code_length: int) -> bool:
+	# 2) Validate and compute expected code length from decoded data
+	var expected_len := 0
+	var any_a := false
+
+	var used_hero_paths: Dictionary[int, bool] = {}
+	var used_type_letters: Dictionary[StringName, bool] = {}
+
+	for slot in ["1", "2", "3", "4"]:
+		var slot_data: Dictionary = out[slot]
+		var hero_path := slot_data["hero_path"] as Data.HeroesPaths
+
+		# hero_path must be a valid enum entry (excluding NONE)
+		if hero_path == Data.HeroesPaths.NONE:
+			return false
+		if hero_path < 0 or hero_path >= Data.HeroesPaths.size():
+			return false
+		if hero_path >= 64: # because we encode in 1 base64-url char
+			return false
+
+		# Must be unique hero (no duplicates)
+		if used_hero_paths.has(hero_path):
+			return false
+		used_hero_paths[hero_path] = true
+
+		# Type letter uniqueness (first letter of enum name)
+		var enum_name := Data.HeroesPaths.keys()[hero_path] as String
+		if enum_name.is_empty():
+			return false
+		var type_letter := StringName(enum_name.left(1))
+		if used_type_letters.has(type_letter):
+			return false
+		used_type_letters[type_letter] = true
+
+		# Determine skills count for this hero
+		var count := 9 if _needs_9_skills(hero_path) else 5
+		if _needs_9_skills(hero_path):
+			any_a = true
+		
+		# Validate skills array
+		if typeof(slot_data["skills"]) != TYPE_ARRAY:
+			return false
+		var skills: Array = slot_data["skills"]
+		if skills.size() != count:
+			return false
+
+		# Skills must be 0..10 and unique (no repeats)
+		var used_skills := {}  # Dictionary[int, bool]
+		for s in skills:
+			if typeof(s) != TYPE_INT:
+				return false
+			var skill := int(s)
+			if skill < 0 or skill > 10:
+				return false
+			if used_skills.has(skill):
+				return false
+			used_skills[skill] = true
+
+		# Expected code length: 1 for hero + 3 (5 skills) or 6 (9 skills)
+		expected_len += 1 + (6 if count == 9 else 3)
+
+	# Your additional assumption: at most one A* hero
+	if any_a:
+		var a_count := 0
+		for slot in [1, 2, 3, 4]:
+			var hero_path := int(out[slot]["hero_path"])
+			if _needs_9_skills(hero_path):
+				a_count += 1
+		if a_count > 1:
+			return false
+
+	# 3) Validate the encoded part length (reject random strings)
+	# Must match exactly, not "less or equal", otherwise random strings still parse.
+	if code_length != expected_len:
+		return false
+
+	return true

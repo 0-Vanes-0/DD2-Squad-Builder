@@ -24,13 +24,14 @@ func _ready() -> void:
 
 
 func show_panel(type: MessageType, arg := "") -> void:
+	self.size = Vector2(360, 240)
 	current_type = type
 	message_label.show()
 	match type:
 		MessageType.SAVE_SQUAD:
 			self.title = "Saving squad..."
 			message_label.text = ""
-			line_edit.text = ""
+			line_edit.text = arg
 			line_edit.placeholder_text = "Enter squad name..."
 			line_edit.show()
 

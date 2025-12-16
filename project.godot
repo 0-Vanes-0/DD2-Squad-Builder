@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DD2 Squad Builder"
-config/version="0.2"
+config/version="0.3"
 run/main_scene="uid://c2ktq8osijub2"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://b8wm135ghenfp"
@@ -31,6 +31,7 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://assets/": "orange",
+"res://build/": "red",
 "res://resources/": "yellow",
 "res://scenes/": "green",
 "res://src/": "blue"

@@ -11,8 +11,7 @@ var is_unique := Callable()
 
 static func create(hero_path: Data.HeroesPaths) -> HeroPathDraggable:
 	var hero_path_draggable := Data.hero_path_draggable_scene.instantiate() as HeroPathDraggable
-	hero_path_draggable.hero_path = hero_path
-	hero_path_draggable.texture = Data.heroes_textures[hero_path]
+	hero_path_draggable.set_hero_path(hero_path)
 	return hero_path_draggable
 
 
@@ -64,3 +63,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 					hero_dropped.emit(data["rank_number"])
 				else:
 					hero_dropped.emit(0)
+
+
+func set_hero_path(hero_path: Data.HeroesPaths):
+	self.hero_path = hero_path
+	self.texture = Data.heroes_textures[hero_path]

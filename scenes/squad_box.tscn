@@ -42,15 +42,14 @@ mouse_filter = 2
 layout_mode = 2
 alignment = 1
 
-[node name="InspectButton" type="Button" parent="HBoxContainer2"]
-layout_mode = 2
-disabled = true
-text = "  Inspect  "
-
 [node name="CopyButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "     Copy     "
+
+[node name="PasteButton" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "    Paste    "
 
 [node name="RenameButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
@@ -58,9 +57,9 @@ text = "  Rename  "
 
 [node name="DeleteButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
-text = "  Delete  "
+text = "   Delete   "
 
-[connection signal="pressed" from="HBoxContainer2/InspectButton" to="." method="_on_inspect_button_pressed"]
 [connection signal="pressed" from="HBoxContainer2/CopyButton" to="." method="_on_copy_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/PasteButton" to="." method="_on_paste_button_pressed"]
 [connection signal="pressed" from="HBoxContainer2/RenameButton" to="." method="_on_rename_button_pressed"]
 [connection signal="pressed" from="HBoxContainer2/DeleteButton" to="." method="_on_delete_button_pressed"]

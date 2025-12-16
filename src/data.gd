@@ -101,20 +101,20 @@ var heroes_textures: Dictionary[HeroesPaths, Texture2D] = {
 @export var hero_path_draggable_scene: PackedScene
 @export var skill_draggable_scene: PackedScene
 
-var dict: Dictionary = {
-	1: {
+var current_squad: Dictionary = {
+	"1": {
 		"hero_path": HeroesPaths.NONE,
 		"skills": [-1, -1, -1, -1, -1],
 	},
-	2: {
+	"2": {
 		"hero_path": HeroesPaths.NONE,
 		"skills": [-1, -1, -1, -1, -1],
 	},
-	3: {
+	"3": {
 		"hero_path": HeroesPaths.NONE,
 		"skills": [-1, -1, -1, -1, -1],
 	},
-	4: {
+	"4": {
 		"hero_path": HeroesPaths.NONE,
 		"skills": [-1, -1, -1, -1, -1],
 	},

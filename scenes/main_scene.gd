@@ -53,7 +53,7 @@ func _ready() -> void:
 					
 					# If dropped from heroes table:
 					else:
-						var hero_path_from_data := Data.dict[rank_box.rank]["hero_path"] as Data.HeroesPaths
+						var hero_path_from_data := Data.current_squad[str(rank_box.rank)]["hero_path"] as Data.HeroesPaths
 						var hero_path_dropped := rank_box.hero_path_draggable.hero_path
 						var hero_from_data := Data.hero_path_to_hero(hero_path_from_data)
 						var hero_dropped := Data.hero_path_to_hero(hero_path_dropped)
@@ -74,13 +74,17 @@ func _ready() -> void:
 	popup_panel.save_requested.connect(
 			func(squad_name: String):
 				print("Saved squad: %s" % squad_name)
-				Data.dict["squad_name"] = squad_name
+				Data.current_squad["squad_name"] = squad_name
 				var user_data := SaveLoad.load_data()
-				user_data[squad_name] = Data.dict.duplicate(true)
+				user_data[squad_name] = Data.current_squad.duplicate(true)
 				SaveLoad.save_data(user_data)
+				
 				await get_tree().process_frame
-				tab_bar.current_tab = 2
-				tab_container.current_tab = 2
+				if tab_bar.current_tab == 2:
+					saved_squads_menu.show()
+				else:
+					tab_bar.current_tab = 2
+					tab_container.current_tab = 2
 	)
 
 
@@ -91,8 +95,33 @@ func _on_resized() -> void:
 
 func update_heroes_in_data():
 	for rank_box: RankBox in rank_boxes.values():
-		var rank := rank_box.rank
-		Data.dict[rank]["hero_path"] = rank_box.hero_path_draggable.hero_path
-		Data.dict[rank]["skills"] = rank_box.get_skills()
+		var rank := str(rank_box.rank)
+		Data.current_squad[rank]["hero_path"] = rank_box.hero_path_draggable.hero_path
+		Data.current_squad[rank]["skills"] = rank_box.get_skills()
 	
 	skills_menu.visibility_changed.emit()
+
+
+func paste_squad_data(data: Variant):
+	var squad_data: Dictionary = {}
+	if data is String or data is Dictionary:
+		if data is String:
+			squad_data = SquadCode.decode_squad(data)
+		elif data is Dictionary:
+			squad_data = data as Dictionary
+		
+	if squad_data.is_empty():
+		notification_panel.show_message("Failed to decode!")
+		return
+	
+	for rank_box: RankBox in rank_boxes.values():
+		var key := str(rank_box.rank)
+		var hp := squad_data[key]["hero_path"] as Data.HeroesPaths
+		var skills: Array[int] = []
+		skills.assign(squad_data[key]["skills"])
+		rank_box.hero_path_draggable.set_hero_path(hp)
+		rank_box.set_skills(skills, hp)
+		for skill in rank_box.skills:
+			skill.show()
+	
+	Data.current_squad = squad_data

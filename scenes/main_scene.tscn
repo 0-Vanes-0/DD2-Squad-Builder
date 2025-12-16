@@ -96,11 +96,11 @@ text = "   Copy   "
 script = ExtResource("4_18nlu")
 main_scene = NodePath("../../../../../..")
 
-[node name="PasteButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox"]
+[node name="PasteButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
-disabled = true
 text = "   Paste   "
 script = ExtResource("5_6wevv")
+main_scene = NodePath("../../../../../..")
 
 [node name="SaveButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
@@ -437,6 +437,7 @@ autowrap_mode = 3
 
 [node name="SquadsVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 40
 
 [node name="Info" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer"]
 layout_mode = 2
@@ -517,6 +518,7 @@ oversampling_override = 1.0
 title = "Saving squad..."
 initial_position = 1
 size = Vector2i(360, 240)
+wrap_controls = false
 borderless = false
 always_on_top = true
 transparent = false

@@ -48,15 +48,15 @@ func _ready() -> void:
 			func(squad_name: String):
 				print("Deleted squad: %s" % squad_name)
 				var user_data := SaveLoad.load_data()
-				assert(user_data.erase(squad_name))
+				user_data.erase(squad_name)
 				SaveLoad.save_data(user_data)
 				
 				self.queue_free()
 	)
 
 
-func _on_inspect_button_pressed() -> void:
-	pass # TODO: Paste squad to main scene and to data (ranks, squad name)
+func _on_paste_button_pressed() -> void:
+	main_scene.paste_squad_data(squad_data)
 
 
 func _on_copy_button_pressed() -> void:

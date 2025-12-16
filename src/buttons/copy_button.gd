@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	var code := SquadCode.encode_squad(Data.dict)
+	var code := SquadCode.encode_squad(Data.current_squad)
 	if code.is_empty():
 		main_scene.notification_panel.show_message("Heroes and/or skills not filled!")
 	else:
