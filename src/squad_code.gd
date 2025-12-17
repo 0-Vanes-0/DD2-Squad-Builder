@@ -178,8 +178,8 @@ static func _validate_squad(out: Dictionary, code_length: int) -> bool:
 	# Your additional assumption: at most one A* hero
 	if any_a:
 		var a_count := 0
-		for slot in [1, 2, 3, 4]:
-			var hero_path := int(out[slot]["hero_path"])
+		for slot in ["1", "2", "3", "4"]:
+			var hero_path := out[slot]["hero_path"] as Data.HeroesPaths
 			if _needs_9_skills(hero_path):
 				a_count += 1
 		if a_count > 1:

@@ -77,7 +77,7 @@ func _ready() -> void:
 
 				await get_tree().process_frame
 				if tab_bar.current_tab == 2:
-					saved_squads_menu.show()
+					saved_squads_menu.visibility_changed.emit()
 				else:
 					tab_bar.current_tab = 2
 					tab_container.current_tab = 2
