@@ -4,9 +4,9 @@ extends Resource
 enum Types {
 	NONE,
 	BLIGHT, BLEED, BURN,
-	BLOCK, DODGE, GUARD, RIPOSTE, STEALTH, STRENGTH, POSITIVE,
+	BLOCK, DODGE, GUARD, RIPOSTE, STEALTH, STRENGTH, CRIT, POSITIVE,
 	BLIND, DAZE, STUN, TAUNT, VULN, WEAK, NEGATIVE,
-	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL,
+	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL, EXECUTE
 }
 
 const ICON_TYPE: Dictionary[StringName, Types] = {
@@ -20,6 +20,7 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$rps": Types.RIPOSTE,
 	&"$stl": Types.STEALTH,
 	&"$str": Types.STRENGTH,
+	&"$crt": Types.CRIT,
 	&"$bff": Types.POSITIVE,
 	
 	&"$bln": Types.BLIND,
@@ -37,6 +38,7 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$sts": Types.STRESS,
 	&"$spd": Types.SPEED,
 	&"$hlh": Types.HEAL,
+	&"$exe": Types.EXECUTE,
 }
 
 @export var dict: Dictionary[Types, Texture2D]

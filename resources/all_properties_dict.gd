@@ -1,6 +1,8 @@
 class_name AllPropertiesDictionary
 extends Resource
 
+const NBSP := "\u00A0"
+
 @export var properties: Dictionary[String, String] = {}
 
 
@@ -16,13 +18,15 @@ static func create(json_string: String) -> AllPropertiesDictionary:
 			all_props.properties.assign(data)
 	
 	assert(not all_props.properties.is_empty())
+	for key in all_props.properties.keys():
+		all_props.properties[key] = all_props.properties[key].replace(" ", NBSP)
 	return all_props
 
 
 func construct_text(tokens: Array[String]) -> String:
 	var sentence := ""
 	for token in tokens:
-		if token in ["heal", "stress"]:
+		if token in PropertiesLabel.RANKS_TOKENS:
 			sentence += properties[token] + tokens[1]
 			break
 		

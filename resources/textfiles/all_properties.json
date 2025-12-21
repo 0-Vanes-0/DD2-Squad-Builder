@@ -14,12 +14,14 @@
 	"convert_from_blight": "Converting $blt to damage.",
 	"convert_from_burn": "Converting $brn to damage.",
 	"convert_from_dot": "Converting $bld $blt $brn to damage.",
-	"move_ally": "Moving heroes.",
 	"move_enemy": "Moving enemies.",
 	"clear": "Clearing corpses.",
 	
+	"move_ally": "Forward/Back by ",
 	"heal": "Healing by ",
 	"stress": "Anti-stressing by ",
+	"execute": "$exe by ",
+	"aoe": "AOE by ",
 	
 	"blight_icon": "$blt",
 	"bleed_icon": "$bld",
@@ -31,6 +33,7 @@
 	"riposte_icon": "$rps",
 	"stealth_icon": "$stl",
 	"strength_icon": "$str",
+	"crit_icon": "$crt",
 	"positive_icon": "$bff",
 	
 	"blind_icon": "$bln",
@@ -47,4 +50,5 @@
 	"stress_icon": "$sts",
 	"speed_icon": "$spd",
 	"heal_icon": "$hlh",
+	"execute_icon": "$exe",
 }

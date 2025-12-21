@@ -1,14 +1,16 @@
 class_name PropertiesLabel
 extends RichTextLabel
 
+const NBSP := "\u00A0"
 const FIRST_WORDS := [
 	"apply_dot", "apply_pos", "apply_neg", "apply",
 	"remove_dot", "remove_pos", "remove_neg", "remove",
 	"consume", "ignore",
 	"convert_from_bleed", "convert_from_blight", "convert_from_burn", "convert_from_dot",
 	"move_ally", "move_enemy",
-	"clear", "heal", "stress",
+	"clear", "heal", "stress", "execute",
 ]
+const RANKS_TOKENS: Array[String] = ["heal", "stress", "execute", "move_ally", "aoe"]
 var tokens_map := {}
 
 
@@ -19,8 +21,11 @@ func update_skills_props():
 	for rank in ["1", "2", "3", "4"]:
 		var has_rank_healing := false
 		var has_rank_antistressing := false
-		var hero_path := Data.current_squad[rank]["hero_path"] as HeroesPaths.Enum
+		var has_rank_execute := false
+		var has_rank_moving := false
+		var has_rank_aoe := false
 		
+		var hero_path := Data.current_squad[rank]["hero_path"] as HeroesPaths.Enum
 		var skills: Array[int]
 		skills.assign(Data.current_squad[rank]["skills"])
 		for number in skills:
@@ -38,6 +43,18 @@ func update_skills_props():
 								if not has_rank_antistressing:
 									_add_to_tokens_map(words[0], ["1"])
 									has_rank_antistressing = true
+							elif words[0] == "execute":
+								if not has_rank_execute:
+									_add_to_tokens_map(words[0], ["1"])
+									has_rank_execute = true
+							elif words[0] == "move_ally":
+								if not has_rank_moving:
+									_add_to_tokens_map(words[0], ["1"])
+									has_rank_moving = true
+							elif words[0] == "aoe":
+								if not has_rank_aoe:
+									_add_to_tokens_map(words[0], ["1"])
+									has_rank_aoe = true
 							else:
 								_add_to_tokens_map(words[0])
 						else:
@@ -51,9 +68,9 @@ func update_skills_props():
 	var empty := [""]
 	for first_word in sorted_tokens_map.keys():
 		var tokens: Array[String]
-		if first_word in ["heal", "stress"]:
+		if first_word in RANKS_TOKENS:
 			var amount := sorted_tokens_map[first_word].size() as int
-			var heroes := " heroes." if amount > 1 else " hero."
+			var heroes := NBSP + "heroes." if amount > 1 else NBSP + "hero."
 			tokens.assign([str(amount) + heroes])
 		elif sorted_tokens_map[first_word][0] != empty[0]:
 			tokens.assign(sorted_tokens_map[first_word])
@@ -74,7 +91,7 @@ func _add_to_tokens_map(first_word: String, args := [""]):
 		tokens_map[first_word] = []
 	
 	for word in args:
-		if not word in tokens_map[first_word] or first_word in ["heal", "stress"]:
+		if not word in tokens_map[first_word] or first_word in RANKS_TOKENS:
 			tokens_map[first_word].append(word)
 
 

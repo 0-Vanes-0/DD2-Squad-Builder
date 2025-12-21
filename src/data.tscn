@@ -1,4 +1,4 @@
-[gd_scene load_steps=295 format=3 uid="uid://dou3hflgxs5ms"]
+[gd_scene load_steps=308 format=3 uid="uid://dou3hflgxs5ms"]
 
 [ext_resource type="Script" uid="uid://cxg75tgd2xc4b" path="res://src/data.gd" id="1_40iss"]
 [ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="2_en3sy"]
@@ -179,6 +179,7 @@
 [ext_resource type="Texture2D" uid="uid://cgp1vj7g15wuk" path="res://assets/icons/Dd2_token_riposte.png" id="177_ne6rw"]
 [ext_resource type="Texture2D" uid="uid://736q1trkqvxe" path="res://assets/icons/Dd2_token_stealth.png" id="178_si24v"]
 [ext_resource type="Texture2D" uid="uid://b6gi7es0bg6l" path="res://assets/icons/Dd2_token_strength_2.png" id="179_4g8ed"]
+[ext_resource type="Texture2D" uid="uid://rg7qhcbk0wt0" path="res://assets/icons/Dd2_token_crit.png" id="180_ne6rw"]
 [ext_resource type="Texture2D" uid="uid://cxdpd2b3m7t05" path="res://assets/icons/Dd2_token_buff.png" id="180_u57f6"]
 [ext_resource type="Texture2D" uid="uid://dis7grxppnydb" path="res://assets/icons/Dd2_token_blind.png" id="181_wwpph"]
 [ext_resource type="Texture2D" uid="uid://bppvnadelkk6t" path="res://assets/icons/Dd2_token_daze.png" id="182_f0e13"]
@@ -197,6 +198,7 @@
 [ext_resource type="Texture2D" uid="uid://blxuculillgyc" path="res://assets/icons/Icon_HP_dd2.png" id="193_dr7go"]
 [ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="194_0w4dv"]
 [ext_resource type="Script" uid="uid://begm6aieeipkh" path="res://resources/all_heroes_skills_properties_dict.gd" id="194_f0e13"]
+[ext_resource type="Texture2D" uid="uid://dwsco5jf11v1x" path="res://assets/icons/Token_deaths_door_armor_broken.png" id="194_ne6rw"]
 
 [sub_resource type="Resource" id="Resource_4vye1"]
 script = ExtResource("2_xxa4v")
@@ -290,20 +292,22 @@ dict = Dictionary[int, Texture2D]({
 7: ExtResource("177_ne6rw"),
 8: ExtResource("178_si24v"),
 9: ExtResource("179_4g8ed"),
-10: ExtResource("180_u57f6"),
-11: ExtResource("181_wwpph"),
-12: ExtResource("182_f0e13"),
-13: ExtResource("182_udnga"),
-14: ExtResource("183_t3ct6"),
-15: ExtResource("184_q427p"),
-16: ExtResource("185_4afi2"),
-17: ExtResource("186_hg1jf"),
-18: ExtResource("187_jsxhp"),
-19: ExtResource("188_55l1s"),
-20: ExtResource("189_3scyv"),
-21: ExtResource("190_a7cu5"),
-22: ExtResource("191_n8da0"),
-23: ExtResource("193_dr7go")
+10: ExtResource("180_ne6rw"),
+11: ExtResource("180_u57f6"),
+12: ExtResource("181_wwpph"),
+13: ExtResource("182_f0e13"),
+14: ExtResource("182_udnga"),
+15: ExtResource("183_t3ct6"),
+16: ExtResource("184_q427p"),
+17: ExtResource("185_4afi2"),
+18: ExtResource("186_hg1jf"),
+19: ExtResource("187_jsxhp"),
+20: ExtResource("188_55l1s"),
+21: ExtResource("189_3scyv"),
+22: ExtResource("190_a7cu5"),
+23: ExtResource("191_n8da0"),
+24: ExtResource("193_dr7go"),
+25: ExtResource("194_ne6rw")
 })
 metadata/_custom_type_script = "uid://4v2ties4ofdd"
 
@@ -314,7 +318,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_0w4dv"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["apply_neg blind_icon daze_icon", "apply combo_icon"])
+properties = Array[String](["apply_neg blind_icon daze_icon", "apply combo_icon", "aoe"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_si24v"]
@@ -334,7 +338,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_wwpph"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["apply_dot blight_icon"])
+properties = Array[String](["apply_dot blight_icon", "aoe"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_udnga"]
@@ -359,7 +363,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_hg1jf"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["apply_dot burn_icon", "clear"])
+properties = Array[String](["apply_dot burn_icon", "clear", "aoe"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ne6rw"]
@@ -379,6 +383,18 @@ info = Dictionary[int, ExtResource("194_0w4dv")]({
 })
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_kogbc"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
+[sub_resource type="Resource" id="Resource_ugfbu"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
+[sub_resource type="Resource" id="Resource_af4m7"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
 [sub_resource type="Resource" id="Resource_55l1s"]
 script = ExtResource("194_0w4dv")
 properties = Array[String](["ignore block_icon", "remove_pos block_icon", "consume combo_icon"])
@@ -391,7 +407,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_a7cu5"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["ignore dodge_icon"])
+properties = Array[String](["ignore dodge_icon", "aoe"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_n8da0"]
@@ -421,7 +437,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2jlsy"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["move_ally", "apply_neg daze_icon weak_icon"])
+properties = Array[String](["move_ally", "apply_neg daze_icon weak_icon", "aoe"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_w3bmc"]
@@ -451,70 +467,6 @@ info = Dictionary[int, ExtResource("194_0w4dv")]({
 })
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
-[sub_resource type="Resource" id="Resource_itvf4"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_bd00x"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_s1yq2"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_xousx"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_vtfoi"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_0lgwh"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_ejl4u"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_5yibu"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_0gp1b"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_xlb0c"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_k0wem"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_8ekij"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_0m3og"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_kogbc"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_ugfbu"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
-[sub_resource type="Resource" id="Resource_af4m7"]
-script = ExtResource("193_0vg06")
-metadata/_custom_type_script = "uid://c03w4nq84fgfy"
-
 [sub_resource type="Resource" id="Resource_be6oj"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
@@ -527,6 +479,78 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_3ahbw"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["execute"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_fcu4q"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["consume combo_icon", "apply_neg daze_icon stun_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_rmwou"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_ally", "apply_pos riposte_icon dodge_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_2gjin"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["ignore dodge_icon stealth_icon", "remove_pos dodge_icon stealth_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_pfqd1"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["remove_neg blind_icon", "apply_pos crit_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_hhtk4"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_ally", "move_enemy", "apply combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_ojstr"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["aoe"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_undti"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_dot bleed_icon", "consume combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_t8utl"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["execute"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_vwsvp"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["ignore dodge_icon", "remove_pos positive_icon", "apply_pos positive_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_g4j57"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["ignore block_icon", "remove_pos block_icon", "apply_neg vuln_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_itvf4"]
+script = ExtResource("193_0vg06")
+info = Dictionary[int, ExtResource("194_0w4dv")]({
+0: SubResource("Resource_3ahbw"),
+1: SubResource("Resource_fcu4q"),
+2: SubResource("Resource_rmwou"),
+3: SubResource("Resource_2gjin"),
+4: SubResource("Resource_pfqd1"),
+5: SubResource("Resource_hhtk4"),
+6: SubResource("Resource_ojstr"),
+7: SubResource("Resource_undti"),
+8: SubResource("Resource_t8utl"),
+9: SubResource("Resource_vwsvp"),
+10: SubResource("Resource_g4j57")
+})
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
 [sub_resource type="Resource" id="Resource_aqwch"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
@@ -536,6 +560,10 @@ script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_kdqqc"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
+[sub_resource type="Resource" id="Resource_bd00x"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
@@ -551,6 +579,10 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_s1yq2"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
 [sub_resource type="Resource" id="Resource_mwgie"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
@@ -560,6 +592,10 @@ script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_tso35"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
+[sub_resource type="Resource" id="Resource_xousx"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
@@ -575,6 +611,10 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_vtfoi"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
 [sub_resource type="Resource" id="Resource_em43m"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
@@ -584,6 +624,10 @@ script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_hypfq"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
+[sub_resource type="Resource" id="Resource_0lgwh"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
@@ -599,6 +643,10 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_ejl4u"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
 [sub_resource type="Resource" id="Resource_1ffxf"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
@@ -608,6 +656,10 @@ script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_j2ei7"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
+[sub_resource type="Resource" id="Resource_5yibu"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
@@ -623,6 +675,10 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_0gp1b"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
 [sub_resource type="Resource" id="Resource_nsg7w"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
@@ -632,6 +688,10 @@ script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_nmte6"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
+[sub_resource type="Resource" id="Resource_xlb0c"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
@@ -647,6 +707,10 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_k0wem"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
 [sub_resource type="Resource" id="Resource_qosha"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
@@ -659,6 +723,10 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_8ekij"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
 [sub_resource type="Resource" id="Resource_hklp8"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
@@ -668,6 +736,10 @@ script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_cavdk"]
+script = ExtResource("193_0vg06")
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
+[sub_resource type="Resource" id="Resource_0m3og"]
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
