@@ -5,11 +5,11 @@ signal hero_dropped(from_rank: int)
 
 @export var is_slot := false
 @export var rank_number := 0
-var hero_path: Data.HeroesPaths = Data.HeroesPaths.NONE
+var hero_path: HeroesPaths.Enum = HeroesPaths.Enum.NONE
 var is_unique := Callable()
 
 
-static func create(hero_path: Data.HeroesPaths) -> HeroPathDraggable:
+static func create(hero_path: HeroesPaths.Enum) -> HeroPathDraggable:
 	var hero_path_draggable := Data.hero_path_draggable_scene.instantiate() as HeroPathDraggable
 	hero_path_draggable.set_hero_path(hero_path)
 	return hero_path_draggable
@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
-	if hero_path == Data.HeroesPaths.NONE:
+	if hero_path == HeroesPaths.Enum.NONE:
 		return null
 	
 	var drag_preview := TextureRect.new()
@@ -42,7 +42,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	if data is Dictionary:
 		if is_slot:
-			return data.has("hero_path") and data["hero_path"] != Data.HeroesPaths.NONE
+			return data.has("hero_path") and data["hero_path"] != HeroesPaths.Enum.NONE
 	return false
 
 
@@ -65,6 +65,6 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 					hero_dropped.emit(0)
 
 
-func set_hero_path(hero_path: Data.HeroesPaths):
+func set_hero_path(hero_path: HeroesPaths.Enum):
 	self.hero_path = hero_path
 	self.texture = Data.heroes_textures[hero_path]

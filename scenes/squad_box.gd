@@ -16,10 +16,10 @@ static func create(dict: Dictionary) -> SquadBox:
 	var squad_box := preload("res://scenes/squad_box.tscn").instantiate() as SquadBox # For some reason can't create @export in Data
 	squad_box.squad_data = dict.duplicate(true)
 	squad_box.squad_name_label.text = dict["squad_name"] as String
-	squad_box.rank1_hpd.texture = Data.heroes_textures[dict["1"]["hero_path"] as Data.HeroesPaths]
-	squad_box.rank2_hpd.texture = Data.heroes_textures[dict["2"]["hero_path"] as Data.HeroesPaths]
-	squad_box.rank3_hpd.texture = Data.heroes_textures[dict["3"]["hero_path"] as Data.HeroesPaths]
-	squad_box.rank4_hpd.texture = Data.heroes_textures[dict["4"]["hero_path"] as Data.HeroesPaths]
+	squad_box.rank1_hpd.texture = Data.heroes_textures[dict["1"]["hero_path"] as HeroesPaths.Enum]
+	squad_box.rank2_hpd.texture = Data.heroes_textures[dict["2"]["hero_path"] as HeroesPaths.Enum]
+	squad_box.rank3_hpd.texture = Data.heroes_textures[dict["3"]["hero_path"] as HeroesPaths.Enum]
+	squad_box.rank4_hpd.texture = Data.heroes_textures[dict["4"]["hero_path"] as HeroesPaths.Enum]
 	return squad_box
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=187 format=3 uid="uid://dou3hflgxs5ms"]
+[gd_scene load_steps=228 format=3 uid="uid://dou3hflgxs5ms"]
 
 [ext_resource type="Script" uid="uid://cxg75tgd2xc4b" path="res://src/data.gd" id="1_40iss"]
 [ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="2_en3sy"]
@@ -170,6 +170,33 @@
 [ext_resource type="Texture2D" uid="uid://c2k02dpvy0sau" path="res://assets/skills/B/Skill_icon_bh_finish_him.png" id="165_05ewn"]
 [ext_resource type="Texture2D" uid="uid://dt48tkrsqinfx" path="res://assets/skills/B/Skill_icon_bh_uppercut.png" id="166_2oa5s"]
 [ext_resource type="Texture2D" uid="uid://306pphx5t3bg" path="res://assets/skills/B/Skill_icon_bh_bodyguard.png" id="167_3ch6k"]
+[ext_resource type="Texture2D" uid="uid://bn06qmcmwe43w" path="res://assets/icons/Blight_dd2.png" id="171_v2r0a"]
+[ext_resource type="Texture2D" uid="uid://emhfu8aag0an" path="res://assets/icons/Bleed_dd2.png" id="172_3k2c4"]
+[ext_resource type="Texture2D" uid="uid://bp02thdygw0kt" path="res://assets/icons/Burn_dd2.png" id="173_0vg06"]
+[ext_resource type="Texture2D" uid="uid://vxtfrqv1t7no" path="res://assets/icons/Dd2_token_block.png" id="174_f0e13"]
+[ext_resource type="Texture2D" uid="uid://cu67m7j8qixi0" path="res://assets/icons/Dd2_token_dodge.png" id="175_0w4dv"]
+[ext_resource type="Texture2D" uid="uid://b8h2fr86yq6p" path="res://assets/icons/Dd2_token_guarded.png" id="176_dr7go"]
+[ext_resource type="Texture2D" uid="uid://cgp1vj7g15wuk" path="res://assets/icons/Dd2_token_riposte.png" id="177_ne6rw"]
+[ext_resource type="Texture2D" uid="uid://736q1trkqvxe" path="res://assets/icons/Dd2_token_stealth.png" id="178_si24v"]
+[ext_resource type="Texture2D" uid="uid://b6gi7es0bg6l" path="res://assets/icons/Dd2_token_strength_2.png" id="179_4g8ed"]
+[ext_resource type="Texture2D" uid="uid://cxdpd2b3m7t05" path="res://assets/icons/Dd2_token_buff.png" id="180_u57f6"]
+[ext_resource type="Texture2D" uid="uid://dis7grxppnydb" path="res://assets/icons/Dd2_token_blind.png" id="181_wwpph"]
+[ext_resource type="Texture2D" uid="uid://bppvnadelkk6t" path="res://assets/icons/Dd2_token_daze.png" id="182_f0e13"]
+[ext_resource type="Texture2D" uid="uid://dmxetv75xym5k" path="res://assets/icons/Dd2_token_stun.png" id="182_udnga"]
+[ext_resource type="Texture2D" uid="uid://dbbxxmbw0rs14" path="res://assets/icons/Dd2_token_taunt.png" id="183_t3ct6"]
+[ext_resource type="Texture2D" uid="uid://cpnc7gdsiw4nc" path="res://assets/icons/Dd2_token_vulnerable.png" id="184_q427p"]
+[ext_resource type="Texture2D" uid="uid://6ewbyj2kll3p" path="res://assets/icons/Dd2_token_weak.png" id="185_4afi2"]
+[ext_resource type="Texture2D" uid="uid://dyrbe1ikk616o" path="res://assets/icons/Debuff_dd2.png" id="186_hg1jf"]
+[ext_resource type="Texture2D" uid="uid://d212wr53p27h0" path="res://assets/icons/Dd2_token_combo.png" id="187_jsxhp"]
+[ext_resource type="Texture2D" uid="uid://b2ns0dvdy6af3" path="res://assets/icons/Move_dd2.png" id="188_55l1s"]
+[ext_resource type="Texture2D" uid="uid://be5lbft7xd5ap" path="res://assets/icons/Dd2_token_regen.png" id="189_3scyv"]
+[ext_resource type="Texture2D" uid="uid://ctiar8v1rytg0" path="res://assets/icons/Dd2_token_stress.png" id="190_a7cu5"]
+[ext_resource type="Texture2D" uid="uid://cbu2jgmxp1ygq" path="res://assets/icons/Icon_speed_dd2.png" id="191_n8da0"]
+[ext_resource type="Script" uid="uid://4v2ties4ofdd" path="res://resources/all_icons_dict.gd" id="192_287w1"]
+[ext_resource type="Script" uid="uid://c03w4nq84fgfy" path="res://resources/skills_props_dict.gd" id="193_0vg06"]
+[ext_resource type="Texture2D" uid="uid://blxuculillgyc" path="res://assets/icons/Icon_HP_dd2.png" id="193_dr7go"]
+[ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="194_0w4dv"]
+[ext_resource type="Script" uid="uid://begm6aieeipkh" path="res://resources/all_heroes_skills_properties_dict.gd" id="194_f0e13"]
 
 [sub_resource type="Resource" id="Resource_4vye1"]
 script = ExtResource("2_xxa4v")
@@ -251,6 +278,114 @@ script = ExtResource("2_xxa4v")
 skills = Array[Texture2D]([ExtResource("25_g83nq"), ExtResource("26_gb20v"), ExtResource("27_rw40c"), ExtResource("28_81h45"), ExtResource("29_6p27b"), ExtResource("30_6p27b"), ExtResource("31_v5o8u"), ExtResource("32_0lkss"), ExtResource("33_cqg0s"), ExtResource("34_jp53y"), ExtResource("35_b0xj1")])
 metadata/_custom_type_script = "uid://cjbqwx47ormi4"
 
+[sub_resource type="Resource" id="Resource_7pwgp"]
+script = ExtResource("192_287w1")
+dict = Dictionary[int, Texture2D]({
+1: ExtResource("171_v2r0a"),
+2: ExtResource("172_3k2c4"),
+3: ExtResource("173_0vg06"),
+4: ExtResource("174_f0e13"),
+5: ExtResource("175_0w4dv"),
+6: ExtResource("176_dr7go"),
+7: ExtResource("177_ne6rw"),
+8: ExtResource("178_si24v"),
+9: ExtResource("179_4g8ed"),
+10: ExtResource("180_u57f6"),
+11: ExtResource("181_wwpph"),
+12: ExtResource("182_f0e13"),
+13: ExtResource("182_udnga"),
+14: ExtResource("183_t3ct6"),
+15: ExtResource("184_q427p"),
+16: ExtResource("185_4afi2"),
+17: ExtResource("186_hg1jf"),
+18: ExtResource("187_jsxhp"),
+19: ExtResource("188_55l1s"),
+20: ExtResource("189_3scyv"),
+21: ExtResource("190_a7cu5"),
+22: ExtResource("191_n8da0"),
+23: ExtResource("193_dr7go")
+})
+metadata/_custom_type_script = "uid://4v2ties4ofdd"
+
+[sub_resource type="Resource" id="Resource_dr7go"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_dot blight_icon", "consume combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_0w4dv"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_neg blind_icon daze_icon", "apply combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_si24v"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_dot blight_icon", "consume combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_4g8ed"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["heal", "remove_dot blight_icon bleed_icon burn_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_u57f6"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["remove_dot blight_icon bleed_icon burn_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_wwpph"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_dot blight_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_udnga"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["remove_neg daze_icon stun_icon", "apply_pos strength_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_t3ct6"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["ignore guard_icon", "move_enemy", "apply_neg daze_icon weak_icon stun_icon", "consume combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_q427p"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["heal", "remove_neg negative_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_4afi2"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["convert_from_dot"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_hg1jf"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_dot burn_icon", "clear"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_ne6rw"]
+script = ExtResource("193_0vg06")
+info = Dictionary[int, ExtResource("194_0w4dv")]({
+0: SubResource("Resource_dr7go"),
+1: SubResource("Resource_0w4dv"),
+2: SubResource("Resource_si24v"),
+3: SubResource("Resource_4g8ed"),
+4: SubResource("Resource_u57f6"),
+5: SubResource("Resource_wwpph"),
+6: SubResource("Resource_udnga"),
+7: SubResource("Resource_t3ct6"),
+8: SubResource("Resource_q427p"),
+9: SubResource("Resource_4afi2"),
+10: SubResource("Resource_hg1jf")
+})
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"
+
+[sub_resource type="Resource" id="Resource_f0e13"]
+script = ExtResource("194_f0e13")
+properties = Dictionary[int, ExtResource("193_0vg06")]({
+1: SubResource("Resource_ne6rw")
+})
+metadata/_custom_type_script = "uid://begm6aieeipkh"
+
 [node name="Data" type="Node"]
 script = ExtResource("1_40iss")
 skills_textures = Dictionary[String, ExtResource("2_xxa4v")]({
@@ -273,3 +408,6 @@ skills_textures = Dictionary[String, ExtResource("2_xxa4v")]({
 })
 hero_path_draggable_scene = ExtResource("2_en3sy")
 skill_draggable_scene = ExtResource("3_e77f5")
+all_props_file = "res://resources/textfiles/all_properties.json"
+all_icons = SubResource("Resource_7pwgp")
+all_heroes_skills_properties = SubResource("Resource_f0e13")

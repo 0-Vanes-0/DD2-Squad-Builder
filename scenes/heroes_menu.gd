@@ -11,8 +11,8 @@ func _ready() -> void:
 	for node in heroes_table.get_children():
 		node.queue_free()
 	
-	for value in Data.HeroesPaths.values():
-		if value == Data.HeroesPaths.NONE:
+	for value in HeroesPaths.Enum.values():
+		if value == HeroesPaths.Enum.NONE:
 			continue
 		var hero_path_draggable := HeroPathDraggable.create(value)
 		heroes_table.add_child(hero_path_draggable)

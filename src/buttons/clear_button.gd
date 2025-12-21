@@ -10,8 +10,8 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	for rank_box: RankBox in main_scene.rank_boxes.values():
-		rank_box.hero_path_draggable.set_hero_path(Data.HeroesPaths.NONE)
-		rank_box.set_skills(Data.get_empty_skills(), Data.HeroesPaths.NONE)
+		rank_box.hero_path_draggable.set_hero_path(HeroesPaths.Enum.NONE)
+		rank_box.set_skills(Data.get_empty_skills(), HeroesPaths.Enum.NONE)
 		for skill in rank_box.skills:
 			skill.hide()
 	

@@ -25,18 +25,18 @@ func _on_visibility_changed() -> void:
 				child.queue_free()
 			grid.get_parent().hide()
 		
-		var hero_paths: Array[Data.HeroesPaths] = []
+		var hero_paths: Array[HeroesPaths.Enum] = []
 		for rank_box: RankBox in main_scene.rank_boxes.values():
 			hero_paths.append(rank_box.hero_path_draggable.hero_path)
 		
-		if hero_paths.any( func(hp: Data.HeroesPaths): return hp != Data.HeroesPaths.NONE ):
+		if hero_paths.any( func(hp: HeroesPaths.Enum): return hp != HeroesPaths.Enum.NONE ):
 			no_skills_label.hide()
 			for i in hero_paths.size():
-				if hero_paths[i] != Data.HeroesPaths.NONE:
+				if hero_paths[i] != HeroesPaths.Enum.NONE:
 					rank_grids[i].get_parent().show()
 					rank_grids[i].add_child(Control.new())
 
-					var hero := Data.hero_path_to_hero(hero_paths[i])
+					var hero := HeroesPaths.to_hero(hero_paths[i])
 					for j in Data.skills_textures[hero].skills.size():
 						var skill_draggable := SkillDraggable.create(hero_paths[i], j)
 						rank_grids[i].add_child(skill_draggable)

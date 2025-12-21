@@ -1,0 +1,50 @@
+class_name AllIconsDictionary
+extends Resource
+
+enum Types {
+	NONE,
+	BLIGHT, BLEED, BURN,
+	BLOCK, DODGE, GUARD, RIPOSTE, STEALTH, STRENGTH, POSITIVE,
+	BLIND, DAZE, STUN, TAUNT, VULN, WEAK, NEGATIVE,
+	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL,
+}
+
+const ICON_TYPE: Dictionary[StringName, Types] = {
+	&"$blt": Types.BLIGHT,
+	&"$bld": Types.BLEED,
+	&"$brn": Types.BURN,
+	
+	&"$blk": Types.BLOCK,
+	&"$ddg": Types.DODGE,
+	&"$grd": Types.GUARD,
+	&"$rps": Types.RIPOSTE,
+	&"$stl": Types.STEALTH,
+	&"$str": Types.STRENGTH,
+	&"$bff": Types.POSITIVE,
+	
+	&"$bln": Types.BLIND,
+	&"$dze": Types.DAZE,
+	&"$stn": Types.STUN,
+	&"$tnt": Types.TAUNT,
+	&"$vln": Types.VULN,
+	&"$vvk": Types.WEAK,
+	&"$dbf": Types.NEGATIVE,
+	
+	&"$cmb": Types.COMBO,
+	&"$mve": Types.MOVE,
+	
+	&"$reg": Types.REGEN,
+	&"$sts": Types.STRESS,
+	&"$spd": Types.SPEED,
+	&"$hlh": Types.HEAL,
+}
+
+@export var dict: Dictionary[Types, Texture2D]
+
+
+func get_texture_path(icon_name: String) -> String:
+	var type := ICON_TYPE[icon_name]
+	var texture := dict[type]
+	if texture != null:
+		return texture.resource_path
+	return ""

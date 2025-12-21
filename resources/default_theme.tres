@@ -1,4 +1,16 @@
-[gd_resource type="Theme" format=3 uid="uid://mi0cw2k5bhje"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://mi0cw2k5bhje"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2ngq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nva1m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mwhd1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2pkyf"]
 
 [resource]
 Button/font_sizes/font_size = 22
+Button/styles/focus = SubResource("StyleBoxEmpty_k2ngq")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_nva1m")
+RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_mwhd1")
+TabBar/styles/tab_focus = SubResource("StyleBoxEmpty_2pkyf")

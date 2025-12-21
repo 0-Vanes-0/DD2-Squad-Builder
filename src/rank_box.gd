@@ -28,7 +28,7 @@ func get_skills() -> Array[int]:
 	return skill_numbers
 
 
-func set_skills(skill_numbers: Array[int], hero_path: Data.HeroesPaths):
+func set_skills(skill_numbers: Array[int], hero_path: HeroesPaths.Enum):
 	for i in skill_numbers.size():
 		skills[i].hero_path_assigned = hero_path
 		skills[i].skill_number = skill_numbers[i]
@@ -36,11 +36,11 @@ func set_skills(skill_numbers: Array[int], hero_path: Data.HeroesPaths):
 
 
 func update_skills_visibility():
-	if hero_path_draggable.hero_path == Data.HeroesPaths.NONE:
+	if hero_path_draggable.hero_path == HeroesPaths.Enum.NONE:
 		for skill in skills:
 			skill.hide()
 	else:
-		var is_abomination := Data.is_abomination(hero_path_draggable.hero_path)
+		var is_abomination := HeroesPaths.is_abomination(hero_path_draggable.hero_path)
 		for i in skills.size():
 			skills[i].visible = is_abomination or i < 5
 		

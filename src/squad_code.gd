@@ -9,7 +9,7 @@ static func encode_squad(data: Dictionary) -> String:
 	for slot in ["1", "2", "3", "4"]:
 		var slot_data: Dictionary = data[slot]
 		var hero_path: int = slot_data["hero_path"]
-		if hero_path == Data.HeroesPaths.NONE:
+		if hero_path == HeroesPaths.Enum.NONE:
 			return ""
 		
 		assert(hero_path >= 0 and hero_path < 64)
@@ -107,13 +107,13 @@ static func _int_to_skills(value: int, count: int) -> Array[int]:
 	return skills
 
 
-static func _needs_9_skills(hero_path: Data.HeroesPaths) -> bool:
+static func _needs_9_skills(hero_path: HeroesPaths.Enum) -> bool:
 	# safest: check by enum values explicitly
 	return (
-		hero_path == Data.HeroesPaths.A0
-		or hero_path == Data.HeroesPaths.A1
-		or hero_path == Data.HeroesPaths.A2
-		or hero_path == Data.HeroesPaths.A3
+		hero_path == HeroesPaths.Enum.A0
+		or hero_path == HeroesPaths.Enum.A1
+		or hero_path == HeroesPaths.Enum.A2
+		or hero_path == HeroesPaths.Enum.A3
 	)
 
 
@@ -122,17 +122,17 @@ static func _validate_squad(out: Dictionary, code_length: int) -> bool:
 	var expected_len := 0
 	var any_a := false
 	
-	var used_hero_paths: Array[Data.HeroesPaths] = []
+	var used_hero_paths: Array[HeroesPaths.Enum] = []
 	var used_heroes: Array[StringName] = []
 	
 	for slot in ["1", "2", "3", "4"]:
 		var slot_data: Dictionary = out[slot]
-		var hero_path := slot_data["hero_path"] as Data.HeroesPaths
+		var hero_path := slot_data["hero_path"] as HeroesPaths.Enum
 		
 		# hero_path must be a valid enum entry (excluding NONE)
-		if hero_path == Data.HeroesPaths.NONE:
+		if hero_path == HeroesPaths.Enum.NONE:
 			return false
-		if hero_path < 0 or hero_path >= Data.HeroesPaths.size():
+		if hero_path < 0 or hero_path >= HeroesPaths.Enum.size():
 			return false
 		if hero_path >= 64: # because we encode in 1 base64-url char
 			return false
@@ -143,7 +143,7 @@ static func _validate_squad(out: Dictionary, code_length: int) -> bool:
 		used_hero_paths.append(hero_path)
 		
 		# Type letter uniqueness (first letter of enum name)
-		var hero := StringName(Data.hero_path_to_hero(hero_path))
+		var hero := StringName(HeroesPaths.to_hero(hero_path))
 		if used_heroes.has(hero):
 			return false
 		used_heroes.append(hero)
@@ -179,7 +179,7 @@ static func _validate_squad(out: Dictionary, code_length: int) -> bool:
 	if any_a:
 		var a_count := 0
 		for slot in ["1", "2", "3", "4"]:
-			var hero_path := out[slot]["hero_path"] as Data.HeroesPaths
+			var hero_path := out[slot]["hero_path"] as HeroesPaths.Enum
 			if _needs_9_skills(hero_path):
 				a_count += 1
 		if a_count > 1:

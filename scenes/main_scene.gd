@@ -11,6 +11,7 @@ extends Control
 	3: null,
 	4: null,
 }
+@export var props_label: PropertiesLabel
 @export var skills_menu: SkillsMenu
 @export var saved_squads_menu: SavedSquadsMenu
 @export var notification_panel: NotificationPanel
@@ -18,7 +19,7 @@ extends Control
 
 
 func _ready() -> void:
-	assert(tab_bar and tab_container and split_container and popup_panel and skills_menu and notification_panel and popup_panel)
+	assert(tab_bar and tab_container and split_container and popup_panel and props_label and skills_menu and notification_panel and popup_panel)
 	for rank_box in rank_boxes.values():
 		assert(rank_box)
 	tab_bar.current_tab = 0
@@ -26,20 +27,20 @@ func _ready() -> void:
 	
 	for rank_box: RankBox in rank_boxes.values():
 		rank_box.hero_path_draggable.is_unique = (
-				func(hero_path: Data.HeroesPaths) -> bool:
-					var hero := Data.hero_path_to_hero(hero_path)
-					var rank_box_hero := Data.hero_path_to_hero(rank_box.hero_path_draggable.hero_path)
+				func(hero_path: HeroesPaths.Enum) -> bool:
+					var hero := HeroesPaths.to_hero(hero_path)
+					var rank_box_hero := HeroesPaths.to_hero(rank_box.hero_path_draggable.hero_path)
 					return hero == rank_box_hero or rank_boxes.values().all(
 							func(rb: RankBox) -> bool:
-								var rb_hero := Data.hero_path_to_hero(rb.hero_path_draggable.hero_path)
+								var rb_hero := HeroesPaths.to_hero(rb.hero_path_draggable.hero_path)
 								return hero != rb_hero 
 					)
 		)
-
+		
 		rank_box.hero_path_draggable.hero_dropped.connect(
 				func(from_rank: int):
 					# NOTE: Hero paths are already changed!!!
-
+					
 					# If dropped from another rank box:
 					if from_rank > 0:
 						if from_rank != rank_box.rank:
@@ -51,19 +52,19 @@ func _ready() -> void:
 					
 					# If dropped from heroes table:
 					else:
-						var hero_path_from_data := Data.current_squad[str(rank_box.rank)]["hero_path"] as Data.HeroesPaths
+						var hero_path_from_data := Data.current_squad[str(rank_box.rank)]["hero_path"] as HeroesPaths.Enum
 						var hero_path_dropped := rank_box.hero_path_draggable.hero_path
-						var hero_from_data := Data.hero_path_to_hero(hero_path_from_data)
-						var hero_dropped := Data.hero_path_to_hero(hero_path_dropped)
+						var hero_from_data := HeroesPaths.to_hero(hero_path_from_data)
+						var hero_dropped := HeroesPaths.to_hero(hero_path_dropped)
 						if hero_from_data != hero_dropped:
 							rank_box.set_skills(Data.get_empty_skills(), hero_path_dropped)
 						else:
 							rank_box.set_skills(rank_box.get_skills(), hero_path_dropped)
-						
+					
 					rank_box.update_skills_visibility()
 					update_heroes_in_data()
 		)
-
+		
 		for skill_draggable in rank_box.skills:
 			skill_draggable.skill_dropped.connect( func(): update_heroes_in_data() )
 	
@@ -74,7 +75,7 @@ func _ready() -> void:
 				var user_data := SaveLoad.load_data()
 				user_data[squad_name] = Data.current_squad.duplicate(true)
 				SaveLoad.save_data(user_data)
-
+				
 				await get_tree().process_frame
 				if tab_bar.current_tab == 2:
 					saved_squads_menu.visibility_changed.emit()
@@ -96,6 +97,7 @@ func update_heroes_in_data():
 		Data.current_squad[rank]["skills"] = rank_box.get_skills()
 	
 	skills_menu.visibility_changed.emit()
+	props_label.update_skills_props()
 
 
 func paste_squad_data(data: Variant):
@@ -112,11 +114,11 @@ func paste_squad_data(data: Variant):
 	
 	for rank_box: RankBox in rank_boxes.values():
 		var key := str(rank_box.rank)
-		var hp := squad_data[key]["hero_path"] as Data.HeroesPaths
+		var hp := squad_data[key]["hero_path"] as HeroesPaths.Enum
 		var skills: Array[int] = []
 		skills.assign(squad_data[key]["skills"])
 		rank_box.hero_path_draggable.set_hero_path(hp)
 		rank_box.set_skills(skills, hp)
 		rank_box.update_skills_visibility()
 	
-	Data.current_squad = squad_data
+	update_heroes_in_data()

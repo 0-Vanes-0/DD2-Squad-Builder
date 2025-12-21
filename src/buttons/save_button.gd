@@ -11,9 +11,9 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	var is_ok := true
 
-	var heroes_skills: Dictionary[Data.HeroesPaths, Array] = {}
+	var heroes_skills: Dictionary[HeroesPaths.Enum, Array] = {}
 	for rankbox: RankBox in main_scene.rank_boxes.values():
-		if rankbox.hero_path_draggable.hero_path == Data.HeroesPaths.NONE:
+		if rankbox.hero_path_draggable.hero_path == HeroesPaths.Enum.NONE:
 			is_ok = false
 			break
 		heroes_skills[rankbox.hero_path_draggable.hero_path] = []

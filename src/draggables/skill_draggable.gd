@@ -4,16 +4,16 @@ extends TextureRect
 signal skill_dropped
 
 @export var is_slot := false
-var hero_path_assigned: Data.HeroesPaths = Data.HeroesPaths.NONE
+var hero_path_assigned: HeroesPaths.Enum = HeroesPaths.Enum.NONE
 var skill_number := -1
 var is_unique := Callable()
 
 
-static func create(hero_path: Data.HeroesPaths, skill_number: int) -> SkillDraggable:
+static func create(hero_path: HeroesPaths.Enum, skill_number: int) -> SkillDraggable:
 	var skill_draggable := Data.skill_draggable_scene.instantiate() as SkillDraggable
 	skill_draggable.hero_path_assigned = hero_path
 	skill_draggable.skill_number = skill_number
-	var hero: String = Data.hero_path_to_hero(hero_path)
+	var hero: String = HeroesPaths.to_hero(hero_path)
 	skill_draggable.texture = Data.skills_textures[hero].skills[skill_number]
 	return skill_draggable
 
@@ -49,7 +49,7 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 					data.has("skill_number") 
 					and data["skill_number"] >= 0 
 					and data["hero_path_assigned"] == hero_path_assigned
-					and hero_path_assigned != Data.HeroesPaths.NONE
+					and hero_path_assigned != HeroesPaths.Enum.NONE
 			)
 	return false
 
