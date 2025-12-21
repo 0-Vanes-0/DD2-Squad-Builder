@@ -19,6 +19,7 @@
 	"clear": "Clearing corpses.",
 	
 	"heal": "Healing by ",
+	"stress": "Anti-stressing by ",
 	
 	"blight_icon": "$blt",
 	"bleed_icon": "$bld",

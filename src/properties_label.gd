@@ -7,7 +7,7 @@ const FIRST_WORDS := [
 	"consume", "ignore",
 	"convert_from_bleed", "convert_from_blight", "convert_from_burn", "convert_from_dot",
 	"move_ally", "move_enemy",
-	"clear", "heal",
+	"clear", "heal", "stress",
 ]
 var tokens_map := {}
 
@@ -18,6 +18,7 @@ func update_skills_props():
 	
 	for rank in ["1", "2", "3", "4"]:
 		var has_rank_healing := false
+		var has_rank_antistressing := false
 		var hero_path := Data.current_squad[rank]["hero_path"] as HeroesPaths.Enum
 		
 		var skills: Array[int]
@@ -33,6 +34,10 @@ func update_skills_props():
 								if not has_rank_healing:
 									_add_to_tokens_map(words[0], ["1"])
 									has_rank_healing = true
+							elif words[0] == "stress":
+								if not has_rank_antistressing:
+									_add_to_tokens_map(words[0], ["1"])
+									has_rank_antistressing = true
 							else:
 								_add_to_tokens_map(words[0])
 						else:
@@ -46,7 +51,7 @@ func update_skills_props():
 	var empty := [""]
 	for first_word in sorted_tokens_map.keys():
 		var tokens: Array[String]
-		if first_word == "heal":
+		if first_word in ["heal", "stress"]:
 			var amount := sorted_tokens_map[first_word].size() as int
 			var heroes := " heroes." if amount > 1 else " hero."
 			tokens.assign([str(amount) + heroes])
@@ -69,7 +74,7 @@ func _add_to_tokens_map(first_word: String, args := [""]):
 		tokens_map[first_word] = []
 	
 	for word in args:
-		if not word in tokens_map[first_word] or first_word == "heal":
+		if not word in tokens_map[first_word] or first_word in ["heal", "stress"]:
 			tokens_map[first_word].append(word)
 
 

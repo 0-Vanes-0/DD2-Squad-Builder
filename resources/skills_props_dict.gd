@@ -17,4 +17,6 @@ extends Resource
 
 
 func get_tokens(of_skill: int) -> Array[String]:
+	if info[of_skill] == null:
+		return []
 	return info[of_skill].get_all()
