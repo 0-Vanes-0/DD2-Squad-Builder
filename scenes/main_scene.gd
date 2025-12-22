@@ -24,6 +24,7 @@ func _ready() -> void:
 		assert(rank_box)
 	tab_bar.current_tab = 0
 	tab_container.current_tab = 0
+	$HSplitContainer/RightVBox/TabContainer/Info/ScrollContainer.scroll_vertical = 0
 	
 	for rank_box: RankBox in rank_boxes.values():
 		rank_box.hero_path_draggable.is_unique = (
