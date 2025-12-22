@@ -1,4 +1,4 @@
-[gd_scene load_steps=308 format=3 uid="uid://3qfhtjnxlhvg"]
+[gd_scene load_steps=364 format=3 uid="uid://3qfhtjnxlhvg"]
 
 [ext_resource type="Script" uid="uid://cxg75tgd2xc4b" path="res://src/data.gd" id="1_40iss"]
 [ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="2_en3sy"]
@@ -193,12 +193,13 @@
 [ext_resource type="Texture2D" uid="uid://be5lbft7xd5ap" path="res://assets/icons/Dd2_token_regen.png" id="189_3scyv"]
 [ext_resource type="Texture2D" uid="uid://ctiar8v1rytg0" path="res://assets/icons/Dd2_token_stress.png" id="190_a7cu5"]
 [ext_resource type="Texture2D" uid="uid://cbu2jgmxp1ygq" path="res://assets/icons/Icon_speed_dd2.png" id="191_n8da0"]
-[ext_resource type="Script" uid="uid://dwpy38pl7meac" path="res://resources/all_icons_dict.gd" id="192_287w1"]
+[ext_resource type="Script" uid="uid://4v2ties4ofdd" path="res://resources/all_icons_dict.gd" id="192_287w1"]
 [ext_resource type="Script" uid="uid://c03w4nq84fgfy" path="res://resources/skills_props_dict.gd" id="193_0vg06"]
 [ext_resource type="Texture2D" uid="uid://blxuculillgyc" path="res://assets/icons/Icon_HP_dd2.png" id="193_dr7go"]
 [ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="194_0w4dv"]
 [ext_resource type="Script" uid="uid://begm6aieeipkh" path="res://resources/all_heroes_skills_properties_dict.gd" id="194_f0e13"]
 [ext_resource type="Texture2D" uid="uid://dwsco5jf11v1x" path="res://assets/icons/Token_deaths_door_armor_broken.png" id="194_ne6rw"]
+[ext_resource type="Texture2D" uid="uid://dv43ya8r1oiqu" path="res://assets/icons/Dd2_token_immobilize.png" id="196_4g8ed"]
 
 [sub_resource type="Resource" id="Resource_4vye1"]
 script = ExtResource("2_xxa4v")
@@ -307,23 +308,24 @@ dict = Dictionary[int, Texture2D]({
 22: ExtResource("190_a7cu5"),
 23: ExtResource("191_n8da0"),
 24: ExtResource("193_dr7go"),
-25: ExtResource("194_ne6rw")
+25: ExtResource("194_ne6rw"),
+26: ExtResource("196_4g8ed")
 })
 metadata/_custom_type_script = "uid://4v2ties4ofdd"
 
 [sub_resource type="Resource" id="Resource_dr7go"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["apply_dot blight_icon", "consume combo_icon"])
+properties = Array[String](["apply_dot blight_icon", "consume_combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_0w4dv"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["apply_neg blind_icon daze_icon", "apply combo_icon", "aoe"])
+properties = Array[String](["apply_enemy blind_icon daze_icon combo_icon", "aoe"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_si24v"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["apply_dot blight_icon", "consume combo_icon"])
+properties = Array[String](["apply_dot blight_icon", "consume_combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_4g8ed"]
@@ -343,17 +345,17 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_udnga"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["remove_neg daze_icon stun_icon", "apply_pos strength_icon"])
+properties = Array[String](["remove_hero daze_icon stun_icon", "apply_hero strength_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_t3ct6"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["ignore guard_icon", "move_enemy", "apply_neg daze_icon weak_icon stun_icon", "consume combo_icon"])
+properties = Array[String](["ignore guard_icon", "move_enemy", "apply_enemy daze_icon weak_icon stun_icon", "consume_combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_q427p"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["heal", "remove_neg negative_icon"])
+properties = Array[String](["heal", "remove_hero negative_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_4afi2"]
@@ -397,12 +399,12 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_55l1s"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["ignore block_icon", "remove_pos block_icon", "consume combo_icon"])
+properties = Array[String](["remove_enemy block_icon", "consume_combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_3scyv"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["ignore guard_icon dodge_icon", "consume combo_icon"])
+properties = Array[String](["ignore guard_icon dodge_icon", "consume_combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_a7cu5"]
@@ -412,22 +414,22 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_n8da0"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["apply_dot blight_icon", "consume combo_icon"])
+properties = Array[String](["apply_dot blight_icon", "consume_combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_287w1"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["heal", "apply_pos dodge_icon"])
+properties = Array[String](["heal", "apply_hero dodge_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_e6gft"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["clear", "heal", "apply_pos stealth_icon", "stress"])
+properties = Array[String](["clear", "heal", "apply_hero stealth_icon", "stress"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_t30pe"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["ignore stealth_icon", "remove_pos stealth_icon"])
+properties = Array[String](["remove_enemy stealth_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_1g4ai"]
@@ -437,17 +439,17 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2jlsy"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["move_ally", "apply_neg daze_icon weak_icon", "aoe"])
+properties = Array[String](["move_ally", "apply_enemy daze_icon weak_icon", "aoe"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_w3bmc"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["apply_pos dodge_icon taunt_icon"])
+properties = Array[String](["apply_hero dodge_icon taunt_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bfk0e"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["move_ally", "apply_pos strength_icon stealth_icon"])
+properties = Array[String](["move_ally", "apply_hero strength_icon stealth_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_jsxhp"]
@@ -486,27 +488,27 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_fcu4q"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["consume combo_icon", "apply_neg daze_icon stun_icon"])
+properties = Array[String](["consume_combo", "apply_enemy daze_icon stun_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_rmwou"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["move_ally", "apply_pos riposte_icon dodge_icon"])
+properties = Array[String](["move_ally", "apply_hero riposte_icon dodge_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2gjin"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["ignore dodge_icon stealth_icon", "remove_pos dodge_icon stealth_icon"])
+properties = Array[String](["remove_enemy dodge_icon stealth_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_pfqd1"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["remove_neg blind_icon", "apply_pos crit_icon"])
+properties = Array[String](["remove_hero blind_icon", "apply_hero crit_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_hhtk4"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["move_ally", "move_enemy", "apply combo_icon"])
+properties = Array[String](["move_ally", "move_enemy", "apply_enemy combo_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ojstr"]
@@ -516,7 +518,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_undti"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["apply_dot bleed_icon", "consume combo_icon"])
+properties = Array[String](["apply_dot bleed_icon", "consume_combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_t8utl"]
@@ -526,12 +528,12 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_vwsvp"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["ignore dodge_icon", "remove_pos positive_icon", "apply_pos positive_icon"])
+properties = Array[String](["remove_enemy positive_icon", "apply_hero positive_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_g4j57"]
 script = ExtResource("194_0w4dv")
-properties = Array[String](["ignore block_icon", "remove_pos block_icon", "apply_neg vuln_icon"])
+properties = Array[String](["remove_enemy block_icon", "apply_enemy vuln_icon"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_itvf4"]
@@ -563,8 +565,76 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_7p1sh"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["heal", "consume_combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_fuss3"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_ally", "consume_combo", "move_enemy", "apply_enemy daze_icon stun_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_dnwt2"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero block_icon guard_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_bv84f"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero block_icon", "stress"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_p8wjq"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero block_icon immobilize_icon", "move_ally", "consume_combo", "apply_enemy stun_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_a8idr"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["aoe", "remove_enemy riposte_icon crit_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_xm8x8"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero riposte_icon taunt_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_uheyd"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["remove_hero blind_icon", "apply_hero strength_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_5lkvp"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero taunt_icon block_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_vpqgi"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["execute", "ignore block_icon", "apply_hero vuln_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_a7uwe"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_enemy combo_icon", "move_ally", "apply_hero block_icon", "heal"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
 [sub_resource type="Resource" id="Resource_bd00x"]
 script = ExtResource("193_0vg06")
+info = Dictionary[int, ExtResource("194_0w4dv")]({
+0: SubResource("Resource_7p1sh"),
+1: SubResource("Resource_fuss3"),
+2: SubResource("Resource_dnwt2"),
+3: SubResource("Resource_bv84f"),
+4: SubResource("Resource_p8wjq"),
+5: SubResource("Resource_a8idr"),
+6: SubResource("Resource_xm8x8"),
+7: SubResource("Resource_uheyd"),
+8: SubResource("Resource_5lkvp"),
+9: SubResource("Resource_vpqgi"),
+10: SubResource("Resource_a7uwe")
+})
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_rccxq"]
@@ -579,8 +649,76 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_4n3lm"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["consume_combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_r0oh6"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_enemy combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_l6lml"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["ignore blind_icon", "apply_enemy weak_icon stun_icon", "remove_enemy stealth_icon", "consume_combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_tit4o"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_dot bleed_icon", "consume_combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_5eh4d"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_ally", "apply_hero immobilize_icon taunt_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_vmv24"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["heal", "remove_dot bleed_icon blight_icon burn_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_5au8u"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_dot bleed_icon", "consume_combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_m5fgp"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["execute", "apply_hero strength_icon crit_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_rv6ir"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["aoe", "move_ally"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_k6lcq"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["stress", "heal"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_mhlsg"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["ignore block_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
 [sub_resource type="Resource" id="Resource_s1yq2"]
 script = ExtResource("193_0vg06")
+info = Dictionary[int, ExtResource("194_0w4dv")]({
+0: SubResource("Resource_4n3lm"),
+1: SubResource("Resource_r0oh6"),
+2: SubResource("Resource_l6lml"),
+3: SubResource("Resource_tit4o"),
+4: SubResource("Resource_5eh4d"),
+5: SubResource("Resource_vmv24"),
+6: SubResource("Resource_5au8u"),
+7: SubResource("Resource_m5fgp"),
+8: SubResource("Resource_rv6ir"),
+9: SubResource("Resource_k6lcq"),
+10: SubResource("Resource_mhlsg")
+})
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_mwgie"]
@@ -595,8 +733,76 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_iks7m"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_enemy combo_icon", "move_ally", "apply_hero dodge_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_f1nia"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_ally", "apply_enemy blind_icon combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_qhsny"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_enemy vuln_icon", "apply_dot bleed_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_c5knw"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_ally", "apply_hero strength_icon crit_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_q1b8x"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["stress"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_3c83q"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["aoe", "apply_dot bleed_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_ahx2l"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_ally", "execute", "stress", "consume_combo", "apply_hero vuln_icon daze_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_mowfx"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_ally", "apply_enemy combo_icon", "apply_hero dodge_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_isrqy"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_ally", "apply_hero block_icon", "remove_hero combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_uq1hf"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero daze_icon bleed_icon", "extra"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_w5tyo"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_enemy"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
 [sub_resource type="Resource" id="Resource_xousx"]
 script = ExtResource("193_0vg06")
+info = Dictionary[int, ExtResource("194_0w4dv")]({
+0: SubResource("Resource_iks7m"),
+1: SubResource("Resource_f1nia"),
+2: SubResource("Resource_qhsny"),
+3: SubResource("Resource_c5knw"),
+4: SubResource("Resource_q1b8x"),
+5: SubResource("Resource_3c83q"),
+6: SubResource("Resource_ahx2l"),
+7: SubResource("Resource_mowfx"),
+8: SubResource("Resource_isrqy"),
+9: SubResource("Resource_uq1hf"),
+10: SubResource("Resource_w5tyo")
+})
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_xwd6v"]
@@ -611,8 +817,76 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_iqifj"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero blind_icon", "consume_combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_kpi8v"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["clear", "move_enemy", "apply_enemy combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_yuuwm"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero block_icon taunt_icon", "remove_dot bleed_icon blight_icon burn_icon", "remove_hero vuln_icon strength_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_l5q5s"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["heal", "stress"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_phl0k"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["stress", "remove_hero blind_icon weak_icon vuln_icon combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_yr42a"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["aoe", "apply_hero blind_icon", "consume_combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_aebbs"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero strength_icon", "remove_hero weak_icon block_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_a1jeg"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_enemy weak_icon", "apply_hero taunt_icon", "remove_enemy stealth_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_27lmj"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero strength_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_0gea2"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["remove_enemy block_icon", "consume_combo", "apply_hero blind_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_nmoaq"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero immobilize_icon", "apply_enemy immobilize_icon daze_icon combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
 [sub_resource type="Resource" id="Resource_vtfoi"]
 script = ExtResource("193_0vg06")
+info = Dictionary[int, ExtResource("194_0w4dv")]({
+0: SubResource("Resource_iqifj"),
+1: SubResource("Resource_kpi8v"),
+2: SubResource("Resource_yuuwm"),
+3: SubResource("Resource_l5q5s"),
+4: SubResource("Resource_phl0k"),
+5: SubResource("Resource_yr42a"),
+6: SubResource("Resource_aebbs"),
+7: SubResource("Resource_a1jeg"),
+8: SubResource("Resource_27lmj"),
+9: SubResource("Resource_0gea2"),
+10: SubResource("Resource_nmoaq")
+})
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_em43m"]
@@ -627,8 +901,76 @@ metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 script = ExtResource("193_0vg06")
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
+[sub_resource type="Resource" id="Resource_cecni"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["execute", "consume_combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_1mc5a"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["aoe"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_x8sbk"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_enemy combo_icon weak_icon", "remove_enemy crit_icon strength_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_4lijf"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["heal", "apply_hero bleed_icon stealth_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_do6wx"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["move_enemy", "clear", "apply_enemy combo_icon stun_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_7jude"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["remove_enemy dodge_icon block_icon", "apply_enemy vuln_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_lswx0"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["consume_combo", "ignore stealth_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_rtvqe"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["ignore dodge_icon blind_icon", "apply_enemy combo_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_b4mdi"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["aoe", "move_enemy", "apply_dot bleed_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_u3u8s"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["ignore block_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_a12do"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["apply_hero negative_icon"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
 [sub_resource type="Resource" id="Resource_0lgwh"]
 script = ExtResource("193_0vg06")
+info = Dictionary[int, ExtResource("194_0w4dv")]({
+0: SubResource("Resource_cecni"),
+1: SubResource("Resource_1mc5a"),
+2: SubResource("Resource_x8sbk"),
+3: SubResource("Resource_4lijf"),
+4: SubResource("Resource_do6wx"),
+5: SubResource("Resource_7jude"),
+6: SubResource("Resource_lswx0"),
+7: SubResource("Resource_rtvqe"),
+8: SubResource("Resource_b4mdi"),
+9: SubResource("Resource_u3u8s"),
+10: SubResource("Resource_a12do")
+})
 metadata/_custom_type_script = "uid://c03w4nq84fgfy"
 
 [sub_resource type="Resource" id="Resource_ipfso"]

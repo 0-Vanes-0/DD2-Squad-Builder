@@ -3,12 +3,12 @@ extends RichTextLabel
 
 const NBSP := "\u00A0"
 const FIRST_WORDS := [
-	"apply_dot", "apply_pos", "apply_neg", "apply",
-	"remove_dot", "remove_pos", "remove_neg", "remove",
+	"apply_dot", "apply_hero", "apply_enemy",
+	"remove_dot", "remove_enemy", "remove_hero",
 	"consume", "ignore",
 	"convert_from_bleed", "convert_from_blight", "convert_from_burn", "convert_from_dot",
 	"move_ally", "move_enemy",
-	"clear", "heal", "stress", "execute",
+	"clear", "heal", "stress", "execute", "extra",
 ]
 var tokens_map := {}
 

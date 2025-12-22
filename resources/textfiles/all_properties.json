@@ -1,13 +1,10 @@
 {
-	"apply_dot": "Applying ",
-	"apply_pos": "Applying ",
-	"apply_neg": "Applying ",
-	"apply": "Applying ",
-	"remove_dot": "Removing ",
-	"remove_pos": "Removing ",
-	"remove_neg": "Removing ",
-	"remove": "Removing ",
-	"consume": "Consuming ",
+	"apply_dot": "Applying on enemies:",
+	"apply_hero": "Applying on heroes:",
+	"apply_enemy": "Applying on enemies:",
+	"remove_dot": "Removing on enemies:",
+	"remove_hero": "Removing on heroes:",
+	"remove_enemy": "Removing on enemies:",
 	"ignore": "Ignoring ",
 	
 	"convert_from_bleed": "Converting $bld to damage.",
@@ -16,7 +13,9 @@
 	"convert_from_dot": "Converting $bld $blt $brn to damage.",
 	"move_enemy": "Moving enemies.",
 	"clear": "Clearing corpses.",
+	"extra": "Giving extra action.",
 	
+	"consume_combo": "Consuming $cmb by ",
 	"move_ally": "Forward/Back by ",
 	"heal": "Healing by ",
 	"stress": "Anti-stressing by ",
@@ -42,6 +41,7 @@
 	"taunt_icon": "$tnt",
 	"vuln_icon": "$vln",
 	"weak_icon": "$vvk",
+	"immobilize_icon": "$imm",
 	"negative_icon": "$dbf",
 	
 	"combo_icon": "$cmb",
