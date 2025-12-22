@@ -2,8 +2,7 @@ class_name NotificationPanel
 extends PanelContainer
 
 const DURATION_PER_CHARACTER := 0.1 # seconds
-@export var label: Label
-var is_on_right := true
+@export var label: RichTextLabel
 
 
 func _ready() -> void:
@@ -11,18 +10,44 @@ func _ready() -> void:
 	self.hide()
 
 
-func _physics_process(_delta: float) -> void:
-	var mouse_pos := get_viewport().get_mouse_position()
-	self.position = mouse_pos + Vector2.UP * self.size
-	if not is_on_right:
-		self.position += Vector2.LEFT * self.size
+func _process(_delta: float) -> void:
+	if self.visible:
+		_update_position()
 
 
-func show_message(message: String, is_hover := false, on_right := true):
-	is_on_right = on_right
-	label.text = " " + message + " "
-	self.size.x = 1
+func show_message(message: String, is_hover := false):
+	label.clear()
+	label.append_text(" " + message + " ")
 	self.show()
-	if not is_hover: # is lick
+	
+	self.reset_size.call_deferred()
+	
+	if not is_hover: # is click
 		await get_tree().create_timer(DURATION_PER_CHARACTER * message.length()).timeout
 		self.hide()
+
+
+func _update_position():
+	var viewport_rect: Rect2 = self.get_viewport().get_visible_rect()
+	var mouse_pos: Vector2 = self.get_global_mouse_position()
+	
+	# Vertical: prefer above cursor, otherwise go below.
+	var above_y := mouse_pos.y - size.y
+	var below_y := mouse_pos.y
+	var pos_y := above_y
+	if pos_y < viewport_rect.position.y:
+		pos_y = below_y
+	
+	# Horizontal: prefer right (or left if requested), flip if off-screen.
+	var right_x := mouse_pos.x
+	var left_x := mouse_pos.x - size.x
+	var pos_x := right_x
+	
+	if pos_x + size.x > viewport_rect.end.x:
+		pos_x = left_x
+	
+	# Final clamp (covers extremely large panels / edge cases).
+	pos_x = clamp(pos_x, viewport_rect.position.x, viewport_rect.end.x - size.x)
+	pos_y = clamp(pos_y, viewport_rect.position.y, viewport_rect.end.y - size.y)
+	
+	self.global_position = Vector2(pos_x, pos_y)

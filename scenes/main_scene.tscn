@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/menu_tab_bar.gd" id="3_7ykc4"]
 [ext_resource type="Script" uid="uid://b02tbfuh3lwpq" path="res://src/animated_texture_rect.gd" id="3_bcnxi"]
 [ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/buttons/clear_button.gd" id="3_c16ls"]
-[ext_resource type="Texture2D" uid="uid://b5qkce4p3vw0p" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-051.png" id="3_k6f3i"]
+[ext_resource type="Texture2D" uid="uid://tp258ehcvytw" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-121.png" id="3_k6f3i"]
 [ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/buttons/copy_button.gd" id="4_18nlu"]
 [ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/buttons/paste_button.gd" id="5_6wevv"]
 [ext_resource type="SpriteFrames" uid="uid://b7dh45p3o1kxi" path="res://resources/crossroads_frames.tres" id="5_xdqt8"]
@@ -366,7 +366,6 @@ layout_mode = 2
 alignment = 1
 
 [node name="PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox"]
-custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -545,7 +544,6 @@ metadata/_tab_index = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Info"]
 layout_mode = 2
-scroll_vertical = 696
 horizontal_scroll_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer/Info/ScrollContainer"]
@@ -635,10 +633,15 @@ line_edit = NodePath("MarginContainer/VBoxContainer/LineEdit")
 ok_button = NodePath("MarginContainer/VBoxContainer/HBoxContainer/OkButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupPanel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 356.0
-offset_bottom = 391.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -682,10 +685,15 @@ label = NodePath("MarginContainer/Label")
 [node name="MarginContainer" type="MarginContainer" parent="NotificationPanel"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="NotificationPanel/MarginContainer"]
+[node name="Label" type="RichTextLabel" parent="NotificationPanel/MarginContainer"]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
-size_flags_horizontal = 4
+bbcode_enabled = true
 text = "  Copied!  "
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
 
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" method="_on_pressed"]

@@ -19,7 +19,7 @@ func _on_meta_clicked(meta: Variant) -> void:
 
 
 func _on_meta_hover_started(meta: Variant) -> void:
-	notification_panel.show_message(URLS[str(meta)], true, false)
+	notification_panel.show_message(URLS[str(meta)], true)
 
 
 func _on_meta_hover_ended(_meta: Variant) -> void:
