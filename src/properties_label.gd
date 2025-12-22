@@ -10,7 +10,6 @@ const FIRST_WORDS := [
 	"move_ally", "move_enemy",
 	"clear", "heal", "stress", "execute",
 ]
-const RANKS_TOKENS: Array[String] = ["heal", "stress", "execute", "move_ally", "aoe"]
 var tokens_map := {}
 
 
@@ -68,7 +67,7 @@ func update_skills_props():
 	var empty := [""]
 	for first_word in sorted_tokens_map.keys():
 		var tokens: Array[String]
-		if first_word in RANKS_TOKENS:
+		if first_word in Data.RANKS_TOKENS:
 			var amount := sorted_tokens_map[first_word].size() as int
 			var heroes := NBSP + "heroes." if amount > 1 else NBSP + "hero."
 			tokens.assign([str(amount) + heroes])
@@ -91,7 +90,7 @@ func _add_to_tokens_map(first_word: String, args := [""]):
 		tokens_map[first_word] = []
 	
 	for word in args:
-		if not word in tokens_map[first_word] or first_word in RANKS_TOKENS:
+		if not word in tokens_map[first_word] or first_word in Data.RANKS_TOKENS:
 			tokens_map[first_word].append(word)
 
 

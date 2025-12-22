@@ -26,7 +26,7 @@ static func create(json_string: String) -> AllPropertiesDictionary:
 func construct_text(tokens: Array[String]) -> String:
 	var sentence := ""
 	for token in tokens:
-		if token in PropertiesLabel.RANKS_TOKENS:
+		if token in Data.RANKS_TOKENS:
 			sentence += properties[token] + tokens[1]
 			break
 		

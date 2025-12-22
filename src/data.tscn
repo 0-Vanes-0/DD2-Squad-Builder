@@ -1,4 +1,4 @@
-[gd_scene load_steps=308 format=3 uid="uid://dou3hflgxs5ms"]
+[gd_scene load_steps=308 format=3 uid="uid://3qfhtjnxlhvg"]
 
 [ext_resource type="Script" uid="uid://cxg75tgd2xc4b" path="res://src/data.gd" id="1_40iss"]
 [ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="2_en3sy"]
@@ -193,7 +193,7 @@
 [ext_resource type="Texture2D" uid="uid://be5lbft7xd5ap" path="res://assets/icons/Dd2_token_regen.png" id="189_3scyv"]
 [ext_resource type="Texture2D" uid="uid://ctiar8v1rytg0" path="res://assets/icons/Dd2_token_stress.png" id="190_a7cu5"]
 [ext_resource type="Texture2D" uid="uid://cbu2jgmxp1ygq" path="res://assets/icons/Icon_speed_dd2.png" id="191_n8da0"]
-[ext_resource type="Script" uid="uid://4v2ties4ofdd" path="res://resources/all_icons_dict.gd" id="192_287w1"]
+[ext_resource type="Script" uid="uid://dwpy38pl7meac" path="res://resources/all_icons_dict.gd" id="192_287w1"]
 [ext_resource type="Script" uid="uid://c03w4nq84fgfy" path="res://resources/skills_props_dict.gd" id="193_0vg06"]
 [ext_resource type="Texture2D" uid="uid://blxuculillgyc" path="res://assets/icons/Icon_HP_dd2.png" id="193_dr7go"]
 [ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="194_0w4dv"]
