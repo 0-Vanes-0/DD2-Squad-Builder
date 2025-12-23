@@ -8,7 +8,7 @@ const FIRST_WORDS := [
 	"consume", "ignore",
 	"convert_from_bleed", "convert_from_blight", "convert_from_burn", "convert_from_dot",
 	"move_ally", "move_enemy",
-	"clear", "heal", "stress", "execute", "extra",
+	"clear", "heal", "stress", "execute", "extra", "aoe",
 ]
 var tokens_map := {}
 
@@ -69,13 +69,13 @@ func update_skills_props():
 		var tokens: Array[String]
 		if first_word in Data.RANKS_TOKENS:
 			var amount := sorted_tokens_map[first_word].size() as int
-			var heroes := NBSP + "heroes." if amount > 1 else NBSP + "hero."
+			var heroes := NBSP + "heroes" if amount > 1 else NBSP + "hero"
 			tokens.assign([str(amount) + heroes])
 		elif sorted_tokens_map[first_word][0] != empty[0]:
 			tokens.assign(sorted_tokens_map[first_word])
 		
 		tokens.push_front(first_word)
-		full_text += Data.all_props.construct_text(tokens) + " "
+		full_text += Data.all_props.construct_text(tokens) + ". "
 	
 	if full_text.is_empty():
 		full_text = "No squad info yet."

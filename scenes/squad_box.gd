@@ -1,6 +1,8 @@
 class_name SquadBox
 extends VBoxContainer
 
+signal changed
+
 @export_group("Required Children")
 @export var squad_name_label: Label
 @export var rank1_hpd: HeroPathDraggable
@@ -41,8 +43,10 @@ func _ready() -> void:
 					var user_data := SaveLoad.load_data()
 					user_data[to_squad_name] = squad_data.duplicate(true)
 					user_data[to_squad_name]["squad_name"] = to_squad_name
-					assert(user_data.erase(from_squad_name))
+					user_data.erase(from_squad_name)
 					SaveLoad.save_data(user_data)
+
+					changed.emit()
 	)
 	main_scene.popup_panel.delete_requested.connect(
 			func(squad_name: String):
@@ -51,6 +55,8 @@ func _ready() -> void:
 				user_data.erase(squad_name)
 				SaveLoad.save_data(user_data)
 				
+				changed.emit()
+
 				self.queue_free()
 	)
 

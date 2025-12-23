@@ -23,4 +23,5 @@ func _on_visibility_changed() -> void:
 			for key in user_data.keys():
 				var squad_data := user_data[key] as Dictionary
 				var squad_box := SquadBox.create(squad_data)
+				squad_box.changed.connect(_on_visibility_changed)
 				vbox.add_child(squad_box)

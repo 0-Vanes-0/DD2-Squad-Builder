@@ -26,12 +26,15 @@ static func create(json_string: String) -> AllPropertiesDictionary:
 func construct_text(tokens: Array[String]) -> String:
 	var sentence := ""
 	for token in tokens:
-		if token in Data.RANKS_TOKENS:
-			sentence += properties[token] + tokens[1]
-			break
+		var texts := properties[token].split(NBSP)
+		for i in texts.size():
+			if texts[i].begins_with("$"):
+				texts[i] = "[img]" + Data.all_icons.get_texture_path(texts[i]) + "[/img]"
 		
-		var text := properties[token]
-		if text.begins_with("$"): # TODO: make better $ replacement
-			text = "[img]" + Data.all_icons.get_texture_path(text) + "[/img]"
-		sentence += text
+		if token in Data.RANKS_TOKENS:
+			sentence += NBSP.join(texts) + tokens[1] # Assuming size as 2.
+			break
+		else:
+			sentence += NBSP.join(texts)
+	
 	return sentence.strip_edges()

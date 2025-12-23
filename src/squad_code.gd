@@ -20,7 +20,7 @@ static func encode_squad(data: Dictionary) -> String:
 		skills.assign(slot_data["skills"])
 		var count := 9 if _needs_9_skills(hero_path) else 5
 		
-		var packed := _skills_to_int(skills)
+		var packed := _skills_to_int(skills.slice(0, count))
 		var skill_len := 6 if count == 9 else 3
 		code += _b64_encode_fixed(packed, skill_len)
 	
@@ -33,6 +33,7 @@ static func encode_squad(data: Dictionary) -> String:
 static func decode_squad(text: String) -> Dictionary:
 	var pipe_index := text.find("|")
 	if pipe_index == -1:
+		print_debug("Symbol | not found.")
 		return {}
 	
 	var code := text.substr(0, pipe_index)
@@ -42,7 +43,8 @@ static func decode_squad(text: String) -> Dictionary:
 	
 	var index := 0
 	for slot in ["1", "2", "3", "4"]:
-		if not index < code.length():
+		if index >= code.length():
+			print_debug("Code is larger than should be.")
 			return {}
 		
 		var hero_path := _b64_value(code[index])
@@ -51,7 +53,8 @@ static func decode_squad(text: String) -> Dictionary:
 		var count := 9 if _needs_9_skills(hero_path) else 5
 		var skill_len := 6 if count == 9 else 3
 		
-		if not index + skill_len <= code.length():
+		if index + skill_len > code.length():
+			print_debug("index + length of skill are larger than should be.")
 			return {}
 		
 		var skills_text := code.substr(index, skill_len)
@@ -59,13 +62,22 @@ static func decode_squad(text: String) -> Dictionary:
 		
 		var packed := _b64_decode_fixed(skills_text)
 		var skills := _int_to_skills(packed, count)
+
+		var skills_full: Array[int] = []
+		skills_full.resize(9)
+		for i in range(count):
+			skills_full[i] = skills[i]
+		for i in range(count, 9):
+			skills_full[i] = -1
 		
 		out[slot] = {
 			"hero_path": hero_path,
-			"skills": skills
+			"skills": skills_full
 		}
 	
-	_validate_squad(out, code.length())
+	if not _is_valid_squad(out, code.length()):
+		print_debug("Code didnt pass validation.")
+		return {}
 	
 	return out
 
@@ -117,7 +129,7 @@ static func _needs_9_skills(hero_path: HeroesPaths.Enum) -> bool:
 	)
 
 
-static func _validate_squad(out: Dictionary, code_length: int) -> bool:
+static func _is_valid_squad(out: Dictionary, code_length: int) -> bool:
 	# Validate and compute expected code length from decoded data
 	var expected_len := 0
 	var any_a := false
@@ -158,7 +170,7 @@ static func _validate_squad(out: Dictionary, code_length: int) -> bool:
 			return false
 		var skills: Array[int] = []
 		skills.assign(slot_data["skills"])
-		if skills.size() != count:
+		if skills.size() != 9:
 			return false
 
 		# Skills must be 0..10 and unique (no repeats)
@@ -166,8 +178,11 @@ static func _validate_squad(out: Dictionary, code_length: int) -> bool:
 		for i in skills.size():
 			var skill := skills[i]
 			if skill < 0 or skill > 10:
-				if count == 5 and i < 5:
-					return false
+				if count == 5 :
+					if i < 5:
+						return false
+					else:
+						break
 			if used_skills.has(skill):
 				return false
 			used_skills.append(skill)
