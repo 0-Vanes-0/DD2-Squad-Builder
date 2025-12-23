@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="SkillsPropsDictionary" load_steps=14 format=3 uid="uid://b63gif5ll4jro"]
+
+[ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="1_tyav0"]
+[ext_resource type="Script" uid="uid://c03w4nq84fgfy" path="res://resources/skills_props_dict.gd" id="2_25h8g"]
+
+[sub_resource type="Resource" id="Resource_7tmgb"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["apply_hero strength block"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_hrhbt"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["remove_enemy stealth dodge", "apply_enemy daze"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_0msia"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["apply_dot burn"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_nibs4"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["heal"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_13rjb"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["apply_hero block dodge"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_dq4om"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["remove_dot bleed blight burn", "remove_hero"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_h3tbd"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["ignore block dodge guard"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_v2tth"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["apply_hero block guard", "stress"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_dk1ka"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["apply_hero strength crit"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_ixoo0"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["apply_hero regen"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_2fwsy"]
+script = ExtResource("1_tyav0")
+properties = Array[String](["heal"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[resource]
+script = ExtResource("2_25h8g")
+info = Dictionary[int, ExtResource("1_tyav0")]({
+0: SubResource("Resource_7tmgb"),
+1: SubResource("Resource_hrhbt"),
+2: SubResource("Resource_0msia"),
+3: SubResource("Resource_nibs4"),
+4: SubResource("Resource_13rjb"),
+5: SubResource("Resource_dq4om"),
+6: SubResource("Resource_h3tbd"),
+7: SubResource("Resource_v2tth"),
+8: SubResource("Resource_dk1ka"),
+9: SubResource("Resource_ixoo0"),
+10: SubResource("Resource_2fwsy")
+})
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"

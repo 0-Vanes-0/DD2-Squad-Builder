@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="SkillsPropsDictionary" load_steps=14 format=3 uid="uid://bbmvxji724r2y"]
+
+[ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="1_hvf2g"]
+[ext_resource type="Script" uid="uid://c03w4nq84fgfy" path="res://resources/skills_props_dict.gd" id="2_f1umi"]
+
+[sub_resource type="Resource" id="Resource_dr7go"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["apply_dot blight", "consume combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_0w4dv"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["apply_enemy blind daze combo", "aoe"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_si24v"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["apply_dot blight", "consume combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_4g8ed"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["heal", "remove_dot blight bleed burn"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_u57f6"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["remove_dot blight bleed burn"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_wwpph"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["apply_dot blight", "aoe"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_udnga"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["remove_hero daze stun", "apply_hero strength"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_t3ct6"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["ignore guard", "move_enemy", "apply_enemy daze weak stun", "consume combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_q427p"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["heal", "remove_hero negative"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_4afi2"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["convert_from_dot"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_hg1jf"]
+script = ExtResource("1_hvf2g")
+properties = Array[String](["apply_dot burn", "clear", "aoe"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[resource]
+script = ExtResource("2_f1umi")
+info = Dictionary[int, ExtResource("1_hvf2g")]({
+0: SubResource("Resource_dr7go"),
+1: SubResource("Resource_0w4dv"),
+2: SubResource("Resource_si24v"),
+3: SubResource("Resource_4g8ed"),
+4: SubResource("Resource_u57f6"),
+5: SubResource("Resource_wwpph"),
+6: SubResource("Resource_udnga"),
+7: SubResource("Resource_t3ct6"),
+8: SubResource("Resource_q427p"),
+9: SubResource("Resource_4afi2"),
+10: SubResource("Resource_hg1jf")
+})
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"

@@ -372,6 +372,7 @@ bbcode_enabled = true
 text = "[center]No squad info yet.[/center]"
 fit_content = true
 scroll_active = false
+autowrap_mode = 2
 script = ExtResource("10_4w45t")
 
 [node name="RightVBox" type="VBoxContainer" parent="HSplitContainer"]

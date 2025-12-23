@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="SkillsPropsDictionary" load_steps=14 format=3 uid="uid://c3jqihbsy4oxo"]
+
+[ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="1_nbn8v"]
+[ext_resource type="Script" uid="uid://c03w4nq84fgfy" path="res://resources/skills_props_dict.gd" id="2_5kde0"]
+
+[sub_resource type="Resource" id="Resource_4n3lm"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["consume combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_r0oh6"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["apply_enemy combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_l6lml"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["ignore blind", "apply_enemy weak stun", "remove_enemy stealth", "consume combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_tit4o"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["apply_dot bleed", "consume combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_5eh4d"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["move_ally", "apply_hero immobilize taunt"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_vmv24"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["heal", "remove_dot bleed blight burn"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_5au8u"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["apply_dot bleed", "consume combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_m5fgp"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["execute", "apply_hero strength crit"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_rv6ir"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["aoe", "move_ally"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_k6lcq"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["stress", "heal"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_mhlsg"]
+script = ExtResource("1_nbn8v")
+properties = Array[String](["ignore block"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[resource]
+script = ExtResource("2_5kde0")
+info = Dictionary[int, ExtResource("1_nbn8v")]({
+0: SubResource("Resource_4n3lm"),
+1: SubResource("Resource_r0oh6"),
+2: SubResource("Resource_l6lml"),
+3: SubResource("Resource_tit4o"),
+4: SubResource("Resource_5eh4d"),
+5: SubResource("Resource_vmv24"),
+6: SubResource("Resource_5au8u"),
+7: SubResource("Resource_m5fgp"),
+8: SubResource("Resource_rv6ir"),
+9: SubResource("Resource_k6lcq"),
+10: SubResource("Resource_mhlsg")
+})
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"

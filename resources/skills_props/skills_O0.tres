@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="SkillsPropsDictionary" load_steps=14 format=3 uid="uid://dsu7blc3vvq3s"]
+
+[ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="1_6242y"]
+[ext_resource type="Script" uid="uid://c03w4nq84fgfy" path="res://resources/skills_props_dict.gd" id="2_thjrx"]
+
+[sub_resource type="Resource" id="Resource_cecni"]
+script = ExtResource("1_6242y")
+properties = Array[String](["execute", "consume combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_1mc5a"]
+script = ExtResource("1_6242y")
+properties = Array[String](["aoe"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_x8sbk"]
+script = ExtResource("1_6242y")
+properties = Array[String](["apply_enemy combo weak", "remove_enemy crit strength"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_4lijf"]
+script = ExtResource("1_6242y")
+properties = Array[String](["heal", "apply_hero bleed stealth"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_do6wx"]
+script = ExtResource("1_6242y")
+properties = Array[String](["move_enemy", "clear", "apply_enemy combo stun"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_7jude"]
+script = ExtResource("1_6242y")
+properties = Array[String](["remove_enemy dodge block", "apply_enemy vuln"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_lswx0"]
+script = ExtResource("1_6242y")
+properties = Array[String](["consume combo", "ignore stealth"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_rtvqe"]
+script = ExtResource("1_6242y")
+properties = Array[String](["ignore dodge blind", "apply_enemy combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_b4mdi"]
+script = ExtResource("1_6242y")
+properties = Array[String](["aoe", "move_enemy", "apply_dot bleed"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_u3u8s"]
+script = ExtResource("1_6242y")
+properties = Array[String](["ignore block"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_a12do"]
+script = ExtResource("1_6242y")
+properties = Array[String](["apply_hero negative"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[resource]
+script = ExtResource("2_thjrx")
+info = Dictionary[int, ExtResource("1_6242y")]({
+0: SubResource("Resource_cecni"),
+1: SubResource("Resource_1mc5a"),
+2: SubResource("Resource_x8sbk"),
+3: SubResource("Resource_4lijf"),
+4: SubResource("Resource_do6wx"),
+5: SubResource("Resource_7jude"),
+6: SubResource("Resource_lswx0"),
+7: SubResource("Resource_rtvqe"),
+8: SubResource("Resource_b4mdi"),
+9: SubResource("Resource_u3u8s"),
+10: SubResource("Resource_a12do")
+})
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"

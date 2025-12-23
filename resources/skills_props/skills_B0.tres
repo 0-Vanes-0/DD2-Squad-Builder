@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="SkillsPropsDictionary" load_steps=14 format=3 uid="uid://dbvmh7yrqh1gw"]
+
+[ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="1_g0uvp"]
+[ext_resource type="Script" uid="uid://c03w4nq84fgfy" path="res://resources/skills_props_dict.gd" id="2_wg71x"]
+
+[sub_resource type="Resource" id="Resource_hjrwo"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_mx2tf"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_sosqi"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_y6lo3"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_k1wy3"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_sakxj"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_6tu7t"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_ktxc0"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_tbmb1"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_xjigl"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_ho50b"]
+script = ExtResource("1_g0uvp")
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[resource]
+script = ExtResource("2_wg71x")
+info = Dictionary[int, ExtResource("1_g0uvp")]({
+0: SubResource("Resource_hjrwo"),
+1: SubResource("Resource_mx2tf"),
+2: SubResource("Resource_sosqi"),
+3: SubResource("Resource_y6lo3"),
+4: SubResource("Resource_k1wy3"),
+5: SubResource("Resource_sakxj"),
+6: SubResource("Resource_6tu7t"),
+7: SubResource("Resource_ktxc0"),
+8: SubResource("Resource_tbmb1"),
+9: SubResource("Resource_xjigl"),
+10: SubResource("Resource_ho50b")
+})
+metadata/_custom_type_script = "uid://c03w4nq84fgfy"

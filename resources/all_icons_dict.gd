@@ -4,9 +4,9 @@ extends Resource
 enum Types {
 	NONE,
 	BLIGHT, BLEED, BURN,
-	BLOCK, DODGE, GUARD, RIPOSTE, STEALTH, STRENGTH, CRIT, POSITIVE,
-	BLIND, DAZE, STUN, TAUNT, VULN, WEAK, NEGATIVE,
-	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL, EXECUTE, IMMOBILIZE,
+	BLOCK, BLOCK_PLUS, DODGE, DODGE_PLUS, GUARD, RIPOSTE, STEALTH, STRENGTH, CRIT, POSITIVE,
+	BLIND, DAZE, STUN, TAUNT, VULN, WEAK, IMMOBILIZE, NEGATIVE,
+	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL, EXECUTE,
 }
 
 const ICON_TYPE: Dictionary[StringName, Types] = {
@@ -15,7 +15,9 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$brn": Types.BURN,
 	
 	&"$blk": Types.BLOCK,
+	&"$blk+": Types.BLOCK_PLUS,
 	&"$ddg": Types.DODGE,
+	&"$ddg+": Types.DODGE_PLUS,
 	&"$grd": Types.GUARD,
 	&"$rps": Types.RIPOSTE,
 	&"$stl": Types.STEALTH,
@@ -34,7 +36,6 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	
 	&"$cmb": Types.COMBO,
 	&"$mve": Types.MOVE,
-	
 	&"$reg": Types.REGEN,
 	&"$sts": Types.STRESS,
 	&"$spd": Types.SPEED,
