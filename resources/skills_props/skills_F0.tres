@@ -5,46 +5,57 @@
 
 [sub_resource type="Resource" id="Resource_w3bmc"]
 script = ExtResource("1_myoly")
+properties = Array[String](["apply_dot blight", "consume combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bfk0e"]
 script = ExtResource("1_myoly")
+properties = Array[String](["apply_dot blight", "clear"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_itvf4"]
 script = ExtResource("1_myoly")
+properties = Array[String](["heal"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bd00x"]
 script = ExtResource("1_myoly")
+properties = Array[String](["stress"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_s1yq2"]
 script = ExtResource("1_myoly")
+properties = Array[String](["heal", "pply_hero block+ strength", "remove_hero daze stun"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_xousx"]
 script = ExtResource("1_myoly")
+properties = Array[String](["apply_dot blight", "consume combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_vtfoi"]
 script = ExtResource("1_myoly")
+properties = Array[String](["heal", "apply_hero taunt"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_0lgwh"]
 script = ExtResource("1_myoly")
+properties = Array[String](["remove_dot bleed blight burn"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ejl4u"]
 script = ExtResource("1_myoly")
+properties = Array[String](["heal", "apply_dot blight", "consume combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_5yibu"]
 script = ExtResource("1_myoly")
+properties = Array[String](["apply_hero regen", "heal"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_3ahbw"]
 script = ExtResource("1_myoly")
+properties = Array[String](["consume blight", "heal"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [resource]

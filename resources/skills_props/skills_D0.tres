@@ -5,46 +5,57 @@
 
 [sub_resource type="Resource" id="Resource_n8da0"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["move_ally"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_287w1"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["apply_hero riposte"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_e6gft"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["move_enemy", "move_ally", "apply_hero dodge+", "ignore riposte"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_t30pe"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["ignore block dodge", "execute"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_1g4ai"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["pply_hero strength crit"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2jlsy"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["move_enemy", "apply_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_w3bmc"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["extra"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bfk0e"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["move_ally", "remove_hero dodge"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_itvf4"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["apply_hero dodge+ taunt riposte", "remove_hero combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bd00x"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["ignore block weak", "execute"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_s1yq2"]
 script = ExtResource("1_xlgqv")
+properties = Array[String](["apply dodge", "ignore blind"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [resource]

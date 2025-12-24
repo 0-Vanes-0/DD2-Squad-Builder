@@ -27,9 +27,14 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/required_export_var/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
+"res://addons/": "purple",
 "res://assets/": "orange",
 "res://build/": "red",
 "res://resources/": "yellow",

@@ -31,7 +31,7 @@ func _ready() -> void:
 	rank2_hpd.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	rank3_hpd.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	rank4_hpd.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
+	
 	main_scene = get_tree().current_scene as MainScene
 	assert(main_scene)
 	main_scene.popup_panel.rename_requested.connect(
@@ -39,13 +39,13 @@ func _ready() -> void:
 				if from_squad_name != to_squad_name:
 					print("Renamed squad %s to: %s" % [from_squad_name, to_squad_name])
 					squad_name_label.text = to_squad_name
-
+					
 					var user_data := SaveLoad.load_data()
 					user_data[to_squad_name] = squad_data.duplicate(true)
 					user_data[to_squad_name]["squad_name"] = to_squad_name
 					user_data.erase(from_squad_name)
 					SaveLoad.save_data(user_data)
-
+					
 					changed.emit()
 	)
 	main_scene.popup_panel.delete_requested.connect(
@@ -56,7 +56,7 @@ func _ready() -> void:
 				SaveLoad.save_data(user_data)
 				
 				changed.emit()
-
+				
 				self.queue_free()
 	)
 

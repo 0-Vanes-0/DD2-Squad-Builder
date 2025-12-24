@@ -1,11 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://c2ktq8osijub2"]
+[gd_scene load_steps=22 format=3 uid="uid://c2ktq8osijub2"]
 
 [ext_resource type="Theme" uid="uid://mi0cw2k5bhje" path="res://resources/default_theme.tres" id="1_pw63i"]
 [ext_resource type="Script" uid="uid://cpm3iqqo7lebm" path="res://scenes/main_scene.gd" id="1_w2twt"]
 [ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/menu_tab_bar.gd" id="3_7ykc4"]
 [ext_resource type="Script" uid="uid://b02tbfuh3lwpq" path="res://src/animated_texture_rect.gd" id="3_bcnxi"]
 [ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/buttons/clear_button.gd" id="3_c16ls"]
-[ext_resource type="Texture2D" uid="uid://bkg77w67g016e" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-027.png" id="3_k6f3i"]
+[ext_resource type="Texture2D" uid="uid://4yppgdwfktdx" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-119.png" id="3_xdqt8"]
 [ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/buttons/copy_button.gd" id="4_18nlu"]
 [ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/buttons/paste_button.gd" id="5_6wevv"]
 [ext_resource type="SpriteFrames" uid="uid://b7dh45p3o1kxi" path="res://resources/crossroads_frames.tres" id="5_xdqt8"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://xfbr4tvv7qkf" path="res://src/properties_label.gd" id="10_4w45t"]
 [ext_resource type="Script" uid="uid://bo7er32dyytal" path="res://scenes/skills_menu.gd" id="11_mngbo"]
 [ext_resource type="Script" uid="uid://b8erljir6ou1d" path="res://scenes/heroes_menu.gd" id="12_r6p65"]
+[ext_resource type="Script" uid="uid://bvbjbwsvf42cx" path="res://src/bottom_h_box.gd" id="13_adb74"]
 [ext_resource type="Script" uid="uid://bu72kudpuaeqo" path="res://scenes/saved_squads.gd" id="14_6u1mn"]
 [ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
 [ext_resource type="Script" uid="uid://2kvb5n432r81" path="res://src/info_label.gd" id="15_6u1mn"]
@@ -62,7 +63,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_k6f3i")
+texture = ExtResource("3_xdqt8")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("3_bcnxi")
@@ -361,11 +362,13 @@ is_slot = true
 layout_mode = 2
 is_slot = true
 
-[node name="BottomHBox" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox"]
+[node name="BottomHBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox"]
 layout_mode = 2
-alignment = 1
+theme_override_constants/separation = 20
+script = ExtResource("13_adb74")
 
 [node name="PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -374,6 +377,68 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 script = ExtResource("10_4w45t")
+
+[node name="GridContainer" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center]No hero info yet.[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+script = ExtResource("10_4w45t")
+does_belong_to_hero = true
+metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
+
+[node name="PropertiesLabel2" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center]No hero info yet.[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+script = ExtResource("10_4w45t")
+does_belong_to_hero = true
+metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
+
+[node name="PropertiesLabel3" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center]No hero info yet.[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+script = ExtResource("10_4w45t")
+does_belong_to_hero = true
+metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
+
+[node name="PropertiesLabel4" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center]No hero info yet.[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+script = ExtResource("10_4w45t")
+does_belong_to_hero = true
+metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
+
+[node name="SwitchButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "  Switch total/per hero summary  "
+
+[node name="Empty2" type="Control" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
 
 [node name="RightVBox" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
@@ -580,6 +645,8 @@ and instead of writing
 
 • While you're creating a squad, the text below is being updated. It makes a summary of your squad, highlighting its advantages and other properties. Revealing all disadvantages of the squad is your own responsibility.
 
+• You also may find useful to see [url=wiki][color=royal_blue]DD2's wiki website[/color][/url], just if you need additional information or strategies.
+
 • If you've found some bug or if you want to suggest some functional/visual changes — click [url=issues][color=royal_blue]Report issue/suggestion[/color][/url].
 [/fill]
 [font_size=24]ROADMAP (in priority order)[/font_size]
@@ -596,6 +663,8 @@ and instead of writing
 RedHook — Darkest Dungeon 2 itself, its images and mechanics.
 
 Catabbro (me) — DD2 Squad Builder developer.
+
+darkestdungeon.wiki.gg — all the data about heroes, all pngs used in this project
 
 GitHub — repository storage and free public hosting of the web page.
 
@@ -701,6 +770,7 @@ vertical_alignment = 1
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/CopyButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/CopyButton" method="_on_pressed"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/PasteButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/PasteButton" method="_on_pressed"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" method="_on_pressed"]
+[connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/SwitchButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox" method="_on_switch_button_pressed"]
 [connection signal="tab_selected" from="HSplitContainer/RightVBox/TabBar" to="HSplitContainer/RightVBox/TabBar" method="_on_tab_selected"]
 [connection signal="visibility_changed" from="HSplitContainer/RightVBox/TabContainer/Skills" to="HSplitContainer/RightVBox/TabContainer/Skills" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="HSplitContainer/RightVBox/TabContainer/SavedSquads" to="HSplitContainer/RightVBox/TabContainer/SavedSquads" method="_on_visibility_changed"]

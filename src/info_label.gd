@@ -5,6 +5,7 @@ const URLS := {
 	"issues": "https://github.com/0-Vanes-0/DD2-Squad-Builder/issues",
 	"Steam": "https://store.steampowered.com/app/1940340/Darkest_Dungeon_II/",
 	"Godot": "https://godotengine.org/",
+	"wiki": "https://darkestdungeon.wiki.gg/wiki/Heroes_(Darkest_Dungeon_II)",
 }
 @export var notification_panel: NotificationPanel
 

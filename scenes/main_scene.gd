@@ -122,4 +122,5 @@ func paste_squad_data(data: Variant):
 		rank_box.set_skills(skills, hp)
 		rank_box.update_skills_visibility()
 	
+	Data.current_squad["squad_name"] = squad_data["squad_name"]
 	update_heroes_in_data()

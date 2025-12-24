@@ -10,12 +10,12 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_3scyv"]
 script = ExtResource("1_av2c7")
-properties = Array[String](["ignore guard dodge", "consume combo"])
+properties = Array[String](["ignore guard dodge", "consume combo stealth"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_a7cu5"]
 script = ExtResource("1_av2c7")
-properties = Array[String](["ignore dodge", "aoe"])
+properties = Array[String](["ignore dodge", "aoe", "consume stealth"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_n8da0"]
@@ -35,22 +35,22 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_t30pe"]
 script = ExtResource("1_av2c7")
-properties = Array[String](["remove_enemy stealth"])
+properties = Array[String](["remove_enemy stealth", "consume stealth"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_1g4ai"]
 script = ExtResource("1_av2c7")
-properties = Array[String](["ignore dodge", "move_ally", "move_enemy"])
+properties = Array[String](["ignore dodge", "move_ally", "move_enemy", "consume stealth"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2jlsy"]
 script = ExtResource("1_av2c7")
-properties = Array[String](["move_ally", "apply_enemy daze weak", "aoe"])
+properties = Array[String](["move_ally", "apply_enemy daze weak", "aoe", "consume stealth"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_w3bmc"]
 script = ExtResource("1_av2c7")
-properties = Array[String](["apply_hero dodge dodge+ taunt"])
+properties = Array[String](["apply_hero dodge dodge+ taunt", "consume stealth"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bfk0e"]

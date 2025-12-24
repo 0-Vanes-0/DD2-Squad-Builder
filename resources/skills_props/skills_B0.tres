@@ -5,46 +5,57 @@
 
 [sub_resource type="Resource" id="Resource_hjrwo"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["ignore guard", "consume combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_mx2tf"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["ignore guard", "remove_enemy dodge", "apply_enemy combo vuln"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_sosqi"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["move_enemy", "ignore guard", "apply_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_y6lo3"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["apply_dot bleed", "consume combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_k1wy3"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["move_enemy", "apply_enemy daze stun blind", "consume combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_sakxj"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["apply_enemy weak", "apply_hero taunt", "remove_hero vuln"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_6tu7t"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["consume combo", "ignore dodge"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ktxc0"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["ignore dodge", "remove_enemy guard", "apply_enemy combo stun"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_tbmb1"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["execute", "consume stun daze"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_xjigl"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["apply_enemy stun", "move_enemy"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ho50b"]
 script = ExtResource("1_g0uvp")
+properties = Array[String](["apply_hero block guard"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [resource]

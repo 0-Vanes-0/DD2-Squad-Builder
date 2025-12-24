@@ -8,9 +8,11 @@ const FIRST_WORDS := [
 	"consume", "ignore",
 	"convert_from_bleed", "convert_from_blight", "convert_from_burn", "convert_from_dot",
 	"move_ally", "move_enemy",
-	"clear", "heal", "stress", "execute", "extra", "aoe",
+	"clear", "heal", "stress", "execute", "extra", "aoe", "invert_hero", "invert_enemy",
 ]
 var tokens_map := {}
+
+@export var does_belong_to_hero := false
 
 
 func update_skills_props():
