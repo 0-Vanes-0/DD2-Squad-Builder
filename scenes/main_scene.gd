@@ -11,7 +11,7 @@ extends Control
 	3: null,
 	4: null,
 }
-@export var props_label: PropertiesLabel
+@export var bottom_box: BottomBox
 @export var skills_menu: SkillsMenu
 @export var saved_squads_menu: SavedSquadsMenu
 @export var notification_panel: NotificationPanel
@@ -19,7 +19,7 @@ extends Control
 
 
 func _ready() -> void:
-	assert(tab_bar and tab_container and split_container and popup_panel and props_label and skills_menu and notification_panel and popup_panel)
+	assert(tab_bar and tab_container and split_container and popup_panel and bottom_box and skills_menu and notification_panel and popup_panel)
 	for rank_box in rank_boxes.values():
 		assert(rank_box)
 	tab_bar.current_tab = 0
@@ -98,7 +98,7 @@ func update_heroes_in_data():
 		Data.current_squad[rank]["skills"] = rank_box.get_skills()
 	
 	skills_menu.visibility_changed.emit()
-	props_label.update_skills_props()
+	bottom_box.update()
 
 
 func paste_squad_data(data: Variant):

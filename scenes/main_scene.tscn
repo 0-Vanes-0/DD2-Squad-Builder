@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/menu_tab_bar.gd" id="3_7ykc4"]
 [ext_resource type="Script" uid="uid://b02tbfuh3lwpq" path="res://src/animated_texture_rect.gd" id="3_bcnxi"]
 [ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/buttons/clear_button.gd" id="3_c16ls"]
-[ext_resource type="Texture2D" uid="uid://4yppgdwfktdx" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-119.png" id="3_xdqt8"]
+[ext_resource type="Texture2D" uid="uid://cptt30704mxha" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-081.png" id="3_xdqt8"]
 [ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/buttons/copy_button.gd" id="4_18nlu"]
 [ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/buttons/paste_button.gd" id="5_6wevv"]
 [ext_resource type="SpriteFrames" uid="uid://b7dh45p3o1kxi" path="res://resources/crossroads_frames.tres" id="5_xdqt8"]
@@ -22,7 +22,7 @@
 [ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
 [ext_resource type="Script" uid="uid://2kvb5n432r81" path="res://src/info_label.gd" id="15_6u1mn"]
 
-[node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "props_label", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel")]
+[node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +40,7 @@ rank_boxes = {
 3: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox"),
 4: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox")
 }
-props_label = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/PropertiesLabel")
+bottom_box = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox")
 skills_menu = NodePath("HSplitContainer/RightVBox/TabContainer/Skills")
 saved_squads_menu = NodePath("HSplitContainer/RightVBox/TabContainer/SavedSquads")
 notification_panel = NodePath("NotificationPanel")
@@ -362,71 +362,72 @@ is_slot = true
 layout_mode = 2
 is_slot = true
 
-[node name="BottomHBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox"]
+[node name="BottomHBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox" node_paths=PackedStringArray("total_properties_label", "grid_container", "rank_1_properties_label", "rank_2_properties_label", "rank_3_properties_label", "rank_4_properties_label")]
 layout_mode = 2
 theme_override_constants/separation = 20
 script = ExtResource("13_adb74")
+total_properties_label = NodePath("TotalPropertiesLabel")
+grid_container = NodePath("GridContainer")
+rank_1_properties_label = NodePath("GridContainer/Rank1PropertiesLabel")
+rank_2_properties_label = NodePath("GridContainer/Rank2PropertiesLabel")
+rank_3_properties_label = NodePath("GridContainer/Rank3PropertiesLabel")
+rank_4_properties_label = NodePath("GridContainer/Rank4PropertiesLabel")
 
-[node name="PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox"]
-visible = false
+[node name="TotalPropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[center]No squad info yet.[/center]"
 fit_content = true
 scroll_active = false
-autowrap_mode = 2
 script = ExtResource("10_4w45t")
 
 [node name="GridContainer" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 4
 
-[node name="PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
+[node name="Rank4PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[center]No hero info yet.[/center]"
 fit_content = true
 scroll_active = false
-autowrap_mode = 2
 script = ExtResource("10_4w45t")
 does_belong_to_hero = true
 metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
 
-[node name="PropertiesLabel2" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
+[node name="Rank3PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[center]No hero info yet.[/center]"
 fit_content = true
 scroll_active = false
-autowrap_mode = 2
 script = ExtResource("10_4w45t")
 does_belong_to_hero = true
 metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
 
-[node name="PropertiesLabel3" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
+[node name="Rank2PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[center]No hero info yet.[/center]"
 fit_content = true
 scroll_active = false
-autowrap_mode = 2
 script = ExtResource("10_4w45t")
 does_belong_to_hero = true
 metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
 
-[node name="PropertiesLabel4" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
+[node name="Rank1PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[center]No hero info yet.[/center]"
 fit_content = true
 scroll_active = false
-autowrap_mode = 2
 script = ExtResource("10_4w45t")
 does_belong_to_hero = true
 metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
@@ -708,8 +709,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_right = 356.0
+offset_bottom = 391.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10

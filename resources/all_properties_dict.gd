@@ -23,7 +23,7 @@ static func create(json_string: String) -> AllPropertiesDictionary:
 	return all_props
 
 
-func construct_text(tokens: Array[String]) -> String:
+func construct_text(tokens: Array[String], is_4rank: bool) -> String:
 	var sentence := ""
 	for token in tokens:
 		var texts := properties[token].split(NBSP)
@@ -32,7 +32,12 @@ func construct_text(tokens: Array[String]) -> String:
 				texts[i] = "[img]" + Data.all_icons.get_texture_path(texts[i]) + "[/img]"
 		
 		if token in Data.RANKS_TOKENS:
-			sentence += NBSP.join(texts) + tokens[1] # Assuming size as 2.
+			if not is_4rank:
+				texts.remove_at(texts.size() - 1)
+				texts.remove_at(texts.size() - 1)
+				sentence += NBSP.join(texts)
+			else:
+				sentence += NBSP.join(texts) + tokens[1] # tokens[1] = "N heroes"
 			break
 		else:
 			sentence += NBSP.join(texts)
