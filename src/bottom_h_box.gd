@@ -12,11 +12,31 @@ extends VBoxContainer
 
 func _ready() -> void:
 	assert(total_properties_label and grid_container and rank_1_properties_label and rank_2_properties_label and rank_3_properties_label and rank_4_properties_label)
-	total_properties_label.visibility_changed.connect( func(): if total_properties_label.visible: total_properties_label.update_skills_props() )
-	rank_1_properties_label.visibility_changed.connect( func(): if rank_1_properties_label.visible: rank_1_properties_label.update_skills_props(["1"]) )
-	rank_2_properties_label.visibility_changed.connect( func(): if rank_2_properties_label.visible: rank_2_properties_label.update_skills_props(["2"]) )
-	rank_3_properties_label.visibility_changed.connect( func(): if rank_3_properties_label.visible: rank_3_properties_label.update_skills_props(["3"]) )
-	rank_4_properties_label.visibility_changed.connect( func(): if rank_4_properties_label.visible: rank_4_properties_label.update_skills_props(["4"]) )
+	total_properties_label.visibility_changed.connect(
+			func(): 
+				if total_properties_label.visible:
+					total_properties_label.update_skills_props()
+	)
+	rank_1_properties_label.visibility_changed.connect(
+			func(): 
+				if rank_1_properties_label.visible:
+					rank_1_properties_label.update_skills_props(["1"])
+	)
+	rank_2_properties_label.visibility_changed.connect(
+			func(): 
+				if rank_2_properties_label.visible:
+					rank_2_properties_label.update_skills_props(["2"])
+	)
+	rank_3_properties_label.visibility_changed.connect(
+			func(): 
+				if rank_3_properties_label.visible:
+					rank_3_properties_label.update_skills_props(["3"])
+	)
+	rank_4_properties_label.visibility_changed.connect(
+			func(): 
+				if rank_4_properties_label.visible:
+					rank_4_properties_label.update_skills_props(["4"])
+	)
 
 
 func _on_switch_button_pressed() -> void:

@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_hjrwo"]
 script = ExtResource("1_g0uvp")
-properties = Array[String](["ignore guard", "consume combo"])
+properties = Array[String](["ignore guard", "consume_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_mx2tf"]
@@ -20,12 +20,12 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_y6lo3"]
 script = ExtResource("1_g0uvp")
-properties = Array[String](["apply_dot bleed", "consume combo"])
+properties = Array[String](["apply_dot bleed", "consume_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_k1wy3"]
 script = ExtResource("1_g0uvp")
-properties = Array[String](["move_enemy", "apply_enemy daze stun blind", "consume combo"])
+properties = Array[String](["move_enemy", "apply_enemy daze stun blind", "consume_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_sakxj"]
@@ -35,7 +35,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_6tu7t"]
 script = ExtResource("1_g0uvp")
-properties = Array[String](["consume combo", "ignore dodge"])
+properties = Array[String](["consume_enemy combo", "ignore dodge"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ktxc0"]
@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_tbmb1"]
 script = ExtResource("1_g0uvp")
-properties = Array[String](["execute", "consume stun daze"])
+properties = Array[String](["execute", "consume_enemy stun daze"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_xjigl"]

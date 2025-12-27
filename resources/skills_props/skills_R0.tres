@@ -5,12 +5,12 @@
 
 [sub_resource type="Resource" id="Resource_1ovka"]
 script = ExtResource("1_wevgb")
-properties = Array[String](["apply_dot burn", "consume combo stealth"])
+properties = Array[String](["apply_dot burn", "consume_enemy combo", "consume_hero stealth"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_mud50"]
 script = ExtResource("1_wevgb")
-properties = Array[String](["apply_dot burn", "consume combo stealth"])
+properties = Array[String](["apply_dot burn", "consume_enemy combo", "consume_hero stealth"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2x4a4"]
@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_76y6n"]
 script = ExtResource("1_wevgb")
-properties = Array[String](["move_ally", "move_enemy", "apply_hero stealth", "consume combo"])
+properties = Array[String](["move_ally", "move_enemy", "apply_hero stealth", "consume_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_i3880"]

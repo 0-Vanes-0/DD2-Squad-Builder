@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_dr7go"]
 script = ExtResource("1_hvf2g")
-properties = Array[String](["apply_dot blight", "consume combo"])
+properties = Array[String](["apply_dot blight", "consume_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_0w4dv"]
@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_si24v"]
 script = ExtResource("1_hvf2g")
-properties = Array[String](["apply_dot blight", "consume combo"])
+properties = Array[String](["apply_dot blight", "consume_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_4g8ed"]
@@ -40,7 +40,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_t3ct6"]
 script = ExtResource("1_hvf2g")
-properties = Array[String](["ignore guard", "move_enemy", "apply_enemy daze weak stun", "consume combo"])
+properties = Array[String](["ignore guard", "move_enemy", "apply_enemy daze weak stun", "consume_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_q427p"]
@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_hg1jf"]
 script = ExtResource("1_hvf2g")
-properties = Array[String](["apply_dot burn", "clear", "aoe"])
+properties = Array[String](["apply_dot burn", "clear", "aoe", "cooldown"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [resource]

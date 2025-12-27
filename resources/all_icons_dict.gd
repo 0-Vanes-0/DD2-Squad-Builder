@@ -6,7 +6,8 @@ enum Types {
 	BLIGHT, BLEED, BURN,
 	BLOCK, BLOCK_PLUS, DODGE, DODGE_PLUS, GUARD, RIPOSTE, STEALTH, STRENGTH, CRIT, POSITIVE,
 	BLIND, DAZE, STUN, TAUNT, VULN, WEAK, IMMOBILIZE, NEGATIVE,
-	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL, EXECUTE,
+	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL, EXECUTE, DEATHSDOOR,
+	WINDED, RUINING, RUIN, POWER
 }
 
 const ICON_TYPE: Dictionary[StringName, Types] = {
@@ -41,6 +42,12 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$spd": Types.SPEED,
 	&"$hlh": Types.HEAL,
 	&"$exe": Types.EXECUTE,
+	&"$dth": Types.DEATHSDOOR,
+	
+	&"$wnd": Types.WINDED,
+	&"$rnn": Types.RUINING,
+	&"$rui": Types.RUIN,
+	&"$pow": Types.POWER,
 }
 
 @export var dict: Dictionary[Types, Texture2D]

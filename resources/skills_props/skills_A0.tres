@@ -10,7 +10,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_t30pe"]
 script = ExtResource("1_4uew6")
-properties = Array[String](["move_enemy", "apply_hero block", "consume combo", "apply_enemy stun"])
+properties = Array[String](["move_enemy", "apply_hero block", "consume_enemy combo", "apply_enemy stun"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_1g4ai"]
@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2jlsy"]
 script = ExtResource("1_4uew6")
-properties = Array[String](["consume combo", "apply_dot blight", "apply_enemy combo"])
+properties = Array[String](["consume_enemy combo", "apply_dot blight", "apply_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_w3bmc"]
@@ -40,12 +40,12 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bd00x"]
 script = ExtResource("1_4uew6")
-properties = Array[String](["consume vuln"])
+properties = Array[String](["consume_enemy vuln"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_s1yq2"]
 script = ExtResource("1_4uew6")
-properties = Array[String](["ignore block", "consume block"])
+properties = Array[String](["ignore block", "consume_enemy block"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_xousx"]

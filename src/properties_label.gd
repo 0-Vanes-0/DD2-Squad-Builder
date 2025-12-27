@@ -6,10 +6,25 @@ const FIRST_WORDS := [
 	"apply_dot", "apply_hero", "apply_enemy",
 	"remove_dot", "remove_enemy", "remove_hero",
 	"consume", "ignore",
+	"steal_hero", "steal_enemy",
 	"convert_from_bleed", "convert_from_blight", "convert_from_burn", "convert_from_dot",
 	"move_ally", "move_enemy",
-	"clear", "heal", "stress", "execute", "extra", "aoe", "invert_hero", "invert_enemy",
+	"clear", "heal", "stress", "execute", "extra", "aoe", "invert_hero", "invert_enemy", "cooldown",
+	"selfdmg",
 ]
+const PATH_COMMENTS: Dictionary[HeroesPaths.Enum, String] = { # TODO: PARSE THE FILE
+	HeroesPaths.Enum.P1: "On kill: $regen 2",
+	HeroesPaths.Enum.G1: "Bigger CRT chance",
+	HeroesPaths.Enum.W0: "$rps applies $cmb (33%)",
+	HeroesPaths.Enum.W1: "$rps applies $cmb (33%)",
+	HeroesPaths.Enum.W2: "$rps applies $cmb (33%)",
+	HeroesPaths.Enum.W3: "$rps applies $bld 2",
+	HeroesPaths.Enum.M2: "$rps applies $dze (33%)",
+	HeroesPaths.Enum.M3: "$rps applies +1 (max. +5) DMG but -8% (max. -40%) DoT RES", # TODO: SKILLS !!!!!!!!!!!!!!!!!!!!!!
+	HeroesPaths.Enum.H1: "<66% $hlh : +25% DMG; <33% $hlh : Ignore $wnd ; Ignore $dth penalties; On kill +25% $hlh ; Adrenaline Rush grants $stl and removes DoT (1 time); Bloodlust ",
+	HeroesPaths.Enum.H2: "<66% $hlh : +10% CRT; <33% $hlh : +1 $bld DUR ; On CRT: Ignore $wnd (1 turn)",
+	HeroesPaths.Enum.H3: "<33% $hlh : +20% $bld $blt $brn $mve $stn $neg RES; On CRT: heal 0-2 $sts ; turn end: per $wnd gain $blk (66%)",
+}
 var tokens_map := {}
 
 @export var does_belong_to_hero := false
@@ -68,6 +83,10 @@ func update_skills_props(ranks: Array[String] = ["1", "2", "3", "4"]):
 		full_text = "No squad info yet." if is_4ranks else "No hero info yet."
 	
 	self.append_text("[center]")
+	if not is_4ranks:
+		var path_comment := PATH_COMMENTS.get(Data.current_squad[ranks[0]]["hero_path"], "") as String
+		if not path_comment.is_empty():
+			self.append_text(path_comment + "\n")
 	self.append_text(full_text.strip_edges())
 	self.append_text("[/center]")
 

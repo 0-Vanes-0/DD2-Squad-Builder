@@ -30,22 +30,22 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_3c83q"]
 script = ExtResource("1_er37k")
-properties = Array[String](["aoe", "apply_dot bleed"])
+properties = Array[String](["aoe", "apply_dot bleed", "apply_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ahx2l"]
 script = ExtResource("1_er37k")
-properties = Array[String](["move_ally", "execute", "stress", "consume combo", "apply_hero vuln daze"])
+properties = Array[String](["move_ally", "execute", "stress", "consume_enemy combo", "apply_hero vuln daze"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_mowfx"]
 script = ExtResource("1_er37k")
-properties = Array[String](["move_ally", "apply_enemy combo", "apply_hero dodge"])
+properties = Array[String](["move_ally", "apply_enemy combo", "apply_hero dodge+"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_isrqy"]
 script = ExtResource("1_er37k")
-properties = Array[String](["move_ally", "apply_hero block", "remove_hero combo"])
+properties = Array[String](["move_ally", "apply_hero block+", "remove_hero combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_uq1hf"]

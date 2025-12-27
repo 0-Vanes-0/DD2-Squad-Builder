@@ -5,8 +5,12 @@
 	"remove_dot": "Removing DoT: ",
 	"remove_hero": "Removing on heroes: ",
 	"remove_enemy": "Removing on enemies: ",
-	"ignore": "Ignoring ",
-	"consume": "Consuming ",
+	"consume_hero": "Consuming on hero: ",
+	"consume_enemy": "Consuming on enemy: ",
+	"steal_hero": "Stealing from hero: ",
+	"steal_enemy": "Stealing from enemy: ",
+	"ignore": "Ignoring: ",
+	
 	"convert_from_bleed": "Converting $bld to damage",
 	"convert_from_blight": "Converting $blt to damage",
 	"convert_from_burn": "Converting $brn to damage",
@@ -16,14 +20,19 @@
 	"extra": "Giving extra action",
 	"invert_hero": "Inverting negative tokens on hero",
 	"invert_enemy": "Inverting positive tokens on enemy",
+	"cooldown": "Clearing skills cooldown",
+	
 	"move_ally": "Forward / Back $mve by ",
 	"heal": "Healing $hlh by ",
 	"stress": "Healing $sts by ",
 	"execute": "$exe by ",
 	"aoe": "AoE by ",
+	"selfdmg": "Damaging self by ",
+	
 	"blight": "$blt",
 	"bleed": "$bld",
 	"burn": "$brn",
+
 	"block": "$blk",
 	"block+": "$blk+",
 	"dodge": "$ddg",
@@ -34,6 +43,7 @@
 	"strength": "$str",
 	"crit": "$crt",
 	"positive": "$bff",
+
 	"blind": "$bln",
 	"daze": "$dze",
 	"stun": "$stn",
@@ -42,11 +52,18 @@
 	"weak": "$vvk",
 	"immobilize": "$imm",
 	"negative": "$dbf",
+
 	"combo": "$cmb",
 	"move": "$mve",
 	"regen": "$reg",
 	"stress_icon": "$sts",
 	"speed": "$spd",
 	"healing": "$hlh",
-	"execution": "$exe"
+	"execution": "$exe",
+
+	"door": "$dth",
+	"winded": "$win",
+	"ruining": "$rnn",
+	"ruin": "$rui",
+	"power": "$pow",
 }

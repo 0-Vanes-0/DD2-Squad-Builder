@@ -85,7 +85,7 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 @export_file_path("*.json") var all_props_file: String
 @export var all_icons: AllIconsDictionary
 @export var all_heroes_skills_properties: AllHeroesSkillsPropertiesDictionary
-const RANKS_TOKENS: Array[String] = ["heal", "stress", "execute", "move_ally", "aoe"]
+const RANKS_TOKENS: Array[String] = ["heal", "stress", "execute", "move_ally", "aoe", "selfdmg"]
 
 var current_squad: Dictionary = {
 	"1": {
@@ -123,18 +123,6 @@ func _ready() -> void:
 	assert(error == OK, "Error upon reading all_properties file!")
 	var text := file.get_as_text()
 	all_props = AllPropertiesDictionary.create(text)
-	
-	#var default_hero_paths: Array[HeroesPaths] = [
-		#HeroesPaths.P0, HeroesPaths.G0, HeroesPaths.W0, HeroesPaths.M0,
-		#HeroesPaths.H0, HeroesPaths.J0, HeroesPaths.L0, HeroesPaths.O0,
-		#HeroesPaths.R0, HeroesPaths.V0, HeroesPaths.F0,
-		#HeroesPaths.D0, HeroesPaths.C0, HeroesPaths.A0, HeroesPaths.B0,
-	#]
-	#for hero_path in default_hero_paths:
-		#for i in range(0, 11):
-			#pass
-			#var level_text := heroes_skills_properties.get_level_text(hero_path, i)
-			#assert(not level_text.get_text(1).is_empty())
 
 
 func get_skill_texture(hero_path: HeroesPaths.Enum, skill_number: int) -> Texture2D:

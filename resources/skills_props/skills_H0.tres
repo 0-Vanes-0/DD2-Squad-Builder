@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_4n3lm"]
 script = ExtResource("1_nbn8v")
-properties = Array[String](["consume combo"])
+properties = Array[String](["consume_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_r0oh6"]
@@ -15,47 +15,47 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_l6lml"]
 script = ExtResource("1_nbn8v")
-properties = Array[String](["ignore blind", "apply_enemy weak stun", "remove_enemy stealth", "consume combo"])
+properties = Array[String](["ignore blind", "apply_enemy weak stun", "remove_enemy stealth", "consume_enemy combo", "apply_hero winded", "aoe"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_tit4o"]
 script = ExtResource("1_nbn8v")
-properties = Array[String](["apply_dot bleed", "consume combo"])
+properties = Array[String](["apply_dot bleed", "consume_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_5eh4d"]
 script = ExtResource("1_nbn8v")
-properties = Array[String](["move_ally", "apply_hero immobilize taunt"])
+properties = Array[String](["move_ally", "apply_hero immobilize taunt", "remove_hero winded"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_vmv24"]
 script = ExtResource("1_nbn8v")
-properties = Array[String](["heal", "remove_dot bleed blight burn"])
+properties = Array[String](["heal", "remove_dot bleed blight burn", "remove_hero winded"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_5au8u"]
 script = ExtResource("1_nbn8v")
-properties = Array[String](["apply_dot bleed", "consume combo"])
+properties = Array[String](["apply_dot bleed", "consume_enemy combo", "apply_hero winded"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_m5fgp"]
 script = ExtResource("1_nbn8v")
-properties = Array[String](["execute", "apply_hero strength crit"])
+properties = Array[String](["execute", "apply_hero strength crit", "remove_hero winded"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_rv6ir"]
 script = ExtResource("1_nbn8v")
-properties = Array[String](["aoe", "move_ally"])
+properties = Array[String](["aoe", "move_ally", "apply_hero winded"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_k6lcq"]
 script = ExtResource("1_nbn8v")
-properties = Array[String](["stress", "heal"])
+properties = Array[String](["stress", "heal", "apply_hero winded"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_mhlsg"]
 script = ExtResource("1_nbn8v")
-properties = Array[String](["ignore block"])
+properties = Array[String](["ignore block winded", "consume_hero winded"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [resource]
