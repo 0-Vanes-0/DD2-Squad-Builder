@@ -1,5 +1,5 @@
 {
-	"P1": ["On kill: $regen 2"],
+	"P1": ["On kill: $reg 2"],
 	"G1": ["Bigger CRT chance"],
 	"W0": ["$rps applies $cmb (33%)"],
 	"W1": ["$rps applies $cmb (33%)"],
@@ -9,7 +9,7 @@
 	"M3": ["$rps applies +1 (max +5) DMG but -8% (max -40%) DoT RES"],
 	"H0": [
 		"<66% $hlh : +25% DMG",
-		"<33% $hlh : +25$ DMG",
+		"<33% $hlh : +25% DMG",
 	],
 	"H1": [
 		"<66% $hlh : +25% DMG",
@@ -37,10 +37,10 @@
 		"Echoing March: next Encore grants +3 $spd (3 turns)",
 	],
 	"J2": [
-		"Finale: 3 uses limit and removes escaping buffs but no cooldown",
-		"On escaping hits: +1 DMG for melee skills and +2 DMG for next Finale",
+		"On avoiding hits: +1 DMG for melee skills and +2 DMG for next Finale",
+		"Finale: 3 uses limit and removes avoiding buffs but no cooldown",
 		"Battle Ballad: next Finale ignores $bln $ddg",
-		"Harvest: next Finale heals 30% $hlh",
+		"Harvest: next Finale +30% $hlh",
 		"Play Out: next Finale ignores $blk $grd",
 		"Encore: restore all last Finale buffs"
 	],
@@ -71,4 +71,29 @@
 		"Each $cnv grants +10% $stn RES & +10% $mve RES",
 	],
 	"V3": ["On $cns effect: $cnv ( $cns DUR changed from 3 to 5)"],
+	"F0": ["On 10 $sts : always -2 relationship, add $tox , clear skills cooldowns, -10% $dth RES, reduce/heal to 30% $hlh"],
+	"F1": ["On 10 $sts : always -2 relationship, add $tox , clear skills cooldowns, -10% $dth RES, reduce/heal to 30% $hlh"],
+	"F2": [
+		"On 10 $sts : always -2 relationship, add $tox , clear skills cooldowns, -10% $dth RES, reduce/heal to 30% $hlh",
+		"Some skills are locked until low $hlh",
+	],
+	"F3": ["On 10 $sts : always -2 relationship, add $tox , clear skills cooldowns, -10% $dth RES, reduce/heal to 45% $hlh , +1 $blt dealt"],
+	"D0": [
+		"On $rps & $agr : +10% $hlh (33%)",
+		"On $rps & $def : apply $ddg (33%)",
+	],
+	"D1": [
+		"On kill & $agr : $reg 3",
+		"On kill & $def : -1 $sts",
+	],
+	"D2": [
+		"On $agr : +15% $neg piercing",
+		"Melee skills while $def : apply -5% $neg RES (3 turns)",
+	],
+	"D3": [
+		"On avoiding hits & $agr : +5% (max +25%) CRT but -10% (max -50%) DoT RES",
+		"On avoiding hits & $def : +20% (max +100%) DMG dealt but +40% (max +200%) DMG received",
+		"On damaged or Coup de Grâce: lose all $pos & $neg",
+	],
+	
 }

@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_w3bmc"]
 script = ExtResource("1_myoly")
-properties = Array[String](["apply_dot blight", "consume_enemy combo"])
+properties = Array[String](["apply_dot blight", "consume_enemy combo", "selfdmg"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bfk0e"]
@@ -15,12 +15,12 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_itvf4"]
 script = ExtResource("1_myoly")
-properties = Array[String](["heal"])
+properties = Array[String](["heal", "selfdmg"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bd00x"]
 script = ExtResource("1_myoly")
-properties = Array[String](["stress"])
+properties = Array[String](["calm"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_s1yq2"]
@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_xousx"]
 script = ExtResource("1_myoly")
-properties = Array[String](["apply_dot blight", "consume_enemy combo", "aoe"])
+properties = Array[String](["apply_dot blight", "consume_enemy combo", "aoe", "selfdmg"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_vtfoi"]
@@ -50,12 +50,12 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_5yibu"]
 script = ExtResource("1_myoly")
-properties = Array[String](["apply_hero regen", "heal"])
+properties = Array[String](["apply_hero regen", "heal", "selfdmg"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_3ahbw"]
 script = ExtResource("1_myoly")
-properties = Array[String](["consume_enemy blight", "heal"])
+properties = Array[String](["consume_enemy blight", "heal", "aoe"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [resource]

@@ -82,10 +82,11 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 @export var hero_path_draggable_scene: PackedScene
 @export var skill_draggable_scene: PackedScene
 
-@export_file_path("*.json") var all_props_file: String
+@export_file_path("*.json") var all_props_file_path: String
+@export_file_path("*.json") var all_paths_comments_file_path: String
 @export var all_icons: AllIconsDictionary
 @export var all_heroes_skills_properties: AllHeroesSkillsPropertiesDictionary
-const RANKS_TOKENS: Array[String] = ["heal", "stress", "execute", "move_forw", "move_back", "aoe", "selfdmg", "stack"]
+const RANKS_TOKENS: Array[String] = ["heal", "calm", "execute", "move_forw", "move_back", "aoe", "selfdmg", "stack"]
 
 var current_squad: Dictionary = {
 	"1": {
@@ -118,11 +119,19 @@ func _ready() -> void:
 	for hst in skills_textures.values():
 		assert(hst is HeroSkillsTextures, "All skills_textures values must be HeroSkillsTextures")
 	
-	var file := FileAccess.open(all_props_file, FileAccess.READ)
+	var all_props_file := FileAccess.open(all_props_file_path, FileAccess.READ)
 	var error: Error = FileAccess.get_open_error()
 	assert(error == OK, "Error upon reading all_properties file!")
-	var text := file.get_as_text()
-	all_props = AllPropertiesDictionary.create(text)
+	var all_props_text := all_props_file.get_as_text()
+	all_props_file.close()
+
+	var all_paths_comments_file := FileAccess.open(all_paths_comments_file_path, FileAccess.READ)
+	error = FileAccess.get_open_error()
+	assert(error == OK, "Error upon reading all_paths_comments file!")
+	var all_paths_comments_text := all_paths_comments_file.get_as_text()
+	all_paths_comments_file.close()
+
+	all_props = AllPropertiesDictionary.create(all_props_text, all_paths_comments_text)
 
 
 func get_skill_texture(hero_path: HeroesPaths.Enum, skill_number: int) -> Texture2D:

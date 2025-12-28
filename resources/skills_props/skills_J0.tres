@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_q1b8x"]
 script = ExtResource("1_er37k")
-properties = Array[String](["stress"])
+properties = Array[String](["calm"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_3c83q"]
@@ -35,7 +35,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ahx2l"]
 script = ExtResource("1_er37k")
-properties = Array[String](["move_back", "execute", "stress", "consume_enemy combo", "apply_hero vuln daze"])
+properties = Array[String](["move_back", "execute", "calm", "consume_enemy combo", "apply_hero vuln daze"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_mowfx"]

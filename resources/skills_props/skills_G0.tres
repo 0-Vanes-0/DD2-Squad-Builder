@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_e6gft"]
 script = ExtResource("1_av2c7")
-properties = Array[String](["clear", "heal", "apply_hero stealth", "stress"])
+properties = Array[String](["clear", "heal", "apply_hero stealth", "calm"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_t30pe"]

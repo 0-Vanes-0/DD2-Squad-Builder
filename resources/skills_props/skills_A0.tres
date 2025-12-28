@@ -25,12 +25,12 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_w3bmc"]
 script = ExtResource("1_4uew6")
-properties = Array[String](["heal", "stress"])
+properties = Array[String](["heal", "calm"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bfk0e"]
 script = ExtResource("1_4uew6")
-properties = Array[String](["stress", "apply_hero regen strength"])
+properties = Array[String](["calm", "apply_hero regen strength"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_itvf4"]

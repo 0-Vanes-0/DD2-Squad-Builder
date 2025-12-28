@@ -20,12 +20,12 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_l5q5s"]
 script = ExtResource("1_noy5r")
-properties = Array[String](["heal", "stress"])
+properties = Array[String](["heal", "calm"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_phl0k"]
 script = ExtResource("1_noy5r")
-properties = Array[String](["stress", "remove_hero blind weak vuln combo"])
+properties = Array[String](["calm", "remove_hero blind weak vuln combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_yr42a"]

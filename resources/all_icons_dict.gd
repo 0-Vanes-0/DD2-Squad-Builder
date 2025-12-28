@@ -7,7 +7,7 @@ enum Types {
 	BLOCK, BLOCK_PLUS, DODGE, DODGE_PLUS, GUARD, RIPOSTE, STEALTH, STRENGTH, CRIT, POSITIVE,
 	BLIND, DAZE, STUN, TAUNT, VULN, WEAK, IMMOBILIZE, NEGATIVE,
 	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL, EXECUTE, DEATHSDOOR,
-	WINDED, RUINING, RUIN, POWER, CONVICTION, CONSECRATION,
+	WINDED, RUINING, RUIN, POWER, CONVICTION, CONSECRATION, TOXIC, AGGRESIVE, DEFENSIVE,
 }
 
 const ICON_TYPE: Dictionary[StringName, Types] = {
@@ -24,7 +24,7 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$stl": Types.STEALTH,
 	&"$str": Types.STRENGTH,
 	&"$crt": Types.CRIT,
-	&"$bff": Types.POSITIVE,
+	&"$pos": Types.POSITIVE,
 	
 	&"$bln": Types.BLIND,
 	&"$dze": Types.DAZE,
@@ -33,7 +33,7 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$vln": Types.VULN,
 	&"$vvk": Types.WEAK,
 	&"$imm": Types.IMMOBILIZE,
-	&"$dbf": Types.NEGATIVE,
+	&"$neg": Types.NEGATIVE,
 	
 	&"$cmb": Types.COMBO,
 	&"$mve": Types.MOVE,
@@ -50,6 +50,9 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$pow": Types.POWER,
 	&"$cnv": Types.CONVICTION,
 	&"$cns": Types.CONSECRATION,
+	&"$tox": Types.TOXIC,
+	&"$agr": Types.AGGRESIVE,
+	&"$def": Types.DEFENSIVE,
 }
 
 @export var dict: Dictionary[Types, Texture2D]

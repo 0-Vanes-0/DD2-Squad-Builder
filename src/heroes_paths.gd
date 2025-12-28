@@ -21,6 +21,14 @@ enum Enum {
 }
 
 
+static func from_text(text: String) -> Enum:
+	var names := Enum.keys()
+	var index := names.find(text)
+	if index == -1:
+		return Enum.NONE
+	return Enum.values()[index]
+
+
 static func to_text(hero_path: HeroesPaths.Enum) -> String:
 	return HeroesPaths.Enum.keys()[hero_path] as String
 
