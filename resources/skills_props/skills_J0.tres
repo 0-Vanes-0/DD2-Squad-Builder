@@ -5,12 +5,12 @@
 
 [sub_resource type="Resource" id="Resource_iks7m"]
 script = ExtResource("1_er37k")
-properties = Array[String](["apply_enemy combo", "move_ally", "apply_hero dodge"])
+properties = Array[String](["apply_enemy combo", "move_forw", "apply_hero dodge"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_f1nia"]
 script = ExtResource("1_er37k")
-properties = Array[String](["move_ally", "apply_enemy blind combo"])
+properties = Array[String](["move_back", "apply_enemy blind combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_qhsny"]
@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_c5knw"]
 script = ExtResource("1_er37k")
-properties = Array[String](["move_ally", "apply_hero strength crit"])
+properties = Array[String](["move_forw", "apply_hero strength crit"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_q1b8x"]
@@ -35,17 +35,17 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ahx2l"]
 script = ExtResource("1_er37k")
-properties = Array[String](["move_ally", "execute", "stress", "consume_enemy combo", "apply_hero vuln daze"])
+properties = Array[String](["move_back", "execute", "stress", "consume_enemy combo", "apply_hero vuln daze"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_mowfx"]
 script = ExtResource("1_er37k")
-properties = Array[String](["move_ally", "apply_enemy combo", "apply_hero dodge+"])
+properties = Array[String](["move_forw", "apply_enemy combo", "apply_hero dodge+"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_isrqy"]
 script = ExtResource("1_er37k")
-properties = Array[String](["move_ally", "apply_hero block+", "remove_hero combo"])
+properties = Array[String](["move_back", "apply_hero block+", "remove_hero combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_uq1hf"]

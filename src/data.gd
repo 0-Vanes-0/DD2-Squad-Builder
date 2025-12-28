@@ -85,7 +85,7 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 @export_file_path("*.json") var all_props_file: String
 @export var all_icons: AllIconsDictionary
 @export var all_heroes_skills_properties: AllHeroesSkillsPropertiesDictionary
-const RANKS_TOKENS: Array[String] = ["heal", "stress", "execute", "move_ally", "aoe", "selfdmg"]
+const RANKS_TOKENS: Array[String] = ["heal", "stress", "execute", "move_forw", "move_back", "aoe", "selfdmg", "stack"]
 
 var current_squad: Dictionary = {
 	"1": {

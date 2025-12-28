@@ -10,7 +10,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_fuss3"]
 script = ExtResource("1_4iosv")
-properties = Array[String](["move_ally", "consume_enemy combo", "move_enemy", "apply_enemy daze stun"])
+properties = Array[String](["move_forw", "consume_enemy combo", "move_enemy", "apply_enemy daze stun"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_dnwt2"]
@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_p8wjq"]
 script = ExtResource("1_4iosv")
-properties = Array[String](["apply_hero block immobilize", "move_ally", "consume_enemy combo", "apply_enemy stun"])
+properties = Array[String](["apply_hero block immobilize", "move_forw", "consume_enemy combo", "apply_enemy stun"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_a8idr"]
@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_a7uwe"]
 script = ExtResource("1_4iosv")
-properties = Array[String](["apply_enemy combo", "move_ally", "apply_hero block+", "heal"])
+properties = Array[String](["apply_enemy combo", "move_back", "apply_hero block+", "heal"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [resource]

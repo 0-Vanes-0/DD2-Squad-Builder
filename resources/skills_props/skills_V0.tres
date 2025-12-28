@@ -15,17 +15,17 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_0msia"]
 script = ExtResource("1_tyav0")
-properties = Array[String](["apply_dot burn"])
+properties = Array[String](["apply_dot burn", "consume_hero conv"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_nibs4"]
 script = ExtResource("1_tyav0")
-properties = Array[String](["heal"])
+properties = Array[String](["heal", "consume_hero conv"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_13rjb"]
 script = ExtResource("1_tyav0")
-properties = Array[String](["apply_hero block dodge"])
+properties = Array[String](["apply_hero block dodge cons"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_dq4om"]
@@ -35,7 +35,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_h3tbd"]
 script = ExtResource("1_tyav0")
-properties = Array[String](["ignore block dodge guard"])
+properties = Array[String](["ignore block dodge guard", "consume_hero conv"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_v2tth"]
@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_dk1ka"]
 script = ExtResource("1_tyav0")
-properties = Array[String](["apply_hero strength crit"])
+properties = Array[String](["apply_hero strength crit cons"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ixoo0"]
@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2fwsy"]
 script = ExtResource("1_tyav0")
-properties = Array[String](["heal"])
+properties = Array[String](["heal", "consume_hero conv cons", "apply_hero positive"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [resource]

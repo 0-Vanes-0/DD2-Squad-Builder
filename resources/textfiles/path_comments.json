@@ -6,7 +6,7 @@
 	"W2": ["$rps applies $cmb (33%)"],
 	"W3": ["$rps applies $bld 2"],
 	"M2": ["$rps applies $dze (33%)"],
-	"M3": ["$rps applies +1 (+5) DMG but -8% (-40%) DoT RES"],
+	"M3": ["$rps applies +1 (max +5) DMG but -8% (max -40%) DoT RES"],
 	"H0": [
 		"<66% $hlh : +25% DMG",
 		"<33% $hlh : +25$ DMG",
@@ -16,7 +16,7 @@
 		"<33% $hlh : Ignore $wnd",
 		"Ignore $dth penalties",
 		"On kill +25% $hlh",
-		"Adrenaline Rush grants $stl and removes DoT (1 time)",
+		"Adrenaline Rush grants $stl and removes DoT on $dth (max 1 time)",
 		"Bloodlust grants $exe 3 on $dth",
 	],
 	"H2": [
@@ -44,9 +44,9 @@
 		"Play Out: next Finale ignores $blk $grd",
 		"Encore: restore all last Finale buffs"
 	],
-	"L1": ["Chop, Hew & Break: +15% DMG per $neg on self but -2 (-10) $hlh per $neg on self"],
+	"L1": ["Chop, Hew & Break: +15% DMG per $neg on self but -2 (max -10) $hlh per $neg on self"],
 	"L3": [
-		"Gains Oath on kill: +1% / +3% vs Chirurgeon, Death, Shambler, Warlord, Collector / +6% vs Lair Bosses (66%)",
+		"Gains Oath on kill: +1% / +3% vs Chirurgeon, Death, Shambler, Warlord, Collector / +6% vs Lair Bosses (max 66%)",
 		"Movement is Forward 2 / Back 2",
 		"$rui : +Oath% DMG for Non-Chop skills, +1 $sts per hit, $exe 1 (3 turns)",
 		"Chop: +Oath% DMG",
@@ -56,8 +56,19 @@
 	],
 	"O1": ["Per $pow +10% $neg RES piercing but -10% $neg RES"],
 	"O2": ["Per $pow +1 DMG but +10% DMG received"],
-	"O3": ["Moving grants $pow (70%/50%/30%)"],
-	"R1": [""],
-	"R2": [""],
-	"R3": [""],
+	"O3": ["Moving grants $pow (70%/50%/30% chance with 0/1/2 $pow )"],
+	"R1": ["Round end: if self $brn - gain +1 $brn dealt & +1 $spd (max 3 times); if not $brn - remove these bonuses"],
+	"R2": ["<75% $hlh after heal: $ddg (50%) or $ddg+ (25%)"],
+	"R3": [
+		"On constant moving: +1 (max +2) DMG but lose standing $pos",
+		"On constant standing: +1 $brn dealt (max +1 $brn dealt & +1 $brn DUR) but lose moving $pos",
+	],
+	"V0": ["Turn start: $cnv"],
+	"V1": ["Turn start: $cnv , each grants +5% $neg RES piercing"],
+	"V2": [
+		"When hit: $cnv",
+		"When CRT: $cnv (60%)",
+		"Each $cnv grants +10% $stn RES & +10% $mve RES",
+	],
+	"V3": ["On $cns effect: $cnv ( $cns DUR changed from 3 to 5)"],
 }

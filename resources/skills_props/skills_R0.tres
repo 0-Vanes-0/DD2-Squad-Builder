@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_bria1"]
 script = ExtResource("1_wevgb")
-properties = Array[String](["apply_hero regen stealth", "move_ally", "remove_dot bleed blight burn"])
+properties = Array[String](["apply_hero regen stealth", "move_back", "remove_dot bleed blight burn"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_xokaw"]
@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_76y6n"]
 script = ExtResource("1_wevgb")
-properties = Array[String](["move_ally", "move_enemy", "apply_hero stealth", "consume_enemy combo"])
+properties = Array[String](["move_forw", "move_enemy", "apply_hero stealth", "consume_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_i3880"]
@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_pbvla"]
 script = ExtResource("1_wevgb")
-properties = Array[String](["aoe", "apply_dot burn", "move_ally"])
+properties = Array[String](["aoe", "apply_dot burn", "move_back", "apply_enemy combo", "consume_hero stealth"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_vaiwt"]
@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_lea4h"]
 script = ExtResource("1_wevgb")
-properties = Array[String](["ignore guard block", "convert_from_burn"])
+properties = Array[String](["ignore guard block", "convert_from_burn", "consume_hero stealth crit", "cooldown"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [resource]

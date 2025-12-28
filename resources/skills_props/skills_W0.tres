@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_rmwou"]
 script = ExtResource("1_y5g68")
-properties = Array[String](["move_ally", "apply_hero riposte dodge"])
+properties = Array[String](["move_forw", "apply_hero riposte dodge"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2gjin"]
@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_hhtk4"]
 script = ExtResource("1_y5g68")
-properties = Array[String](["move_ally", "move_enemy", "apply_enemy combo"])
+properties = Array[String](["move_back", "move_enemy", "apply_enemy combo"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_ojstr"]
