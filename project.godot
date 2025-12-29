@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="DD2 Squad Builder"
-config/version="0.55"
+config/version="0.56"
 run/main_scene="uid://c2ktq8osijub2"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+run/max_fps=60
+run/low_processor_mode=true
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="uid://b8wm135ghenfp"
 
 [autoload]

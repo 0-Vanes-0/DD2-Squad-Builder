@@ -8,6 +8,7 @@ const URLS := {
 	"wiki": "https://darkestdungeon.wiki.gg/wiki/Heroes_(Darkest_Dungeon_II)",
 }
 @export var notification_panel: NotificationPanel
+var _is_mouse_inside := false
 
 
 func _ready() -> void:
@@ -20,12 +21,18 @@ func _on_meta_clicked(meta: Variant) -> void:
 
 
 func _on_meta_hover_started(meta: Variant) -> void:
-	notification_panel.show_message(URLS[str(meta)], true)
+	if _is_mouse_inside:
+		notification_panel.show_message(URLS[str(meta)], true)
 
 
 func _on_meta_hover_ended(_meta: Variant) -> void:
 	notification_panel.hide()
 
 
+func _on_mouse_entered() -> void:
+	_is_mouse_inside = true
+
+
 func _on_mouse_exited() -> void:
+	_is_mouse_inside = false
 	notification_panel.hide()
