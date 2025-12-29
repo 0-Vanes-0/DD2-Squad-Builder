@@ -678,15 +678,15 @@ E.g. someone asks:
 and instead of writing
 [center][tornado radius=3][color=gray]\"PD Physician, Jester Wanderer, BH, Leper Monarch\"[/color][/tornado][/center]
 [center][tornado radius=3 freq=-1][color=gray]and much text about skills[/color][/tornado][/center]
-[fill]you can just send [b]squad code[/b] that also includes chosen skills for each hero. The one who asked will just copy-paste it here to see heroes and skills.
+[fill]you can just send [b]squad code[/b] that also includes chosen skills for each hero. The one who asked will just copy-paste it here to see heroes and skills (allow browser to see your clipboard data).
 
-• Skills order doesn't matter here. However, I recommend to sort them by upgrade (mastering) priority: skill on the top must be upgraded ASAP, skill on the on the bottom has the least importance.
+• Skills order doesn't matter here. However, I recommend to sort them by upgrade (mastering) priority: skill on the top must be upgraded ASAP, skill on the bottom has the least importance.
 
 • Having a hero with some skills applied, you may replace the hero with another path which preserves skills assigned to the hero. However, if you drag & drop a [b]different[/b] hero — [b]assigned skills will be erased[/b]!
 
 • You can move heroes between ranks and even swap between each other.
 
-• Once you have all 4 heroes with all 5 skills set, click Save, give your squad a name and it will be saved in Saved Squads. [b]WARNING![/b] The squads are saved in [b]browser's cache[/b]; if you clean it — all squads data will be erased as well! 
+• Once you have all 4 heroes with all skills set, click Save, give your squad a name and it will be saved in Saved Squads. [b]WARNING![/b] The squads are saved in [b]browser's cookies[/b] (you shouold allow them); if you clean them — all squads data will be erased as well!
 
 • While you're creating a squad, the text below is being updated. It makes a summary of your squad, highlighting its advantages and other properties. Revealing all disadvantages of the squad is your own responsibility.
 
