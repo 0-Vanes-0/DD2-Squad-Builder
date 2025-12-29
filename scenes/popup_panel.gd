@@ -24,7 +24,6 @@ func _ready() -> void:
 
 
 func show_panel(type: MessageType, arg := "") -> void:
-	self.size = Vector2(360, 240)
 	current_type = type
 	message_label.show()
 	match type:
@@ -50,7 +49,8 @@ func show_panel(type: MessageType, arg := "") -> void:
 			line_edit.hide()
 
 	color_rect.show()
-	self.popup()
+	self.popup(Rect2i(0, 0, 360, 240))
+	(self.get_child(0) as MarginContainer).set_anchors_preset(Control.PRESET_FULL_RECT)
 
 
 func _on_close_requested() -> void:

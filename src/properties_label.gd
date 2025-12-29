@@ -5,7 +5,7 @@ const NBSP := "\u00A0"
 const FIRST_WORDS := [
 	"apply_dot", "apply_hero", "apply_enemy",
 	"remove_dot", "remove_enemy", "remove_hero",
-	"consume", "ignore",
+	"consume_hero", "consume_enemy", "ignore",
 	"steal_hero", "steal_enemy",
 	"convert_from_bleed", "convert_from_blight", "convert_from_burn", "convert_from_dot",
 	"move_forw", "move_back", "move_enemy",

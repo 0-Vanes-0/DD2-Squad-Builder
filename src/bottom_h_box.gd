@@ -37,6 +37,8 @@ func _ready() -> void:
 				if rank_4_properties_label.visible:
 					rank_4_properties_label.update_skills_props(["4"])
 	)
+	total_properties_label.show()
+	grid_container.hide()
 
 
 func _on_switch_button_pressed() -> void:

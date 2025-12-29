@@ -18,8 +18,8 @@
 	"move_enemy": "Moving enemies",
 	"clear": "Clearing corpses",
 	"extra": "Giving extra action",
-	"invert_hero": "Inverting negative tokens on hero",
-	"invert_enemy": "Inverting positive tokens on enemy",
+	"invert_hero": "Inverting $neg tokens on hero",
+	"invert_enemy": "Inverting $pos tokens on enemy",
 	"cooldown": "Clearing skills cooldown",
 	
 	"move_forw": "Forward by ",
