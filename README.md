@@ -45,6 +45,7 @@ you can just send **squad code** that also includes chosen skills for each hero.
 - [ ] Show descriptions of heroes-paths
 - [ ] Show descriptions of skills
 - [ ] Hook localizations from the game
+- [ ] Paste squad to game????? in HeroSelect scene
 - [ ] Visual improvements of UI
 
 ## CREDITS
