@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/menu_tab_bar.gd" id="3_7ykc4"]
 [ext_resource type="Script" uid="uid://b02tbfuh3lwpq" path="res://src/animated_texture_rect.gd" id="3_bcnxi"]
 [ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/buttons/clear_button.gd" id="3_c16ls"]
-[ext_resource type="Texture2D" uid="uid://dsjpxp6ql1n3t" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-056.png" id="3_xdqt8"]
+[ext_resource type="Texture2D" uid="uid://1tq6e2qa0m66" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-100.png" id="3_xdqt8"]
 [ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/buttons/copy_button.gd" id="4_18nlu"]
 [ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/buttons/paste_button.gd" id="5_6wevv"]
 [ext_resource type="SpriteFrames" uid="uid://b7dh45p3o1kxi" path="res://resources/crossroads_frames.tres" id="5_xdqt8"]
@@ -68,6 +68,7 @@ expand_mode = 2
 stretch_mode = 4
 script = ExtResource("3_bcnxi")
 sprite_frames = ExtResource("5_xdqt8")
+playing = true
 metadata/_custom_type_script = "uid://b02tbfuh3lwpq"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
@@ -376,10 +377,12 @@ rank_4_properties_label = NodePath("GridContainer/Rank4HBox/Rank4PropertiesLabel
 [node name="TotalPropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 2
 bbcode_enabled = true
 text = "[center]No squad info yet.[/center]"
 fit_content = true
 scroll_active = false
+selection_enabled = true
 script = ExtResource("10_4w45t")
 
 [node name="GridContainer" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox"]
@@ -401,10 +404,12 @@ text = "Rank 1"
 [node name="Rank1PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer/Rank1HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 2
 bbcode_enabled = true
 text = "[center]No hero info yet.[/center]"
 fit_content = true
 scroll_active = false
+selection_enabled = true
 script = ExtResource("10_4w45t")
 does_belong_to_hero = true
 metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
@@ -423,10 +428,12 @@ text = "Rank 2"
 [node name="Rank2PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer/Rank2HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 2
 bbcode_enabled = true
 text = "[center]No hero info yet.[/center]"
 fit_content = true
 scroll_active = false
+selection_enabled = true
 script = ExtResource("10_4w45t")
 does_belong_to_hero = true
 metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
@@ -445,10 +452,12 @@ text = "Rank 3"
 [node name="Rank3PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer/Rank3HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 2
 bbcode_enabled = true
 text = "[center]No hero info yet.[/center]"
 fit_content = true
 scroll_active = false
+selection_enabled = true
 script = ExtResource("10_4w45t")
 does_belong_to_hero = true
 metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
@@ -467,10 +476,12 @@ text = "Rank 4"
 [node name="Rank4PropertiesLabel" type="RichTextLabel" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/GridContainer/Rank4HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 2
 bbcode_enabled = true
 text = "[center]No hero info yet.[/center]"
 fit_content = true
 scroll_active = false
+selection_enabled = true
 script = ExtResource("10_4w45t")
 does_belong_to_hero = true
 metadata/_custom_type_script = "uid://xfbr4tvv7qkf"
@@ -780,6 +791,9 @@ layout_mode = 2
 placeholder_text = "Enter some info..."
 alignment = 1
 max_length = 32
+clear_button_enabled = true
+select_all_on_focus = true
+caret_blink = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PopupPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
