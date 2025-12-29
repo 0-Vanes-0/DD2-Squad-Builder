@@ -6,6 +6,8 @@ Link to the page: http://0-vanes-0.github.io/DD2-Squad-Builder/
 
 [Report issue/suggestion](https://github.com/0-Vanes-0/DD2-Squad-Builder/issues)
 
+Also feel free to fork and suggest a pull request if you'd like to make the utility better or to help with one of tasks from the roadmap.
+
 ## USAGE
 • This web utility helps to build a squad for [Darkest Dungeon 2](https://store.steampowered.com/app/1940340/Darkest_Dungeon_II/) and to share it with anybody.
 E.g. someone asks: 
