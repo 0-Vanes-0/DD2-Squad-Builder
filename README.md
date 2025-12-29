@@ -18,6 +18,11 @@ and instead of writing
 
 you can just send **squad code** that also includes chosen skills for each hero. The one who asked will just copy-paste it here to see heroes and skills (allow browser to see your clipboard data).
 
+• How to form a squad?              
+1. In Heroes tab, drag&drop a hero-path to one of rank slots. You should fill all 4 ranks.
+2. In Skills tab, drag&drop skills to one of skill slots. You should fill all 5 slots (in case of Abomination - 9 slots).
+3. Look at the summary below, copy or save your current squad (it will appear in Saved Squads tab).
+
 • Skills order doesn't matter here. However, I recommend to sort them by upgrade (mastering) priority: skill on the top must be upgraded ASAP, skill on the bottom has the least importance.
 
 • Having a hero with some skills applied, you may replace the hero with another path which preserves skills assigned to the hero. However, if you drag & drop a **different** hero — **assigned skills will be erased**!
