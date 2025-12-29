@@ -6,10 +6,10 @@ extends TextureRect
 @export var animation: StringName = &"default"
 @export var autoplay: bool = true
 @export var speed_scale: float = 1.0
+@export var playing := false
 
 var _frame_index := 0
 var _time_left := 0.0
-var _playing := false
 
 
 func _ready() -> void:
@@ -20,18 +20,18 @@ func _ready() -> void:
 
 
 func play() -> void:
-	_playing = true
+	playing = true
 	set_process(true)
 	_reset_to_first_frame()
 
 
 func stop() -> void:
-	_playing = false
+	playing = false
 	set_process(false)
 
 
 func _process(delta: float) -> void:
-	if not _playing or sprite_frames == null:
+	if not playing or sprite_frames == null:
 		return
 	if not sprite_frames.has_animation(animation):
 		return
