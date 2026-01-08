@@ -27,6 +27,14 @@ func show_message(message: String, is_hover := false):
 		self.hide()
 
 
+func show_hero_path(hero_path: HeroesPaths.Enum):
+	var path_name := Data.all_paths_names.get_path_name(hero_path)
+	var path_comment := Data.all_props.get_path_comment(hero_path, true)
+	var full_message := "[b]%s[/b]" % [path_name]
+	full_message += "\n\n" + path_comment if not path_comment.is_empty() else ""
+	show_message(full_message, true)
+
+
 func _update_position():
 	var viewport_rect: Rect2 = self.get_viewport().get_visible_rect()
 	var mouse_pos: Vector2 = self.get_global_mouse_position()

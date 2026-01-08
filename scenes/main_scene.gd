@@ -37,7 +37,13 @@ func _ready() -> void:
 								return hero != rb_hero 
 					)
 		)
-		
+		rank_box.hero_path_draggable.info_requested.connect(
+				func(hero_path: HeroesPaths.Enum):
+					if hero_path == HeroesPaths.Enum.NONE:
+						notification_panel.hide()
+					else:
+						notification_panel.show_hero_path(hero_path)
+		)
 		rank_box.hero_path_draggable.hero_dropped.connect(
 				func(from_rank: int):
 					# NOTE: Hero paths are already changed!!!

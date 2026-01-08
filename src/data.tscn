@@ -2012,6 +2012,7 @@ skills_textures = Dictionary[String, ExtResource("2_xxa4v")]({
 hero_path_draggable_scene = ExtResource("2_en3sy")
 skill_draggable_scene = ExtResource("3_e77f5")
 all_props_file_path = "res://resources/textfiles/all_properties.json"
+all_paths_names_file_path = "res://resources/textfiles/path_names.json"
 all_paths_comments_file_path = "res://resources/textfiles/path_comments.json"
 all_icons = SubResource("Resource_w3bmc")
 all_heroes_skills_properties = SubResource("Resource_f0e13")

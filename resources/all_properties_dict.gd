@@ -57,9 +57,33 @@ func construct_text(tokens: Array[String], is_4rank: bool) -> String:
 	return sentence.strip_edges()
 
 
-static func check_and_convert_texts_to_icons(line: String, splitter: String) -> PackedStringArray:
+func get_path_comment(hero_path: HeroesPaths.Enum, include_a := false) -> String:
+	var text := ""
+	var path_comment := path_comments.get(hero_path, PackedStringArray()) as PackedStringArray
+	for comment in path_comment:
+		var splitted_comment := check_and_convert_texts_to_icons(comment, " ", include_a)
+		if not splitted_comment.is_empty():
+			text += NBSP.join(splitted_comment) + "\n"
+	return text
+
+
+static func check_and_convert_texts_to_icons(line: String, splitter: String, include_a := false) -> PackedStringArray:
 	var texts := line.split(splitter)
-	for i in texts.size():
-		if texts[i].begins_with("$"):
-			texts[i] = "[img]" + Data.all_icons.get_texture_path(texts[i]) + "[/img]"
+	if line.begins_with("@"):
+		if include_a:
+			texts[0] = "Wanderer diff:"
+			for i in range(1, texts.size()):
+				var hero := texts[i].substr(1, 1)
+				var skill := int(texts[i].substr(2))
+				texts[i] = "[img=50x50]" + Data.skills_textures[hero].skills[skill].resource_path + "[/img]"
+		else:
+			texts = PackedStringArray()
+	else:
+		for i in texts.size():
+			if texts[i].begins_with("$"):
+				texts[i] = "[img]" + Data.all_icons.get_texture_path(texts[i]) + "[/img]"
+			elif texts[i].begins_with("#"):
+				var hero := texts[i].substr(1, 1)
+				var skill := int(texts[i].substr(2))
+				texts[i] = "[img=50x50]" + Data.skills_textures[hero].skills[skill].resource_path + "[/img]"
 	return texts

@@ -72,12 +72,10 @@ func update_skills_props(ranks: Array[String] = ["1", "2", "3", "4"]):
 	var has_comment := false
 	if not is_4ranks:
 		var label_rank := ranks[0]
-		var path_comments := Data.all_props.path_comments.get(Data.current_squad[label_rank]["hero_path"], PackedStringArray()) as PackedStringArray
-		if not path_comments.is_empty():
+		var path_comment := Data.all_props.get_path_comment(Data.current_squad[label_rank]["hero_path"])
+		if not path_comment.is_empty():
 			has_comment = true
-			for comment in path_comments:
-				var splitted_comment := AllPropertiesDictionary.check_and_convert_texts_to_icons(comment, " ")
-				self.append_text(NBSP.join(splitted_comment) + "\n")
+			self.append_text(path_comment)
 	
 	if full_text.is_empty() and not has_comment:
 		full_text = "No squad info yet." if is_4ranks else "No hero info yet."

@@ -1,98 +1,206 @@
 {
-	"P1": ["On kill: $reg 2"],
-	"G1": ["Bigger CRT chance"],
-	"W0": ["$rps applies $cmb (33%)"],
-	"W1": ["$rps applies $cmb (33%)"],
-	"W2": ["$rps applies $cmb (33%)"],
-	"W3": ["$rps applies $bld 2"],
-	"M2": ["$rps applies $dze (33%)"],
-	"M3": ["$rps applies +1 (max +5) DMG but -8% (max -40%) DoT RES"],
+	"P1": [
+		"@ #P2 #P3 #P4 #P6 #P7 #P9",
+		"On kill: $reg 2",
+	],
+	"P2": [
+		"@ #P0 #P5 #P7 #P9 #P10",
+	],
+	"P3": [
+		"@ #P0 #P2 #P4 #P6 #P7 #P9",
+	],
+	"G1": [
+		"@ #G1 #G2 #G4 #G9",
+		"Bigger CRT chance",
+	],
+	"G2": [
+		"@ #G1 #G2 #G3 #G4 #G10",
+	],
+	"G3": [
+		"@ #G1 #G2 #G7 #G8 #G9",
+	],
+	"W0": [
+		"$rps applies $cmb (33%)",
+	],
+	"W1": [
+		"@ #W0 #W2 #W4 #W6",
+		"$rps applies $cmb (33%)",
+	],
+	"W2": [
+		"@ #W1 #W5 #W6 #W8",
+		"$rps applies $cmb (33%)",
+	],
+	"W3": [
+		"@ #W6 #W7 #W9",
+		"$rps applies $bld 2",
+	],
+	"M1": [
+		"@ #M0 #M5 #M6 #M7 #M8",
+	],
+	"M2": [
+		"@ #M1 #M4 #M5 #M8",
+		"$rps applies $dze (33%)",
+	],
+	"M3": [
+		"@ #M5 #M8 #M9",
+		"$rps applies +1 (max +5) DMG but -8% (max -40%) DoT RES",
+	],
 	"H0": [
 		"<66% $hlh : +25% DMG",
 		"<33% $hlh : +25% DMG",
 	],
 	"H1": [
+		"@ #H2 #H5 #H7 #H8 #H10",
 		"<66% $hlh : +25% DMG",
 		"<33% $hlh : Ignore $wnd",
 		"Ignore $dth penalties",
 		"On kill +25% $hlh",
-		"Adrenaline Rush grants $stl and removes DoT on $dth (max 1 time)",
-		"Bloodlust grants $exe 3 on $dth",
+		"Having #H5 grants $stl and removes DoT on $dth (max 1 time)",
+		"Having #H7 grants $exe 3 on $dth",
 	],
 	"H2": [
+		"@ #H1 #H6 #H8 #H10",
 		"<66% $hlh : +10% CRT",
 		"<33% $hlh : +1 $bld DUR",
 		"On CRT: Ignore $wnd (1 turn)",
 	],
 	"H3": [
+		"@ #H1 #H2 #H4 #H8 #H10",
 		"<33% $hlh : +20% $bld $blt $brn $mve $stn $neg RES",
 		"On CRT: heal 0-2 $sts",
 		"Turn end: per $wnd gain $blk (66%)",
 	],
 	"J1": [
-		"Battle Ballad: next Encore grants $str (85%) or $crt (15%)",
-		"Inspiring Tune: next Encore grants +33% $sts RES (2 turns)",
-		"Solo: next Encore removes 1 $neg",
-		"Play Out: next Encore grants $blk and removes $cmb",
-		"Echoing March: next Encore grants +3 $spd (3 turns)",
+		"@ #J3 #J4 #J6 #J7 #J8 #J9 #J10",
+		"#J3 : next #J9 grants $str (85%) or $crt (15%)",
+		"#J4 : next #J9 grants +33% $sts RES (2 turns)",
+		"#J7 : next #J9 removes 1 $neg",
+		"#J8 : next #J9 grants $blk and removes $cmb",
+		"#J10 : next #J9 grants +3 $spd (3 turns)",
 	],
 	"J2": [
-		"On avoiding hits: +1 DMG for melee skills and +2 DMG for next Finale",
-		"Finale: 3 uses limit and removes avoiding buffs but no cooldown",
-		"Battle Ballad: next Finale ignores $bln $ddg",
-		"Harvest: next Finale +30% $hlh",
-		"Play Out: next Finale ignores $blk $grd",
-		"Encore: restore all last Finale buffs"
+		"@ #J3 #J5 #J6 #J7 #J8 #J9",
+		"On avoiding hits: +1 DMG for melee skills and +2 DMG for next #J6",
+		"#J6 : 3 uses limit and removes avoiding buffs but no cooldown",
+		"#J3 : next #J6 ignores $bln $ddg",
+		"#J5 : next #J6 +30% $hlh",
+		"#J8 : next #J6 ignores $blk $grd",
+		"#J9 : restore all last #J6 buffs",
 	],
-	"L1": ["Chop, Hew & Break: +15% DMG per $neg on self\n but -2 (max -10) $hlh per $neg on self"],
+	"J3": [
+		"@ #J3 #J4 #J6 #J7 #J8 #J10",
+		"Applying $bld on heroes for better supporting",
+	],
+	"L1": [
+		"@ #L0 #L5 #L6 #L8 #L9",
+		"#L0 #L5 #L9 : +15% DMG per $neg on self\n but -2 (max -10) $hlh per $neg on self",
+	],
+	"L2": [
+		"@ #L2 #L3 #L6 #L8 #L9",
+	],
 	"L3": [
+		"@ #L0 #L1 #L3 #L4 #L8 #L10",
 		"Gains Oath on kill: +1% /\n +3% vs Chirurgeon, Death, Shambler, Warlord, Collector /\n +6% vs Lair Bosses (max 66%)",
 		"Movement is Forward 2 / Back 2",
-		"$rui : +Oath% DMG for Non-Chop skills, $exe 1, +1 $sts per hit,\n +Oath/2% DMG to adjacent heroes (3 turns)",
-		"Chop: +Oath% DMG",
-		"Purge: by default remove 2 $pos but Oath+1% chance to steal all $pos",
-		"Solemnity: heal is multiplied by additional Oath%",
+		"$rui : +Oath% DMG for Non #L0 skills, $exe 1, +1 $sts per hit,\n +Oath/2% DMG to adjacent heroes (3 turns)",
+		"#L0 : +Oath% DMG",
+		"#L1 : by default remove 2 $pos but Oath+1% chance to steal all $pos",
+		"#L3 : heal is multiplied by additional Oath%",
 	],
-	"O1": ["Per $pow +10% $neg RES piercing but -10% $neg RES"],
-	"O2": ["Per $pow +1 DMG but +10% DMG received"],
-	"O3": ["Moving grants $pow (70%/50%/30% chance with 0/1/2 $pow )"],
-	"R1": ["Round end: if self $brn - gain +1 $brn dealt & +1 $spd (max 3 times);\n if not $brn - remove these bonuses"],
-	"R2": ["<75% $hlh after heal: $ddg (50%) or $ddg+ (25%)"],
+	"O1": [
+		"@ #O1 #O2 #O3 #O5 #O6 #O7",
+		"Per $pow +10% $neg RES piercing but -10% $neg RES",
+	],
+	"O2": [
+		"@ #O3 #O7 #O8 #O9 #O10",
+		"Per $pow +1 DMG but +10% DMG received",
+	],
+	"O3": [
+		"@ #O0 #O3 #O6 #O7 #O9",
+		"Moving grants $pow (70%/50%/30% chance with 0/1/2 $pow )",
+	],
+	"R1": [
+		"@ #R0 #R1 #R4 #R8 #R9 #R10",
+		"Round end: if self $brn - gain +1 $brn dealt & +1 $spd (max 3 times);\n if not $brn - remove these bonuses",
+	],
+	"R2": [
+		"@ #R0 #R2 #R4 #R5",
+		"<75% $hlh after heal: $ddg (50%) or $ddg+ (25%)",
+	],
 	"R3": [
+		"@ #R0 #R1 #R2 #R5 #R8",
 		"On constant moving: +1 (max +2) DMG but lose standing $pos",
 		"On constant standing: +1 $brn dealt (max +1 $brn dealt & +1 $brn DUR)\n but lose moving $pos",
 	],
-	"V0": ["Turn start: $cnv"],
-	"V1": ["Turn start: $cnv , each grants +5% $neg RES piercing"],
+	"V0": [
+		"Turn start: $cnv",
+	],
+	"V1": [
+		"@ #V0 #V1 #V2 #V10",
+		"Turn start: $cnv , each grants +5% $neg RES piercing",
+	],
 	"V2": [
+		"@ #V0 #V5 #V7 #V10",
 		"When hit: $cnv",
 		"When CRT: $cnv (60%)",
 		"Each $cnv grants +10% $stn RES & +10% $mve RES",
 	],
-	"V3": ["On $cns effect: $cnv ( $cns DUR changed from 3 to 5)"],
-	"F0": ["On 10 $sts : always -2 relationship, add $tox ,\n clear skills cooldowns, -10% $dth RES, reduce/heal to 30% $hlh"],
-	"F1": ["On 10 $sts : always -2 relationship, add $tox ,\n clear skills cooldowns, -10% $dth RES, reduce/heal to 30% $hlh"],
+	"V3": [
+		"@ #V4 #V8 #V10",
+		"On $cns effect: $cnv ( $cns DUR changed from 3 to 5)",
+	],
+	"F0": [
+		"On 10 $sts : always -2 relationship, add $tox ,\n clear skills cooldowns, -10% $dth RES, reduce/heal to 30% $hlh",
+	],
+	"F1": [
+		"@ #F0 #F4 #F5 #F8",
+		"On 10 $sts : always -2 relationship, add $tox ,\n clear skills cooldowns, -10% $dth RES, reduce/heal to 30% $hlh",
+	],
 	"F2": [
+		"@ #F0 #F4 #F5 #F8",
 		"On 10 $sts : always -2 relationship, add $tox ,\n clear skills cooldowns, -10% $dth RES, reduce/heal to 30% $hlh",
 		"Some skills are locked until low $hlh",
 	],
-	"F3": ["On 10 $sts : always -2 relationship, add $tox ,\n clear skills cooldowns, -10% $dth RES, reduce/heal to 45% $hlh , +1 $blt dealt"],
+	"F3": [
+		"@ #F2 #F4 #F7 #F8",
+		"On 10 $sts : always -2 relationship, add $tox ,\n clear skills cooldowns, -10% $dth RES, reduce/heal to 45% $hlh , +1 $blt dealt",
+	],
 	"D0": [
 		"On $rps & $agr : +10% $hlh (33%)",
 		"On $rps & $def : apply $ddg (33%)",
 	],
 	"D1": [
+		"@ #D2 #D6 #D9 #D10",
 		"On kill & $agr : $reg 3",
 		"On kill & $def : -1 $sts",
 	],
 	"D2": [
+		"@ #D0 #D2 #D5 #D9",
 		"On $agr : +15% $neg piercing",
 		"Melee skills while $def : apply -5% $neg RES (3 turns)",
 	],
 	"D3": [
+		"@ #D1 #D2 #D4 #D9",
 		"On avoiding hits & $agr : +5% (max +25%) CRT\n but -10% (max -50%) DoT RES",
 		"On avoiding hits & $def : +20% (max +100%) DMG dealt\n but +40% (max +200%) DMG received",
-		"On damaged or Coup de Grâce: lose all $pos & $neg",
+		"On damaged or #D9 : lose all $pos & $neg",
 	],
-	
+	"C1": [
+		"@ #C0 #C5 #C10",
+	],
+	"C2": [
+		"@ #C0 #C4 #C10",
+	],
+	"C3": [
+		"@ #C2 #C4 #C6 #C10",
+	],
+	"A1": [
+		"@ #A0 #A1 #A2 #A4 #A5 #A9 #A10",
+	],
+	"A2": [
+		"@ #A5 #A6 #A7 #A8 #A10",
+	],
+	"A3": [
+		"@ #A5 #A6 #A7 #A8 #A9 #A10",
+	],
 }

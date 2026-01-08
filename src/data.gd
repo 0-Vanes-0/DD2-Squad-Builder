@@ -83,6 +83,7 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 @export var skill_draggable_scene: PackedScene
 
 @export_file_path("*.json") var all_props_file_path: String
+@export_file_path("*.json") var all_paths_names_file_path: String
 @export_file_path("*.json") var all_paths_comments_file_path: String
 @export var all_icons: AllIconsDictionary
 @export var all_heroes_skills_properties: AllHeroesSkillsPropertiesDictionary
@@ -111,7 +112,9 @@ var settings: Dictionary
 var DEFAULT_SETTINGS := {
 	"language": "eng",
 }
+var is_dragging := false
 var all_props: AllPropertiesDictionary
+var all_paths_names: AllPathsNamesDictionary
 
 
 func _ready() -> void:
@@ -119,6 +122,10 @@ func _ready() -> void:
 	for hst in skills_textures.values():
 		assert(hst is HeroSkillsTextures, "All skills_textures values must be HeroSkillsTextures")
 	
+	assert(not all_props_file_path.is_empty())
+	assert(not all_paths_names_file_path.is_empty())
+	assert(not all_paths_comments_file_path.is_empty())
+
 	var all_props_file := FileAccess.open(all_props_file_path, FileAccess.READ)
 	var error: Error = FileAccess.get_open_error()
 	assert(error == OK, "Error upon reading all_properties file!")
@@ -132,6 +139,14 @@ func _ready() -> void:
 	all_paths_comments_file.close()
 
 	all_props = AllPropertiesDictionary.create(all_props_text, all_paths_comments_text)
+
+	var all_paths_names_file := FileAccess.open(all_paths_names_file_path, FileAccess.READ)
+	error = FileAccess.get_open_error()
+	assert(error == OK, "Error upon reading all_paths_names file!")
+	var all_paths_names_text := all_paths_names_file.get_as_text()
+	all_paths_names_file.close()
+
+	all_paths_names = AllPathsNamesDictionary.create(all_paths_names_text)
 
 
 func get_skill_texture(hero_path: HeroesPaths.Enum, skill_number: int) -> Texture2D:
