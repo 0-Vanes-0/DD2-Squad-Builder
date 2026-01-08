@@ -44,7 +44,7 @@ you can just send **squad code** that also includes chosen skills for each hero.
 - [x] ~~Create drag & drop system for heroes-paths and skills~~
 - [x] ~~Create automatic properties summary of squad~~
 - [x] ~~Do the same for each hero and add switch button~~
-- [ ] Show descriptions of heroes-paths
+- [x] ~~Show descriptions of heroes-paths~~
 - [ ] Show descriptions of skills
 - [ ] Hook localizations from the game
 - [ ] Paste squad to game????? in HeroSelect scene
