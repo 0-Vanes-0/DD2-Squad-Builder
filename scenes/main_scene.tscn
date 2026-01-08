@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/menu_tab_bar.gd" id="3_7ykc4"]
 [ext_resource type="Script" uid="uid://b02tbfuh3lwpq" path="res://src/animated_texture_rect.gd" id="3_bcnxi"]
 [ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/buttons/clear_button.gd" id="3_c16ls"]
-[ext_resource type="Texture2D" uid="uid://72ncj645rdys" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-025.png" id="3_xdqt8"]
+[ext_resource type="Texture2D" uid="uid://dla4sxhmvj8x0" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-070.png" id="3_xdqt8"]
 [ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/buttons/copy_button.gd" id="4_18nlu"]
 [ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/buttons/paste_button.gd" id="5_6wevv"]
 [ext_resource type="SpriteFrames" uid="uid://b7dh45p3o1kxi" path="res://resources/crossroads_frames.tres" id="5_xdqt8"]
@@ -721,7 +721,7 @@ and instead of writing
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Create drag & drop system for heroes-paths and skills[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Create automatic properties summary of squad[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Do the same for each hero and add switch button[/color][/s]
-[img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Show descriptions of heroes-paths
+[img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Show descriptions of heroes-paths[/color][/s]
 [img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Show descriptions of skills
 [img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Hook localizations from the game
 [img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Paste squad to game????? in HeroSelect scene
