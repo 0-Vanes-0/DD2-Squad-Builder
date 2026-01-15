@@ -39,8 +39,13 @@ static func decode_squad(text: String) -> Dictionary:
 
 	var pipe_index := text.find("|")
 	if pipe_index == -1:
-		print_debug("Symbol | not found: " + text)
-		return {}
+		# Try to find | uri-encoded:
+		pipe_index = text.find("%7C")
+		if pipe_index == -1:
+			print_debug("Symbol | not found: " + text)
+			return {}
+		else:
+			text = text.replace("%7C", "|")
 	
 	var code := text.substr(0, pipe_index - 0)
 	var name := "" if text.length() == pipe_index + 1 else text.substr(pipe_index + 1).uri_decode()
