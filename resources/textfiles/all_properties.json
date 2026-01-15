@@ -44,6 +44,7 @@
 	"stealth": "$stl",
 	"strength": "$str",
 	"crit": "$crt",
+	"fast": "$fst",
 	"positive": "$pos",
 
 	"blind": "$bln",

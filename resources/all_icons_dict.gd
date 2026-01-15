@@ -8,6 +8,7 @@ enum Types {
 	BLIND, DAZE, STUN, TAUNT, VULN, WEAK, IMMOBILIZE, NEGATIVE,
 	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL, EXECUTE, DEATHSDOOR,
 	WINDED, RUINING, RUIN, POWER, CONVICTION, CONSECRATION, TOXIC, AGGRESIVE, DEFENSIVE,
+	FAST,
 }
 
 const ICON_TYPE: Dictionary[StringName, Types] = {
@@ -24,6 +25,7 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$stl": Types.STEALTH,
 	&"$str": Types.STRENGTH,
 	&"$crt": Types.CRIT,
+	&"$fst": Types.FAST,
 	&"$pos": Types.POSITIVE,
 	
 	&"$bln": Types.BLIND,

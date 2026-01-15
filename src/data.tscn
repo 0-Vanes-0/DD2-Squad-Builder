@@ -1,4 +1,4 @@
-[gd_scene load_steps=460 format=3 uid="uid://3qfhtjnxlhvg"]
+[gd_scene load_steps=461 format=3 uid="uid://3qfhtjnxlhvg"]
 
 [ext_resource type="Script" uid="uid://cxg75tgd2xc4b" path="res://src/data.gd" id="1_40iss"]
 [ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="2_en3sy"]
@@ -222,6 +222,7 @@
 [ext_resource type="Resource" uid="uid://djyd7ucjed56t" path="res://resources/skills_props/skills_R0.tres" id="208_1g4ai"]
 [ext_resource type="Texture2D" uid="uid://cjvmqejvrg2ib" path="res://assets/icons/Token_toxic.png" id="208_ejl4u"]
 [ext_resource type="Resource" uid="uid://b63gif5ll4jro" path="res://resources/skills_props/skills_V0.tres" id="209_2jlsy"]
+[ext_resource type="Texture2D" uid="uid://ipqs0rq3q0kx" path="res://assets/icons/Dd2_token_speed.png" id="209_5yibu"]
 [ext_resource type="Resource" uid="uid://beukrkyok0wfd" path="res://resources/skills_props/skills_F0.tres" id="210_a7cu5"]
 [ext_resource type="Resource" uid="uid://ch3qjvxrrlkrm" path="res://resources/skills_props/skills_D0.tres" id="211_n8da0"]
 [ext_resource type="Resource" uid="uid://c3j37xvbps00l" path="res://resources/skills_props/skills_C0.tres" id="212_287w1"]
@@ -348,7 +349,8 @@ dict = Dictionary[int, Texture2D]({
 35: ExtResource("205_vtfoi"),
 36: ExtResource("208_ejl4u"),
 37: ExtResource("206_0lgwh"),
-38: ExtResource("207_ejl4u")
+38: ExtResource("207_ejl4u"),
+39: ExtResource("209_5yibu")
 })
 metadata/_custom_type_script = "uid://4v2ties4ofdd"
 
