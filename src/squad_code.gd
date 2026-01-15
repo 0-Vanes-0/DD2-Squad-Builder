@@ -2,7 +2,10 @@ class_name SquadCode
 extends Object
 
 const WEBSITE := "https://0-vanes-0.github.io/DD2-Squad-Builder"
+const SQUAD_PARAM := "?squad="
+const OPTIONAL_PARAM := "&optional="
 const B64URL := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
+# TODO: Add additional parameters: &optional=F{1-9}A{1-5}P{1-11}
 
 
 static func encode_squad(data: Dictionary) -> String:
@@ -31,17 +34,15 @@ static func encode_squad(data: Dictionary) -> String:
 
 ## Converts squad code string into squad data dictionary.
 static func decode_squad(text: String) -> Dictionary:
-	if not text.begins_with("https://"):
-		print_debug("Text does not begin with expected website URL.")
-		return {}
+	if text.begins_with("https://"):
+		text = text.substr(text.find(SQUAD_PARAM) + SQUAD_PARAM.length())
 
 	var pipe_index := text.find("|")
 	if pipe_index == -1:
 		print_debug("Symbol | not found.")
 		return {}
 	
-	var start_index := text.find("=", WEBSITE.length()) + 1
-	var code := text.substr(start_index, pipe_index - start_index)
+	var code := text.substr(0, pipe_index - 0)
 	var name := "" if text.length() == pipe_index + 1 else text.substr(pipe_index + 1).uri_decode()
 	
 	var out: Dictionary = { "squad_name": name }
