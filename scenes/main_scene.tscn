@@ -1,11 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2ktq8osijub2"]
+[gd_scene load_steps=22 format=3 uid="uid://c2ktq8osijub2"]
 
 [ext_resource type="Theme" uid="uid://mi0cw2k5bhje" path="res://resources/default_theme.tres" id="1_pw63i"]
 [ext_resource type="Script" uid="uid://cpm3iqqo7lebm" path="res://scenes/main_scene.gd" id="1_w2twt"]
 [ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/menu_tab_bar.gd" id="3_7ykc4"]
 [ext_resource type="Script" uid="uid://b02tbfuh3lwpq" path="res://src/animated_texture_rect.gd" id="3_bcnxi"]
 [ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/buttons/clear_button.gd" id="3_c16ls"]
-[ext_resource type="Texture2D" uid="uid://beeopcr52qv3v" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-096.png" id="3_xdqt8"]
 [ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/buttons/copy_button.gd" id="4_18nlu"]
 [ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/buttons/paste_button.gd" id="5_6wevv"]
 [ext_resource type="SpriteFrames" uid="uid://b7dh45p3o1kxi" path="res://resources/crossroads_frames.tres" id="5_xdqt8"]
@@ -66,7 +65,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_xdqt8")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("3_bcnxi")
@@ -779,7 +777,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 391.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
