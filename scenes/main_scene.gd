@@ -91,6 +91,12 @@ func _ready() -> void:
 					tab_container.current_tab = 2
 	)
 
+	if OS.has_feature("web") and Engine.has_singleton("JavaScriptBridge"):
+		var query := JavaScriptBridge.eval("window.location.search", true) as String
+		if query != null and not query.is_empty() and query.begins_with("?squad="):
+			var squad_code := query.replace("?squad=", "")
+			paste_squad_data(squad_code)
+
 
 func _on_resized() -> void:
 	var tab_container_size := 600

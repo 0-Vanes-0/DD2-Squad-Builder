@@ -1,6 +1,7 @@
 class_name SquadCode
 extends Object
 
+const WEBSITE := "https://0-vanes-0.github.io/DD2-Squad-Builder"
 const B64URL := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
 
 
@@ -24,19 +25,19 @@ static func encode_squad(data: Dictionary) -> String:
 		var skill_len := 6 if count == 9 else 3
 		code += _b64_encode_fixed(packed, skill_len)
 	
-	# Keep squad_name readable, but make it safe for the delimiter.
-	# (If you truly want it raw, you must forbid '|' in names.)
 	var name := String(data.get("squad_name", ""))
-	return code + "|" + name.uri_encode()
+	return WEBSITE + "?squad=" + code + "|" + name.uri_encode()
 
 
+## Converts squad code string into squad data dictionary.
 static func decode_squad(text: String) -> Dictionary:
 	var pipe_index := text.find("|")
 	if pipe_index == -1:
 		print_debug("Symbol | not found.")
 		return {}
 	
-	var code := text.substr(0, pipe_index)
+	var start_index := text.find("=", WEBSITE.length()) + 1
+	var code := text.substr(start_index, pipe_index - start_index)
 	var name := "" if text.length() == pipe_index + 1 else text.substr(pipe_index + 1).uri_decode()
 	
 	var out: Dictionary = { "squad_name": name }

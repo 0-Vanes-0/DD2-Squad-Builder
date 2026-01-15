@@ -65,11 +65,15 @@ func _on_popup_hide() -> void:
 func _on_ok_button_pressed() -> void:
 	match current_type:
 		MessageType.SAVE_SQUAD:
+			var no_spaces_text := line_edit.text.replace(" ", "_")
+			if no_spaces_text.substr(0, 1).is_valid_int():
+				no_spaces_text[0] = "_"
+			
 			if line_edit.text.strip_edges() == "":
 				message_label.text = "Squad name cannot be empty!"
 				return
-			if line_edit.text.contains("|"):
-				message_label.text = "The symbol | is prohibited due to its usage in codes."
+			if not no_spaces_text.is_valid_ascii_identifier():
+				message_label.text = "The name may contain only letters, digits and spaces."
 				return
 			save_requested.emit(line_edit.text)
 			close_requested.emit()
