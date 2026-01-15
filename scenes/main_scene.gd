@@ -93,6 +93,10 @@ func _ready() -> void:
 
 	if OS.has_feature("web") and Engine.has_singleton("JavaScriptBridge"):
 		var query := JavaScriptBridge.eval("window.location.search", true) as String
+		if query == null or query.is_empty():
+			await get_tree().create_timer(0.2).timeout
+			query = JavaScriptBridge.eval("window.location.hash", true) as String
+		
 		if query != null and not query.is_empty() and query.begins_with("?squad="):
 			var squad_code := query.replace("?squad=", "")
 			paste_squad_data(squad_code)
@@ -115,7 +119,6 @@ func update_heroes_in_data():
 
 
 func paste_squad_data(data: Variant):
-	print_debug("Requested paste squad data: %s" % str(data))
 	var squad_data: Dictionary = {}
 	if data is String or data is Dictionary:
 		if data is String:
