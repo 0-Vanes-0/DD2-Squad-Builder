@@ -31,6 +31,10 @@ static func encode_squad(data: Dictionary) -> String:
 
 ## Converts squad code string into squad data dictionary.
 static func decode_squad(text: String) -> Dictionary:
+	if not text.begins_with("https://"):
+		print_debug("Text does not begin with expected website URL.")
+		return {}
+
 	var pipe_index := text.find("|")
 	if pipe_index == -1:
 		print_debug("Symbol | not found.")

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/menu_tab_bar.gd" id="3_7ykc4"]
 [ext_resource type="Script" uid="uid://b02tbfuh3lwpq" path="res://src/animated_texture_rect.gd" id="3_bcnxi"]
 [ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/buttons/clear_button.gd" id="3_c16ls"]
-[ext_resource type="Texture2D" uid="uid://clhqfpulenooo" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-058.png" id="3_xdqt8"]
+[ext_resource type="Texture2D" uid="uid://d0dmbbmdd0el6" path="res://assets/ezgif-8c40eeaa5a8c63c1-png-split/ezgif-frame-048.png" id="3_xdqt8"]
 [ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/buttons/copy_button.gd" id="4_18nlu"]
 [ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/buttons/paste_button.gd" id="5_6wevv"]
 [ext_resource type="SpriteFrames" uid="uid://b7dh45p3o1kxi" path="res://resources/crossroads_frames.tres" id="5_xdqt8"]
@@ -694,13 +694,13 @@ and instead of writing
 [center][tornado radius=3][color=gray]\"PD Physician, Jester Wanderer, BH, Leper Monarch\"[/color][/tornado][/center]
 [center][tornado radius=3 freq=-1][color=gray]and much text about skills[/color][/tornado][/center]
 [fill]you can just send [b]squad code[/b] that also includes chosen skills for each hero. The one who asked will just copy-paste it here to see heroes and skills (allow browser to see your clipboard data).
-[/fill]
-• How to form a squad?
-[fill]1. In Heroes tab, drag&drop a hero-path to one of rank slots. You should fill all 4 ranks.
+
+[left]• How to form a squad?[/left]
+1. In Heroes tab, drag&drop a hero-path to one of rank slots. You should fill all 4 ranks.
 2. In Skills tab, drag&drop skills to one of skill slots. You should fill all 5 slots (in case of Abomination - 9 slots).
 3. Look at the summary below, copy or save your current squad (it will appear in Saved Squads tab).
 
-• Hold RMB on hero-path to see info about it.
+[left]• Hold RMB on hero-path to see info about it.[/left]
 
 • You can move heroes between ranks and even swap between each other. Same for skills slots.
 
