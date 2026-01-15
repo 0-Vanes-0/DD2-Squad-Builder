@@ -1,0 +1,32 @@
+{
+	"<hero letter><path number>_<skill number>": {
+		"name": "<skill name>",
+		"type": "<skill type: 'melee', 'ranged', 'heal' or 'stress'>",
+		"skill_ranks": "<ranks>",
+		"target_ranks": "<ranks and aoe symbol if needed OR just 'self'>",
+		"target_type": "<'hero' or 'enemy'>",
+		"skill_text": "<all text of skill>",
+		"skill_u_text": "<all text of upgraded skill>",
+	},
+	"template": {
+		"name": "",
+		"type": "",
+		"skill_ranks": "1234",
+		"target_ranks": "1234-",
+		"target_type": "",
+		"skill_text": "DMG: _ CRIT: % ...",
+		"skill_u_text": "",
+	},
+	"J3_4": {
+		"name": "Inspiring Tune",
+		"type": "stress",
+		"skills_ranks": "12",
+		"target_ranks": "1234-",
+		"skill_text": "Requires targets $sts 5+.\n-2 $sts , 2 $bld",
+		"skill_u_text": "Requires targets $sts 5+ or targets $bld .\n-2 $sts , 2 $bld",
+	},
+	"L1_0": {
+		
+	},
+
+}
