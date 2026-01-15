@@ -39,7 +39,7 @@ static func decode_squad(text: String) -> Dictionary:
 
 	var pipe_index := text.find("|")
 	if pipe_index == -1:
-		print_debug("Symbol | not found.")
+		print_debug("Symbol | not found: " + text)
 		return {}
 	
 	var code := text.substr(0, pipe_index - 0)
