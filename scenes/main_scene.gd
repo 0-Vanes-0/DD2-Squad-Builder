@@ -96,6 +96,7 @@ func _ready() -> void:
 		if query != null and not query.is_empty() and query.begins_with("?squad="):
 			var squad_code := query.replace("?squad=", "")
 			paste_squad_data(squad_code)
+			print_debug("Loaded squad from URL parameter: %s" % query)
 
 
 func _on_resized() -> void:
@@ -114,6 +115,7 @@ func update_heroes_in_data():
 
 
 func paste_squad_data(data: Variant):
+	print_debug("Requested paste squad data: %s" % str(data))
 	var squad_data: Dictionary = {}
 	if data is String or data is Dictionary:
 		if data is String:
