@@ -9,6 +9,7 @@ enum Types {
 	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL, EXECUTE, DEATHSDOOR,
 	WINDED, RUINING, RUIN, POWER, CONVICTION, CONSECRATION, TOXIC, AGGRESIVE, DEFENSIVE,
 	FAST,
+	SMALL_MELEE, SMALL_RANGED, SMALL_HEAL, SMALL_ANTISTRESS, UPGRADE,
 }
 
 const ICON_TYPE: Dictionary[StringName, Types] = {
@@ -55,14 +56,21 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$tox": Types.TOXIC,
 	&"$agr": Types.AGGRESIVE,
 	&"$def": Types.DEFENSIVE,
+
+	&"$tml": Types.SMALL_MELEE,
+	&"$trg": Types.SMALL_RANGED,
+	&"$thl": Types.SMALL_HEAL,
+	&"$tst": Types.SMALL_ANTISTRESS,
+
+	&"$upg": Types.UPGRADE,
 }
 
 @export var dict: Dictionary[Types, Texture2D]
 
 
-func get_texture_path(icon_name: String) -> String:
+func get_texture(icon_name: String) -> Texture2D:
 	var type := ICON_TYPE[icon_name]
 	var texture := dict[type]
 	if texture != null:
-		return texture.resource_path
-	return ""
+		return texture
+	return null

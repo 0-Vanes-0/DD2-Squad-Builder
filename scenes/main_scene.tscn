@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c2ktq8osijub2"]
+[gd_scene load_steps=23 format=3 uid="uid://c2ktq8osijub2"]
 
 [ext_resource type="Theme" uid="uid://mi0cw2k5bhje" path="res://resources/default_theme.tres" id="1_pw63i"]
 [ext_resource type="Script" uid="uid://cpm3iqqo7lebm" path="res://scenes/main_scene.gd" id="1_w2twt"]
@@ -20,11 +20,12 @@
 [ext_resource type="Script" uid="uid://bu72kudpuaeqo" path="res://scenes/saved_squads.gd" id="14_6u1mn"]
 [ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
 [ext_resource type="Script" uid="uid://2kvb5n432r81" path="res://src/info_label.gd" id="15_6u1mn"]
+[ext_resource type="PackedScene" uid="uid://ckcb3pjocibly" path="res://scenes/ranks_sub_viewport.tscn" id="21_xdqt8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb74"]
 bg_color = Color(0, 0, 0, 0.78431374)
 
-[node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel")]
+[node name="MainScene" type="Control" node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,6 +48,7 @@ skills_menu = NodePath("HSplitContainer/RightVBox/TabContainer/Skills")
 saved_squads_menu = NodePath("HSplitContainer/RightVBox/TabContainer/SavedSquads")
 notification_panel = NodePath("NotificationPanel")
 popup_panel = NodePath("PopupPanel")
+viewport = NodePath("SubViewport")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -501,7 +503,7 @@ layout_mode = 2
 
 [node name="TabBar" type="TabBar" parent="HSplitContainer/RightVBox" node_paths=PackedStringArray("tab_container")]
 layout_mode = 2
-current_tab = 2
+current_tab = 3
 tab_alignment = 1
 scrolling_enabled = false
 scroll_to_selected = false
@@ -777,7 +779,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 236.0
+offset_bottom = 391.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
@@ -815,14 +817,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "  OK  "
 
-[node name="NotificationPanel" type="PanelContainer" parent="." node_paths=PackedStringArray("label")]
+[node name="NotificationPanel" type="PanelContainer" parent="." node_paths=PackedStringArray("_label")]
 layout_mode = 1
 offset_top = -29.0
 offset_right = 75.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_adb74")
 script = ExtResource("8_18nlu")
-label = NodePath("MarginContainer/Label")
+_label = NodePath("MarginContainer/Label")
 
 [node name="MarginContainer" type="MarginContainer" parent="NotificationPanel"]
 layout_mode = 2
@@ -838,6 +840,8 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
+
+[node name="SubViewport" parent="." instance=ExtResource("21_xdqt8")]
 
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" method="_on_pressed"]

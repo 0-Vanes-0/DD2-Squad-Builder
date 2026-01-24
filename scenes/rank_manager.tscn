@@ -1,86 +1,110 @@
-[gd_scene load_steps=2 format=3 uid="uid://bolspn5dxqll0"]
+[gd_scene load_steps=2 format=3 uid="uid://bkex5nql87pu"]
 
 [ext_resource type="Script" uid="uid://fsxrmfbb2gfd" path="res://scenes/rank_manager.gd" id="1_jvpm7"]
 
-[node name="RankManager" type="Node2D"]
+[node name="RankManager" type="Node2D" node_paths=PackedStringArray("rank_1_empty", "rank_2_empty", "rank_3_empty", "rank_4_empty", "line_yellow", "rank_1_yellow", "rank_2_yellow", "rank_3_yellow", "rank_4_yellow", "line_blue", "rank_1_blue", "rank_2_blue", "rank_3_blue", "rank_4_blue")]
 script = ExtResource("1_jvpm7")
+rank_1_empty = NodePath("Rank1Empty")
+rank_2_empty = NodePath("Rank2Empty")
+rank_3_empty = NodePath("Rank3Empty")
+rank_4_empty = NodePath("Rank4Empty")
+line_yellow = NodePath("LineYellow")
+rank_1_yellow = NodePath("Rank1Yellow")
+rank_2_yellow = NodePath("Rank2Yellow")
+rank_3_yellow = NodePath("Rank3Yellow")
+rank_4_yellow = NodePath("Rank4Yellow")
+line_blue = NodePath("LineBlue")
+rank_1_blue = NodePath("Rank1Blue")
+rank_2_blue = NodePath("Rank2Blue")
+rank_3_blue = NodePath("Rank3Blue")
+rank_4_blue = NodePath("Rank4Blue")
 
 [node name="Rank1Empty" type="Line2D" parent="."]
-points = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
+points = PackedVector2Array(40, 4, 22, 8, 8, 22, 4, 40, 8, 58, 22, 72, 40, 76, 58, 72, 72, 58, 76, 40, 72, 22, 58, 8)
 closed = true
-width = 1.0
+width = 7.0
 antialiased = true
 
 [node name="Rank2Empty" type="Line2D" parent="."]
 position = Vector2(100, 0)
-points = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
+points = PackedVector2Array(40, 4, 22, 8, 8, 22, 4, 40, 8, 58, 22, 72, 40, 76, 58, 72, 72, 58, 76, 40, 72, 22, 58, 8)
 closed = true
-width = 1.0
+width = 7.0
 antialiased = true
 
 [node name="Rank3Empty" type="Line2D" parent="."]
 position = Vector2(200, 0)
-points = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
+points = PackedVector2Array(40, 4, 22, 8, 8, 22, 4, 40, 8, 58, 22, 72, 40, 76, 58, 72, 72, 58, 76, 40, 72, 22, 58, 8)
 closed = true
-width = 1.0
+width = 7.0
 antialiased = true
 
 [node name="Rank4Empty" type="Line2D" parent="."]
 position = Vector2(300, 0)
-points = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
+points = PackedVector2Array(40, 4, 22, 8, 8, 22, 4, 40, 8, 58, 22, 72, 40, 76, 58, 72, 72, 58, 76, 40, 72, 22, 58, 8)
 closed = true
-width = 1.0
+width = 7.0
 antialiased = true
 
 [node name="LineYellow" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(40, 40, 140, 40, 240, 40, 340, 40)
 default_color = Color(0.6666667, 0.54901963, 0.27058825, 1)
 
 [node name="Rank1Yellow" type="Polygon2D" parent="."]
+visible = false
 color = Color(0.6666667, 0.54901963, 0.27058825, 1)
 antialiased = true
 polygon = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
 
 [node name="Rank2Yellow" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(100, 0)
 color = Color(0.6666667, 0.54901963, 0.27058825, 1)
 antialiased = true
 polygon = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
 
 [node name="Rank3Yellow" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(200, 0)
 color = Color(0.6666667, 0.54901963, 0.27058825, 1)
 antialiased = true
 polygon = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
 
 [node name="Rank4Yellow" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(300, 0)
 color = Color(0.6666667, 0.54901963, 0.27058825, 1)
 antialiased = true
 polygon = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
 
 [node name="LineBlue" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(40, 40, 140, 40, 240, 40, 340, 40)
 default_color = Color(0.16470589, 0.3882353, 0.5137255, 1)
 
 [node name="Rank1Blue" type="Polygon2D" parent="."]
+visible = false
 color = Color(0.16470589, 0.3882353, 0.5137255, 1)
 antialiased = true
 polygon = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
 
 [node name="Rank2Blue" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(100, 0)
 color = Color(0.16470589, 0.3882353, 0.5137255, 1)
 antialiased = true
 polygon = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
 
 [node name="Rank3Blue" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(200, 0)
 color = Color(0.16470589, 0.3882353, 0.5137255, 1)
 antialiased = true
 polygon = PackedVector2Array(40, 0, 20, 5, 5, 20, 0, 40, 5, 60, 20, 75, 40, 80, 60, 75, 75, 60, 80, 40, 75, 20, 60, 5)
 
 [node name="Rank4Blue" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(300, 0)
 color = Color(0.16470589, 0.3882353, 0.5137255, 1)
 antialiased = true

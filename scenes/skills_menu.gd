@@ -40,6 +40,13 @@ func _on_visibility_changed() -> void:
 					for j in Data.skills_textures[hero].skills.size():
 						var skill_draggable := SkillDraggable.create(hero_paths[i], j)
 						rank_grids[i].add_child(skill_draggable)
+						skill_draggable.info_requested.connect(
+								func(hero_path: HeroesPaths.Enum, skill_number: int):
+									if hero_path == HeroesPaths.Enum.NONE or skill_number == -1:
+										main_scene.notification_panel.hide()
+									else:
+										main_scene.notification_panel.show_skill(hero_path, skill_number)
+						)
 
 		else:
 			no_skills_label.show()

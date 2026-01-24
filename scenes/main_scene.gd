@@ -16,10 +16,11 @@ extends Control
 @export var saved_squads_menu: SavedSquadsMenu
 @export var notification_panel: NotificationPanel
 @export var popup_panel: MyPopupPanel
+@export var viewport: RankSubviewport
 
 
 func _ready() -> void:
-	assert(tab_bar and tab_container and split_container and popup_panel and bottom_box and skills_menu and notification_panel and popup_panel)
+	assert(tab_bar and tab_container and split_container and popup_panel and bottom_box and skills_menu and notification_panel and popup_panel and viewport)
 	for rank_box in rank_boxes.values():
 		assert(rank_box)
 	tab_bar.current_tab = 0
@@ -74,6 +75,13 @@ func _ready() -> void:
 		
 		for skill_draggable in rank_box.skills:
 			skill_draggable.skill_dropped.connect( func(): update_heroes_in_data() )
+			skill_draggable.info_requested.connect(
+					func(hero_path: HeroesPaths.Enum, skill_number: int):
+						if hero_path == HeroesPaths.Enum.NONE or skill_number == -1:
+							notification_panel.hide()
+						else:
+							notification_panel.show_skill(hero_path, skill_number)
+			)
 	
 	popup_panel.save_requested.connect(
 			func(squad_name: String):
@@ -90,7 +98,9 @@ func _ready() -> void:
 					tab_bar.current_tab = 2
 					tab_container.current_tab = 2
 	)
-
+	
+	Data.all_skills_comments.viewport = viewport
+	
 	if OS.has_feature("web") and Engine.has_singleton("JavaScriptBridge"):
 		var query := JavaScriptBridge.eval("window.location.search", true) as String
 		if query != null and not query.is_empty() and query.begins_with("?squad="):

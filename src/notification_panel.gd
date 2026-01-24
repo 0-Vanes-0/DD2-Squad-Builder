@@ -2,11 +2,11 @@ class_name NotificationPanel
 extends PanelContainer
 
 const DURATION_PER_CHARACTER := 0.1 # seconds
-@export var label: RichTextLabel
+@export var _label: RichTextLabel
 
 
 func _ready() -> void:
-	assert(label)
+	assert(_label)
 	self.hide()
 
 
@@ -16,23 +16,35 @@ func _process(_delta: float) -> void:
 
 
 func show_message(message: String, is_hover := false):
-	label.clear()
-	label.append_text(" " + message + " ")
+	_label.clear()
+	_label.append_text(" " + message + " ")
+	_show_panel(is_hover)
+
+
+func show_hero_path(hero_path: HeroesPaths.Enum):
+	_label.clear()
+	_label.push_bold()
+	_label.append_text(Data.all_paths_names.get_path_name(hero_path))
+	_label.pop()
+	_label.append_text("\n\n")
+	Data.all_props.append_path_comment(_label, hero_path, true)
+	_show_panel(true)
+
+
+func show_skill(hero_path: HeroesPaths.Enum, skill_number: int):
+	_label.clear()
+	await Data.all_skills_comments.assign_comments(_label, hero_path, skill_number)
+	_show_panel(true)
+
+
+func _show_panel(is_hover := false):
 	self.show()
 	
 	self.reset_size.call_deferred()
 	
 	if not is_hover: # is click
-		await get_tree().create_timer(DURATION_PER_CHARACTER * message.length()).timeout
+		await get_tree().create_timer(DURATION_PER_CHARACTER * _label.get_parsed_text().length()).timeout
 		self.hide()
-
-
-func show_hero_path(hero_path: HeroesPaths.Enum):
-	var path_name := Data.all_paths_names.get_path_name(hero_path)
-	var path_comment := Data.all_props.get_path_comment(hero_path, true)
-	var full_message := "[b]%s[/b]" % [path_name]
-	full_message += "\n\n" + path_comment if not path_comment.is_empty() else ""
-	show_message(full_message, true)
 
 
 func _update_position():
@@ -47,7 +59,7 @@ func _update_position():
 		pos_y = below_y
 	
 	# Horizontal: prefer right (or left if requested), flip if off-screen.
-	var right_x := mouse_pos.x
+	var right_x := mouse_pos.x + 20
 	var left_x := mouse_pos.x - size.x
 	var pos_x := right_x
 	

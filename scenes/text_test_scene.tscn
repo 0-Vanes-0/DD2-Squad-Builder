@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c170tp8fg0jx4"]
+[gd_scene load_steps=4 format=3 uid="uid://c170tp8fg0jx4"]
 
 [ext_resource type="Script" uid="uid://b8yuof5t25or3" path="res://scenes/text_test_scene.gd" id="1_617o5"]
-[ext_resource type="PackedScene" uid="uid://bolspn5dxqll0" path="res://scenes/rank_manager.tscn" id="2_0uadv"]
+[ext_resource type="PackedScene" uid="uid://bkex5nql87pu" path="res://scenes/rank_manager.tscn" id="2_0uadv"]
+[ext_resource type="Script" uid="uid://dlr5nftxd54fw" path="res://scenes/sub_viewport.gd" id="2_dx31h"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("label")]
+[node name="Control" type="Control" node_paths=PackedStringArray("label", "viewport")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,23 +12,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_617o5")
-label = NodePath("RichTextLabel")
+label = NodePath("ColorRect/MarginContainer/RichTextLabel")
+viewport = NodePath("SubViewport")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 360.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-fit_content = true
-
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." node_paths=PackedStringArray("rank_manager")]
 disable_3d = true
 transparent_bg = true
 size = Vector2i(380, 80)
 render_target_update_mode = 4
+script = ExtResource("2_dx31h")
+rank_manager = NodePath("RankManager")
 
 [node name="RankManager" parent="SubViewport" instance=ExtResource("2_0uadv")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="ScrollContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 640.0
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_following = true
+autowrap_mode = 0
+vertical_alignment = 1
+selection_enabled = true

@@ -1,23 +1,27 @@
 {
 	"<hero letter><path number>_<skill number>": {
 		"name": "<skill name>",
-		"type": "<skill type: 'melee', 'ranged', 'heal', 'stress' or '-'>",
+		"type": "<skill type: 'melee', 'ranged', 'heal', 'stress' OR '-'>",
 		"skill_ranks": "<ranks>",
-		"target_ranks": "<ranks and aoe symbol if needed OR just 'self'>",
-		"target_type": "<'hero' or 'enemy'>",
-		"cooldown": "<cooldown number or just '-'>",
-		"uses": "<uses number or just '-'>",
-		"skill_text": ["<all text of skill; if new line needed - write new string in this array>"],
-		"skill_u_text": ["<all text of upgraded skill; if new line needed - write new string in this array>"],
+		"target_ranks": "<ranks and aoe symbol '-' in the end if needed OR just 'self'>",
+		"target_type": "<'hero' OR 'ally' OR 'enemy'>",
+		"cooldown": "<cooldown number (and upgraded cooldown number in parenthesis if needed) OR just '-'>",
+		"uses": "<uses number OR just '-'>",
+		"skill_text": [
+			"<all text of skill; if new line needed - write new string after comma>",
+		],
+		"skill_u_text": [
+			"<all text of upgraded skill; if new line needed - write new string after comma>",
+		],
 	},
 	"template": {
 		"name": "",
-		"type": "",
+		"type": "-",
 		"skill_ranks": "1234",
 		"target_ranks": "1234-",
 		"target_type": "",
-		"cooldown": "",
-		"uses": "",
+		"cooldown": "-",
+		"uses": "-",
 		"skill_text": [
 			"DMG: ",
 			"CRIT: %",
@@ -32,7 +36,7 @@
 	"J3_4": {
 		"name": "Inspiring Tune",
 		"type": "stress",
-		"skills_ranks": "12",
+		"skill_ranks": "12",
 		"target_ranks": "1234-",
 		"target_type": "hero",
 		"cooldown": "2",
@@ -97,4 +101,39 @@
 			"Melee skills: $exe 2 (3 turns)",
 		],
 	},
+	"D0_6": {
+		"name": "Again",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "ally",
+		"cooldown": "5",
+		"uses": "2",
+		"skill_text": [
+			"Target: Clear Skills Cooldowns",
+			"Requires $agr",
+			"Remove $agr $def",
+		],
+		"skill_u_text": [
+			"Target: Clear Skills Cooldowns",
+			"Requires $agr or $def",
+		],
+	},
+	"C3_6": {
+		"name": "Battle Heal",
+		"type": "heal",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "hero",
+		"cooldown": "2(1)",
+		"uses": "4",
+		"skill_text": [
+			"Requires $hlh < 50%",
+			"Heal 20%",
+		],
+		"skill_u_text": [
+			"Requires $hlh < 50%",
+			"Heal 30%",
+		],
+	}
 }

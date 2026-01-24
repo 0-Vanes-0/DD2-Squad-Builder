@@ -19,9 +19,7 @@ static func create(props_json_string: String, path_comments_json_string: String)
 			all_props.properties.assign(data)
 	
 	assert(not all_props.properties.is_empty())
-	for key in all_props.properties.keys():
-		all_props.properties[key] = all_props.properties[key].replace(" ", NBSP)
-
+	
 	parse_result = json.parse(path_comments_json_string)
 	if parse_result != OK:
 		print("JSON Parse Error: ", json.get_error_message(), " in path_comments_json_string at line ", json.get_error_line())
@@ -39,51 +37,48 @@ static func create(props_json_string: String, path_comments_json_string: String)
 	return all_props
 
 
-func construct_text(tokens: Array[String], is_4rank: bool) -> String:
-	var sentence := ""
+func construct_text(in_label: RichTextLabel, tokens: Array[String], is_4rank: bool):
 	for token in tokens:
-		var texts := check_and_convert_texts_to_icons(properties[token], NBSP)
+		split_and_convert_texts_to_icons(in_label, properties[token])
 		if token in Data.RANKS_TOKENS:
-			if not is_4rank:
-				texts.remove_at(texts.size() - 1)
-				texts.remove_at(texts.size() - 1)
-				sentence += NBSP.join(texts)
-			else:
-				sentence += NBSP.join(texts) + tokens[1] # tokens[1] = "N heroes"
+			if is_4rank:
+				in_label.append_text(tokens[1]) # tokens[1] = " by N heroes"
 			break
-		else:
-			sentence += NBSP.join(texts)
-	
-	return sentence.strip_edges()
 
 
-func get_path_comment(hero_path: HeroesPaths.Enum, include_a := false) -> String:
-	var text := ""
+func append_path_comment(in_label: RichTextLabel, hero_path: HeroesPaths.Enum, include_a := false) -> bool:
 	var path_comment := path_comments.get(hero_path, PackedStringArray()) as PackedStringArray
-	for comment in path_comment:
-		var splitted_comment := check_and_convert_texts_to_icons(comment, " ", include_a)
-		if not splitted_comment.is_empty():
-			text += NBSP.join(splitted_comment) + "\n"
-	return text
+	if not path_comment.is_empty():
+		for comment in path_comment:
+			split_and_convert_texts_to_icons(in_label, comment, include_a)
+			
+		in_label.append_text("\n")
+	
+	return not path_comment.is_empty()
 
 
-static func check_and_convert_texts_to_icons(line: String, splitter: String, include_a := false) -> PackedStringArray:
-	var texts := line.split(splitter)
+static func split_and_convert_texts_to_icons(in_label: RichTextLabel, line: String, include_a := false):
+	var texts := line.split(" ")
 	if line.begins_with("@"):
 		if include_a:
-			texts[0] = "Wanderer diff:"
+			in_label.append_text("Wanderer diff:")
 			for i in range(1, texts.size()):
 				var hero := texts[i].substr(1, 1)
 				var skill := int(texts[i].substr(2))
-				texts[i] = "[img=50x50]" + Data.skills_textures[hero].skills[skill].resource_path + "[/img]"
-		else:
-			texts = PackedStringArray()
+				in_label.add_image(Data.skills_textures[hero].skills[skill], 50, 50)
 	else:
 		for i in texts.size():
 			if texts[i].begins_with("$"):
-				texts[i] = "[img]" + Data.all_icons.get_texture_path(texts[i]) + "[/img]"
+				var texture := Data.all_icons.get_texture(texts[i]) as Texture2D
+				if texture != null:
+					in_label.add_image(texture)
 			elif texts[i].begins_with("#"):
 				var hero := texts[i].substr(1, 1)
 				var skill := int(texts[i].substr(2))
-				texts[i] = "[img=50x50]" + Data.skills_textures[hero].skills[skill].resource_path + "[/img]"
-	return texts
+				in_label.add_image(Data.skills_textures[hero].skills[skill], 50, 50)
+			else:
+				texts[i] = texts[i].replace(" ", NBSP)
+				in_label.append_text(texts[i])
+				if i+1 < texts.size() and not texts[i+1].begins_with("#"):
+					in_label.append_text(NBSP)
+			
