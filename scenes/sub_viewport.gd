@@ -1,7 +1,7 @@
 class_name RankSubviewport
 extends SubViewport
 
-const SIZE := Vector2(380, 80)
+const SIZE := Vector2i(380, 80)
 const IN_TEXT_SIZE := SIZE / 4
 
 @export_group("Required Children")

@@ -32,30 +32,41 @@ func assign_comments(in_label: RichTextLabel, hero_path: HeroesPaths.Enum, skill
 		"heal": Data.all_icons.get_texture("$thl"),
 		"stress": Data.all_icons.get_texture("$tst"),
 	}
+
+	var default_hero_path_skill := HeroesPaths.to_text(HeroesPaths.get_default(hero_path)) + "_" + str(skill_number)
+	var default_skill_data := dict[default_hero_path_skill]
 	var key := "%s_%d" % [HeroesPaths.to_text(hero_path), skill_number]
-	var skill_data := dict.get(key, {}) as Dictionary
+	var skill_data := dict.get(key, default_skill_data) as Dictionary
 	if not skill_data.is_empty():
+		in_label.push_font_size(32)
 		var image := Data.get_skill_texture(hero_path, skill_number) as Texture2D
 		in_label.add_image(image, 100, 100)
-		in_label.append_text("[font_size=32]%s[/font_size]\n" % skill_data["name"])
+		in_label.append_text("%s\n" % skill_data["name"])
+		in_label.pop()
 
 		if skill_data["type"] != "-":
 			in_label.append_text("                    ")
-			in_label.add_image(skill_types_icons[skill_data["type"]])
+			var type := skill_data["type"] as String
+			in_label.add_image(skill_types_icons[type.to_lower()])
 			in_label.append_text(" %s\n" % (skill_data["type"] as String).to_pascal_case())
 
 		var self_ranks := await viewport.get_image(skill_data["skill_ranks"], true)
 		in_label.add_image(self_ranks, RankSubviewport.IN_TEXT_SIZE.x, RankSubviewport.IN_TEXT_SIZE.y)
-		in_label.append_text("  [font_size=32]→[/font_size]  ")
+		in_label.push_font_size(32)
+		in_label.append_text("  →  ")
+		in_label.pop()
 		if skill_data["target_ranks"] == "self":
 			in_label.append_text("Self")
 		else:
-			var target_ranks := await viewport.get_image(skill_data["target_ranks"], skill_data["target_type"] != "enemy")
+			var is_hero: bool = skill_data["target_type"] in ["hero", "ally"]
+			var target_ranks := await viewport.get_image(skill_data["target_ranks"], is_hero)
 			in_label.add_image(target_ranks, RankSubviewport.IN_TEXT_SIZE.x, RankSubviewport.IN_TEXT_SIZE.y)
 			if skill_data["target_type"] == "ally":
 				in_label.append_text(" (not Self)")
+			elif skill_data["target_type"] == "corpse":
+				in_label.append_text(" (Corpse)")
 		
-		in_label.append_text("\n")
+		in_label.newline()
 
 		if skill_data["cooldown"] != "-":
 			var cooldown := skill_data["cooldown"] as String

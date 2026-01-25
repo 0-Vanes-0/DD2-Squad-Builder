@@ -51,8 +51,9 @@ func append_path_comment(in_label: RichTextLabel, hero_path: HeroesPaths.Enum, i
 	if not path_comment.is_empty():
 		for comment in path_comment:
 			split_and_convert_texts_to_icons(in_label, comment, include_a)
+			in_label.newline()
 			
-		in_label.append_text("\n")
+		in_label.newline()
 	
 	return not path_comment.is_empty()
 
@@ -79,6 +80,6 @@ static func split_and_convert_texts_to_icons(in_label: RichTextLabel, line: Stri
 			else:
 				texts[i] = texts[i].replace(" ", NBSP)
 				in_label.append_text(texts[i])
-				if i+1 < texts.size() and not texts[i+1].begins_with("#"):
+				if i+1 < texts.size() and not (texts[i+1].begins_with("#") or texts[i+1].begins_with("$")):
 					in_label.append_text(NBSP)
 			

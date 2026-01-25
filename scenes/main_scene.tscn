@@ -819,8 +819,8 @@ text = "  OK  "
 
 [node name="NotificationPanel" type="PanelContainer" parent="." node_paths=PackedStringArray("_label")]
 layout_mode = 1
-offset_top = -29.0
-offset_right = 75.0
+offset_top = -44.0
+offset_right = 78.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_adb74")
 script = ExtResource("8_18nlu")
@@ -828,14 +828,16 @@ _label = NodePath("MarginContainer/Label")
 
 [node name="MarginContainer" type="MarginContainer" parent="NotificationPanel"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
 
 [node name="Label" type="RichTextLabel" parent="NotificationPanel/MarginContainer"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 bbcode_enabled = true
-text = "  Copied!  "
+text = "Copied!"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0

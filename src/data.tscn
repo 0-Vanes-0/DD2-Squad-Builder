@@ -1,4 +1,4 @@
-[gd_scene load_steps=466 format=3 uid="uid://3qfhtjnxlhvg"]
+[gd_scene load_steps=468 format=3 uid="uid://3qfhtjnxlhvg"]
 
 [ext_resource type="Script" uid="uid://cxg75tgd2xc4b" path="res://src/data.gd" id="1_40iss"]
 [ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="2_en3sy"]
@@ -233,6 +233,7 @@
 [ext_resource type="Texture2D" uid="uid://d2dhb4if16ty4" path="res://assets/icons/Dd2_antistress_icon.png" id="213_ugfbu"]
 [ext_resource type="Texture2D" uid="uid://c5pn8yxnp637g" path="res://assets/icons/Dd2_mastery_icon.png" id="214_0m3og"]
 [ext_resource type="Resource" uid="uid://dbvmh7yrqh1gw" path="res://resources/skills_props/skills_B0.tres" id="214_t30pe"]
+[ext_resource type="Texture2D" uid="uid://djg2fl3wuqq2t" path="res://assets/icons/Disease_dd2.png" id="215_kogbc"]
 
 [sub_resource type="Resource" id="Resource_4vye1"]
 script = ExtResource("2_xxa4v")
@@ -360,13 +361,19 @@ dict = Dictionary[int, Texture2D]({
 41: ExtResource("211_0m3og"),
 42: ExtResource("212_kogbc"),
 43: ExtResource("213_ugfbu"),
-44: ExtResource("214_0m3og")
+44: ExtResource("214_0m3og"),
+45: ExtResource("215_kogbc")
 })
 metadata/_custom_type_script = "uid://4v2ties4ofdd"
 
 [sub_resource type="Resource" id="Resource_1g4ai"]
 script = ExtResource("194_0w4dv")
 properties = Array[String](["apply_dot bleed", "consume_enemy combo"])
+metadata/_custom_type_script = "uid://bpw62k00huy6s"
+
+[sub_resource type="Resource" id="Resource_1ixjn"]
+script = ExtResource("194_0w4dv")
+properties = Array[String](["heal", "remove_dot blight bleed burn"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2jlsy"]
@@ -395,7 +402,7 @@ info = Dictionary[int, ExtResource("194_0w4dv")]({
 0: null,
 1: null,
 2: SubResource("Resource_1g4ai"),
-3: null,
+3: SubResource("Resource_1ixjn"),
 4: SubResource("Resource_2jlsy"),
 5: null,
 6: SubResource("Resource_bfk0e"),

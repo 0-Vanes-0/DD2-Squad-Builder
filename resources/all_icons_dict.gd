@@ -10,6 +10,7 @@ enum Types {
 	WINDED, RUINING, RUIN, POWER, CONVICTION, CONSECRATION, TOXIC, AGGRESIVE, DEFENSIVE,
 	FAST,
 	SMALL_MELEE, SMALL_RANGED, SMALL_HEAL, SMALL_ANTISTRESS, UPGRADE,
+	DISEASE,
 }
 
 const ICON_TYPE: Dictionary[StringName, Types] = {
@@ -46,6 +47,7 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$hlh": Types.HEAL,
 	&"$exe": Types.EXECUTE,
 	&"$dth": Types.DEATHSDOOR,
+	&"$dss": Types.DISEASE,
 	
 	&"$wnd": Types.WINDED,
 	&"$rnn": Types.RUINING,
