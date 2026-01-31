@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkex5nql87pu"]
+[gd_scene format=3 uid="uid://bkex5nql87pu"]
 
 [ext_resource type="Script" uid="uid://fsxrmfbb2gfd" path="res://scenes/rank_manager.gd" id="1_jvpm7"]
 

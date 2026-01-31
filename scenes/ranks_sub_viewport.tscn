@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckcb3pjocibly"]
+[gd_scene format=3 uid="uid://ckcb3pjocibly"]
 
 [ext_resource type="PackedScene" uid="uid://bkex5nql87pu" path="res://scenes/rank_manager.tscn" id="1_amk2y"]
 [ext_resource type="Script" uid="uid://dlr5nftxd54fw" path="res://scenes/sub_viewport.gd" id="1_ujmm6"]
