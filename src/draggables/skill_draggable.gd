@@ -1,7 +1,8 @@
 class_name SkillDraggable
-extends TextureRect
+extends HoverableTextureRect
 
 signal skill_dropped
+signal info_requested(hero_path: HeroesPaths.Enum, skill_number: int)
 
 @export var is_slot := false
 var hero_path_assigned: HeroesPaths.Enum = HeroesPaths.Enum.NONE
@@ -21,6 +22,14 @@ static func create(hero_path: HeroesPaths.Enum, skill_number: int) -> SkillDragg
 func _ready() -> void:
 	if not is_slot:
 		is_unique = func() -> bool: return true
+	
+	self.hovered.connect(
+			func(is_hovered: bool):
+				if is_hovered:
+					info_requested.emit(hero_path_assigned, skill_number)
+				else:
+					info_requested.emit(HeroesPaths.Enum.NONE, -1)
+	)
 
 
 func _get_drag_data(_at_position: Vector2) -> Variant:

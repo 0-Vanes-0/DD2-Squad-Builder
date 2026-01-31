@@ -12,14 +12,13 @@ const FIRST_WORDS := [
 	"clear", "heal", "calm", "execute", "extra", "aoe", "invert_hero", "invert_enemy", "cooldown",
 	"selfdmg", "stack",
 ]
-var tokens_map := {}
 
 @export var does_belong_to_hero := false
 
 
 func update_skills_props(ranks: Array[String] = ["1", "2", "3", "4"]):
 	self.clear()
-	tokens_map.clear()
+	var tokens_map := {}
 	
 	for rank in ranks:
 		var rank_flags: Dictionary[String, bool] = {}
@@ -40,17 +39,22 @@ func update_skills_props(ranks: Array[String] = ["1", "2", "3", "4"]):
 					else:
 						if words.size() == 1:
 							if not rank_flags.has(words[0]):
-								_add_to_tokens_map(words[0])
+								_add_to_tokens_map(tokens_map, words[0])
 							elif rank_flags[words[0]] == false:
 								rank_flags[words[0]] = true
-								_add_to_tokens_map(words[0], ["-"])
+								_add_to_tokens_map(tokens_map, words[0], ["-"])
 						else:
-							_add_to_tokens_map(words[0], words.slice(1))
+							_add_to_tokens_map(tokens_map, words[0], words.slice(1))
 	
 	var is_4ranks := ranks.size() == 4
 
+	var has_text := false
+	self.push_paragraph(HORIZONTAL_ALIGNMENT_CENTER) # [center]
+	if not is_4ranks:
+		var label_rank := ranks[0]
+		has_text = Data.all_props.append_path_comment(self, Data.current_squad[label_rank]["hero_path"])
+	
 	var sorted_tokens_map := _get_sorted_tokens_map(tokens_map)
-	var full_text := ""
 	var empty := [""]
 	for first_word in sorted_tokens_map.keys():
 		var tokens: Array[String]
@@ -58,33 +62,22 @@ func update_skills_props(ranks: Array[String] = ["1", "2", "3", "4"]):
 			if is_4ranks:
 				var amount := sorted_tokens_map[first_word].size() as int
 				var heroes := NBSP + "heroes" if amount > 1 else NBSP + "hero"
-				tokens.assign([str(amount) + heroes])
+				tokens.assign([NBSP + "by" + NBSP + str(amount) + heroes])
 		elif sorted_tokens_map[first_word][0] != empty[0]:
 			tokens.assign(sorted_tokens_map[first_word])
 		
 		tokens.push_front(first_word)
-		full_text += Data.all_props.construct_text(tokens, is_4ranks)
-		full_text += ". " if is_4ranks else "\n"
+		Data.all_props.construct_text(self, tokens, is_4ranks)
+		self.append_text(". " if is_4ranks else "\n")
+		has_text = true
 	
+	if not has_text:
+		self.append_text("No info yet.")
 	
-	self.append_text("[center]")
-	
-	var has_comment := false
-	if not is_4ranks:
-		var label_rank := ranks[0]
-		var path_comment := Data.all_props.get_path_comment(Data.current_squad[label_rank]["hero_path"])
-		if not path_comment.is_empty():
-			has_comment = true
-			self.append_text(path_comment)
-	
-	if full_text.is_empty() and not has_comment:
-		full_text = "No squad info yet." if is_4ranks else "No hero info yet."
-	
-	self.append_text(full_text.strip_edges())
-	self.append_text("[/center]")
+	self.pop() # [/center]
 
 
-func _add_to_tokens_map(first_word: String, args := [""]):
+func _add_to_tokens_map(tokens_map: Dictionary, first_word: String, args := [""]):
 	if not tokens_map.has(first_word):
 		tokens_map[first_word] = []
 	
@@ -93,6 +86,7 @@ func _add_to_tokens_map(first_word: String, args := [""]):
 			tokens_map[first_word].append(word)
 
 
+## Returns [param dict] sorted in order of [member FIRST_WORDS].
 func _get_sorted_tokens_map(dict: Dictionary) -> Dictionary:
 	var sorted_tokens_map := {}
 	for word in FIRST_WORDS:

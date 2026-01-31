@@ -29,13 +29,17 @@ static func from_text(text: String) -> Enum:
 	return Enum.values()[index]
 
 
-static func to_text(hero_path: HeroesPaths.Enum) -> String:
-	return HeroesPaths.Enum.keys()[hero_path] as String
+static func to_text(hero_path: Enum) -> String:
+	return Enum.keys()[hero_path] as String
 
 
-static func to_hero(hero_path: HeroesPaths.Enum) -> String:
+static func to_hero(hero_path: Enum) -> String:
 	return to_text(hero_path).substr(0, 1)
 
 
-static func is_abomination(hero_path: HeroesPaths.Enum) -> bool:
+static func is_abomination(hero_path: Enum) -> bool:
 	return to_hero(hero_path) == "A"
+
+
+static func get_default(hero_path: Enum) -> Enum:
+	return Enum[to_hero(hero_path) + "0"]

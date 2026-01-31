@@ -10,7 +10,7 @@
 	"steal_hero": "Stealing from heroes: ",
 	"steal_enemy": "Stealing from enemies: ",
 	"ignore": "Ignoring: ",
-	
+
 	"convert_from_bleed": "Converting $bld to damage",
 	"convert_from_blight": "Converting $blt to damage",
 	"convert_from_burn": "Converting $brn to damage",
@@ -21,15 +21,15 @@
 	"invert_hero": "Inverting $neg tokens on hero",
 	"invert_enemy": "Inverting $pos tokens on enemy",
 	"cooldown": "Clearing skills cooldown",
-	
-	"move_forw": "Forward by ",
-	"move_back": "Back by ",
-	"heal": "Healing $hlh by ",
-	"calm": "Healing $sts by ",
-	"execute": "$exe by ",
-	"aoe": "AoE by ",
-	"selfdmg": "Damaging self by ",
-	"stack": "Stacking +DMG by ",
+
+	"move_forw": "Forward",
+	"move_back": "Back",
+	"heal": "Healing $hlh",
+	"calm": "Healing $sts",
+	"execute": "$exe",
+	"aoe": "AoE",
+	"selfdmg": "Damaging self",
+	"stack": "Stacking +DMG",
 
 	"blight": "$blt",
 	"bleed": "$bld",
@@ -44,6 +44,7 @@
 	"stealth": "$stl",
 	"strength": "$str",
 	"crit": "$crt",
+	"fast": "$fst",
 	"positive": "$pos",
 
 	"blind": "$bln",
@@ -63,14 +64,23 @@
 	"health": "$hlh",
 	"execution": "$exe",
 	"door": "$dth",
-
+	"horror": "$hrr",
+	
 	"winded": "$wnd",
 	"ruining": "$rnn",
 	"ruin": "$rui",
 	"power": "$pow",
 	"conv": "$cnv",
 	"cons": "$cns",
+	"Fortitude": "$cof",
+	"Fortitude+": "$cof+",
+	"Light": "$col",
+	"Light+": "$col+",
 	"toxic": "$tox",
 	"agr": "$agr",
-	"def": "$def"
+	"def": "$def",
+	"controlled_burn": "$cbn",
+	"controlled_burn_u": "$cbn+",
+	"pain": "$fpn",
+	"pain_u": "$fpn+"
 }

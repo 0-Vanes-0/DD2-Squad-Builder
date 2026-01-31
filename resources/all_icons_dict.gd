@@ -8,6 +8,11 @@ enum Types {
 	BLIND, DAZE, STUN, TAUNT, VULN, WEAK, IMMOBILIZE, NEGATIVE,
 	COMBO, MOVE, REGEN, STRESS, SPEED, HEAL, EXECUTE, DEATHSDOOR,
 	WINDED, RUINING, RUIN, POWER, CONVICTION, CONSECRATION, TOXIC, AGGRESIVE, DEFENSIVE,
+	FAST,
+	SMALL_MELEE, SMALL_RANGED, SMALL_HEAL, SMALL_ANTISTRESS, UPGRADE,
+	DISEASE, HORROR,
+	FORTITUDE, FORTITUDE_PLUS, LIGHT, LIGHT_PLUS,
+	CONTROLLED_BURN, CONTROLLED_BURN_PLUS, PAIN, PAIN_PLUS, RUIN_PLUS,
 }
 
 const ICON_TYPE: Dictionary[StringName, Types] = {
@@ -24,6 +29,7 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$stl": Types.STEALTH,
 	&"$str": Types.STRENGTH,
 	&"$crt": Types.CRIT,
+	&"$fst": Types.FAST,
 	&"$pos": Types.POSITIVE,
 	
 	&"$bln": Types.BLIND,
@@ -43,24 +49,42 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$hlh": Types.HEAL,
 	&"$exe": Types.EXECUTE,
 	&"$dth": Types.DEATHSDOOR,
+	&"$dss": Types.DISEASE,
+	&"$hrr": Types.HORROR,
 	
 	&"$wnd": Types.WINDED,
 	&"$rnn": Types.RUINING,
 	&"$rui": Types.RUIN,
+	&"$rui+": Types.RUIN_PLUS,
 	&"$pow": Types.POWER,
 	&"$cnv": Types.CONVICTION,
 	&"$cns": Types.CONSECRATION,
 	&"$tox": Types.TOXIC,
 	&"$agr": Types.AGGRESIVE,
 	&"$def": Types.DEFENSIVE,
+	&"$cof": Types.FORTITUDE,
+	&"$cof+": Types.FORTITUDE_PLUS,
+	&"$col": Types.LIGHT,
+	&"$col+": Types.LIGHT_PLUS,
+	&"$fpn": Types.PAIN,
+	&"$fpn+": Types.PAIN_PLUS,
+	&"$cbn": Types.CONTROLLED_BURN,
+	&"$cbn+": Types.CONTROLLED_BURN_PLUS,
+
+	&"$tml": Types.SMALL_MELEE,
+	&"$trg": Types.SMALL_RANGED,
+	&"$thl": Types.SMALL_HEAL,
+	&"$tst": Types.SMALL_ANTISTRESS,
+
+	&"$upg": Types.UPGRADE,
 }
 
 @export var dict: Dictionary[Types, Texture2D]
 
 
-func get_texture_path(icon_name: String) -> String:
+func get_texture(icon_name: String) -> Texture2D:
 	var type := ICON_TYPE[icon_name]
 	var texture := dict[type]
 	if texture != null:
-		return texture.resource_path
-	return ""
+		return texture
+	return null

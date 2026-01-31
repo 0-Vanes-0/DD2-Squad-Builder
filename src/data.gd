@@ -85,6 +85,7 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 @export_file_path("*.json") var all_props_file_path: String
 @export_file_path("*.json") var all_paths_names_file_path: String
 @export_file_path("*.json") var all_paths_comments_file_path: String
+@export_file_path("*.json") var all_skills_comments_file_path: String
 @export var all_icons: AllIconsDictionary
 @export var all_heroes_skills_properties: AllHeroesSkillsPropertiesDictionary
 const RANKS_TOKENS: Array[String] = ["heal", "calm", "execute", "move_forw", "move_back", "aoe", "selfdmg", "stack"]
@@ -115,6 +116,7 @@ var DEFAULT_SETTINGS := {
 var is_dragging := false
 var all_props: AllPropertiesDictionary
 var all_paths_names: AllPathsNamesDictionary
+var all_skills_comments: AllSkillsCommentsDictionary
 
 
 func _ready() -> void:
@@ -147,6 +149,14 @@ func _ready() -> void:
 	all_paths_names_file.close()
 
 	all_paths_names = AllPathsNamesDictionary.create(all_paths_names_text)
+
+	var all_skills_comments_file := FileAccess.open(all_skills_comments_file_path, FileAccess.READ)
+	error = FileAccess.get_open_error()
+	assert(error == OK, "Error upon reading all_skills_comments file!")
+	var all_skills_comments_text := all_skills_comments_file.get_as_text()
+	all_skills_comments_file.close()
+
+	all_skills_comments = AllSkillsCommentsDictionary.create(all_skills_comments_text)
 
 
 func get_skill_texture(hero_path: HeroesPaths.Enum, skill_number: int) -> Texture2D:
