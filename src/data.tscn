@@ -1,4 +1,4 @@
-[gd_scene load_steps=468 format=3 uid="uid://3qfhtjnxlhvg"]
+[gd_scene format=3 uid="uid://3qfhtjnxlhvg"]
 
 [ext_resource type="Script" uid="uid://cxg75tgd2xc4b" path="res://src/data.gd" id="1_40iss"]
 [ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="2_en3sy"]
@@ -207,6 +207,7 @@
 [ext_resource type="Texture2D" uid="uid://06etif2tr5h7" path="res://assets/icons/Dd2_token_winded.png" id="200_bfk0e"]
 [ext_resource type="Resource" uid="uid://s3p83cnlxtl" path="res://resources/skills_props/skills_G0.tres" id="201_3scyv"]
 [ext_resource type="Texture2D" uid="uid://c8d0t8xaxe5rx" path="res://assets/icons/Dd2_token_lep_ruination.png" id="201_itvf4"]
+[ext_resource type="Texture2D" uid="uid://bww3gtss74ymh" path="res://assets/icons/Dd2_token_lep_ruin_has_come.png" id="202_4edd1"]
 [ext_resource type="Resource" uid="uid://ctdnrsowiktyh" path="res://resources/skills_props/skills_W0.tres" id="202_a7cu5"]
 [ext_resource type="Texture2D" uid="uid://dbbubj4hpjsqw" path="res://assets/icons/Dd2_token_lep_ruin_has_come_u.png" id="202_bd00x"]
 [ext_resource type="Texture2D" uid="uid://bf7hlc2np50qu" path="res://assets/icons/Dd2_token_uncheckedpower.png" id="203_bd00x"]
@@ -234,6 +235,15 @@
 [ext_resource type="Texture2D" uid="uid://c5pn8yxnp637g" path="res://assets/icons/Dd2_mastery_icon.png" id="214_0m3og"]
 [ext_resource type="Resource" uid="uid://dbvmh7yrqh1gw" path="res://resources/skills_props/skills_B0.tres" id="214_t30pe"]
 [ext_resource type="Texture2D" uid="uid://djg2fl3wuqq2t" path="res://assets/icons/Disease_dd2.png" id="215_kogbc"]
+[ext_resource type="Texture2D" uid="uid://cfi86h3mhwf0u" path="res://assets/icons/Dd2_token_horror.png" id="216_rccxq"]
+[ext_resource type="Texture2D" uid="uid://b4bonkn261hry" path="res://assets/icons/Token_blessing_of_fortitude.png" id="217_4edd1"]
+[ext_resource type="Texture2D" uid="uid://cj77bdn0lyoof" path="res://assets/icons/Token_blessing_of_fortitude_u.png" id="218_k3bar"]
+[ext_resource type="Texture2D" uid="uid://l1ubiqk5nxah" path="res://assets/icons/Token_blessing_of_light.png" id="219_mwgie"]
+[ext_resource type="Texture2D" uid="uid://c8f5h3lnhmxv6" path="res://assets/icons/Token_blessing_of_light_u.png" id="220_30fdh"]
+[ext_resource type="Texture2D" uid="uid://d1cjepl1lvrqi" path="res://assets/icons/Token_controlled_burn.png" id="221_tso35"]
+[ext_resource type="Texture2D" uid="uid://chnpqduu2b3pi" path="res://assets/icons/Token_controlled_burn_u.png" id="222_xwd6v"]
+[ext_resource type="Texture2D" uid="uid://ctf3g5uk03g5" path="res://assets/icons/Token_pain_heal.png" id="223_jcqda"]
+[ext_resource type="Texture2D" uid="uid://ycbfhs5nxv2w" path="res://assets/icons/Token_flagellant_pain_heal_u.png" id="224_6m7ap"]
 
 [sub_resource type="Resource" id="Resource_4vye1"]
 script = ExtResource("2_xxa4v")
@@ -349,7 +359,7 @@ dict = Dictionary[int, Texture2D]({
 29: ExtResource("199_w3bmc"),
 30: ExtResource("200_bfk0e"),
 31: ExtResource("201_itvf4"),
-32: ExtResource("202_bd00x"),
+32: ExtResource("202_4edd1"),
 33: ExtResource("203_bd00x"),
 34: ExtResource("204_xousx"),
 35: ExtResource("205_vtfoi"),
@@ -362,7 +372,17 @@ dict = Dictionary[int, Texture2D]({
 42: ExtResource("212_kogbc"),
 43: ExtResource("213_ugfbu"),
 44: ExtResource("214_0m3og"),
-45: ExtResource("215_kogbc")
+45: ExtResource("215_kogbc"),
+46: ExtResource("216_rccxq"),
+47: ExtResource("217_4edd1"),
+48: ExtResource("218_k3bar"),
+49: ExtResource("219_mwgie"),
+50: ExtResource("220_30fdh"),
+51: ExtResource("221_tso35"),
+52: ExtResource("222_xwd6v"),
+53: ExtResource("223_jcqda"),
+54: ExtResource("224_6m7ap"),
+55: ExtResource("202_bd00x")
 })
 metadata/_custom_type_script = "uid://4v2ties4ofdd"
 
@@ -2008,7 +2028,7 @@ properties = Dictionary[int, ExtResource("193_0vg06")]({
 })
 metadata/_custom_type_script = "uid://begm6aieeipkh"
 
-[node name="Data" type="Node"]
+[node name="Data" type="Node" unique_id=1750906677]
 script = ExtResource("1_40iss")
 skills_textures = Dictionary[String, ExtResource("2_xxa4v")]({
 "-": SubResource("Resource_4vye1"),

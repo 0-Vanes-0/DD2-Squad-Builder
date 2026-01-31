@@ -43,13 +43,13 @@
 		  "DMG: 2-3",
 		  "CRIT: 5%",
 		  "$blt 4",
-		  "When Target  $cmb : +30% $blt RES Piercing"
+		  "+30% $blt RES Piercing When Target  $cmb"
 		],
 		"skill_u_text": [
 		  "DMG: 3-4",
 		  "CRIT: 10%",
 		  "$blt 5",
-		  "When Target  $cmb : +30% $blt RES Piercing, +1 $blt Duration Dealt"
+		  "+30% $blt RES Piercing and +1 $blt DUR Dealt When Target  $cmb"
 		]
 	  },
 	  "P0_1": {
@@ -84,13 +84,13 @@
 		"skill_text": [
 		  "DMG: 3-6",
 		  "CRIT: 10%",
-		  "When Target  $cmb : +30% $blt RES Piercing",
+		  "+30% $bld RES Piercing When Target  $cmb",
 		  "$bld 3"
 		],
 		"skill_u_text": [
 		  "DMG: 4-7",
 		  "CRIT: 15%",
-		  "When Target  $cmb : +30% $blt RES Piercing, +1 $blt Duration Dealt",
+		  "+30% $bld RES Piercing and +1 $bld DUR Dealt When Target  $cmb",
 		  "$bld 4"
 		]
 	  },
@@ -158,12 +158,12 @@
 		"cooldown": "1",
 		"uses": "-",
 		"skill_text": [
-		  "Remove $dze",
+		  "Remove  $dze",
 		  "$str x2"
 		],
 		"skill_u_text": [
-		  "Remove $dze , $stn",
-		  "$str x2 $fst"
+		  "Remove  $dze , $stn",
+		  "$str x2  $fst"
 		]
 	  },
 	  "P0_7": {
@@ -176,16 +176,16 @@
 		"uses": "-",
 		"skill_text": [
 		  "CRIT: 5%",
-		  "Ignores $grd",
+		  "Ignores  $grd",
 		  "$mve Shuffle, $dze",
-		  "Remove $grd"
+		  "Remove  $grd"
 		],
 		"skill_u_text": [
 		  "CRIT: 15%",
-		  "Target: Ignores $grd",
+		  "Target: Ignores  $grd",
 		  "$mve Shuffle, $dze , $vvk",
-		  "Remove $grd",
-		  "$stn When Target $cmb"
+		  "Remove  $grd",
+		  "$stn When Target  $cmb"
 		]
 	  },
 	  "P0_8": {
@@ -209,7 +209,7 @@
 	  },
 	  "P0_9": {
 		"name": "Cause of Death",
-		"type": "ranged",
+		"type": "-",
 		"skill_ranks": "123",
 		"target_ranks": "123",
 		"target_type": "enemy",
@@ -259,15 +259,15 @@
 		  "DMG: 3-6",
 		  "CRIT: 10%",
 		  "$bld 2",
-		  "When  $cmb : +30% $bld RES Piercing",
-		  "Self: When Target  $cmb : $pos (1 Battle): +1 $bld Dealt"
+		  "+30% $bld RES Piercing When Target  $cmb",
+		  "When Target  $cmb : Self:  $pos (1 Battle): +1 $bld Dealt"
 		],
 		"skill_u_text": [
 		  "DMG: 4-7",
 		  "CRIT: 15%",
 		  "$bld 3",
-		  "When  $cmb : +30% $bld RES Piercing",
-		  "Self: When Target  $cmb :  $pos (1 Battle): +1 $bld $brn Dealt"
+		  "+30% $bld RES Piercing When Target  $cmb",
+		  "When Target  $cmb : Self:  $pos (1 Battle): +1 $bld Dealt"
 		]
 	  },
 	  "P1_3": {
@@ -280,7 +280,7 @@
 		"uses": "3",
 		"skill_text": [
 		  "Heal  $hlh 20% when Target  $hlh  is below 50%",
-		  "Remove $blt $bld $brn"
+		  "Remove  $blt $bld $brn"
 		],
 		"skill_u_text": [
 		  "+25% Healed when Target $bld",
@@ -320,11 +320,11 @@
 		"cooldown": "1",
 		"uses": "-",
 		"skill_text": [
-		  "$str , $blk"
+		  "$str $blk"
 		],
 		"skill_u_text": [
-		  "$str , $blk",
-		  "Self: $str , $blk"
+		  "$str $blk",
+		  "Self:  $str $blk"
 		]
 	  },
 	  "P1_7": {
@@ -339,19 +339,19 @@
 		  "DMG: 1-3",
 		  "CRIT: 5%",
 		  "$mve Knockback 1, $dze",
-		  "Self: $blk"
+		  "Self:  $blk"
 		],
 		"skill_u_text": [
 		  "DMG: 2-5",
 		  "CRIT: 10%",
 		  "$mve Knockback 2, $dze",
-		  "Apply on CRIT: $imm",
-		  "Self: $blk"
+		  "Apply on CRIT:  $imm",
+		  "Self:  $blk"
 		]
 	  },
 	  "P1_9": {
 		"name": "Cause of Death",
-		"type": "ranged",
+		"type": "-",
 		"skill_ranks": "12",
 		"target_ranks": "123",
 		"target_type": "enemy",
@@ -381,7 +381,7 @@
 		  "CRIT: 20%",
 		  "$blt 6",
 		  "When Target $bld : +20% $blt RES Piercing",
-		  "When Target $brn : +1 $blt Duration Dealt"
+		  "When Target $brn : +1 $blt DUR Dealt"
 		]
 	  },
 	  "P2_5": {
@@ -400,7 +400,7 @@
 		  "CRIT: 15%",
 		  "$blt 5",
 		  "When Target $bld : +20% $blt RES Piercing",
-		  "When Target $brn : +1 $blt Duration Dealt"
+		  "When Target $brn : +1 $blt DUR Dealt"
 		]
 	  },
 	  "P2_7": {
@@ -424,7 +424,7 @@
 	  },
 	  "P2_9": {
 		"name": "Cause of Death",
-		"type": "ranged",
+		"type": "-",
 		"skill_ranks": "123",
 		"target_ranks": "123",
 		"target_type": "enemy",
@@ -433,15 +433,15 @@
 		"skill_text": [
 		  "DMG: 5-8",
 		  "CRIT: 10%",
-		  "Ignores $blk when Target $blt",
+		  "Ignores  $blk when Target $blt",
 		  "+2 DMG Dealt when Target $bld",
 		  "+10% CRIT when Target $brn"
 		],
 		"skill_u_text": [
 		  "DMG: 5-8",
 		  "CRIT: 15%",
-		  "Ignores $blk , +2 DMG Dealt when Target $blt",
-		  "Ignores $ddg , +2 DMG Dealt when Target $bld",
+		  "Ignores  $blk , +2 DMG Dealt when Target $blt",
+		  "Ignores  $ddg , +2 DMG Dealt when Target $bld",
 		  "+15% CRIT, +2 DMG Dealt when Target $brn"
 		]
 	  },
@@ -482,14 +482,15 @@
 		  "CRIT: 5%",
 		  "$blt 3",
 		  "$vvk",
-		  "When Target $cmb : +20% $neg RES Piercing"
+		  "+20% $neg RES Piercing When Target  $cmb"
 		],
 		"skill_u_text": [
 		  "DMG: 3-4",
 		  "CRIT: 10%",
 		  "$blt 4",
-		  "$vvk, $vvk when Target $cmb",
-		  "When Target $cmb : +20% $neg RES Piercing"
+		  "$vvk",
+		  "$vvk When Target  $cmb",
+		  "+20% $neg RES Piercing When Target  $cmb"
 		]
 	  },
 	  "P3_2": {
@@ -503,12 +504,12 @@
 		"skill_text": [
 		  "DMG: 3-6",
 		  "CRIT: 10%",
-		  "$bld 3, $cmb"
+		  "$bld 3  $cmb"
 		],
 		"skill_u_text": [
 		  "DMG: 4-7",
 		  "CRIT: 15%",
-		  "$bld 4, $cmb"
+		  "$bld 4  $cmb"
 		]
 	  },
 	  "P3_4": {
@@ -538,10 +539,10 @@
 		"cooldown": "2",
 		"uses": "-",
 		"skill_text": [
-		  "Invert all $vvk , $vln , $bln or $dze into $str , $blk, $ddg or $fst respectively"
+		  "Invert all tokens of type  $vvk $vln $bln or $dze  into  $str $blk $ddg or  $fst respectively"
 		],
 		"skill_u_text": [
-		  "Invert all $vvk , $vln , $bln , $dze or $stn into $str , $blk+, $ddg+, $fst or $fst respectively",
+		  "Invert all tokens of type  $vvk $vln $bln $dze or $stn  into  $str $blk+ $ddg+ $fst  or  $fst respectively",
 		  "Then repeat for another token type"
 		]
 	  },
@@ -555,20 +556,20 @@
 		"uses": "-",
 		"skill_text": [
 		  "CRIT: 5%",
-		  "$mve Shuffle, $dze , Remove $rps",
-		  "Adjacent Enemies: $mve Shuffle or $dze",
+		  "$mve Shuffle, $dze , Remove  $rps",
+		  "Adjacent Enemies:  $mve Shuffle or $dze",
 		  "Adjacent Enemy effects will apply even if the skill misses"
 		],
 		"skill_u_text": [
 		  "CRIT: 5%",
-		  "$mve Shuffle, $dze , $vln , Remove $rps",
-		  "Adjacent Enemies: $mve Shuffle or $dze or $vln",
+		  "$mve Shuffle, $dze , $vln , Remove  $rps",
+		  "Adjacent Enemies:  $mve Shuffle or $dze or $vln",
 		  "Adjacent Enemy effects will apply even if the skill misses"
 		]
 	  },
 	  "P3_9": {
 		"name": "Cause of Death",
-		"type": "ranged",
+		"type": "-",
 		"skill_ranks": "234",
 		"target_ranks": "1234",
 		"target_type": "enemy",
@@ -584,7 +585,7 @@
 		  "+1 $bld $blt $brn Received",
 		  "-1 $bld $blt $brn Dealt",
 		  "Debuff applies an additional time on CRIT.",
-		  "This additional time ignores $neg RES."
+		  "This additional time Ignores  $neg RES."
 		]
 	  },
 	  "G0_0": {
@@ -598,15 +599,15 @@
 		"skill_text": [
 		  "DMG: 4-7",
 		  "CRIT: 15%",
-		  "Ignores $blk",
-		  "+50% CRIT When Target $cmb"
+		  "Ignores  $blk",
+		  "+50% CRIT When Target  $cmb"
 		],
 		"skill_u_text": [
 		  "DMG: 5-9",
 		  "CRIT: 20%",
-		  "Ignores $blk",
-		  "+50% CRIT When Target $cmb",
-		  "Apply On CRIT: Remove $blk"
+		  "Ignores  $blk",
+		  "+50% CRIT When Target  $cmb",
+		  "Apply On CRIT: Remove  $blk"
 		]
 	  },
 	  "G0_1": {
@@ -620,16 +621,16 @@
 		"skill_text": [
 		  "DMG: 3-6",
 		  "CRIT: 15%",
-		  "Ignores $grd",
-		  "Ignores $ddg When $stl",
-		  "+50% CRIT When Target $cmb"
+		  "Ignores  $grd",
+		  "Ignores  $ddg when  $stl",
+		  "+50% CRIT When Target  $cmb"
 		],
 		"skill_u_text": [
 		  "DMG: 4-8",
 		  "CRIT: 30%",
-		  "Ignores $grd",
-		  "Ignores $ddg When $stl",
-		  "+50% CRIT When Target $cmb"
+		  "Ignores  $grd",
+		  "Ignores  $ddg when  $stl",
+		  "+50% CRIT When Target  $cmb"
 		]
 	  },
 	  "G0_2": {
@@ -647,7 +648,7 @@
 		"skill_u_text": [
 		  "DMG: 4-6",
 		  "CRIT: 20%",
-		  "Ignores $ddg When Self $stl"
+		  "Ignores  $ddg When self  $stl"
 		]
 	  },
 	  "G0_3": {
@@ -661,16 +662,14 @@
 		"skill_text": [
 		  "DMG: 2-4",
 		  "CRIT: 5%",
-		  "$blt 2",
-		  "+50% CRIT When Target $cmb",
-		  "Apply on CRIT: Increase $blt Duration to 5 turns"
+		  "$blt 2 or on CRIT: $blt 2 (5 turns)",
+		  "+50% CRIT When Target  $cmb"
 		],
 		"skill_u_text": [
 		  "DMG: 2-5",
 		  "CRIT: 10%",
-		  "$blt 4",
-		  "+50% CRIT When Target $cmb",
-		  "Apply on CRIT: Increase $blt Duration to 5 turns"
+		  "$blt 4 or on CRIT: $blt 4 (5 turns)",
+		  "+50% CRIT When Target  $cmb"
 		]
 	  },
 	  "G0_4": {
@@ -682,12 +681,12 @@
 		"cooldown": "-",
 		"uses": "3",
 		"skill_text": [
-		  "Self: If $hlh < 33%: Heal $hlh 33%",
-		  "Self: $ddg x3 $spd"
+		  "If  $hlh  < 33%: Heal  $hlh 33%",
+		  "$ddg x3  $spd"
 		],
 		"skill_u_text": [
-		  "Self: If $hlh < 33%: Heal $hlh 33%",
-		  "Self: $ddg+ x3 $spd"
+		  "If  $hlh  < 33%: Heal  $hlh 33%",
+		  "$ddg+ x3  $spd"
 		]
 	  },
 	  "G0_5": {
@@ -700,13 +699,13 @@
 		"uses": "3",
 		"skill_text": [
 		  "Clear Corpse",
-		  "Self: Heal $hlh 33%",
-		  "Self: $stl"
+		  "Self: Heal  $hlh 33%",
+		  "Self:  $stl"
 		],
 		"skill_u_text": [
 		  "Clear Corpse",
-		  "Self: Heal $hlh 50%",
-		  "Self: $stl x2",
+		  "Self: Heal  $hlh 50%",
+		  "Self:  $stl x2",
 		  "Self: -1 $sts"
 		]
 	  },
@@ -721,17 +720,17 @@
 		"skill_text": [
 		  "DMG: 4-7",
 		  "CRIT: 5%",
-		  "Ignores $stl",
+		  "Ignores  $stl",
 		  "$exe Execution 1",
-		  "Remove $stl"
+		  "Remove  $stl"
 		],
 		"skill_u_text": [
 		  "DMG: 6-9",
 		  "CRIT: 10%",
-		  "Ignores $stl",
+		  "Ignores  $stl",
 		  "$exe Execution 1",
-		  "$exe Execution 3 when Self $stl",
-		  "Remove $stl"
+		  "$exe Execution 3 when self  $stl",
+		  "Remove  $stl"
 		]
 	  },
 	  "G0_7": {
@@ -745,16 +744,16 @@
 		"skill_text": [
 		  "DMG: 5-8",
 		  "CRIT: 20%",
-		  "Ignores $ddg When Self $stl",
-		  "On CRIT: $mve Knockback 2",
-		  "Self: $mve Forward 2"
+		  "Ignores  $ddg When self  $stl",
+		  "On CRIT:  $mve Knockback 2",
+		  "Self:  $mve Forward 2"
 		],
 		"skill_u_text": [
 		  "DMG: 7-11",
 		  "CRIT: 30%",
-		  "Ignores $ddg $blk When Self $stl",
-		  "On CRIT: $mve Knockback 3",
-		  "Self: $mve Forward 2"
+		  "Ignores  $ddg $blk When self  $stl",
+		  "On CRIT:  $mve Knockback 3",
+		  "Self:  $mve Forward 2"
 		]
 	  },
 	  "G0_8": {
@@ -768,16 +767,16 @@
 		"skill_text": [
 		  "DMG: 4-7",
 		  "CRIT: 10%",
-		  "Self: $mve Back 3",
-		  "Self: $dze $vvk",
-		  "Self: Does not Apply $dze $vvk When Self $stl"
+		  "Self:  $mve Back 3",
+		  "Self:  $dze $vvk",
+		  "Self: Does not Apply  $dze $vvk When self  $stl"
 		],
 		"skill_u_text": [
 		  "DMG: 6-9",
 		  "CRIT: 15%",
-		  "Self: $mve Back 3",
-		  "Self: $dze $vvk",
-		  "Self: Applies $dze $vvk to Target instead When Self $stl"
+		  "Self:  $mve Back 3",
+		  "Self:  $dze $vvk",
+		  "Self: Applies  $dze $vvk to Target instead When self  $stl"
 		]
 	  },
 	  "G0_9": {
@@ -789,13 +788,13 @@
 		"cooldown": "2",
 		"uses": "-",
 		"skill_text": [
-		  "Self: $ddg x3 $tnt x2",
-		  "Self: Remove $stl"
+		  "$ddg x3  $tnt x2",
+		  "Remove  $stl"
 		],
 		"skill_u_text": [
-		  "Self: $ddg+ x3 $tnt x2",
-		  "Self: Remove $stl",
-		  "Self: If $stl : $pos Gain When Missed: $ddg (50%) (3 Turns)"
+		  "$ddg+ x3  $tnt x2",
+		  "If  $stl :  $pos Gain When enemy misses:  $ddg (50%) (3 Turns)",
+		  "Remove  $stl"
 		]
 	  },
 	  "G0_10": {
@@ -807,12 +806,12 @@
 		"cooldown": "2",
 		"uses": "-",
 		"skill_text": [
-		  "Self: $mve Back 2",
-		  "Self: $stl x2"
+		  "$mve Back 2",
+		  "$stl x2"
 		],
 		"skill_u_text": [
-		  "Self: $mve Back 2",
-		  "Self: $stl x2 $str"
+		  "$mve Back 2",
+		  "$stl x2  $str"
 		]
 	  },
 	  "G1_1": {
@@ -826,14 +825,14 @@
 		"skill_text": [
 		  "DMG: 4-7",
 		  "CRIT: 20%",
-		  "Ignores $ddg When $stl",
-		  "+50% CRIT When Target $cmb"
+		  "Ignores  $ddg when  $stl",
+		  "+50% CRIT When Target  $cmb"
 		],
 		"skill_u_text": [
 		  "DMG: 5-9",
 		  "CRIT: 30%",
-		  "Ignores $ddg When $stl",
-		  "+50% CRIT When Target $cmb",
+		  "Ignores  $ddg when  $stl",
+		  "+50% CRIT When Target  $cmb",
 		  "Self: On CRIT: +2 $spd (3 Turns)"
 		]
 	  },
@@ -863,14 +862,14 @@
 		"cooldown": "-",
 		"uses": "2",
 		"skill_text": [
-		  "Self: If $hlh < 33%: Heal $hlh 33%",
-		  "Self: $ddg x2",
-		  "Self: $pos : +4% CRIT (1 Battle)"
+		  "If  $hlh  < 33%: Heal  $hlh 33%",
+		  "$ddg x2",
+		  "$pos : +4% CRIT (1 Battle)"
 		],
 		"skill_u_text": [
-		  "Self: If $hlh < 33%: Heal $hlh 33%",
-		  "Self: $ddg+ x2",
-		  "Self: $pos : +6% CRIT (1 Battle)"
+		  "If  $hlh  < 33%: Heal  $hlh 33%",
+		  "$ddg+ x2",
+		  "$pos : +6% CRIT (1 Battle)"
 		]
 	  },
 	  "G1_9": {
@@ -882,13 +881,13 @@
 		"cooldown": "2",
 		"uses": "-",
 		"skill_text": [
-		  "Self: $ddg x2 $tnt x2",
-		  "Self: Remove $stl"
+		  "$ddg x2  $tnt x2",
+		  "Remove  $stl"
 		],
 		"skill_u_text": [
-		  "Self: $ddg+ x2 $tnt x2",
-		  "Self: Remove $stl",
-		  "Self: If $stl : $pos Gain +4% CRIT When Missed (3 Turns)"
+		  "$ddg+ x2  $tnt x2",
+		  "Remove  $stl",
+		  "If  $stl :  $pos Gain When enemy misses (3 Turns): +4% CRIT (1 Battle)"
 		]
 	  },
 	  "G2_1": {
@@ -902,15 +901,15 @@
 		"skill_text": [
 		  "DMG: 3-5",
 		  "CRIT: 15%",
-		  "Ignores $ddg When $stl",
-		  "+50% CRIT When Target $cmb",
+		  "Ignores  $ddg when  $stl",
+		  "+50% CRIT When Target  $cmb",
 		  "$vvk When Target $blt"
 		],
 		"skill_u_text": [
 		  "DMG: 4-7",
 		  "CRIT: 30%",
-		  "Ignores $ddg When $stl",
-		  "+50% CRIT When Target $cmb",
+		  "Ignores  $ddg when  $stl",
+		  "+50% CRIT When Target  $cmb",
 		  "$vvk When Target $blt"
 		]
 	  },
@@ -925,13 +924,13 @@
 		"skill_text": [
 		  "DMG: 2-3",
 		  "CRIT: 10%",
-		  "+2 $blt when Self $stl",
+		  "+2 $blt when self  $stl",
 		  "$blt 2"
 		],
 		"skill_u_text": [
 		  "DMG: 3-4",
 		  "CRIT: 20%",
-		  "+2 $blt when Self $stl",
+		  "+2 $blt when self  $stl",
 		  "$blt 3"
 		]
 	  },
@@ -947,13 +946,13 @@
 		  "DMG: 2-4",
 		  "CRIT: 5%",
 		  "$blt 3",
-		  "+2 $blt when Self $stl"
+		  "+2 $blt when self  $stl"
 		],
 		"skill_u_text": [
 		  "DMG: 2-5",
 		  "CRIT: 10%",
 		  "$blt 4",
-		  "+3 $blt when Self $stl"
+		  "+3 $blt when self  $stl"
 		]
 	  },
 	  "G2_4": {
@@ -965,14 +964,14 @@
 		"cooldown": "-",
 		"uses": "3",
 		"skill_text": [
-		  "Self: If $hlh < 50%: Heal $hlh 20%",
-		  "Self: Remove $blt",
-		  "Self: +30% $blt RES"
+		  "If  $hlh  < 50%: Heal  $hlh 20%",
+		  "Remove  $blt",
+		  "+30% $blt RES"
 		],
 		"skill_u_text": [
-		  "Self: If $hlh < 50%: Heal $hlh 20%",
-		  "Self: Remove $bld $blt $brn",
-		  "Self: +30% $blt RES (3 Turns)"
+		  "If  $hlh  < 50%: Heal  $hlh 20%",
+		  "Remove  $bld $blt $brn",
+		  "+30% $blt RES (3 Turns)"
 		]
 	  },
 	  "G2_10": {
@@ -984,14 +983,14 @@
 		"cooldown": "2",
 		"uses": "-",
 		"skill_text": [
-		  "Self: $mve Back 2",
-		  "Self: $stl x2",
-		  "Self: $pos 20% $blt RES Piercing (1 Turn)"
+		  "$mve Back 2",
+		  "$stl x2",
+		  "$pos 20% $blt RES Piercing (1 Turn)"
 		],
 		"skill_u_text": [
-		  "Self: $mve Back 2",
-		  "Self: $stl x2, $fst",
-		  "Self: $pos 20% $blt RES Piercing (2 Turns)"
+		  "$mve Back 2",
+		  "$stl x2, $fst",
+		  "$pos 20% $blt RES Piercing (2 Turns)"
 		]
 	  },
 	  "G3_1": {
@@ -1005,14 +1004,14 @@
 		"skill_text": [
 		  "DMG: 3-6",
 		  "CRIT: 15%",
-		  "Ignores $ddg $rps When $stl",
-		  "+50% CRIT When Target $cmb"
+		  "Ignores  $ddg $rps when  $stl",
+		  "+50% CRIT When Target  $cmb"
 		],
 		"skill_u_text": [
 		  "DMG: 4-8",
 		  "CRIT: 30%",
-		  "Ignores $ddg $rps When $stl",
-		  "+50% CRIT When Target $cmb"
+		  "Ignores  $ddg $rps when  $stl",
+		  "+50% CRIT When Target  $cmb"
 		]
 	  },
 	  "G3_2": {
@@ -1026,13 +1025,13 @@
 		"skill_text": [
 		  "DMG: 3-5",
 		  "CRIT: 10%",
-		  "Requires $stl",
-		  "Remove $stl (50%)"
+		  "Requires  $stl",
+		  "Remove  $stl (50%)"
 		],
 		"skill_u_text": [
 		  "DMG: 4-6",
 		  "CRIT: 15%",
-		  "Requires $stl"
+		  "Requires  $stl"
 		]
 	  },
 	  "G3_7": {
@@ -1046,17 +1045,17 @@
 		"skill_text": [
 		  "DMG: 5-8",
 		  "CRIT: 20%",
-		  "Ignores $ddg When Self $stl",
-		  "+50% DMG When Self $stl",
-		  "Self: $mve Forward 2"
+		  "Ignores  $ddg When self  $stl",
+		  "+50% DMG When self  $stl",
+		  "Self:  $mve Forward 2"
 		],
 		"skill_u_text": [
 		  "DMG: 7-11",
 		  "CRIT: 30%",
 		  "$exe Execution 1",
-		  "Ignores $ddg When Self $stl",
-		  "+50% DMG When Self $stl",
-		  "Self: $mve Forward 2"
+		  "Ignores  $ddg When self  $stl",
+		  "+50% DMG When self  $stl",
+		  "Self:  $mve Forward 2"
 		]
 	  },
 	  "G3_8": {
@@ -1070,13 +1069,13 @@
 		"skill_text": [
 		  "DMG: 4-7",
 		  "CRIT: 10%",
-		  "Self: $mve Back 3"
+		  "Self:  $mve Back 3"
 		],
 		"skill_u_text": [
 		  "DMG: 6-9",
 		  "CRIT: 15%",
-		  "Ignores $blk When Self $stl",
-		  "Self: $mve Back 3"
+		  "Ignores  $blk When self  $stl",
+		  "Self:  $mve Back 3"
 		]
 	  },
 	  "G3_9": {
@@ -1089,38 +1088,220 @@
 		"uses": "-",
 		"skill_text": [
 		  "$tnt x2",
-		  "Self: $pos : Turn Start: $stl (2 turns)",
-		  "Self: $pos : Turn End: Remove $stl (3 Rounds)",
+		  "Self:  $pos : Turn Start:  $stl (2 turns)",
+		  "Self:  $pos : Turn End: Remove  $stl (3 Rounds)",
 		],
 		"skill_u_text": [
 		  "$tnt x3",
-		  "Self: $pos : Turn Start: $stl (3 turns)",
-		  "Self: $pos : Turn End: Remove $stl (4 Rounds)",
+		  "Self:  $pos : Turn Start:  $stl (3 turns)",
+		  "Self:  $pos : Turn End: Remove  $stl (4 Rounds)",
 		]
 	  },
-	"J3_4": {
-		"name": "Inspiring Tune",
-		"type": "stress",
-		"skill_ranks": "12",
-		"target_ranks": "1234-",
+	  "W0_0": {
+		"name": "Wicked Slice",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 15%",
+		  "$exe Execution 1"
+		],
+		"skill_u_text": [
+		  "DMG: 6-9",
+		  "CRIT: 20%",
+		  "$exe Execution 1"
+		]
+	  },
+	  "W0_1": {
+		"name": "Pistol Shot",
+		"type": "ranged",
+		"skill_ranks": "234",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 10%",
+		  "$dze  When Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 5-8",
+		  "CRIT: 15%",
+		  "$stn  When Target  $cmb"
+		]
+	  },
+	  "W0_2": {
+		"name": "Duelist's Advance",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Self: Move Forward 1",
+		  "Self:  $rps x2"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "Self: Move Forward 1",
+		  "Self:  $rps x3  $ddg"
+		]
+	  },
+	  "W0_3": {
+		"name": "Tracking Shot",
+		"type": "ranged",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Ignores  $ddg $stl",
+		  "Remove  $ddg $stl",
+		  "$cmb"
+		],
+		"skill_u_text": [
+		  "Ignores  $ddg $stl",
+		  "Remove  $ddg $stl",
+		  "$cmb",
+		  "$neg : Cannot Gain  $ddg (2 Rounds)"
+		]
+	  },
+	  "W0_4": {
+		"name": "Take Aim",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
 		"target_type": "hero",
 		"cooldown": "2",
 		"uses": "-",
 		"skill_text": [
-			"Requires targets $sts 5+ :",
-			"-1 $sts when target $sts 5+",
-			"-1 $sts when target $bld",
-			"$bld 1",
+		  "Remove  $bln",
+		  "$crt"
 		],
 		"skill_u_text": [
-			"Requires targets $sts 5+ or targets $bld :",
-			"-1 $sts when target $sts 5+",
-			"-1 $sts when target $bld",
-			"$bld 1",
+		  "Remove  $bln",
+		  "$crt x2"
+		]
+	  },
+	  "W0_5": {
+		"name": "Point Blank Shot",
+		"type": "ranged",
+		"skill_ranks": "1",
+		"target_ranks": "1",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-10",
+		  "CRIT: 10%",
+		  "Self:  $mve Back 1",
+		  "$mve Knockback 1",
+		  "$cmb"
 		],
-	},
-	"L1_0": {
-		"name": "Chop",
+		"skill_u_text": [
+		  "DMG: 10-13",
+		  "CRIT: 15%",
+		  "Self:  $mve Back 1",
+		  "$mve Knockback 1",
+		  "$cmb"
+		]
+	  },
+	  "W0_6": {
+		"name": "Grapeshot Blast",
+		"type": "ranged",
+		"skill_ranks": "1234",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Gain on CRIT:  $str"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "$neg  -2 $spd (3 Turns)",
+		  "Gain on CRIT:  $str"
+		]
+	  },
+	  "W0_7": {
+		"name": "Open Vein",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$bld 2",
+		  "+100% $bld dealt if Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "$bld 3",
+		  "+100% $bld dealt if Target  $cmb"
+		]
+	  },
+	
+	  "W0_8": {
+		"name": "Double Tap",
+		"type": "ranged",
+		"skill_ranks": "23",
+		"target_ranks": "23",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%",
+		  "+30% DMG When Target  $hlh  < 30%"
+		],
+		"skill_u_text": [
+		  "DMG: 6-9",
+		  "CRIT: 10%",
+		  "$exe Execution 1",
+		  "+30% DMG When Target  $hlh  < 30%"
+		]
+	  },
+	  "W0_9": {
+		"name": "Highway Robbery",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Ignores  $ddg",
+		  "Remove 2  $pos Tokens",
+		  "$neg -5% CRIT (3 Turns)"
+		],
+		"skill_u_text": [
+		  "CRIT: 5%",
+		  "Ignores  $ddg",
+		  "Steal 2  $pos Tokens",
+		  "$neg -5% CRIT (3 Turns)",
+		  "Self:  $pos +5% CRIT (3 Turns)"
+		]
+	  },
+	  "W0_10": {
+		"name": "Double Cross",
 		"type": "melee",
 		"skill_ranks": "12",
 		"target_ranks": "12",
@@ -1128,21 +1309,849 @@
 		"cooldown": "-",
 		"uses": "-",
 		"skill_text": [
-			"DMG: 6-12",
-			"CRIT: 5%",
-			"Ignores $bln $vvk when target $cmb",
-			"+10% DMG per $neg on self",
-			"Self: $bln , 2 DMG per $neg on self to a maximum of 10 DMG",
+		  "DMG: 2-4",
+		  "CRIT: 5%",
+		  "Ignores  $blk",
+		  "Remove  $blk",
+		  "$vln",
+		  "Self:  $blk"
 		],
 		"skill_u_text": [
-			"DMG: 6-12",
-			"CRIT: 5%",
-			"Ignores $bln $vvk when target $cmb",
-			"+15% DMG per $neg on self",
-			"Self: $bln (75%), 2 DMG per $neg on self to a maximum of 10 DMG",
+		  "DMG: 3-5",
+		  "CRIT: 10%",
+		  "Ignores  $blk",
+		  "Remove  $blk",
+		  "$vln x2",
+		  "Self:  $blk"
+		]
+	  },
+	  "W1_0": {
+		"name": "Wicked Slice",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 15%",
+		  "$exe Execution 1"
 		],
-	},
-	"H0_7": {
+		"skill_u_text": [
+		  "DMG: 6-9",
+		  "CRIT: 20%",
+		  "$exe Execution 2"
+		]
+	  },
+	  "W1_2": {
+		"name": "Duelist's Advance",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$mve Forward 2",
+		  "Self:  $rps x2  $blk"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "$mve Forward 2",
+		  "Self:  $rps x2  $blk+"
+		]
+	  },
+	  "W1_4": {
+		"name": "Take Aim",
+		"type": "-",
+		"skill_ranks": "123",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "$spd $rps x2",
+		  "$pos Round Start:  $rps (3 Turns)"
+		],
+		"skill_u_text": [
+		  "$spd $rps x2",
+		  "$pos Round Start:  $rps (3 Turns)",
+		  "Riposte: +25% DMG (4 Turns)"
+		]
+	  },
+	  "W1_6": {
+		"name": "Grapeshot Blast",
+		"type": "ranged",
+		"skill_ranks": "1",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Self:  $mve Back 1"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "Self:  $mve Back 1"
+		]
+	  },
+	  "W2_1": {
+		"name": "Pistol Shot",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-8",
+		  "CRIT: 10%"
+		],
+		"skill_u_text": [
+		  "DMG: 7-10",
+		  "CRIT: 15%"
+		]
+	  },
+	  "W2_5": {
+		"name": "Point Blank Shot",
+		"type": "ranged",
+		"skill_ranks": "1",
+		"target_ranks": "1",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-10",
+		  "CRIT: 10%",
+		  "$mve Knockback 2",
+		  "$cmb",
+		  "Self:  $mve Back 2"
+		],
+		"skill_u_text": [
+		  "DMG: 10-13",
+		  "CRIT: 15%",
+		  "$mve Knockback 2",
+		  "$cmb",
+		  "Self:  $mve Back 2"
+		]
+	  },
+	  "W2_6": {
+		"name": "Grapeshot Blast",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "34-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 10%"
+		],
+		"skill_u_text": [
+		  "DMG: 5-7",
+		  "CRIT: 15%"
+		]
+	  },
+	  "W2_8": {
+		"name": "Double Tap",
+		"type": "ranged",
+		"skill_ranks": "234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Target No Corpse",
+		  "DMG: 2-4",
+		  "CRIT: 5%",
+		  "Self:  $mve Back 1",
+		  "When Target Survives: Fire a Second Shot",
+		  "-------------------------",
+		  "Second Shot",
+		  "DMG: 2-4",
+		  "CRIT: 5%",
+		  "Ignores  $tnt"
+		],
+		"skill_u_text": [
+		  "Requires Target No Corpse",
+		  "DMG: 3-4",
+		  "CRIT: 10%",
+		  "$exe Execution 1",
+		  "Self:  $mve Back 1",
+		  "When Target Survives: Fire a Second Shot",
+		  "-------------------------",
+		  "Second Shot",
+		  "DMG: 3-4",
+		  "CRIT: 10%",
+		  "Ignores  $tnt",
+		  "$cmb ,  $exe Execution 1"
+		]
+	  },
+	  "W3_6": {
+		"name": "Grapeshot Blast",
+		"type": "ranged",
+		"skill_ranks": "123",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-3",
+		  "CRIT: 5%",
+		  "$neg -10% $bld RES (3 Turns)"
+		],
+		"skill_u_text": [
+		  "DMG: 3-4",
+		  "CRIT: 10%",
+		  "$neg -10% $bld RES (3 Turns)",
+		  "$neg +1 $bld Received (3 Turns)"
+		]
+	  },
+	  "W3_7": {
+		"name": "Open Vein",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 10%",
+		  "$bld 3"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 15%",
+		  "$bld 4",
+		  "$neg -10% $bld RES (3 Turns)"
+		]
+	  },
+	  "W3_9": {
+		"name": "Highway Robbery",
+		"type": "-",
+		"skill_ranks": "123",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Ignores  $ddg",
+		  "Remove 2 $pos Tokens",
+		  "$neg -2 $bld Dealt (3 Turns)"
+		],
+		"skill_u_text": [
+		  "CRIT: 5%",
+		  "Ignores  $ddg",
+		  "Steal 2 $pos Tokens",
+		  "$neg -2 $bld Dealt (3 Turns)",
+		  "Self:  $pos +2 $bld Dealt (3 Turns)"
+		]
+	  },
+	  "M0_0": {
+		"name": "Crush",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "Self: Heal  $hlh 10% When Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 5-7",
+		  "CRIT: 5%",
+		  "Self: Heal  $hlh 20% When Target  $cmb"
+		]
+	  },
+	  "M0_1": {
+		"name": "Rampart",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$mve Knockback 1",
+		  "Self:  $mve Forward 1"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "$mve Knockback 2",
+		  "Self:  $mve Forward 1"
+		]
+	  },
+	  "M0_2": {
+		"name": "Defender",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "ally",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$grd x2",
+		  "Self:  $blk x2"
+		],
+		"skill_u_text": [
+		  "$grd x3",
+		  "Self:  $blk+ x2"
+		]
+	  },
+	  "M0_3": {
+		"name": "Bolster",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "ally",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Stress 5+: -1 $sts",
+		  "Self:  $blk",
+		  "Self: Stress 5+: -1 $sts"
+		],
+		"skill_u_text": [
+		  "Stress 5+: -2 $sts",
+		  "Self:  $blk+",
+		  "Self: Stress 5+: -2 $sts"
+		]
+	  },
+	  "M0_4": {
+		"name": "Hold the Line",
+		"type": "-",
+		"skill_ranks": "234",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 10%",
+		  "Self:  $blk $imm",
+		  "Self:  $mve Forward 3"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$stn When Target  $cmb",
+		  "Self:  $blk x2  $imm x2",
+		  "Self:  $mve Forward 3"
+		]
+	  },
+	  "M0_5": {
+		"name": "Bellow",
+		"type": "ranged",
+		"skill_ranks": "1234",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Remove  $rps",
+		  "$neg -2 $spd (3 Turns)"
+		],
+		"skill_u_text": [
+		  "CRIT: 5%",
+		  "Remove  $rps $crt",
+		  "$neg -3 $spd (3 Turns)"
+		]
+	  },
+	  "M0_6": {
+		"name": "Retribution",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2(1)",
+		"uses": "-",
+		"skill_text": [
+		  "$rps x2  $tnt x2"
+		],
+		"skill_u_text": [
+		  "$rps x2  $tnt x2"
+		]
+	  },
+	  "M0_7": {
+		"name": "Command",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "ally",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Remove  $bln",
+		  "$str"
+		],
+		"skill_u_text": [
+		  "Remove  $bln",
+		  "$str x2"
+		]
+	  },
+	  "M0_8": {
+		"name": "Stand Fast",
+		"type": "-",
+		"skill_ranks": "12",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "$blk x2  $tnt x2",
+		  "$pos Turn Start:  $blk (3 Turns)"
+		],
+		"skill_u_text": [
+		  "$blk+ x2  $tnt x2",
+		  "$pos Turn Start:  $blk+ (3 Turns)"
+		]
+	  },
+	  "M0_9": {
+		"name": "Courageous Abandon",
+		"type": "melee",
+		"skill_ranks": "1",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-8",
+		  "CRIT: 10%",
+		  "Requires Self  $blk",
+		  "Ignores  $blk",
+		  "$blk x2: Deals +100% DMG",
+		  "Self: Remove  $blk",
+		  "Self:  $vln",
+		  "Self:  $neg Cannot Gain  $blk (2 Turns)"
+		],
+		"skill_u_text": [
+		  "DMG: 8-10",
+		  "CRIT: 20%",
+		  "Requires Self  $blk",
+		  "Ignores  $blk",
+		  "$blk x2: Deals +100% DMG",
+		  "$blk x3:  $exe Execution 2",
+		  "Self: Remove  $blk",
+		  "Self:  $vln",
+		  "Self:  $neg Cannot Gain  $blk (2 Turns)"
+		]
+	  },
+	  "M0_10": {
+		"name": "Strategic Withdrawal",
+		"type": "ranged",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$cmb",
+		  "Self:  $mve Back 2"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$cmb",
+		  "Self:  $mve Back 2,  $fst",
+		  "Self: While on  $dth : $blk+ , Heal  $hlh 33% "
+		]
+	  },
+	  "M1_0": {
+		"name": "Crush",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "All Allies Ahead: Heal  $hlh 2 When Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 5-7",
+		  "CRIT: 5%",
+		  "Self:  $imm",
+		  "All Allies Ahead: Heal  $hlh 2 When Target  $cmb"
+		]
+	  },
+	  "M1_5": {
+		"name": "Bellow",
+		"type": "-",
+		"skill_ranks": "234",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "All Allies Ahead:",
+		  "$pos +3 $spd (3 Turns)"
+		],
+		"skill_u_text": [
+		  "All Allies Ahead:",
+		  "Remove 1 $neg Token",
+		  "$pos +3 $spd (3 Turns)"
+		]
+	  },
+	  "M1_6": {
+		"name": "Retribution",
+		"type": "-",
+		"skill_ranks": "234",
+		"target_ranks": "1234-",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "All Allies Ahead:  $str When  $hlh  Under 75%"
+		],
+		"skill_u_text": [
+		  "All Allies Ahead:  $str When  $hlh  Under 100%",
+		  "All Allies Ahead:  $crt When  $hlh  Under 25%"
+		]
+	  },
+	  "M1_7": {
+		"name": "Command",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$pos Next Hit Applies  $cmb (1 Battle)"
+		],
+		"skill_u_text": [
+		  "$fst",
+		  "$pos Next Hit Applies  $cmb (1 Battle)"
+		]
+	  },
+	  "M1_8": {
+		"name": "Stand Fast",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "$pos +30% $bld $blt $brn RES (3 Turns)",
+		  "$pos +35%  $mve RES (3 Turns)"
+		],
+		"skill_u_text": [
+		  "$pos +50% $bld $blt $brn RES (3 Turns)",
+		  "$pos +70%  $mve RES (3 Turns)"
+		]
+	  },
+	  "M2_1": {
+		"name": "Rampart",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$mve Knockback 1",
+		  "$blk x2: Inflicts  $imm x2",
+		  "Self:  $mve Forward 1"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "$mve Knockback 2",
+		  "$blk x2: Inflicts  $imm x2",
+		  "$blk x3: +30%  $mve $neg RES Piercing",
+		  "Self:  $mve Forward 1"
+		]
+	  },
+	  "M2_4": {
+		"name": "Hold the Line",
+		"type": "-",
+		"skill_ranks": "234",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 10%",
+		  "$blk x2: Inflicts  $stn",
+		  "Self:  $mve Forward 3, $blk"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 15%",
+		  "$blk x2: Inflicts  $stn",
+		  "$blk x3: +30%  $stn RES Piercing",
+		  "Self:  $mve Forward 3, $blk+"
+		]
+	  },
+	  "M2_5": {
+		"name": "Bellow",
+		"type": "ranged",
+		"skill_ranks": "1234",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "1(0)",
+		"uses": "-",
+		"skill_text": [
+		  "Remove  $str $rps"
+		],
+		"skill_u_text": [
+		  "Remove  $str $rps $crt"
+		]
+	  },
+	  "M2_8": {
+		"name": "Stand Fast",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "$blk x2",
+		  "$pos Turn Start:  $blk (3 Turns)"
+		],
+		"skill_u_text": [
+		  "Remove  $cmb",
+		  "$blk+ x2",
+		  "$pos Turn Start:  $blk+ (3 Turns)"
+		]
+	  },
+	  "M3_5": {
+		"name": "Bellow",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "+2 $sts",
+		  "Add 2 Stacks of each Vanguard $pos",
+		  "Add 2 Stacks of each Vanguard $neg"
+		],
+		"skill_u_text": [
+		  "+1 $sts",
+		  "Add 2 Stacks of each Vanguard $pos",
+		  "Add 2 Stacks of each Vanguard $neg",
+		  "At Full Stack: Ignore Vanguard $neg (4 Turns)"
+		]
+	  },
+	  "M3_8": {
+		"name": "Stand Fast",
+		"type": "-",
+		"skill_ranks": "123",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "Remove all Vanguard $pos and $neg",
+		  "Heal  $hlh 10% per 2  $pos removed"
+		],
+		"skill_u_text": [
+		  "Remove all Vanguard $pos and $neg",
+		  "Heal  $hlh 10% per 2  $pos removed",
+		  "-1 $sts per 2 $neg removed"
+		]
+	  },
+	  "M3_9": {
+		"name": "Courageous Abandon",
+		"type": "melee",
+		"skill_ranks": "1",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "$pos This Skill Gains +2 DMG (1 Battle)",
+		  "$neg -6 Max  $hlh (1 Battle)",
+		  "Effects stack up to 3 times."
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 15%",
+		  "$pos This Skill Gains +2 DMG (1 Battle)",
+		  "$neg -4 Max  $hlh (1 Battle)",
+		  "Effects stack up to 5 times."
+		]
+	  },
+	  "H0_0": {
+		"name": "Wicked Hack",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%",
+		  "Deals +50% DMG When Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 6-10",
+		  "CRIT: 10%",
+		  "Deals +50% DMG When Target  $cmb"
+		]
+	  },
+	  "H0_1": {
+		"name": "Iron Swan",
+		"type": "melee",
+		"skill_ranks": "1",
+		"target_ranks": "4",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%"
+		],
+		"skill_u_text": [
+		  "DMG: 6-10",
+		  "CRIT: 10%",
+		  "$cmb"
+		]
+	  },
+	  "H0_2": {
+		"name": "Barbaric YAWP!",
+		"type": "ranged",
+		"skill_ranks": "12",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "1(0)",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Ignores  $stl $bln",
+		  "$vvk",
+		  "Remove  $stl",
+		  "Self:  $wnd  per target hit",
+		  "Self: Per Crit:  $str"
+		],
+		"skill_u_text": [
+		  "CRIT: 15%",
+		  "Ignores  $stl $bln",
+		  "$stn When Target  $cmb",
+		  "$vvk",
+		  "Remove  $stl",
+		  "Self:  $wnd  per target hit",
+		  "Self: Per Crit:  $str"
+		]
+	  },
+	  "H0_3": {
+		"name": "If It Bleeds",
+		"type": "melee",
+		"skill_ranks": "23",
+		"target_ranks": "23",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 10%",
+		  "+30% $bld RES Piercing When Target  $cmb",
+		  "$bld 3"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 15%",
+		  "+1 $bld DUR Dealt When Target  $cmb",
+		  "+30% $bld RES Piercing When Target  $cmb",
+		  "$bld 4"
+		]
+	  },
+	  "H0_4": {
+		"name": "Toe to Toe",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Self:  $mve Forward 1, $imm",
+		  "Self: Convert $wnd to $tnt"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "Self:  $mve Forward 1, $imm x2",
+		  "Self: Convert $wnd to $tnt"
+		]
+	  },
+	  "H0_5": {
+		"name": "Adrenaline Rush",
+		"type": "heal",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "2(3)",
+		"skill_text": [
+		  "Heal  $hlh 5%, Remove  $wnd $bld",
+		  "+100% Healed per  $wnd",
+		  "$pos Gain On Attack: Heal  $hlh 15%(1 Turn)",
+		  "Increase buff DUR by +1 turn per  $wnd"
+		],
+		"skill_u_text": [
+		  "Heal  $hlh 10%, Remove  $wnd $bld $blt $brn",
+		  "+100% Healed per  $wnd",
+		  "$pos Gain On Attack: Heal  $hlh 15%(1 Turn)",
+		  "Increase buff DUR by +1 turn per  $wnd"
+		]
+	  },
+	  "H0_6": {
+		"name": "Bleed Out",
+		"type": "melee",
+		"skill_ranks": "1",
+		"target_ranks": "1",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%",
+		  "+30% $bld RES Piercing When Target  $cmb",
+		  "$bld 4",
+		  "Self:  $wnd"
+		],
+		"skill_u_text": [
+		  "DMG: 6-9",
+		  "CRIT: 10%",
+		  "+30% $bld RES Piercing When Target  $cmb",
+		  "$bld 6",
+		  "Self:  $wnd"
+		]
+	  },
+	  "H0_7": {
 		"name": "Bloodlust",
 		"type": "-",
 		"skill_ranks": "123",
@@ -1151,23 +2160,3826 @@
 		"cooldown": "2",
 		"uses": "-",
 		"skill_text": [
-			"Requires $wnd",
-			"Removes $wnd",
-			"$wnd x1: $fst",
-			"$wnd x2: $str",
-			"$wnd x3: $crt",
+		  "Requires  $wnd",
+		  "Removes  $wnd",
+		  "$pos token per  $wnd :",
+		  "$wnd :  $fst",
+		  "$wnd x2:  $str",
+		  "$wnd x3:  $crt"
 		],
 		"skill_u_text": [
-			"Requires $wnd",
-			"Removes $wnd",
-			"$wnd x1: $fst",
-			"$wnd x2: $str",
-			"$wnd x3: $crt",
-			"Melee skills: $exe 2 (3 turns)",
+		  "Requires  $wnd",
+		  "Removes  $wnd",
+		  "$pos token per  $wnd :",
+		  "$wnd :  $fst",
+		  "$wnd x2:  $str",
+		  "$wnd x3:  $crt",
+		  "Melee Skills:  $exe Execution 2 (3 turns)"
+		]
+	  },
+	  "H0_8": {
+		"name": "Breakthrough",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "123-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "Self:  $mve Forward 1",
+		  "Self: Gain on hit:  $wnd  per target hit"
 		],
-	},
-	"D0_6": {
-		"name": "Again",
+		"skill_u_text": [
+		  "DMG: 4-8",
+		  "CRIT: 10%",
+		  "On CRIT:  $cmb",
+		  "Self:  $mve Forward 1",
+		  "Self: Gain on hit:  $wnd  per target hit"
+		]
+	  },
+	  "H0_9": {
+		"name": "Raucous Revelry",
+		"type": "heal",
+		"skill_ranks": "1234",
+		"target_ranks": "1234-",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Stress 5+: -1 $sts",
+		  "Self:  $wnd",
+		  "Self: Remove  $hrr",
+		  "Self: If  $hlh  < 50%: Heal  $hlh 25%",
+		  "Self: If Stress 5+: -2 $sts"
+		],
+		"skill_u_text": [
+		  "Stress 5+: -1 $sts",
+		  "Remove  $hrr",
+		  "Heal  $hlh 2",
+		  "Self:  $wnd",
+		  "Self: Remove  $hrr",
+		  "Self: If  $hlh  < 50%: Heal  $hlh 33%",
+		  "Self: If Stress 5+: -3 $sts"
+		]
+	  },
+	  "H0_10": {
+		"name": "Howling End",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Requires 3 $wnd",
+		  "DMG: 8-14",
+		  "CRIT: 10%",
+		  "Ignores  $wnd"
+		],
+		"skill_u_text": [
+		  "Requires 3 $wnd",
+		  "DMG: 10-18",
+		  "CRIT: 15%",
+		  "Ignores  $wnd $blk"
+		]
+	  },
+	  "H1_2": {
+		"name": "Barbaric YAWP!",
+		"type": "ranged",
+		"skill_ranks": "12",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-3",
+		  "CRIT: 5%",
+		  "Ignores  $ddg",
+		  "Remove  $ddg",
+		  "$cmb (25%)",
+		  "On CRIT:  $cmb",
+		  "Self:  $wnd"
+		],
+		"skill_u_text": [
+		  "DMG: 3-5",
+		  "CRIT: 15%",
+		  "Ignores  $ddg",
+		  "Remove  $ddg",
+		  "Cannot gain  $ddg (2 rounds)",
+		  "$cmb (33%)",
+		  "On CRIT:  $cmb",
+		  "Self:  $wnd"
+		]
+	  },
+	  "H1_5": {
+		"name": "Adrenaline Rush",
+		"type": "heal",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "2(3)",
+		"skill_text": [
+		  "Heal  $hlh 10%, $reg 1, Remove  $wnd $bld",
+		  "Per  $wnd  removed:",
+		  "• Additional  $reg 1",
+		  "• +10% $bld RES (3 turns)",
+		  "Equipping this skill grants  $pos (once per battle):",
+		  "On entering $dth :  $stl , Remove  $bld $blt $brn",
+		],
+		"skill_u_text": [
+		  "Heal  $hlh 10%,  $reg 1, Remove  $wnd $bld $blt $brn",
+		  "Per  $wnd  removed:",
+		  "• Additional  $reg 1",
+		  "• +10% $bld RES (3 turns)",
+		  "Equipping this skill grants  $pos (once per battle):",
+		  "On entering $dth :  $stl , Remove  $bld $blt $brn",
+		]
+	  },
+	  "H1_7": {
+		"name": "Bloodlust",
+		"type": "-",
+		"skill_ranks": "123",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Convert  $wnd  to  $ddg",
+		  "5 DMG, increased by +5 DMG per  $wnd  removed",
+		  "Doesn't end turn",
+		  "Equipping this skill grants  $pos :",
+		  "On  $dth :  $exe Execution 3",
+		],
+		"skill_u_text": [
+		  "Convert  $wnd  to  $ddg+",
+		  "7 DMG, increased by +7 DMG per  $wnd  removed",
+		  "Doesn't end turn",
+		  "Equipping this skill grants  $pos :",
+		  "On  $dth :  $exe Execution 3",
+		]
+	  },
+	  "H1_8": {
+		"name": "Breakthrough",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "34-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Requires self  $hlh  is below 50%",
+		  "DMG: 3-7",
+		  "CRIT: 5%",
+		  "+50% DMG when on  $dth",
+		  "Self:  $wnd , $mve Forward 1"
+		],
+		"skill_u_text": [
+		  "Requires  $hlh  is below 50%",
+		  "DMG: 4-9",
+		  "CRIT: 10%",
+		  "+50% DMG when on  $dth",
+		  "Self:  $wnd , $mve Forward 1"
+		]
+	  },
+	  "H1_10": {
+		"name": "Howling End",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Requires self  $hlh  is below 50%",
+		  "DMG: 8-12",
+		  "CRIT: 10%",
+		  "+50% DMG when on  $dth",
+		  "Self:  $wnd"
+		],
+		"skill_u_text": [
+		  "Requires self  $hlh  is below 50%",
+		  "DMG: 10-14",
+		  "CRIT: 15%",
+		  "+50% DMG when on  $dth",
+		  "Self:  $wnd"
+		]
+	  },
+	  "H2_1": {
+		"name": "Iron Swan",
+		"type": "melee",
+		"skill_ranks": "1",
+		"target_ranks": "4",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$bld 3, $mve Pull 1",
+		  "Self:  $mve Back 1"
+		],
+		"skill_u_text": [
+		  "DMG: 4-8",
+		  "CRIT: 10%",
+		  "$bld 4, $mve Pull 1",
+		  "Self:  $mve Back 1"
+		]
+	  },
+	  "H2_6": {
+		"name": "Bleed Out",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "1",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "+30% $bld RES Piercing When Target  $cmb",
+		  "$bld 4",
+		  "Self:  $wnd"
+		],
+		"skill_u_text": [
+		  "DMG: 5-7",
+		  "CRIT: 10%",
+		  "+30% $bld RES Piercing When Target  $cmb",
+		  "$bld 6",
+		  "Self:  $wnd"
+		]
+	  },
+	  "H2_8": {
+		"name": "Breakthrough",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$bld 2",
+		  "Self: Forward 1",
+		  "Self:  $wnd"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$bld 3",
+		  "Self: Forward 1",
+		  "Self:  $wnd"
+		]
+	  },
+	  "H2_10": {
+		"name": "Howling End",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%",
+		  "On CRIT: Remove  $bld",
+		  "DMG Dealt increased by 50% of remaining $bld on Target",
+		  "Self:  $mve Back 1, $wnd"
+		],
+		"skill_u_text": [
+		  "DMG: 6-12",
+		  "CRIT: 10%",
+		  "On CRIT: Remove  $bld",
+		  "DMG Dealt increased by 50% of remaining $bld on Target",
+		  "Self:  $mve Back 1, $wnd"
+		]
+	  },
+	  "H3_1": {
+		"name": "Iron Swan",
+		"type": "melee",
+		"skill_ranks": "1",
+		"target_ranks": "4",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%",
+		  "$mve Pull 2",
+		  "Self:  $mve Back 1, $fst"
+		],
+		"skill_u_text": [
+		  "DMG: 6-10",
+		  "CRIT: 10%",
+		  "$mve Pull 2",
+		  "Ignore  $grd",
+		  "Remove  $grd",
+		  "Self:  $mve Back 1, $fst"
+		]
+	  },
+	  "H3_2": {
+		"name": "Barbaric YAWP!",
+		"type": "ranged",
+		"skill_ranks": "12",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Ignores  $bln",
+		  "$vvk",
+		  "On CRIT:  $vvk",
+		  "Self:  $wnd per target hit",
+		  "Self:  $tnt"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "Ignores  $bln",
+		  "$stn When Target  $cmb",
+		  "$vvk",
+		  "On CRIT:  $vvk",
+		  "Self:  $wnd per target hit",
+		  "Self:  $tnt"
+		]
+	  },
+	  "H3_4": {
+		"name": "Toe to Toe",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "2(1)",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Self:  $mve Forward 1, $wnd",
+		  "Self: Per  $wnd : Add  $tnt"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "Self:  $mve Forward 1, $wnd",
+		  "Self: Per  $wnd : Add  $tnt",
+		  "Self: Add  $wnd when target is size 2+"
+		]
+	  },
+	  "H3_8": {
+		"name": "Breakthrough",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "Ignores  $wnd",
+		  "Transfer up to 2 $wnd",
+		  "Self:  $mve Forward 1",
+		  "Self: On hit: Remove  $wnd"
+		],
+		"skill_u_text": [
+		  "DMG: 4-8",
+		  "CRIT: 10%",
+		  "Ignores  $wnd",
+		  "Transfer all $wnd",
+		  "Self:  $mve Forward 1",
+		  "Self: On hit: Remove  $wnd"
+		]
+	  },
+	  "H3_10": {
+		"name": "Howling End",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Requires 3 $wnd",
+		  "DMG: 8-14",
+		  "CRIT: 10%",
+		  "Ignores  $wnd",
+		  "Self: Remove  $wnd"
+		],
+		"skill_u_text": [
+		  "Requires 3 $wnd",
+		  "DMG: 8-14",
+		  "CRIT: 10%",
+		  "Ignores  $wnd $blk",
+		  "Self: Remove  $wnd",
+		  "Self: Convert  $blk  to  $blk+"
+		]
+	  },
+	  "J0_0": {
+		"name": "Razor's Wit",
+		"type": "melee",
+		"skill_ranks": "432",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 10%",
+		  "$cmb",
+		  "Self:  $mve Forward 1"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 15%",
+		  "$cmb",
+		  "Self:  $mve Forward 1",
+		  "Self:  $ddg"
+		]
+	  },
+	  "J0_1": {
+		"name": "Fade to Black",
+		"type": "melee",
+		"skill_ranks": "321",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 10%",
+		  "$bln",
+		  "Self:  $mve Back 1"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 15%",
+		  "$bln , $cmb",
+		  "Self:  $mve Back 1"
+		]
+	  },
+	  "J0_2": {
+		"name": "Slice Off",
+		"type": "melee",
+		"skill_ranks": "23",
+		"target_ranks": "23",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$bld 3"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$bld 4, $vln"
+		]
+	  },
+	  "J0_3": {
+		"name": "Battle Ballad",
+		"type": "-",
+		"skill_ranks": "234",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$mve Forward 1",
+		  "$str"
+		],
+		"skill_u_text": [
+		  "$mve Forward 2",
+		  "$str",
+		  "$str (85%) or $crt (15%)"
+		]
+	  },
+	  "J0_4": {
+		"name": "Inspiring Tune",
+		"type": "-",
+		"skill_ranks": "34",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Target $sts 5+:",
+		  "-2 $sts"
+		],
+		"skill_u_text": [
+		  "Requires Target $sts 5+:",
+		  "-3 $sts",
+		  "Remove  $hrr"
+		]
+	  },
+	  "J0_5": {
+		"name": "Harvest",
+		"type": "melee",
+		"skill_ranks": "23",
+		"target_ranks": "23-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-4",
+		  "CRIT: 5%",
+		  "$bld 2",
+		  "$cmb (25%)"
+		],
+		"skill_u_text": [
+		  "DMG: 3-4",
+		  "CRIT: 10%",
+		  "$bld 3",
+		  "$cmb (50%)"
+		]
+	  },
+	  "J0_6": {
+		"name": "Finale",
+		"type": "ranged",
+		"skill_ranks": "21",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-12",
+		  "CRIT: 10%",
+		  "Deals +50% DMG When Target  $cmb",
+		  "On Killing Blow: -1 $sts",
+		  "Self:  $mve Back 3, $vln , $dze"
+		],
+		"skill_u_text": [
+		  "DMG: 10-13",
+		  "CRIT: 20%",
+		  "$exe Execution 1",
+		  "Deals +50% DMG When Target  $cmb",
+		  "On Killing Blow: -2 $sts",
+		  "Self:  $mve Back 3, $vln , $dze"
+		]
+	  },
+	  "J0_7": {
+		"name": "Solo",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$cmb",
+		  "Self:  $mve Forward 3, $ddg x2, $fst"
+		],
+		"skill_u_text": [
+		  "$cmb",
+		  "Self:  $mve Forward 3, $ddg+ x2, $fst"
+		]
+	  },
+	  "J0_8": {
+		"name": "Play Out",
+		"type": "-",
+		"skill_ranks": "432",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "$mve Back 1, $blk"
+		],
+		"skill_u_text": [
+		  "$mve Back 2, $blk+",
+		  "Remove  $cmb"
+		]
+	  },
+	  "J0_9": {
+		"name": "Encore",
+		"type": "-",
+		"skill_ranks": "43",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "3(2)",
+		"uses": "-",
+		"skill_text": [
+		  "Extra Action",
+		  "$bld 2",
+		  "Self:  $dze , $vvk"
+		],
+		"skill_u_text": [
+		  "Extra Action",
+		  "$bld 2",
+		  "Self:  $dze"
+		]
+	  },
+	  "J0_10": {
+		"name": "Echoing March",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "$mve Pull 1",
+		  "$neg : Turn Start:  $mve Pull 1 (3 Turns)"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "$mve Pull 2",
+		  "$neg : Turn Start:  $mve Pull 2 (3 Turns)"
+		]
+	  },
+	  "J1_3": {
+		"name": "Battle Ballad",
+		"type": "-",
+		"skill_ranks": "432",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$mve Forward 1, $str",
+		  "Self:  $pos : Next #J9 :  $str"
+		],
+		"skill_u_text": [
+		  "$mve Forward 1, $str , $str (85%) or $crt (15%)",
+		  "Self:  $pos : Next #J9 :  $str (85%) or $crt (15%)"
+		]
+	  },
+	  "J1_4": {
+		"name": "Inspiring Tune",
+		"type": "-",
+		"skill_ranks": "34",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Target $sts 5+:",
+		  "-2 $sts",
+		  "Self:  $pos : Next #J9 : +25% $sts RES (2 Turns)"
+		],
+		"skill_u_text": [
+		  "Requires Target $sts 5+:",
+		  "-3 $sts",
+		  "$pos : +100% $sts RES (2 Turns) when  $sts 7+",
+		  "Self:  $pos : Next #J9 : +33% $sts RES (2 Turns)"
+		]
+	  },
+	  "J1_6": {
+		"name": "Finale",
+		"type": "ranged",
+		"skill_ranks": "21",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-12",
+		  "CRIT: 10%",
+		  "Deals +50% DMG When Target  $cmb",
+		  "On Killing Blow: Each Ally -1 $sts (50%)",
+		  "Self:  $mve Back 3, $vln , $dze"
+		],
+		"skill_u_text": [
+		  "DMG: 10-13",
+		  "CRIT: 20%",
+		  "Deals +50% DMG When Target  $cmb",
+		  "On Killing Blow: Each Ally -1 $sts (67%)",
+		  "Self:  $mve Back 3, $vln , $dze"
+		]
+	  },
+	  "J1_7": {
+		"name": "Solo",
+		"type": "ranged",
+		"skill_ranks": "432",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Requires  $cmb :",
+		  "CRIT: 5%",
+		  "Random $neg Token",
+		  "Self:  $ddg x2, $fst , $mve Forward 2",
+		  "Self:  $pos : Next #J9 : Remove 1 $neg Token (67%)"
+		],
+		"skill_u_text": [
+		  "Requires  $cmb :",
+		  "CRIT: 10%",
+		  "Random $neg Token, $cmb",
+		  "Self:  $ddg x2, $fst , $mve Forward 2",
+		  "Self:  $pos : Next #J9 : Remove 1 $neg Token"
+		]
+	  },
+	  "J1_8": {
+		"name": "Play Out",
+		"type": "-",
+		"skill_ranks": "432",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "$mve Back 1, $blk",
+		  "Self:  $pos : Next #J9 :  $blk"
+		],
+		"skill_u_text": [
+		  "$mve Back 2, $blk+ , Remove  $cmb",
+		  "Self:  $pos : Next #J9 :  $blk , Remove  $cmb"
+		]
+	  },
+	  "J1_9": {
+		"name": "Encore",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "4321-",
+		"target_type": "ally",
+		"cooldown": "-",
+		"uses": "2(4)",
+		"skill_text": [
+		  "Each Ally: Apply all  $pos of #J9",
+		  "Self:  $mve Back 2, Remove all  $pos of #J9"
+		],
+		"skill_u_text": [
+		  "Each Ally: Apply all  $pos of #J9",
+		  "Self:  $mve Back 2, Remove all  $pos of #J9"
+		]
+	  },
+	  "J1_10": {
+		"name": "Echoing March",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "$mve Knockback 1",
+		  "$neg : Turn Start:  $mve Knockback 1 (3 Turns)",
+		  "Self:  $pos : Next #J9 : +2 $spd (3 Turns)"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "$mve Knockback 2",
+		  "$neg : Turn Start:  $mve Knockback 1 (3 Turns)",
+		  "Self:  $pos : Next #J9 : +3 $spd (3 Turns)"
+		]
+	  },
+	  "J2_3": {
+		"name": "Battle Ballad",
+		"type": "-",
+		"skill_ranks": "432",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "$mve Forward 1, $str",
+		  "Self:  $pos : Next #J6 : Ignore  $bln"
+		],
+		"skill_u_text": [
+		  "$mve Forward 1, $str , $str (85%) or $crt (15%)",
+		  "Self:  $pos : Next #J6 : Ignore  $bln $ddg"
+		]
+	  },
+	  "J2_5": {
+		"name": "Harvest",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "23-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$cmb (25%)",
+		  "Self: Heal  $hlh 10% When Target $bld",
+		  "Self:  $pos : Next #J6 : Heal  $hlh 20%"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "$cmb (33%)",
+		  "Self: Heal  $hlh 15% When Target $bld",
+		  "Self:  $pos : Next #J6 : Heal  $hlh 30%"
+		]
+	  },
+	  "J2_6": {
+		"name": "Finale",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "3",
+		"skill_text": [
+		  "DMG: 6-12",
+		  "CRIT: 10%",
+		  "Deals +50% DMG When Target  $cmb",
+		  "Self:  $mve Back 2, $vln , $dze",
+		  "Self: Removes all $pos of #J6 and of Melee DMG"
+		],
+		"skill_u_text": [
+		  "DMG: 10-13",
+		  "CRIT: 20%",
+		  "Deals +50% DMG When Target  $cmb",
+		  "Self:  $mve Back 2, $vln , $dze",
+		  "Self: Removes all $pos of #J6 and of Melee DMG"
+		]
+	  },
+	  "J2_7": {
+		"name": "Solo",
+		"type": "ranged",
+		"skill_ranks": "432",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$ddg x2, $tnt x2, $mve Forward 3"
+		],
+		"skill_u_text": [
+		  "$ddg+ x2, $tnt x2, $mve Forward 3"
+		]
+	  },
+	  "J2_8": {
+		"name": "Play Out",
+		"type": "-",
+		"skill_ranks": "432",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "$mve Back 1, $blk",
+		  "Self:  $pos : Next #J6 : Ignore  $grd"
+		],
+		"skill_u_text": [
+		  "$mve Back 1, $blk+ , Remove  $cmb",
+		  "Self:  $pos : Next #J6 : Ignore  $grd $blk"
+		]
+	  },
+	  "J2_9": {
+		"name": "Encore",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "4(2)",
+		"uses": "-",
+		"skill_text": [
+		  "Restore All Last  $pos of #J6",
+		  "$mve Forward 1"
+		],
+		"skill_u_text": [
+		  "Restore All Last  $pos of #J6",
+		  "$mve Forward 1, $fst"
+		]
+	  },
+	  "J3_3": {
+		"name": "Battle Ballad",
+		"type": "-",
+		"skill_ranks": "432",
+		"target_ranks": "432",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "$mve Forward 1, $bld 2",
+		  "$str , $str (70%) or $crt (5%) or $fst (25%)"
+		],
+		"skill_u_text": [
+		  "$mve Forward 1, $bld 2",
+		  "$str , $crt (15%), $str (65%) or $crt (10%) or $fst (20%) or Extra Action (5%)"
+		]
+	  },
+	  "J3_4": {
+		"name": "Inspiring Tune",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321-",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Target $sts 5+:",
+		  "-1 $sts When Target $sts 5+",
+		  "-1 $sts When Target $bld",
+		  "$bld 1"
+		],
+		"skill_u_text": [
+		  "Requires Target $sts 5+ or Target $bld :",
+		  "-1 $sts When Target $sts 5+",
+		  "-1 $sts When Target $bld",
+		  "$bld 1"
+		]
+	  },
+	  "J3_6": {
+		"name": "Finale",
+		"type": "ranged",
+		"skill_ranks": "21",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-12",
+		  "CRIT: 10%",
+		  "Deals +50% DMG When Target  $cmb",
+		  "On Killing Blow: -1 $sts",
+		  "Self:  $mve Back 3, $vln , $dze"
+		],
+		"skill_u_text": [
+		  "DMG: 10-13",
+		  "CRIT: 20%",
+		  "Deals +50% DMG When Target  $cmb",
+		  "Deals +50% DMG When Target  $bld",
+		  "On Killing Blow: -1 $sts",
+		  "Self:  $mve Back 3, $vln , $dze"
+		]
+	  },
+	  "J3_7": {
+		"name": "Solo",
+		"type": "ranged",
+		"skill_ranks": "43",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "$cmb , $bld 2",
+		  "Self:  $mve Forward 3, $ddg x2"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "$cmb , $bld 2",
+		  "Self:  $mve Forward 3, $ddg+ x2"
+		]
+	  },
+	  "J3_8": {
+		"name": "Play Out",
+		"type": "-",
+		"skill_ranks": "432",
+		"target_ranks": "321",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "$mve Back 1, $bld 2, $blk",
+		  "$blk (50%) or $ddg (25%) or $fst (25%)"
+		],
+		"skill_u_text": [
+		  "$mve Back 1, $bld 2, $blk+",
+		  "$blk+ (50%) or $ddg+ (25%) or $fst (20%) or Heal  $hlh 100% (5%)"
+		]
+	  },
+	  "J3_10": {
+		"name": "Echoing March",
+		"type": "ranged",
+		"skill_ranks": "43",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "$mve Pull 1, $bld 2",
+		  "$neg : Turn Start:  $mve Pull 1 (3 Turns)"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "$mve Pull 1, $bld 2",
+		  "$neg : Turn Start:  $mve Pull 1 (3 Turns)",
+		  "$neg : When Moving:  $bld (3 Turns)"
+		]
+	  },
+	  "L0_0": {
+		"name": "Chop",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-12",
+		  "CRIT: 5%",
+		  "Ignores  $bln when Target  $cmb",
+		  "Self:  $bln (75%)"
+		],
+		"skill_u_text": [
+		  "DMG: 8-16",
+		  "CRIT: 5%",
+		  "Ignores  $bln when Target  $cmb",
+		  "Self:  $bln (60%)"
+		]
+	  },
+	  "L0_1": {
+		"name": "Purge",
+		"type": "melee",
+		"skill_ranks": "1",
+		"target_ranks": "1",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-7",
+		  "CRIT: 5%",
+		  "$mve Knockback 3, Clear All Corpses"
+		],
+		"skill_u_text": [
+		  "DMG: 5-9",
+		  "CRIT: 5%",
+		  "$cmb ,  $mve Knockback 3, Clear All Corpses"
+		]
+	  },
+	  "L0_2": {
+		"name": "Withstand",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "2",
+		"skill_text": [
+		  "$blk x2  $tnt x2, Turn Start:  $blk (1 Battle)",
+		  "$pos +20% $bld $blt $brn $mve RES (1 Battle)",
+		  "Remove  $str $vln , Remove #L6 Buffs",
+		  "$neg Cannot Gain  $str (1 Battle)",
+		  "$neg -100% CRIT (1 Battle)",
+		  "#L2 Buffs do not stack."
+		],
+		"skill_u_text": [
+		  "$blk x2  $tnt x2, Turn Start:  $blk (1 Battle)",
+		  "$pos +20% $bld $blt $brn $mve RES (1 Battle)",
+		  "Remove  $str $vln , Remove #L6 Buffs",
+		  "$neg Cannot Gain  $str (1 Battle)",
+		  "$neg -100% CRIT (1 Battle)",
+		  "#L2 Buffs do not stack.",
+		  "Does not end turn."
+		]
+	  },
+	  "L0_3": {
+		"name": "Solemnity",
+		"type": "heal",
+		"skill_ranks": "12",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "2",
+		"skill_text": [
+		  "If  $hlh  < 33%: Heal  $hlh 33%",
+		  "-2 $sts"
+		],
+		"skill_u_text": [
+		  "If  $hlh  < 33%: Heal  $hlh 50%",
+		  "-3 $sts"
+		]
+	  },
+	  "L0_4": {
+		"name": "Reflection",
+		"type": "-",
+		"skill_ranks": "12",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "-1 $sts",
+		  "Remove  $bln $vvk $vln $cmb"
+		],
+		"skill_u_text": [
+		  "-1 $sts",
+		  "Remove  $bln $vvk $vln $cmb",
+		  "$pos : +10% $neg RES (3 Turns) per Token type removed"
+		]
+	  },
+	  "L0_5": {
+		"name": "Hew",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%",
+		  "Ignores  $bln when Target  $cmb",
+		  "Self:  $bln (75%)"
+		],
+		"skill_u_text": [
+		  "DMG: 5-10",
+		  "CRIT: 5%",
+		  "Ignores  $bln when Target  $cmb",
+		  "Self:  $bln (60%)"
+		]
+	  },
+	  "L0_6": {
+		"name": "Revenge",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "2",
+		"skill_text": [
+		  "$str , Turn Start:  $str (75%) (1 Battle)",
+		  "+3 $spd (1 Battle)",
+		  "Remove  $blk $vvk , Remove #L2 Buffs",
+		  "$neg Cannot Gain  $blk (1 Battle)",
+		  "#L6 Buffs do not stack."
+		],
+		"skill_u_text": [
+		  "$str , Turn Start:  $str (75%) (1 Battle)",
+		  "+3 $spd (1 Battle)",
+		  "Remove  $blk $vvk , Remove #L2 Buffs",
+		  "$neg Cannot Gain  $blk (1 Battle)",
+		  "#L6 Buffs do not stack.",
+		  "Does not end turn."
+		]
+	  },
+	  "L0_7": {
+		"name": "Intimidate",
+		"type": "-",
+		"skill_ranks": "1",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "2(1)",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-6",
+		  "CRIT: 5%",
+		  "$vvk x2",
+		  "Self:  $tnt x2"
+		],
+		"skill_u_text": [
+		  "DMG: 3-7",
+		  "CRIT: 5%",
+		  "Ignores  $stl",
+		  "Remove  $stl",
+		  "$vvk x2",
+		  "Self:  $tnt x2"
+		]
+	  },
+	  "L0_8": {
+		"name": "Ruin",
+		"type": "-",
+		"skill_ranks": "123",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Requires self no $rnn :",
+		  "$rnn x2",
+		  "$pos : 1 $rnn (max 10) When Damaged (2 Turns)",
+		  "When 2 Turns pass:  $rui"
+		],
+		"skill_u_text": [
+		  "Requires self no $rnn :",
+		  "$rnn x2",
+		  "$pos : 1 $rnn (max 10) When Damaged (2 Turns)",
+		  "When 2 Turns pass:  $rui+"
+		]
+	  },
+	  "L0_9": {
+		"name": "Break",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-9",
+		  "CRIT: 5%",
+		  "Ignores  $blk",
+		  "Remove  $blk",
+		  "Ignores  $bln when Target  $cmb",
+		  "Self:  $bln (75%)"
+		],
+		"skill_u_text": [
+		  "DMG: 6-12",
+		  "CRIT: 5%",
+		  "Ignores  $blk",
+		  "Remove  $blk",
+		  "Ignores  $bln when Target  $cmb",
+		  "$neg Cannot gain  $blk (2 rounds)",
+		  "Self:  $bln (60%)"
+		]
+	  },
+	  "L0_10": {
+		"name": "Bash",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-7",
+		  "CRIT: 5%",
+		  "$imm $dze",
+		  "Self:  $imm"
+		],
+		"skill_u_text": [
+		  "DMG: 5-9",
+		  "CRIT: 5%",
+		  "$imm x2  $dze $cmb",
+		  "Self:  $imm x2"
+		]
+	  },
+	
+	  "L1_0": {
+		"name": "Chop",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-12",
+		  "CRIT: 5%",
+		  "Ignores  $bln $vvk when Target  $cmb",
+		  "+10% DMG per  $neg Token on self",
+		  "Self:  $bln",
+		  "Self: 2 DMG (max 10 DMG) per  $neg Token on self"
+		],
+		"skill_u_text": [
+		  "DMG: 8-16",
+		  "CRIT: 5%",
+		  "Ignores  $bln $vvk when Target  $cmb",
+		  "+15% DMG per  $neg Token on self",
+		  "Self:  $bln (75%)",
+		  "Self: 2 DMG (max 10 DMG) per  $neg Token on self"
+		]
+	  },
+	  "L1_5": {
+		"name": "Hew",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%",
+		  "Ignores  $bln $vvk when Target  $cmb",
+		  "+10% DMG per  $neg Token on self",
+		  "Self:  $bln",
+		  "Self: 2 DMG (max 10 DMG) per  $neg Token on self"
+		],
+		"skill_u_text": [
+		  "DMG: 5-10",
+		  "CRIT: 5%",
+		  "Ignores  $bln $vvk when Target  $cmb",
+		  "+15% DMG per  $neg Token on self",
+		  "Self:  $bln (75%)",
+		  "Self: 2 DMG (max 10 DMG) per  $neg Token on self"
+		]
+	  },
+	  "L1_6": {
+		"name": "Revenge",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "2",
+		"skill_text": [
+		  "$str , Turn Start:  $str (66%) or convert 1 $str to $crt when  $str x2 (1 Battle)",
+		  "Remove  $blk $vvk , Remove #L2 Buffs",
+		  "On CRIT: Remove all  $neg Tokens (1 Battle)",
+		  "$neg Cannot Gain  $blk (1 Battle)",
+		  "#L6 Buffs do not stack.",
+		  "Does not end turn."
+		],
+		"skill_u_text": [
+		  "$str , Turn Start:  $str (66%) or convert 1 $str to $crt when  $str x2 (1 Battle)",
+		  "Remove  $blk $vvk , Remove #L2 Buffs",
+		  "On CRIT: Remove all  $neg Tokens (1 Battle)",
+		  "$neg Cannot Gain  $blk (1 Battle)",
+		  "#L6 Buffs do not stack.",
+		  "Does not end turn."
+		]
+	  },
+	  "L1_8": {
+		"name": "Ruin",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "1(0)",
+		"uses": "2(3)",
+		"skill_text": [
+		  "Requires Target has  $neg token and Adjacent",
+		  "Steal all  $neg tokens",
+		  "Does not end turn."
+		],
+		"skill_u_text": [
+		  "Requires Target has  $neg token and Adjacent",
+		  "Steal all  $neg tokens",
+		  "Does not end turn."
+		]
+	  },
+	  "L1_9": {
+		"name": "Break",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-9",
+		  "CRIT: 5%",
+		  "Ignores  $blk",
+		  "Remove  $blk",
+		  "Ignores  $bln $vvk when Target  $cmb",
+		  "+15% DMG per  $neg Token on self",
+		  "Self:  $bln",
+		  "Self: 2 DMG (max 10 DMG) per  $neg Token on self"
+		],
+		"skill_u_text": [
+		  "DMG: 10-20",
+		  "CRIT: 5%",
+		  "Ignores  $blk",
+		  "Remove  $blk",
+		  "$neg Cannot gain  $blk (2 rounds)",
+		  "Ignores  $bln $vvk when Target  $cmb",
+		  "+15% DMG per  $neg Token on self",
+		  "Self:  $bln (75%)",
+		  "Self: 2 DMG (max 10 DMG) per  $neg Token on self"
+		]
+	  },
+	
+	  "L2_2": {
+		"name": "Withstand",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "2",
+		"skill_text": [
+		  "$blk x2  $tnt x2, Turn Start:  $blk , $tnt (75%) (1 Battle)",
+		  "$pos +40%  $mve RES, +40%  $stn RES (1 Battle)",
+		  "Remove  $str $vln , Remove #L6 Buffs",
+		  "$neg Cannot Gain  $str (1 Battle)",
+		  "$neg -100% CRIT (1 Battle)",
+		  "#L2 Buffs do not stack."
+		],
+		"skill_u_text": [
+		  "$blk x2  $tnt x2, Turn Start:  $blk , $tnt (75%) (1 Battle)",
+		  "$pos +40%  $mve RES, +40%  $stn RES (1 Battle)",
+		  "Remove  $str $vln , Remove #L6 Buffs",
+		  "$neg Cannot Gain  $str (1 Battle)",
+		  "$neg -100% CRIT (1 Battle)",
+		  "#L2 Buffs do not stack.",
+		  "Does not end turn."
+		]
+	  },
+	  "L2_3": {
+		"name": "Solemnity",
+		"type": "heal",
+		"skill_ranks": "12",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "2",
+		"skill_text": [
+		  "If  $hlh  < 33%: Heal  $hlh 25%",
+		  "$reg 3",
+		  "-2 $sts"
+		],
+		"skill_u_text": [
+		  "If  $hlh  < 33%: Heal  $hlh 33%",
+		  "$reg 4",
+		  "-3 $sts"
+		]
+	  },
+	  "L2_6": {
+		"name": "Revenge",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$str x2",
+		  "Gain on Killing Blow:  $reg 2 (1 Battle)",
+		  "Apply to Attacker when hit:  $cmb (33%) or $vln (33%) (1 Battle)",
+		  "Remove  $blk $vvk , Remove #L2 Buffs",
+		  "$neg Cannot Gain  $blk (1 Battle)",
+		  "#L6 Buffs do not stack."
+		],
+		"skill_u_text": [
+		  "$str x2",
+		  "Gain on Killing Blow:  $reg 2 (1 Battle)",
+		  "Apply to Attacker when hit:  $cmb (33%) or $vln (33%) (1 Battle)",
+		  "Remove  $blk $vvk , Remove #L2 Buffs",
+		  "$neg Cannot Gain  $blk (1 Battle)",
+		  "#L6 Buffs do not stack.",
+		  "Does not end turn."
+		]
+	  },
+	  "L2_8": {
+		"name": "Ruin",
+		"type": "-",
+		"skill_ranks": "321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "1-",
+		"uses": "2",
+		"skill_text": [
+		  "Requires  $blk or $reg",
+		  "Convert  $blk to $str",
+		  "Convert each instance of $reg to $crt",
+		  "Remove #L2 or #L6 buffs"
+		],
+		"skill_u_text": [
+		  "Requires  $blk or $reg",
+		  "Convert  $blk to $str",
+		  "Convert each instance of $reg to $crt",
+		  "$pos : Cannot gain  $vvk (2 Rounds)",
+		  "Remove #L2 or #L6 buffs"
+		]
+	  },
+	  "L2_9": {
+		"name": "Break",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-9",
+		  "CRIT: 5%",
+		  "Ignores  $blk",
+		  "Remove  $blk",
+		  "Ignores  $bln when Target  $cmb",
+		  "Self:  $bln (75%)"
+		],
+		"skill_u_text": [
+		  "DMG: 6-12",
+		  "CRIT: 5%",
+		  "Ignores  $blk",
+		  "Steal all  $blk",
+		  "If #L6 is active: convert stolen  $blk to $reg",
+		  "Self:  $bln (60%)"
+		]
+	  },
+	
+	  "L3_0": {
+		"name": "Chop",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-9",
+		  "CRIT: 5%",
+		  "Ignores  $bln when Target  $cmb",
+		  "Deals bonus +Oath% DMG",
+		  "Self:  $bln (75%)"
+		],
+		"skill_u_text": [
+		  "DMG: 6-12",
+		  "CRIT: 5%",
+		  "Ignores  $bln when Target  $cmb",
+		  "Deals bonus +Oath% DMG",
+		  "Self:  $bln (60%)"
+		]
+	  },
+	  "L3_1": {
+		"name": "Purge",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-4",
+		  "CRIT: 5%",
+		  "Ignores  $ddg",
+		  "Steal all $pos Tokens (1%)",
+		  "Remove 2 $pos Tokens",
+		  "Steal Chance increased by Oath%/2",
+		  "Clear All Corpses"
+		],
+		"skill_u_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Ignores  $ddg",
+		  "Steal all $pos Tokens (1%)",
+		  "Remove 2 $pos Tokens",
+		  "Steal Chance increased by Oath%",
+		  "Clear All Corpses"
+		]
+	  },
+	  "L3_3": {
+		"name": "Solemnity",
+		"type": "heal",
+		"skill_ranks": "12",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "2",
+		"skill_text": [
+		  "If  $hlh  < 33%: Heal  $hlh 25%",
+		  "-2 $sts",
+		  "Multiply healing by Oath%"
+		],
+		"skill_u_text": [
+		  "If  $hlh  < 33%: Heal  $hlh 40%",
+		  "-3 $sts",
+		  "Multiply healing by Oath%"
+		]
+	  },
+	  "L3_4": {
+		"name": "Reflection",
+		"type": "-",
+		"skill_ranks": "321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "2(1)",
+		"uses": "-",
+		"skill_text": [
+		  "Targets an Adjacent Ally",
+		  "Copy all  $pos Tokens to Target",
+		  "Self: Remove  $bln"
+		],
+		"skill_u_text": [
+		  "Targets an Adjacent Ally",
+		  "Copy all  $pos Tokens to Target",
+		  "Self: Remove  $bln $vvk $vln $cmb"
+		]
+	  },
+	  "L3_8": {
+		"name": "Ruin",
+		"type": "-",
+		"skill_ranks": "321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Requires self no $rui",
+		  "$rui"
+		],
+		"skill_u_text": [
+		  "Requires self no $rui",
+		  "$rui",
+		  "Adjacent allies: +Oath/2% DMG"
+		]
+	  },
+	  "L3_10": {
+		"name": "Bash",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-7",
+		  "CRIT: 5%",
+		  "$imm $dze",
+		  "Self:  $imm"
+		],
+		"skill_u_text": [
+		  "DMG: 5-9",
+		  "CRIT: 5%",
+		  "$imm x2  $dze , On  $cmb :  $stn",
+		  "Self:  $imm x2"
+		]
+	  },
+	  "O0_0": {
+		"name": "Sacrificial Stab",
+		"type": "melee",
+		"skill_ranks": "321",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 15%",
+		  "Gain on Killing Blow:  $pow",
+		  "Self:  $pow When Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 5-8",
+		  "CRIT: 20%",
+		  "$exe Execution 1",
+		  "vs Corpse: +100% DMG",
+		  "Gain on Killing Blow:  $pow",
+		  "Self:  $pow When Target  $cmb"
+		]
+	  },
+	  "O0_1": {
+		"name": "Abyssal Artillery",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "34-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$cmb (25%)",
+		  "Self:  $pow (66%) per CRIT"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$cmb (33%)",
+		  "Self:  $pow per CRIT"
+		]
+	  },
+	  "O0_2": {
+		"name": "$vvk ening Curse",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "$cmb $vvk x2"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "$cmb $vvk x2",
+		  "Remove  $crt $str"
+		]
+	  },
+	  "O0_3": {
+		"name": "Wyrd Reconstruction",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Requires  $hlh  < 50%",
+		  "$pow x2: +100% CRIT Heal",
+		  "Heal  $hlh 0-33%",
+		  "$bld 2 (50%)"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "Requires  $hlh  < 50%",
+		  "$pow x2: +100% CRIT Heal, $stl x2",
+		  "Heal  $hlh 0-50%",
+		  "$bld 2 (50%)"
+		]
+	  },
+	  "O0_4": {
+		"name": "Daemon's Pull",
+		"type": "ranged",
+		"skill_ranks": "432",
+		"target_ranks": "34",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-5",
+		  "CRIT: 5%",
+		  "$mve Pull 2",
+		  "$cmb",
+		  "$pow x2:  $stn"
+		],
+		"skill_u_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$mve Pull 3",
+		  "$cmb",
+		  "$pow x2:  $stn",
+		  "Clear All Corpses"
+		]
+	  },
+	  "O0_5": {
+		"name": "Vulnerability Hex",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Ignores  $ddg",
+		  "Remove  $ddg",
+		  "$vln x2"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "Ignores  $ddg",
+		  "Remove  $ddg $blk",
+		  "$vln x2"
+		]
+	  },
+	  "O0_6": {
+		"name": "Binding Shadows",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Ignores  $stl",
+		  "$pow (50%)",
+		  "$stl When Target  $cmb",
+		  "Increase $pow chance to 100% when Self  $stl",
+		  "Ignores  $cmb when Self  $stl"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "Ignores  $stl",
+		  "$pow (66%)",
+		  "$stl x2 When Target  $cmb",
+		  "Increase $pow chance to 100% when Self  $stl",
+		  "Ignores  $cmb when Self  $stl"
+		]
+	  },
+	  "O0_7": {
+		"name": "Malediction",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 10%",
+		  "Requires Self $pow x2",
+		  "Ignores  $ddg",
+		  "$cmb",
+		  "$neg Gain When Hit:  $cmb (3 Rounds)"
+		],
+		"skill_u_text": [
+		  "CRIT: 15%",
+		  "Requires Self $pow x2",
+		  "Ignores  $ddg $bln",
+		  "$cmb",
+		  "$neg Gain When Hit:  $cmb (3 Rounds)",
+		  "If Target resisted: Refunds  $pow on Round End"
+		]
+	  },
+	  "O0_8": {
+		"name": "Anamnesis",
+		"type": "melee",
+		"skill_ranks": "321",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Requires Self $pow x3",
+		  "$bld 3, $mve Shuffle"
+		],
+		"skill_u_text": [
+		  "DMG: 3-5",
+		  "CRIT: 10%",
+		  "Requires Self $pow x2",
+		  "$bld 4, $mve Shuffle"
+		]
+	  },
+	  "O0_9": {
+		"name": "The Burning Stars",
+		"type": "ranged",
+		"skill_ranks": "432",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 12-18",
+		  "CRIT: 5%",
+		  "Requires Self $pow x3"
+		],
+		"skill_u_text": [
+		  "DMG: 12-18",
+		  "CRIT: 15%",
+		  "Requires Self $pow x2",
+		  "Ignores  $blk"
+		]
+	  },
+	  "O0_10": {
+		"name": "Chaotic Offering",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "3(2)",
+		"uses": "-",
+		"skill_text": [
+		  "Requires  $hlh  > 15%",
+		  "15%  $hlh DMG",
+		  "$pow",
+		  "One random effect:  $brn 2 (20%), $mve Shuffle (18%),",
+		  "$dze (18%), $vvk (18%), $tnt (18%), $stl (4%) or $stn (4%)",
+		  "$pos On Turn Start: Add  $pow (3 Turns)"
+		],
+		"skill_u_text": [
+		  "Requires  $hlh  > 10%",
+		  "10%  $hlh DMG",
+		  "$pow",
+		  "One random effect:  $brn 2 (20%), $mve Shuffle (18%),",
+		  "$dze (18%), $vvk (18%), $tnt (18%), $stl (4%) or $stn (4%)",
+		  "$pos On Turn Start: Add  $pow (3 Turns)"
+		]
+	  },
+	  "O1_1": {
+		"name": "Abyssal Artillery",
+		"type": "ranged",
+		"skill_ranks": "43",
+		"target_ranks": "34-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$pow x2:  $bln , $bln (50%)"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$cmb (33%)",
+		  "$pow x2:  $bln , $bln (66%)"
+		]
+	  },
+	  "O1_2": {
+		"name": "$vvk ening Curse",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "$cmb $vvk x2",
+		  "$neg On Attack (1 turn): Occultist:  $pow"
+		],
+		"skill_u_text": [
+		  "CRIT: 15%",
+		  "$cmb $vvk x2",
+		  "$neg On Attack (2 turns): Occultist:  $pow"
+		]
+	  },
+	  "O1_3": {
+		"name": "Wyrd Reconstruction",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Requires  $hlh  < 50%",
+		  "$pow x2: +100% CRIT Heal",
+		  "Heal  $hlh 0-33%",
+		  "$bld 2 (50%)"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "Requires  $hlh  < 50%",
+		  "$pow x2: +100% CRIT Heal, Remove all  $neg Tokens",
+		  "Heal  $hlh 0-50%",
+		  "$bld 2 (50%)"
+		]
+	  },
+	  "O1_5": {
+		"name": "Vulnerability Hex",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Ignores  $ddg",
+		  "Remove  $ddg",
+		  "$vln x2",
+		  "Self:  $pow"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "Ignores  $ddg",
+		  "Remove  $ddg",
+		  "$vln x2",
+		  "$neg On Death (1 battle):  $pow",
+		  "Self:  $pow"
+		]
+	  },
+	  "O1_6": {
+		"name": "Binding Shadows",
+		"type": "melee",
+		"skill_ranks": "1234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Ignores  $stl",
+		  "$neg : -10% $neg RES when Self  $stl (3 Rounds)",
+		  "Self:  $stl When Target  $cmb",
+		  "Ignores  $cmb when Self  $stl"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "Ignores  $stl",
+		  "$neg : -10% $neg RES when Self  $stl (3 Rounds)",
+		  "Self:  $stl x2 When Target  $cmb",
+		  "Ignores  $cmb when Self  $stl"
+		]
+	  },
+	  "O1_7": {
+		"name": "Malediction",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 10%",
+		  "Requires Self  $pow x2",
+		  "Ignores  $ddg",
+		  "$neg Apply to Hero When Hit:  $str (30%) or $blk (30%) or $ddg (30%) or $crt (10%)"
+		],
+		"skill_u_text": [
+		  "CRIT: 15%",
+		  "Requires Self  $pow x2",
+		  "Ignores  $ddg",
+		  "$neg Apply to Hero When Hit:  $str (30%) or $blk+ (30%) or $ddg+ (30%) or $crt (10%)",
+		  "Invert all $pos Tokens, Remove  $rps"
+		]
+	  },
+	  "O2_3": {
+		"name": "Wyrd Reconstruction",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Requires  $hlh  < 50%",
+		  "$pow x2: +100% CRIT Heal",
+		  "Heal  $hlh 0-33%",
+		  "$bld 2 (50%)"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "Requires  $hlh  < 50%",
+		  "$pow x2: +100% CRIT Heal, $reg 2",
+		  "Heal  $hlh 0-50%",
+		  "$bld 2 (50%)",
+		]
+	  },
+	  "O2_7": {
+		"name": "Malediction",
+		"type": "ranged",
+		"skill_ranks": "432",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 10%",
+		  "Requires Self $pow x2",
+		  "Ignores  $ddg",
+		  "$neg When Damaged (3 Rounds):  $reg 2 to self (33%), +4  $hlh  to hero (75%)"
+		],
+		"skill_u_text": [
+		  "CRIT: 15%",
+		  "Requires Self $pow x2",
+		  "Ignores  $ddg $bln",
+		  "$neg When Damaged (3 Rounds):  $reg 2 to self (33%), +4  $hlh  to hero (100%)"
+		]
+	  },
+	  "O2_8": {
+		"name": "Anamnesis",
+		"type": "melee",
+		"skill_ranks": "432",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 1-1",
+		  "CRIT: 5%",
+		  "Requires Self $pow x3",
+		  "+3 DMG per $pos Token on Target",
+		  "Ignores  $blk $ddg $grd $stl $rps",
+		  "Remove All $pos Tokens"
+		],
+		"skill_u_text": [
+		  "DMG: 1-1",
+		  "CRIT: 10%",
+		  "Requires Self $pow x2",
+		  "+3 DMG per $pos Token on Target",
+		  "Ignores  $blk $ddg $grd $stl $rps",
+		  "Remove All $pos Tokens",
+		  "Bonus DMG from $pow is Doubled"
+		]
+	  },
+	  "O2_9": {
+		"name": "The Burning Stars",
+		"type": "ranged",
+		"skill_ranks": "432",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 10-16",
+		  "CRIT: 5%",
+		  "Requires Self $pow x3"
+		],
+		"skill_u_text": [
+		  "DMG: 10-16",
+		  "CRIT: 10%",
+		  "Requires Self $pow x2",
+		  "Bonus DMG from $pow is Doubled"
+		]
+	  },
+	  "O2_10": {
+		"name": "Chaotic Offering",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "3(2)",
+		"uses": "-",
+		"skill_text": [
+		  "Requires  $hlh  > 15%",
+		  "15%  $hlh  DMG",
+		  "$pow",
+		  "One random effect:  $brn 2 (20%), $mve Shuffle (18%),",
+		  "$dze (18%), $vvk (18%), $tnt (18%), $stl (4%) or $stn (4%)",
+		  "Disable Round Start effect (3 Turns)",
+		  "Does not end turn.",
+		  "Equipping this Skill grants Round Start:  $pow (30%)"
+		],
+		"skill_u_text": [
+		  "Requires  $hlh  > 15%",
+		  "15%  $hlh  DMG",
+		  "$pow",
+		  "One random effect:  $brn 2 (20%), $mve Shuffle (18%),",
+		  "$dze (18%), $vvk (18%), $tnt (18%), $stl (4%) or $stn (4%)",
+		  "Disable Round Start effect (3 Turns)",
+		  "Does not end turn.",
+		  "Equipping this Skill grants Round Start:  $pow (60%)"
+		]
+	  },
+	  "O3_0": {
+		"name": "Sacrificial Stab",
+		"type": "melee",
+		"skill_ranks": "321",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 15%",
+		  "Gain on Killing Blow:  $pow",
+		  "Self:  $blk When Target  $cmb",
+		  "Self:  $mve Back 1"
+		],
+		"skill_u_text": [
+		  "DMG: 5-8",
+		  "CRIT: 20%",
+		  "$exe Execution 1",
+		  "vs Corpse: +100% DMG",
+		  "Gain on Killing Blow:  $pow",
+		  "Self:  $blk+ When Target  $cmb",
+		  "Self:  $mve Back 1"
+		]
+	  },
+	  "O3_3": {
+		"name": "Wyrd Reconstruction",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Requires  $hlh  < 50%",
+		  "$pow x2: +100% CRIT Heal",
+		  "Heal  $hlh 0-33%",
+		  "$bld 2 (50%)"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "Requires  $hlh  < 50%",
+		  "$pow x2: +100% CRIT Heal, Remove  $bld $blt $brn",
+		  "Heal  $hlh 0-50%",
+		  "$bld 2 (50%)"
+		]
+	  },
+	  "O3_6": {
+		"name": "Binding Shadows",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$mve Forward 1",
+		  "$stl When Target  $cmb",
+		  "Ignores  $cmb when Self  $stl"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$mve Forward 1",
+		  "$stl x2 When Target  $cmb",
+		  "Ignores  $cmb when Self  $stl"
+		]
+	  },
+	  "O3_7": {
+		"name": "Malediction",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 10%",
+		  "Requires Self $pow x2",
+		  "Ignores  $ddg",
+		  "$neg When Damaged (3 Rounds):  $bld 2 or $blt 2 or $brn 2"
+		],
+		"skill_u_text": [
+		  "CRIT: 15%",
+		  "Requires Self $pow x2",
+		  "Ignores  $ddg $bln",
+		  "$neg When Damaged (3 Rounds):  $bld 3 or $blt 3 or $brn 3"
+		]
+	  },
+	  "O3_9": {
+		"name": "The Burning Stars",
+		"type": "ranged",
+		"skill_ranks": "321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-11",
+		  "CRIT: 5%",
+		  "Requires Self $pow x3",
+		  "$brn 5"
+		],
+		"skill_u_text": [
+		  "DMG: 6-11",
+		  "CRIT: 15%",
+		  "Requires Self $pow x2",
+		  "$brn 6",
+		  "Copy  $brn to Target"
+		]
+	  },
+	  "R0_0": {
+		"name": "Searing Strike",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-7",
+		  "CRIT: 5%",
+		  "+1 $brn Dealt when Self  $stl",
+		  "$brn 2",
+		  "Random Adjacent Enemy: $brn 3 when Target  $cmb",
+		],
+		"skill_u_text": [
+		  "DMG: 4-9",
+		  "CRIT: 10%",
+		  "+2 $brn Dealt when Self  $stl",
+		  "$brn 3",
+		  "Random Adjacent Enemy: $brn 3 when Target  $cmb",
+		]
+	  },
+	  "R0_1": {
+		"name": "Firefly",
+		"type": "ranged",
+		"skill_ranks": "43",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-4",
+		  "CRIT: 5%",
+		  "+10% $brn RES Piercing when Self  $stl",
+		  "$brn 3",
+		  "Random Adjacent Enemy:  $brn 3 When Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 3-4",
+		  "CRIT: 10%",
+		  "+20% $brn RES Piercing when Self  $stl",
+		  "$brn 5",
+		  "Random Adjacent Enemy:  $brn 3 When Target  $cmb"
+		]
+	  },
+	  "R0_2": {
+		"name": "Smokescreen",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "$bln $cmb",
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "$bln x2  $vln $cmb",
+		]
+	  },
+	  "R0_3": {
+		"name": "Run and Hide",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Regeneration 3",
+		  "$stl x2",
+		  "$mve Back 1"
+		],
+		"skill_u_text": [
+		  "Regeneration 3",
+		  "$stl x2",
+		  "Remove  $bld $blt $brn",
+		  "$mve Back 1"
+		]
+	  },
+	  "R0_4": {
+		"name": "Hearthlight",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 10%",
+		  "Ignores  $stl",
+		  "Remove  $stl",
+		  "-10% $brn RES (3 Turns)",
+		  "Apply on CRIT:  $cmb"
+		],
+		"skill_u_text": [
+		  "CRIT: 15%",
+		  "Ignores  $stl",
+		  "Remove  $stl",
+		  "-20% $brn RES (3 Turns)",
+		  "Apply on CRIT:  $cmb",
+		  "Allies: Remove  $bln , +10% $brn RES Piercing (3 Turns)"
+		]
+	  },
+	  "R0_5": {
+		"name": "Ransack",
+		"type": "melee",
+		"skill_ranks": "4321",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$mve Pull 1",
+		  "Self:  $mve Forward 1",
+		  "Self:  $stl when target  $cmb , Ignores  $cmb when Self  $stl"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$mve Pull 2",
+		  "Self:  $mve Forward 1",
+		  "Self:  $stl x2 when target  $cmb , Ignores  $cmb when Self  $stl"
+		]
+	  },
+	  "R0_6": {
+		"name": "Cauterize",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "3",
+		"skill_text": [
+		  "Heal  $hlh 1 while no $bld",
+		  "Heal  $hlh 25% when target $bld , Remove  $bld"
+		],
+		"skill_u_text": [
+		  "Heal  $hlh 5% while no $bld",
+		  "Heal  $hlh 33% when target $bld , Remove  $bld"
+		]
+	  },
+	  "R0_7": {
+		"name": "Controlled Burn",
+		"type": "-",
+		"skill_ranks": "321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Ignores  $stl",
+		  "$brn 2",
+		  "Apply on Attack:  $cbn"
+		],
+		"skill_u_text": [
+		  "CRIT: 5%",
+		  "Ignores  $stl $grd",
+		  "$brn 3",
+		  "Apply on Attack:  $cbn+"
+		]
+	  },
+	  "R0_8": {
+		"name": "Dragonfly",
+		"type": "ranged",
+		"skill_ranks": "21",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 1-2",
+		  "CRIT: 5%",
+		  "$brn 2",
+		  "$cmb (25%)",
+		  "Self: +10% $brn RES Piercing when Self  $stl",
+		  "Self:  $mve Back 1"
+		],
+		"skill_u_text": [
+		  "DMG: 1-3",
+		  "CRIT: 5%",
+		  "$brn 4",
+		  "$cmb (33%)",
+		  "Self: +10% $brn RES Piercing when Self  $stl",
+		  "Self:  $mve Back 1"
+		]
+	  },
+	  "R0_9": {
+		"name": "Firestarter",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "3(2)",
+		"uses": "-",
+		"skill_text": [
+		  "$pos Apply On Hit (3 Turns):  $brn 2"
+		],
+		"skill_u_text": [
+		  "$pos Apply On Hit (3 Turns):  $brn 3",
+		  "Self: +1 $brn DUR Dealt (3 Turns)"
+		]
+	  },
+	  "R0_10": {
+		"name": "Backdraft",
+		"type": "ranged",
+		"skill_ranks": "12",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Requires Enemy in Front $brn",
+		  "Ignores  $grd",
+		  "Ignores  $blk when  $stl",
+		  "Deals 75% of remaining $brn on Enemy in Front as DMG"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "Requires Enemy in Front $brn",
+		  "Ignores  $grd",
+		  "Ignores  $blk when  $stl",
+		  "Deals 100% of remaining $brn on Enemy in Front as DMG",
+		  "Gain on CRIT: Clear Skill Cooldowns"
+		]
+	  },
+	  "R1_0": {
+		"name": "Searing Strike",
+		"type": "melee",
+		"skill_ranks": "23",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-7",
+		  "CRIT: 5%",
+		  "$brn 2",
+		  "Random Adjacent Enemy: $brn 3 when Target  $cmb",
+		  "Self:  $brn 2"
+		],
+		"skill_u_text": [
+		  "DMG: 4-9",
+		  "CRIT: 10%",
+		  "$brn 3",
+		  "Random Adjacent Enemy: $brn 3 when Target  $cmb",
+		  "Self:  $brn 2"
+		]
+	  },
+	  "R1_1": {
+		"name": "Firefly",
+		"type": "ranged",
+		"skill_ranks": "43",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-4",
+		  "CRIT: 5%",
+		  "$brn 2",
+		  "Random Adjacent Enemy: $brn 3 when Target  $cmb",
+		  "Self:  $brn 2"
+		],
+		"skill_u_text": [
+		  "DMG: 3-4",
+		  "CRIT: 10%",
+		  "$brn 4",
+		  "Random Adjacent Enemy: $brn 3 when Target  $cmb",
+		  "Self:  $brn 2"
+		]
+	  },
+	  "R1_4": {
+		"name": "Hearthlight",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Transfer $brn to Target",
+		  "Heal  $hlh 5% per Arsonist Buff",
+		  "Remove Arsonist Buffs"
+		],
+		"skill_u_text": [
+		  "Transfer $brn to Target",
+		  "Heal  $hlh 10% per Arsonist Buff",
+		  "Remove Arsonist Buffs"
+		]
+	  },
+	  "R1_8": {
+		"name": "Dragonfly",
+		"type": "ranged",
+		"skill_ranks": "21",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 1-2",
+		  "CRIT: 5%",
+		  "$brn 2",
+		  "$cmb (25%)",
+		  "Self:  $mve Back 1, Gain on hit:  $brn 2"
+		],
+		"skill_u_text": [
+		  "DMG: 1-3",
+		  "CRIT: 5%",
+		  "$brn 3",
+		  "$cmb (33%)",
+		  "Self:  $mve Back 1, Gain on hit:  $brn 2"
+		]
+	  },
+	  "R1_9": {
+		"name": "Firestarter",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "enemy",
+		"cooldown": "3(2)",
+		"uses": "-",
+		"skill_text": [
+		  "Requires target $brn",
+		  "Copy $brn to Self",
+		  "Target Allies: Transfer $brn to Self"
+		],
+		"skill_u_text": [
+		  "Requires target $brn",
+		  "Copy $brn to Self",
+		  "Target Allies: Transfer $brn to Self",
+		  "Self:  $stl"
+		]
+	  },
+	  "R1_10": {
+		"name": "Backdraft",
+		"type": "ranged",
+		"skill_ranks": "23",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Target $brn and Requires self $brn",
+		  "Deals 50% of remaining $brn on self as DMG",
+		  "Self: Double remaining $brn"
+		],
+		"skill_u_text": [
+		  "Requires Target $brn and Requires self $brn",
+		  "Deals 75% of remaining $brn on self as DMG",
+		  "Self: Double remaining $brn"
+		]
+	  },
+	  "R2_0": {
+		"name": "Searing Strike",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "+50% CRIT per $stl",
+		  "$brn 2 or $brn 4 when Target  $cmb",
+		  "Apply On CRIT: +1 $brn DUR Dealt",
+		  "Self: Remove  $stl"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "+50% CRIT per $stl",
+		  "$brn 3 or $brn 6 when Target  $cmb",
+		  "Apply On CRIT: +1 $brn DUR Dealt",
+		  "Self: Remove  $stl"
+		]
+	  },
+	  "R2_2": {
+		"name": "Smokescreen",
+		"type": "-",
+		"skill_ranks": "123",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "3(2)",
+		"uses": "-",
+		"skill_text": [
+		  "$tnt x2, $mve Forward 1, Remove  $stl",
+		  "Apply to Attacker When Attacked (1 Turn):  $bln",
+		  "Start of Next Turn:  $stl x2"
+		],
+		"skill_u_text": [
+		  "$tnt x2, $mve Forward 1, Remove  $stl",
+		  "Apply to Attacker When Attacked (1 Turn):  $bln $cmb",
+		  "Start of Next Turn:  $stl x2"
+		]
+	  },
+	  "R2_4": {
+		"name": "Hearthlight",
+		"type": "heal",
+		"skill_ranks": "123",
+		"target_ranks": "1234",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Requires  $stl",
+		  "Heal  $hlh 10% per $stl",
+		  "$reg 1 per  $stl",
+		  "Remove  $stl"
+		],
+		"skill_u_text": [
+		  "Requires  $stl",
+		  "Heal  $hlh 10% per $stl",
+		  "$reg 2 per  $stl",
+		  "-1 $sts per  $stl",
+		  "Remove  $stl"
+		]
+	  },
+	  "R2_5": {
+		"name": "Ransack",
+		"type": "melee",
+		"skill_ranks": "1234",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$mve Pull 1",
+		  "Steal 1 $pos Token per  $stl",
+		  "Ignores  $blk when Self  $stl",
+		  "Self:  $mve Forward 1, Remove  $stl"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$mve Pull 2",
+		  "Steal 2 $pos Token per  $stl",
+		  "Ignores  $blk $ddg when Self  $stl",
+		  "Self:  $mve Forward 1, Remove  $stl"
+		]
+	  },
+	  "R3_0": {
+		"name": "Searing Strike",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$brn 2",
+		  "$brn 1 when self  $stl"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$brn 3",
+		  "$brn 1 when self  $stl"
+		]
+	  },
+	  "R3_1": {
+		"name": "Firefly",
+		"type": "ranged",
+		"skill_ranks": "43",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-4",
+		  "CRIT: 5%",
+		  "$brn 3",
+		  "$brn 1 when self  $stl"
+		],
+		"skill_u_text": [
+		  "DMG: 3-4",
+		  "CRIT: 10%",
+		  "$brn 5",
+		  "$brn 1 when self  $stl"
+		]
+	  },
+	  "R3_2": {
+		"name": "Smokescreen",
+		"type": "ranged",
+		"skill_ranks": "1234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 10%",
+		  "$bln $vvk",
+		  "Self:  $stl"
+		],
+		"skill_u_text": [
+		  "CRIT: 20%",
+		  "$bln x2  $vvk",
+		  "Self:  $stl",
+		  "Self: On CRIT:  $stl"
+		]
+	  },
+	  "R3_5": {
+		"name": "Ransack",
+		"type": "melee",
+		"skill_ranks": "1234",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$mve Pull 1, $cmb",
+		  "Self:  $mve Forward 1",
+		  "Self: +10% $mve RES Piercing when  $stl (3 rounds)"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$mve Pull 2, $cmb",
+		  "Self:  $mve Forward 1",
+		  "Self: +20% $mve RES Piercing when  $stl (3 rounds)"
+		]
+	  },
+	  "R3_8": {
+		"name": "Dragonfly",
+		"type": "ranged",
+		"skill_ranks": "21",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 1-2",
+		  "CRIT: 5%",
+		  "$brn 2",
+		  "$brn 1 when self  $stl",
+		  "Self:  $mve Back 1"
+		],
+		"skill_u_text": [
+		  "DMG: 1-3",
+		  "CRIT: 5%",
+		  "$brn 3",
+		  "$brn 1 when self  $stl",
+		  "Self:  $mve Back 1"
+		]
+	  },
+	  "V0_0": {
+		"name": "Hand of Light",
+		"type": "melee",
+		"skill_ranks": "321",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-3",
+		  "CRIT: 5%",
+		  "Self:  $str $blk"
+		],
+		"skill_u_text": [
+		  "DMG: 3-4",
+		  "CRIT: 5%",
+		  "Self:  $str $blk",
+		  "Random Adjacent Ally:  $str"
+		]
+	  },
+	  "V0_1": {
+		"name": "Illumination",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "Ignore  $stl $ddg",
+		  "$dze",
+		  "Remove  $stl $ddg"
+		],
+		"skill_u_text": [
+		  "CRIT: 5%",
+		  "Ignore  $stl $ddg",
+		  "$dze",
+		  "Remove  $stl $ddg",
+		  "$neg : Cannot Gain  $ddg (2 Rounds)"
+		]
+	  },
+	  "V0_2": {
+		"name": "Judgement",
+		"type": "ranged",
+		"skill_ranks": "43",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$cnv x2: Deals +100% DMG",
+		  "$cnv x3: Deals $brn 3"
+		],
+		"skill_u_text": [
+		  "DMG: 4-7",
+		  "CRIT: 5%",
+		  "$cnv x2: Deals +100% DMG",
+		  "$cnv x3: Deals $brn 4"
+		]
+	  },
+	  "V0_3": {
+		"name": "Divine Grace",
+		"type": "heal",
+		"skill_ranks": "43",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Requires  $hlh  < 33%",
+		  "Heal  $hlh 20%",
+		  "$cnv x2: +10% Healed",
+		  "$cnv x3: +10% Healed"
+		],
+		"skill_u_text": [
+		  "Requires  $hlh  < 33%",
+		  "Heal  $hlh 30%",
+		  "$cnv x2: +10% $hlh  Healed",
+		  "$cnv x3: +10% $hlh  Healed, +10% CRIT"
+		]
+	  },
+	  "V0_4": {
+		"name": "Consecration of Fortitude",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "$cof"
+		],
+		"skill_u_text": [
+		  "$cof+"
+		]
+	  },
+	  "V0_5": {
+		"name": "Ministrations",
+		"type": "-",
+		"skill_ranks": "43",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Remove  $bld $blt $brn $dze $stn"
+		],
+		"skill_u_text": [
+		  "Remove  $bld $blt $brn $dze $stn",
+		  "+30% RES per Token type removed"
+		]
+	  },
+	  "V0_6": {
+		"name": "Mace Bash",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "$cnv x2: Ignore  $blk $ddg $grd",
+		  "$cnv x3: Deals +100% DMG"
+		],
+		"skill_u_text": [
+		  "DMG: 6-8",
+		  "CRIT: 5%",
+		  "$cnv x2: Ignore  $blk $ddg $grd",
+		  "$cnv x3: Deals +100% DMG"
+		]
+	  },
+	  "V0_7": {
+		"name": "Sanctuary",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$grd x2",
+		  "Self:  $blk x2"
+		],
+		"skill_u_text": [
+		  "$grd x2",
+		  "$sts 5+: -2 $sts",
+		  "Self:  $blk x2"
+		]
+	  },
+	  "V0_8": {
+		"name": "Consecration of Light",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "$col"
+		],
+		"skill_u_text": [
+		  "$col+"
+		]
+	  },
+	  "V0_9": {
+		"name": "Divine Comfort",
+		"type": "heal",
+		"skill_ranks": "432",
+		"target_ranks": "4321-",
+		"target_type": "hero",
+		"cooldown": "4",
+		"uses": "-",
+		"skill_text": [
+		  "$reg 2"
+		],
+		"skill_u_text": [
+		  "$reg 3"
+		]
+	  },
+	  "V0_10": {
+		"name": "Mantra",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "4321-",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Target  $cns",
+		  "Heal  $hlh 10%",
+		  "$cnv x2: +10% $hlh  Healed",
+		  "$cnv x3: +10% $hlh  Healed"
+		],
+		"skill_u_text": [
+		  "Requires Target  $cns",
+		  "Heal  $hlh 10%",
+		  "$cnv x2: +20%  $hlh Healed",
+		  "$cnv x3: Triggers the effect of any  $cns"
+		]
+	  },
+	  "V1_0": {
+		"name": "Hand of Light",
+		"type": "melee",
+		"skill_ranks": "23",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 1-2",
+		  "CRIT: 5%",
+		  "Self:  $str"
+		],
+		"skill_u_text": [
+		  "DMG: 2-3",
+		  "CRIT: 5%",
+		  "$vvk",
+		  "Self:  $str"
+		]
+	  },
+	  "V1_1": {
+		"name": "Illumination",
+		"type": "ranged",
+		"skill_ranks": "432",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Ignore  $stl $ddg",
+		  "Remove  $stl",
+		  "Remove 2 $neg Tokens"
+		],
+		"skill_u_text": [
+		  "Ignore  $stl $ddg",
+		  "Remove  $stl",
+		  "Remove 3 $neg Tokens"
+		]
+	  },
+	  "V1_2": {
+		"name": "Judgement",
+		"type": "ranged",
+		"skill_ranks": "43",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "$cnv x2:  $vvk x2",
+		  "$cnv x3:  $vln $dze"
+		],
+		"skill_u_text": [
+		  "DMG: 5-8",
+		  "CRIT: 10%",
+		  "$cnv x2:  $vvk x2",
+		  "$cnv x3:  $vln x2  $stn"
+		]
+	  },
+	  "V1_10": {
+		"name": "Mantra",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "4321-",
+		"target_type": "hero",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Target has $neg Token",
+		  "Heal  $hlh 10%",
+		  "$cnv x2: Remove 2 $neg Tokens",
+		  "$cnv x2: +10% $hlh  Healed"
+		],
+		"skill_u_text": [
+		  "Requires Target has $neg Token",
+		  "Heal  $hlh 10%",
+		  "$cnv x2: Remove 3 $neg Tokens",
+		  "$cnv x2: +15% $hlh  Healed"
+		]
+	  },
+	  "V2_0": {
+		"name": "Hand of Light",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-3",
+		  "CRIT: 5%",
+		  "Self:  $str $blk"
+		],
+		"skill_u_text": [
+		  "DMG: 3-4",
+		  "CRIT: 5%",
+		  "Self:  $str $blk",
+		  "Random Adjacent Ally:  $blk"
+		]
+	  },
+	  "V2_5": {
+		"name": "Ministrations",
+		"type": "-",
+		"skill_ranks": "12",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Remove  $bld $blt $brn $dze $stn"
+		],
+		"skill_u_text": [
+		  "Remove  $bld $blt $brn $dze $stn",
+		  "+30% RES per Token type removed"
+		]
+	  },
+	  "V2_7": {
+		"name": "Sanctuary",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$grd x2",
+		  "Self:  $blk x2"
+		],
+		"skill_u_text": [
+		  "$grd x3",
+		  "Self:  $blk $blk+"
+		]
+	  },
+	  "V2_10": {
+		"name": "Mantra",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Heal 10%",
+		  "$cnv x2: +10% $hlh  Healed",
+		  "$cnv x3: -2 $sts"
+		],
+		"skill_u_text": [
+		  "Heal 10%",
+		  "$cnv x2: +20% $hlh  Healed",
+		  "$cnv x3: -2 $sts",
+		  "Heroes with  $grd also receive 50% of these effects"
+		]
+	  },
+	  "V3_4": {
+		"name": "Consecration of Fortitude",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "5",
+		"uses": "-",
+		"skill_text": [
+		  "$cof"
+		],
+		"skill_u_text": [
+		  "$cof+"
+		]
+	  },
+	  "V3_8": {
+		"name": "Consecration of Light",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "hero",
+		"cooldown": "5",
+		"uses": "-",
+		"skill_text": [
+		  "$col"
+		],
+		"skill_u_text": [
+		  "$col+"
+		]
+	  },
+	  "V3_10": {
+		"name": "Mantra",
+		"type": "heal",
+		"skill_ranks": "43",
+		"target_ranks": "4321-",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Target  $cns",
+		  "Heal  $hlh 30%",
+		  "Remove  $cns"
+		],
+		"skill_u_text": [
+		  "Requires Target  $cns",
+		  "Heal  $hlh 50%",
+		  "Remove  $cns"
+		]
+	  },
+	  "F0_0": {
+		"name": "Punish",
+		"type": "melee",
+		"skill_ranks": "321",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "+30% $blt RES Piercing when Target  $cmb",
+		  "$blt 3",
+		  "Self: 10%  $hlh  DMG"
+		],
+		"skill_u_text": [
+		  "DMG: 4-8",
+		  "CRIT: 10%",
+		  "+30% $blt RES Piercing when Target  $cmb",
+		  "+1 $blt DUR Dealt when Target  $cmb",
+		  "$blt 4",
+		  "Self: 10%  $hlh  DMG"
+		]
+	  },
+	
+	  "F0_1": {
+		"name": "Fester",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "corpse",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Clear Corpse",
+		  "Adjacent Enemies:  $blt 3"
+		],
+		"skill_u_text": [
+		  "Clear Corpse",
+		  "Adjacent Enemies:  $blt 5"
+		]
+	  },
+	
+	  "F0_2": {
+		"name": "Deathless",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Heal  $hlh 25%",
+		  "Self: 20%  $hlh  DMG"
+		],
+		"skill_u_text": [
+		  "Heal  $hlh 35%",
+		  "Self: 20%  $hlh  DMG"
+		]
+	  },
+	
+	  "F0_3": {
+		"name": "Endure",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "-2 $sts",
+		  "Self: +2 $sts"
+		],
+		"skill_u_text": [
+		  "-3 $sts",
+		  "Self: +2 $sts"
+		]
+	  },
+	
+	  "F0_4": {
+		"name": "Lash's Gift",
+		"type": "-",
+		"skill_ranks": "234",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Self  $hlh  < 50%",
+		  "$str $blk , +1 $sts",
+		  "Self: Heal  $hlh 25%"
+		],
+		"skill_u_text": [
+		  "Requires Self  $hlh  < 50%",
+		  "$str $blk , +1 $sts",
+		  "Remove  $dze $stn",
+		  "Self: Heal  $hlh 35%"
+		]
+	  },
+	
+	  "F0_5": {
+		"name": "Acid Rain",
+		"type": "ranged",
+		"skill_ranks": "21",
+		"target_ranks": "34-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-3",
+		  "CRIT: 5%",
+		  "+30% $blt RES Piercing when Target  $cmb",
+		  "$blt 2",
+		  "Self: 10%  $hlh  DMG"
+		],
+		"skill_u_text": [
+		  "DMG: 3-4",
+		  "CRIT: 10%",
+		  "+30% $blt RES Piercing when Target  $cmb",
+		  "+1 $blt DUR Dealt when Target  $cmb",
+		  "$blt 2",
+		  "Self: 10%  $hlh  DMG"
+		]
+	  },
+	
+	  "F0_6": {
+		"name": "More! MORE!",
+		"type": "-",
+		"skill_ranks": "21",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "$pos (1 Turn): When Damaged:  $fpn",
+		  "$tnt x2"
+		],
+		"skill_u_text": [
+		  "$pos (1 Turn): When Damaged:  $fpn+",
+		  "$tnt x3"
+		]
+	  },
+	
+	  "F0_7": {
+		"name": "Suffer",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Requires $bld $blt $brn",
+		  "Steal $bld $blt $brn",
+		  "Self:  $pos +10% $dth RES (3 Turns)"
+		],
+		"skill_u_text": [
+		  "Requires $bld $blt $brn",
+		  "Steal $bld $blt $brn",
+		  "Self:  $pos +10% $dth RES (3 Turns)",
+		  "Self: End of Next Turn: Remove  $bld $blt $brn"
+		]
+	  },
+	  "F0_8": {
+		"name": "Sepsis",
+		"type": "heal",
+		"skill_ranks": "21",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "3",
+		"skill_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%",
+		  "Requires self  $hlh  < 50%",
+		  "+30% $blt RES Piercing when Target  $cmb",
+		  "$blt 4",
+		  "Self: Heal  $hlh 35%"
+		],
+		"skill_u_text": [
+		  "DMG: 6-10",
+		  "CRIT: 5%",
+		  "Requires self  $hlh  < 50%",
+		  "+30% $blt RES Piercing when Target  $cmb",
+		  "$blt 6",
+		  "Self: Heal  $hlh 50%"
+		]
+	  },
+	
+	  "F0_9": {
+		"name": "Undying",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$reg 3",
+		  "Self: 10%  $hlh  DMG"
+		],
+		"skill_u_text": [
+		  "$reg 5",
+		  "Self: 10%  $hlh  DMG"
+		]
+	  },
+	
+	  "F0_10": {
+		"name": "Necrosis",
+		"type": "melee",
+		"skill_ranks": "32",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "Requires Targets $blt",
+		  "Self: Per Target: Heal  $hlh 5%"
+		],
+		"skill_u_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%",
+		  "Requires Targets $blt",
+		  "Self: Per Target: Heal  $hlh 5%"
+		]
+	  },
+	
+	  "F1_0": {
+		"name": "Punish",
+		"type": "melee",
+		"skill_ranks": "321",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$mve Knockback 1",
+		  "$blt 2",
+		  "Self: 10%  $hlh  DMG"
+		],
+		"skill_u_text": [
+		  "DMG: 4-8",
+		  "CRIT: 10%",
+		  "$mve Knockback 2",
+		  "$blt 2 $cmb",
+		  "Self: 10%  $hlh  DMG"
+		]
+	  },
+	
+	  "F1_4": {
+		"name": "Lash's Gift",
+		"type": "-",
+		"skill_ranks": "234",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Target has $neg Token",
+		  "Steal All $neg Tokens",
+		  "Self: Heal  $hlh 20%"
+		],
+		"skill_u_text": [
+		  "Requires Target has $neg Token",
+		  "Steal All $neg Tokens and  $cmb",
+		  "Self: Heal  $hlh 30%"
+		]
+	  },
+	
+	  "F1_5": {
+		"name": "Acid Rain",
+		"type": "ranged",
+		"skill_ranks": "21",
+		"target_ranks": "34-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-3",
+		  "CRIT: 5%",
+		  "$vvk",
+		  "Self: 10%  $hlh  DMG"
+		],
+		"skill_u_text": [
+		  "DMG: 3-4",
+		  "CRIT: 10%",
+		  "$vvk",
+		  "$cmb (33%)",
+		  "Self: 10%  $hlh  DMG"
+		]
+	  },
+	
+	  "F1_8": {
+		"name": "Sepsis",
+		"type": "heal",
+		"skill_ranks": "4321",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "3",
+		"uses": "2(3)",
+		"skill_text": [
+		  "Requires Self $neg Token or Self  $hlh  < 50%",
+		  "Ignores  $bln",
+		  "Transfer All $neg Tokens",
+		  "Self: Heal  $hlh 35%"
+		],
+		"skill_u_text": [
+		  "Requires Self $neg Token or  $cmb or Self  $hlh  < 50%",
+		  "Ignores  $bln",
+		  "Transfer All $neg Tokens and  $cmb",
+		  "Self: Heal  $hlh 50%"
+		]
+	  },
+	
+	  "F2_0": {
+		"name": "Punish",
+		"type": "melee",
+		"skill_ranks": "21",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "If  $hlh  < 50%: +2 $blt Dealt",
+		  "+30% $blt RES Piercing and +1 $blt DUR Dealt when Target  $cmb",
+		  "$blt 2",
+		  "Self: 10%  $hlh  DMG"
+		],
+		"skill_u_text": [
+		  "DMG: 4-8",
+		  "CRIT: 10%",
+		  "If  $hlh  < 50%: +2 $blt Dealt",
+		  "+30% $blt RES Piercing and +1 $blt DUR Dealt when Target  $cmb",
+		  "$blt 3",
+		  "Self: 10%  $hlh  DMG"
+		]
+	  },
+	
+	  "F2_4": {
+		"name": "Lash's Gift",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "Requires  $hlh  < 20%",
+		  "Heal  $hlh 10%",
+		  "$crt $ddg , Remove All $neg Tokens",
+		  "Remove  $cmb"
+		],
+		"skill_u_text": [
+		  "Requires  $hlh  < 20%",
+		  "Heal  $hlh 10%",
+		  "$str $crt $ddg+ , Remove All $neg Tokens and $cmb",
+		  "Remove  $cmb"
+		]
+	  },
+	
+	  "F2_5": {
+		"name": "Acid Rain",
+		"type": "ranged",
+		"skill_ranks": "21",
+		"target_ranks": "34-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-3",
+		  "CRIT: 5%",
+		  "If  $hlh  < 50%: +2 $blt Dealt",
+		  "+30% $blt RES Piercing when Target  $cmb",
+		  "$blt 2",
+		  "Self: 10%  $hlh  DMG"
+		],
+		"skill_u_text": [
+		  "DMG: 3-4",
+		  "CRIT: 10%",
+		  "If  $hlh  < 50%: +2 $blt Dealt",
+		  "+30% $blt RES Piercing when Target  $cmb",
+		  "+1 $blt DUR Dealt when Target  $cmb",
+		  "$blt 3",
+		  "Self: 10%  $hlh  DMG"
+		]
+	  },
+	
+	  "F2_8": {
+		"name": "Sepsis",
+		"type": "heal",
+		"skill_ranks": "12",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "2(3)",
+		"skill_text": [
+		  "Requires Target $blt and Self  $hlh  < 50%",
+		  "Deals 100% of remaining $blt as DMG",
+		  "Remove  $blt",
+		  "Self: Heal to  $hlh 45%"
+		],
+		"skill_u_text": [
+		  "Requires Target $blt and Self  $hlh  < 50%",
+		  "Deals 133% of remaining $blt as DMG",
+		  "Remove  $blt",
+		  "Self: Heal to  $hlh 45%"
+		]
+	  },
+	
+	  "F3_2": {
+		"name": "Deathless",
+		"type": "heal",
+		"skill_ranks": "12",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "2",
+		"uses": "3",
+		"skill_text": [
+		  "Requires Self  $hlh  < 50%",
+		  "Heal  $hlh 25%",
+		  "Self: Heal  $hlh 35%"
+		],
+		"skill_u_text": [
+		  "Requires Self  $hlh  < 50%",
+		  "Heal  $hlh 35%",
+		  "Self: Heal  $hlh 50%"
+		]
+	  },
+	
+	  "F3_4": {
+		"name": "Lash's Gift",
+		"type": "-",
+		"skill_ranks": "12",
+		"target_ranks": "1234",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Self  $sts 5+",
+		  "Self: Heal  $hlh 5% per $sts on Self",
+		  "Self:  $crt x2 (10% chance + 30% per $tox )",
+		  "Self: -3 $sts"
+		],
+		"skill_u_text": [
+		  "Requires Self  $sts 5+",
+		  "Self or Ally: Heal  $hlh 5% per $sts on Self",
+		  "Self or Ally:  $crt x2 (10% chance + 30% per $tox )",
+		  "Self: -3 $sts"
+		]
+	  },
+	
+	  "F3_7": {
+		"name": "Suffer",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "4321",
+		"target_type": "ally",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Requires $bld $blt $brn or $hrr",
+		  "Steal $bld $blt $brn $hrr",
+		  "Self: +10% $dth RES (3 Turns)"
+		],
+		"skill_u_text": [
+		  "Requires $bld $blt $brn or $hrr",
+		  "Steal $bld $blt $brn $hrr",
+		  "Self: +10% $dth RES (3 Turns)",
+		  "Self: End of Next Turn: Remove  $bld $blt $brn"
+		]
+	  },
+	
+	  "F3_8": {
+		"name": "Sepsis",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Target $blt",
+		  "Deals 100% of remaining $blt as DMG",
+		  "Remove  $blt unless Target  $cmb"
+		],
+		"skill_u_text": [
+		  "Requires Target $blt",
+		  "Deals 133% of remaining $blt as DMG",
+		  "Remove  $blt unless Target  $cmb"
+		]
+	  },
+	  "D0_0": {
+		"name": "Touché",
+		"type": "melee",
+		"skill_ranks": "1234",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-7",
+		  "CRIT: 5%",
+		  "$mve Back 1 When  $def",
+		  "$mve Forward 1 When  $agr"
+		],
+		"skill_u_text": [
+		  "DMG: 7-9",
+		  "CRIT: 10%",
+		  "$mve Back 1 When  $def",
+		  "$mve Forward 1 When  $agr",
+		  "Rank 1 or 2: Gain  $def If no  $agr / $def",
+		  "Rank 3 or 4: Gain  $agr If no  $agr / $def"
+		]
+	  },
+	  "D0_1": {
+		"name": "Feint",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-4",
+		  "CRIT: 5%",
+		  "Invert  $agr ↔ $def",
+		  "$rps x2"
+		],
+		"skill_u_text": [
+		  "DMG: 3-6",
+		  "CRIT: 10%",
+		  "Invert  $agr ↔ $def",
+		  "$rps x3"
+		]
+	  },
+	  "D0_2": {
+		"name": "Disengage",
+		"type": "melee",
+		"skill_ranks": "",
+		"target_ranks": "",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Ignores  $rps",
+		  "$mve Pull 1 When  $def",
+		  "$mve Knockback 1 When  $agr",
+		  "$mve Back 1",
+		  "$def $ddg"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "Ignores  $rps",
+		  "$mve Pull 2 When  $def",
+		  "$mve Knockback 2 When  $agr",
+		  "$mve Back 1",
+		  "$def $ddg+"
+		]
+	  },
+	  "D0_3": {
+		"name": "Flick",
+		"type": "ranged",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "Ignores  $ddg when  $def",
+		  "Ignores  $blk when  $agr"
+		],
+		"skill_u_text": [
+		  "DMG: 6-8",
+		  "CRIT: 15%",
+		  "Ignores  $blk",
+		  "$exe Execution 1",
+		  "Ignores  $ddg when  $def",
+		  "Ignores  $blk when  $agr"
+		]
+	  },
+	  "D0_4": {
+		"name": "Preparation",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$agr $str $spd"
+		],
+		"skill_u_text": [
+		  "$agr $str $spd",
+		  "+50% $rps  DMG (4 Turns) When $def",
+		  "$crt When  $agr"
+		]
+	  },
+	  "D0_5": {
+		"name": "The Boot",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-5",
+		  "CRIT: 5%",
+		  "Requires Self  $agr",
+		  "$mve Knockback 2"
+		],
+		"skill_u_text": [
+		  "DMG: 3-6",
+		  "CRIT: 10%",
+		  "Requires Self  $agr",
+		  "$mve Knockback 3",
+		  "$cmb"
+		]
+	  },
+	  "D0_6": {
+		"name": "Again!",
 		"type": "-",
 		"skill_ranks": "1234",
 		"target_ranks": "1234",
@@ -1175,16 +5987,715 @@
 		"cooldown": "5",
 		"uses": "2",
 		"skill_text": [
-			"Target: Clear Skills Cooldowns",
-			"Requires $agr",
-			"Remove $agr $def",
+		  "Requires  $agr",
+		  "Clear Skills Cooldowns",
+		  "Remove  $agr $def"
 		],
 		"skill_u_text": [
-			"Target: Clear Skills Cooldowns",
-			"Requires $agr or $def",
+		  "Requires  $agr / $def",
+		  "Clear Skills Cooldowns"
+		]
+	  },
+	  "D0_7": {
+		"name": "Flèche",
+		"type": "melee",
+		"skill_ranks": "432",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-8",
+		  "CRIT: 10%",
+		  "+30% DMG When  $agr",
+		  "Self:  $agr , $mve Forward 3",
+		  "Self: Remove  $ddg"
 		],
-	},
-	"C3_6": {
+		"skill_u_text": [
+		  "DMG: 7-10",
+		  "CRIT: 10%",
+		  "+30% DMG and +5% CRIT When  $agr",
+		  "Self: If not  $def : Remove  $ddg",
+		  "Self:  $agr , $mve Forward 3",
+		]
+	  },
+	  "D0_8": {
+		"name": "Meditation",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$def $ddg x3",
+		  "$tnt x2 when  $def",
+		  "$rps x2 when  $agr"
+		],
+		"skill_u_text": [
+		  "$def $ddg+ x3",
+		  "Remove  $cmb",
+		  "$tnt x2 when  $def",
+		  "$rps x2 when  $agr"
+		]
+	  },
+	  "D0_9": {
+		"name": "Coup de Grâce",
+		"type": "ranged",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4",
+		  "CRIT: 5%",
+		  "Requires Self  $def",
+		  "Ignores  $blk $vvk",
+		  "$exe Execution 1"
+		],
+		"skill_u_text": [
+		  "DMG: 6",
+		  "CRIT: 10%",
+		  "Requires Self  $def",
+		  "Ignores  $blk $vvk",
+		  "$exe Execution 2"
+		]
+	  },
+	  "D0_10": {
+		"name": "Ruthless Instruction",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Self  $def",
+		  "$ddg x2"
+		],
+		"skill_u_text": [
+		  "Requires Self  $def / $agr",
+		  "$ddg x2 when  $def",
+		  "$pos Skills Ignore  $bln (3 Turns) when  $agr"
+		]
+	  },
+	  "D1_2": {
+		"name": "Disengage",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Ignores  $rps",
+		  "$mve Back 2",
+		  "Invert  $agr ↔ $def",
+		  "$ddg"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "Ignores  $rps",
+		  "$mve Back 2",
+		  "Invert  $agr ↔ $def",
+		  "$ddg+"
+		]
+	  },
+	  "D1_6": {
+		"name": "Again!",
+		"type": "-",
+		"skill_ranks": "34",
+		"target_ranks": "1234",
+		"target_type": "ally",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Self  $agr",
+		  "+10% DMG per $sts (4 Turns)"
+		],
+		"skill_u_text": [
+		  "Requires Self  $def / $agr",
+		  "+3 $sts , Extra Turn Next Round When  $def",
+		  "+10% DMG per $sts (4 Turns) When  $agr"
+		]
+	  },
+	  "D1_9": {
+		"name": "Coup de Grâce",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 15%",
+		  "$exe Execution 1"
+		],
+		"skill_u_text": [
+		  "DMG: 5-8",
+		  "CRIT: 20%",
+		  "$exe Execution 1",
+		  "Gain On Killing Blow: Clear all Skill Cooldowns"
+		]
+	  },
+	  "D1_10": {
+		"name": "Ruthless Instruction",
+		"type": "-",
+		"skill_ranks": "34",
+		"target_ranks": "1234",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Requires Self  $def / $agr",
+		  "$sts 5+: -2 $sts when  $def",
+		  "+1 $sts  $str when  $agr"
+		],
+		"skill_u_text": [
+		  "Requires Self  $def / $agr",
+		  "$sts 5+: -3 $sts , Remove  $hrr when  $def",
+		  "+2 $sts  $crt when  $agr"
+		]
+	  },
+	  "D2_0": {
+		"name": "Touché",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-5",
+		  "CRIT: 5%",
+		  "$vvk  When  $def",
+		  "$vln  When  $agr"
+		],
+		"skill_u_text": [
+		  "DMG: 5-7",
+		  "CRIT: 10%",
+		  "$vvk  When  $def",
+		  "$vln  When  $agr",
+		  "Rank 1 or 2: Gain  $def If no  $agr / $def",
+		  "Rank 3 or 4: Gain  $agr If no  $agr / $def"
+		]
+	  },
+	  "D2_2": {
+		"name": "Disengage",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Ignores  $rps",
+		  "$cmb When  $agr",
+		  "Self:  $mve Back 1,  $def $ddg"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "Ignores  $rps",
+		  "$bln x2 when  $def and Target  $cmb",
+		  "$cmb When  $agr",
+		  "Self:  $mve Back 1,  $def $ddg"
+		]
+	  },
+	  "D2_5": {
+		"name": "The Boot",
+		"type": "melee",
+		"skill_ranks": "",
+		"target_ranks": "",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-5",
+		  "CRIT: 5%",
+		  "Requires Self  $def",
+		  "$mve Knockback 2",
+		  "$stn when Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 3-6",
+		  "CRIT: 10%",
+		  "Requires Self  $def / $agr",
+		  "$mve Knockback 2",
+		  "Remove  $blk",
+		  "$stn when  $def and Target  $cmb",
+		  "$cmb when  $agr"
+		]
+	  },
+	  "D2_9": {
+		"name": "Coup de Grâce",
+		"type": "ranged",
+		"skill_ranks": "",
+		"target_ranks": "",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 1-2",
+		  "CRIT: 5%",
+		  "Requires Self  $agr",
+		  "$vvk x2  $vln x2",
+		  "Self: Remove  $agr $def"
+		],
+		"skill_u_text": [
+		  "DMG: 7-11",
+		  "CRIT: 10%",
+		  "Requires Self  $def / $agr",
+		  "Stun when  $def",
+		  "$vvk x2  $vln x2 When $agr",
+		  "Self: Remove  $agr $def"
+		]
+	  },
+	  "D3_1": {
+		"name": "Feint",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 2-4",
+		  "CRIT: 5%",
+		  "Invert  $agr ↔ $def",
+		  "$ddg x2"
+		],
+		"skill_u_text": [
+		  "DMG: 3-6",
+		  "CRIT: 10%",
+		  "Invert  $agr ↔ $def",
+		  "$ddg+ x2"
+		]
+	  },
+	  "D3_2": {
+		"name": "Disengage",
+		"type": "melee",
+		"skill_ranks": "321",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Ignores  $rps",
+		  "Self:  $mve Back 1,  $def",
+		  "Self:  $stl x2 When  $def"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "Ignores  $rps",
+		  "Self:  $mve Back 1,  $def",
+		  "Self:  $stl x2 When  $def",
+		  "Self: Gain  $grd x2 from Ally Behind When  $agr"
+		]
+	  },
+	  "D3_4": {
+		"name": "Preparation",
+		"type": "-",
+		"skill_ranks": "4321",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "$agr $str $spd"
+		],
+		"skill_u_text": [
+		  "$agr $str $spd",
+		  "Remove  $bld $blt $brn When  $def",
+		  "$crt When  $agr"
+		]
+	  },
+	  "D3_9": {
+		"name": "Coup de Grâce",
+		"type": "ranged",
+		"skill_ranks": "4321",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "Remove Intrépide Effects"
+		],
+		"skill_u_text": [
+		  "DMG: 5-8",
+		  "CRIT: 10%",
+		  "Remove Intrépide Effects"
+		]
+	  },
+	  "C0_0": {
+		"name": "Smite",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-7",
+		  "CRIT: 5%",
+		  "+50% DMG when Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 7-9",
+		  "CRIT: 10%",
+		  "+50% DMG when Target  $cmb"
+		]
+	  },
+	  "C0_1": {
+		"name": "Stunning Blow",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$stn when Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "$stn when Target  $cmb",
+		  "Remove  $str $crt"
+		]
+	  },
+	  "C0_2": {
+		"name": "Zealous Accusation",
+		"type": "ranged",
+		"skill_ranks": "12",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 1-2",
+		  "CRIT: 5%",
+		  "$brn 2",
+		  "$cmb (25%)"
+		],
+		"skill_u_text": [
+		  "DMG: 2-3",
+		  "CRIT: 5%",
+		  "$brn 3",
+		  "$cmb (33%)"
+		]
+	  },
+	  "C0_3": {
+		"name": "Inspiring Cry",
+		"type": "stress",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "Requires $sts 5+",
+		  "-2 $sts"
+		],
+		"skill_u_text": [
+		  "Requires $sts 5+",
+		  "-2 $sts",
+		  "Self: -1 $sts"
+		]
+	  },
+	  "C0_4": {
+		"name": "Rallying Cry",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "ally",
+		"cooldown": "1(0)",
+		"uses": "-",
+		"skill_text": [
+		  "Remove  $bln $vvk $vln"
+		],
+		"skill_u_text": [
+		  "Remove  $bln $vvk $vln",
+		  "Self: Remove  $bln $vvk $vln"
+		]
+	  },
+	  "C0_5": {
+		"name": "Reap",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-5",
+		  "CRIT: 5%",
+		  "$neg -20% Healing Received (3 Turns)"
+		],
+		"skill_u_text": [
+		  "DMG: 5-7",
+		  "CRIT: 5%",
+		  "$neg -33% Healing Received (3 Turns)",
+		  "Self: Heal  $hlh 15% When Target  $cmb"
+		]
+	  },
+	  "C0_6": {
+		"name": "Battle Heal",
+		"type": "heal",
+		"skill_ranks": "12",
+		"target_ranks": "1234",
+		"target_type": "hero",
+		"cooldown": "2(1)",
+		"uses": "3",
+		"skill_text": [
+		  "Requires  $hlh  < 50%",
+		  "Heal  $hlh 20%"
+		],
+		"skill_u_text": [
+		  "Requires  $hlh  < 50%",
+		  "Heal  $hlh 25%",
+		  "Self: Heal  $hlh 10%"
+		]
+	  },
+	  "C0_7": {
+		"name": "Bulwark of Faith",
+		"type": "-",
+		"skill_ranks": "12",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "$blk x2  $tnt x2",
+		  "$reg 2"
+		],
+		"skill_u_text": [
+		  "$blk x2  $tnt x3",
+		  "$reg 4"
+		]
+	  },
+	  "C0_8": {
+		"name": "Holy Lance",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-7",
+		  "CRIT: 10%",
+		  "$brn 2",
+		  "Self:  $mve Forward 1"
+		],
+		"skill_u_text": [
+		  "DMG: 5-9",
+		  "CRIT: 15%",
+		  "$brn 3 $cmb",
+		  "Self:  $mve Forward 1"
+		]
+	  },
+	  "C0_9": {
+		"name": "Radiance",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "4(3)",
+		"uses": "-",
+		"skill_text": [
+		  "$reg 2",
+		  "$pos (3 Turns): +20% $brn RES Piercing, +2 $spd , If Target $brn : +2 DMG"
+		],
+		"skill_u_text": [
+		  "$reg 4",
+		  "$pos (3 Turns): +20% $brn RES Piercing, +4 $spd , If Target $brn : +2 DMG"
+		]
+	  },
+	  "C0_10": {
+		"name": "Tenacity",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "$blk x2"
+		],
+		"skill_u_text": [
+		  "$blk x2",
+		  "$pos +10% $neg RES",
+		  "Self:  $blk",
+		  "Self:  $pos +10% $neg RES"
+		]
+	  },
+	  "C1_0": {
+		"name": "Smite",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-7",
+		  "CRIT: 5%",
+		  "$exe 1 when Target $brn",
+		  "Gain on Killing Blow: -1 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 7-10",
+		  "CRIT: 10%",
+		  "$exe 2 when Target $brn",
+		  "Gain on Killing Blow: -2 $sts"
+		]
+	  },
+	  "C1_5": {
+		"name": "Reap",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-5",
+		  "CRIT: 5%",
+		  "$exe 1 when Target $brn",
+		  "$neg -20% Healing Received"
+		],
+		"skill_u_text": [
+		  "DMG: 5-7",
+		  "CRIT: 5%",
+		  "$exe 1 when Target $brn",
+		  "$neg -33% Healing Received",
+		  "Gain On Killing Blow:  $str"
+		]
+	  },
+	  "C1_10": {
+		"name": "Tenacity",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "4",
+		"uses": "-",
+		"skill_text": [
+		  "$pos #C0 #C1 #C5 : Heal  $hlh 15% On Hit when Target $brn (4 Rounds)"
+		],
+		"skill_u_text": [
+		  "$pos #C0 #C1 #C5 : Heal  $hlh 20% On Hit when Target $brn (4 Rounds)",
+		  "$pos +20% $neg RES"
+		]
+	  },
+	  "C2_0": {
+		"name": "Smite",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-7",
+		  "CRIT: 5%",
+		  "Self: -1 $sts when Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 7-9",
+		  "CRIT: 10%",
+		  "Self: -2 $sts when Target  $cmb"
+		]
+	  },
+	  "C2_4": {
+		"name": "Rallying Cry",
+		"type": "-",
+		"skill_ranks": "12",
+		"target_ranks": "1234",
+		"target_type": "ally",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "$grd x2",
+		  "$pos +30% Healing Received (3 turns)",
+		  "Transfer  $reg to Target when Target  $hlh  < 33%"
+		],
+		"skill_u_text": [
+		  "$grd x3",
+		  "$pos +30% Healing Received",
+		  "Copy  $reg to Target when Target  $hlh  < 33%"
+		]
+	  },
+	  "C2_10": {
+		"name": "Tenacity",
+		"type": "-",
+		"skill_ranks": "12",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "$blk x2",
+		  "$pos +30% Healing Received"
+		],
+		"skill_u_text": [
+		  "$blk x3",
+		  "$pos +20% $neg RES",
+		  "$pos +50% Healing Received"
+		]
+	  },
+	  "C3_2": {
+		"name": "Zealous Accusation (Banneret)",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "34-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 1-2",
+		  "CRIT: 5%",
+		  "$brn 2",
+		  "$cmb (25%)"
+		],
+		"skill_u_text": [
+		  "DMG: 2-3",
+		  "CRIT: 5%",
+		  "$brn 3",
+		  "$cmb (33%)"
+		]
+	  },
+	  "C3_4": {
+		"name": "Rallying Cry",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234-",
+		"target_type": "hero",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "$imm"
+		],
+		"skill_u_text": [
+		  "$imm x2"
+		]
+	  },
+	  "C3_6": {
 		"name": "Battle Heal",
 		"type": "heal",
 		"skill_ranks": "1234",
@@ -1193,14 +6704,687 @@
 		"cooldown": "2(1)",
 		"uses": "4",
 		"skill_text": [
-			"Requires $hlh < 50%",
-			"Heal 20%",
+		  "Requires  $hlh  < 50%",
+		  "Heal  $hlh 20%"
 		],
 		"skill_u_text": [
-			"Requires $hlh < 50%",
-			"Heal 30%",
+		  "Requires  $hlh  < 50%",
+		  "Heal  $hlh 30%"
+		]
+	  },
+	  "C3_10": {
+		"name": "Tenacity",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234-",
+		"target_type": "hero",
+		"cooldown": "3(2)",
+		"uses": "-",
+		"skill_text": [
+		  "$blk"
 		],
-	},
+		"skill_u_text": [
+		  "$blk",
+		  "Remove  $stn $dze"
+		]
+	  },
+	  "A0_0": {
+		"name": "Manacles",
+		"type": "ranged",
+		"skill_ranks": "123",
+		"target_ranks": "234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-4",
+		  "CRIT: 5%",
+		  "$mve Pull 1",
+		  "$cmb",
+		  "Remove  $crt"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "$mve Pull 2",
+		  "$cmb",
+		  "Remove  $str $crt"
+		]
+	  },
+	  "A0_1": {
+		"name": "Backlash",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "$mve Knockback 1",
+		  "Self:  $blk"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "$mve Knockback 2",
+		  "$stn when Target  $cmb",
+		  "Self:  $blk"
+		]
+	  },
+	  "A0_2": {
+		"name": "Beast Bile",
+		"type": "ranged",
+		"skill_ranks": "23",
+		"target_ranks": "23-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "$blt 3",
+		  "Apply on CRIT: Increase to $blt 4 (4 turns)",
+		  "Clear Corpse"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "$blt 4 or on CRIT:  $blt 5 (4 turns)",
+		  "Clear All Corpses"
+		]
+	  },
+	  "A0_3": {
+		"name": "Ichor",
+		"type": "ranged",
+		"skill_ranks": "432",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "+30% $blt RES Piercing when Target  $cmb",
+		  "$blt 4 or on CRIT:  $blt 5 (4 turns)"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "+30% $blt RES Piercing when Target  $cmb",
+		  "$blt 4 or on CRIT:  $blt 5 (4 turns)",
+		  "Adjacent Enemies:  $cmb when Target  $cmb"
+		]
+	  },
+	  "A0_4": {
+		"name": "Absolution",
+		"type": "heal",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "1",
+		"uses": "2",
+		"skill_text": [
+		  "If  $hlh  < 50%: Heal  $hlh 33%",
+		  "-2 $sts"
+		],
+		"skill_u_text": [
+		  "If  $hlh  < 50%: Heal  $hlh 50%",
+		  "-3 $sts"
+		]
+	  },
+	  "A0_5": {
+		"name": "Transform",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "5(3)",
+		"uses": "-",
+		"skill_text": [
+		  "Beast Form. Does not end turn.",
+		  "+3 $spd",
+		  "Allies: +1 $sts , +1 $sts (33%)",
+		  "On Revert: -2 $sts , $reg 3",
+		  "-3 $spd (4 Turns)"
+		],
+		"skill_u_text": [
+		  "Beast Form. Does not end turn.",
+		  "$str",
+		  "+3 $spd",
+		  "Allies: +1 $sts",
+		  "On Revert: -2 $sts , $reg 3",
+		  "-3 $spd (4 Turns)"
+		]
+	  },
+	  "A0_6": {
+		"name": "Rake",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Self:  $pos (2 Turns): #A6 Gains +1 DMG",
+		  "Self: +1 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 3-5",
+		  "CRIT: 10%",
+		  "Self:  $pos (2 Turns): #A6 Gains +2 DMG, 5% CRIT",
+		  "Self: +1 $sts"
+		]
+	  },
+	  "A0_7": {
+		"name": "Rage",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-7",
+		  "CRIT: 10%",
+		  "-2 DMG when Target  $blk",
+		  "+2 DMG when Target  $vln",
+		  "Self: +1 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 6-8",
+		  "CRIT: 15%",
+		  "-2 DMG when Target  $blk",
+		  "+3 DMG when Target  $vln",
+		  "Self: +1 $sts"
+		]
+	  },
+	  "A0_8": {
+		"name": "Maul",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-5",
+		  "CRIT: 5%",
+		  "Ignores  $blk",
+		  "+2 DMG when Target  $blk",
+		  "Self: +1 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 5-7",
+		  "CRIT: 10%",
+		  "Ignores  $blk",
+		  "+4 DMG when Target  $blk",
+		  "Self: +1 $sts"
+		]
+	  },
+	  "A0_9": {
+		"name": "Slam",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-7",
+		  "CRIT: 5%",
+		  "$mve Knockback 1, $dze",
+		  "Self:  $mve Forward 1",
+		  "Self: +1 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 6-8",
+		  "CRIT: 10%",
+		  "$mve Knockback 1, $dze",
+		  "Ignores  $ddg",
+		  "Removes  $ddg",
+		  "Self:  $mve Forward 1",
+		  "Self: +1 $sts"
+		]
+	  },
+	  "A0_10": {
+		"name": "Instinct",
+		"type": "ranged",
+		"skill_ranks": "12",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 10%",
+		  "$mve Pull 1",
+		  "$vln x2",
+		  "Remove  $rps",
+		  "Apply on CRIT:  $dze",
+		  "Self: +1 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 2-3",
+		  "CRIT: 10%",
+		  "$mve Pull 2",
+		  "$vln x2",
+		  "Ignores  $rps",
+		  "Remove  $rps",
+		  "Apply on CRIT:  $stn",
+		  "Self: +1 $sts"
+		]
+	  },
+	  "A1_0": {
+		"name": "Manacles",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "$cmb",
+		  "Self:  $mve Forward 1"
+		],
+		"skill_u_text": [
+		  "DMG: 5-8",
+		  "CRIT: 10%",
+		  "$cmb",
+		  "$neg : -10% $stn RES",
+		  "Self:  $mve Forward 1"
+		]
+	  },
+	  "A1_1": {
+		"name": "Backlash",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-4",
+		  "CRIT: 5%",
+		  "+2 DMG when Target  $blt",
+		  "$mve Back 1",
+		  "-2 $sts when Target  $cmb"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 10%",
+		  "+3 DMG when Target  $blt",
+		  "$mve Back 1",
+		  "-2 $sts when Target  $cmb"
+		]
+	  },
+	  "A1_2": {
+		"name": "Beast Bile",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "2(1)",
+		"uses": "-",
+		"skill_text": [
+		  "CRIT: 5%",
+		  "$blt 1 or on CRIT:  $blt 2 (4 turns)",
+		  "$neg : -10% $bld $blt $brn RES",
+		  "Self: +1 $sts"
+		],
+		"skill_u_text": [
+		  "CRIT: 10%",
+		  "$blt 2 or on CRIT:  $blt 3 (4 turns)",
+		  "$neg : -10% $bld $blt $brn RES",
+		  "Self: +1 $sts"
+		]
+	  },
+	  "A1_4": {
+		"name": "Absolution",
+		"type": "heal",
+		"skill_ranks": "",
+		"target_ranks": "",
+		"target_type": "hero",
+		"cooldown": "3",
+		"uses": "2(3)",
+		"skill_text": [
+		  "Adjacent Allies: Heal  $hlh 10%, $reg 2, -1 $sts"
+		],
+		"skill_u_text": [
+		  "Adjacent Allies and Self: Heal  $hlh 10%, $reg 2, -1 $sts"
+		]
+	  },
+	  "A1_5": {
+		"name": "Transform",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "5(3)",
+		"uses": "-",
+		"skill_text": [
+		  "Beast Form. Does not end turn.",
+		  "+3 $spd",
+		  "Allies: +1 $sts , +1 $sts (33%)",
+		  "On Revert:  $mve Back 1, -2 $sts , $reg 3",
+		  "-3 $spd (4 Turns)"
+		],
+		"skill_u_text": [
+		  "Beast Form. Does not end turn.",
+		  "$str",
+		  "+3 $spd",
+		  "Allies: +1 $sts",
+		  "On Revert:  $mve Back 1, -2 $sts , $reg 3",
+		  "-3 $spd (4 Turns)"
+		]
+	  },
+	  "A1_9": {
+		"name": "Slam",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-8",
+		  "CRIT: 5%",
+		  "Ignores  $grd",
+		  "Self:  $mve Forward 1",
+		  "Self: +1 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 6-10",
+		  "CRIT: 10%",
+		  "Ignores  $grd",
+		  "Removes  $grd",
+		  "Self:  $mve Forward 1",
+		  "Self: +1 $sts"
+		]
+	  },
+	  "A1_10": {
+		"name": "Instinct",
+		"type": "ranged",
+		"skill_ranks": "234",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "2",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 1-2",
+		  "CRIT: 5%",
+		  "Requires Target  $blt",
+		  "$vln",
+		  "Apply On CRIT:  $cmb",
+		  "Self: +1 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 2-3",
+		  "CRIT: 10%",
+		  "Requires Target  $blt",
+		  "Remove  $blk",
+		  "$vln",
+		  "Apply On CRIT:  $cmb",
+		  "Self: +1 $sts"
+		]
+	  },
+	  "A2_5": {
+		"name": "Transform",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "5(3)",
+		"uses": "-",
+		"skill_text": [
+		  "Beast Form. Does not end turn.",
+		  "+3 $spd",
+		  "+20% $bld RES Piercing when  $sts 4+",
+		  "Allies: +1 $sts , +1 $sts (75%)",
+		  "On Revert: -2 $sts , $reg 3",
+		  "-3 $spd (4 Turns)"
+		],
+		"skill_u_text": [
+		  "Beast Form. Does not end turn.",
+		  "+3 $spd",
+		  "+30% $bld RES Piercing when  $sts 4+",
+		  "Allies: +1 $sts , +1 $sts (33%)",
+		  "On Revert: -2 $sts , $reg 3",
+		  "-3 $spd (4 Turns)"
+		]
+	  },
+	  "A2_6": {
+		"name": "Rake",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12-",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-4",
+		  "CRIT: 5%",
+		  "$bld 2",
+		  "Self:  $pos (2 Turns): #A6 Gains +1 $bld Dealt",
+		  "Self: +2 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 4-5",
+		  "CRIT: 10%",
+		  "$bld 2",
+		  "Self:  $pos (2 Turns): #A6 Gains +2 $bld Dealt",
+		  "Self: +2 $sts"
+		]
+	  },
+	  "A2_7": {
+		"name": "Rage",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 6-9",
+		  "CRIT: 5%",
+		  "Self: When Target Survives: +2 $sts",
+		  "Self: Gain on Killing Blow: -2 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 8-12",
+		  "CRIT: 10%",
+		  "$exe 2 when Target $bld",
+		  "Self: When Target Survives: +2 $sts",
+		  "Self: Gain on Killing Blow: -2 $sts"
+		]
+	  },
+	  "A2_8": {
+		"name": "Maul",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-7",
+		  "CRIT: 5%",
+		  "$bld 4",
+		  "Self: +2 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 6-8",
+		  "CRIT: 10%",
+		  "$bld 6",
+		  "Self: +2 $sts"
+		]
+	  },
+	  "A2_10": {
+		"name": "Instinct",
+		"type": "ranged",
+		"skill_ranks": "12",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "3",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 1-2",
+		  "CRIT: 5%",
+		  "Requires Target $bld",
+		  "$mve Shuffle",
+		  "Gain On Hit: -1 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 2-4",
+		  "CRIT: 10%",
+		  "Requires Target $bld",
+		  "$mve Shuffle",
+		  "Gain On Hit: -1 $sts , -1 $sts (50%)"
+		]
+	  },
+	  "A3_5": {
+		"name": "Transform",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
+		"target_type": "hero",
+		"cooldown": "4(2)",
+		"uses": "-",
+		"skill_text": [
+		  "Beast Form. Does not end turn.",
+		  "+4 $sts",
+		  "+3 $spd , $neg : -100% $sts RES",
+		  "Allies: +1 $sts , +1 $sts (33%)",
+		  "On Revert: -2 $sts , $reg 3",
+		  "-3 $spd (4 Turns)"
+		],
+		"skill_u_text": [
+		  "Beast Form. Does not end turn.",
+		  "+4 $sts , $hrr",
+		  "+3 $spd , $neg : -100% $sts RES",
+		  "Allies: +1 $sts",
+		  "On Revert: -2 $sts , $reg 3",
+		  "-3 $spd (4 Turns)"
+		]
+	  },
+	  "A3_6": {
+		"name": "Rake",
+		"type": "melee",
+		"skill_ranks": "",
+		"target_ranks": "",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Requires Self  $sts 2+",
+		  "Gain on Hit: -1 $sts",
+		  "Self:  $pos (2 Turns): #A6 Gains +1 DMG",
+		  "Self: Gain the $pos Twice (10% per $sts )"
+		],
+		"skill_u_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Requires Self  $sts 2+",
+		  "Gain on Hit: -1 $sts",
+		  "Self:  $pos (2 Turns): #A6 Gains +2 DMG",
+		  "Self: Gain the $pos Twice (10% per $sts )"
+		]
+	  },
+	  "A3_7": {
+		"name": "Rage",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 5-7",
+		  "Requires Self  $sts 2+",
+		  "+7% CRIT per $sts",
+		  "Self: On CRIT:  $tnt",
+		  "Self: Gain on Hit: -2 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 6-9",
+		  "Requires Self  $sts 2+",
+		  "+10% CRIT per $sts",
+		  "Self: On CRIT:  $blk $tnt",
+		  "Self: Gain on Hit: -2 $sts"
+		]
+	  },
+	  "A3_8": {
+		"name": "Maul",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 4-5",
+		  "CRIT: 5%",
+		  "Requires Self  $sts 2+",
+		  "$vvk",
+		  "Apply on Hit: Instant Kill (1% per $sts ) (ineffective against Bosses)",
+		  "Self: Gain on Hit: -2 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 5-7",
+		  "CRIT: 10%",
+		  "Requires Self  $sts 2+",
+		  "$vvk $vln",
+		  "Apply on Hit: Instant Kill (2% per $sts ) (ineffective against Bosses)",
+		  "Gain on Hit: -2 $sts"
+		]
+	  },
+	  "A3_9": {
+		"name": "Slam",
+		"type": "melee",
+		"skill_ranks": "234",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-6",
+		  "CRIT: 5%",
+		  "Requires Self  $sts 2+",
+		  "$mve Knockback 1",
+		  "Self:  $mve Forward 1",
+		  "Self: Ally Ahead:  $grd x2",
+		  "Self: Gain On Hit: -2 $sts"
+		],
+		"skill_u_text": [
+		  "DMG: 4-8",
+		  "CRIT: 5%",
+		  "Requires Self  $sts 2+",
+		  "$mve Knockback 1",
+		  "Self:  $mve Forward 1",
+		  "Self: Ally Ahead:  $grd x2",
+		  "Self:  $blk x2",
+		  "Self: Gain On Hit: -2 $sts"
+		]
+	  },
+	  "A3_10": {
+		"name": "Instinct",
+		"type": "ranged",
+		"skill_ranks": "1234",
+		"target_ranks": "1234-",
+		"target_type": "enemy",
+		"cooldown": "3(2)",
+		"uses": "-",
+		"skill_text": [
+		  "Copy $pos Token",
+		  "Self: +4 $sts"
+		],
+		"skill_u_text": [
+		  "Steal $pos Token",
+		  "Self: +4 $sts"
+		]
+	  },
 	"B0_0": {
 		"name": "Collect Bounty",
 		"type": "melee",
@@ -1212,14 +7396,14 @@
 		"skill_text": [
 			"DMG: 4-7",
 			"CRIT: 5%",
-			"Ignores $grd",
-			"If $cmb : +50% DMG",
+			"Ignores  $grd",
+			"+50% DMG when Target  $cmb",
 		],
 		"skill_u_text": [
 			"DMG: 6-9",
 			"CRIT: 10%",
-			"Ignores $grd",
-			"If $cmb : +50% DMG",
+			"Ignores  $grd",
+			"+50% DMG when Target  $cmb",
 		],
 	},
 	"B0_1": {
@@ -1231,15 +7415,16 @@
 		"cooldown": "1",
 		"uses": "-",
 		"skill_text": [
-			"Ignore $ddg $grd",
-			"Remove $ddg",
-			"Add $cmb",
+			"CRIT: 5%",
+			"Ignore  $ddg $grd",
+			"Remove  $ddg",
+			"$cmb",
 		],
 		"skill_u_text": [
 			"CRIT: 5%",
-			"Ignore $ddg $grd",
-			"Remove $ddg",
-			"Add $vln x2, $cmb",
+			"Ignore  $ddg $grd",
+			"Remove  $ddg",
+			"$vln x2  $cmb",
 		],
 	},
 	"B0_2": {
@@ -1254,14 +7439,174 @@
 			"DMG: 2-3",
 			"CRIT: 5%",
 			"$mve Pull 1",
-			"Add $cmb",
+			"$cmb",
 		],
 		"skill_u_text": [
 			"DMG: 2-5",
 			"CRIT: 10%",
-			"Ignores $grd",
+			"Ignores  $grd",
 			"$mve Pull 2",
-			"Add $cmb",
+			"$cmb",
+		],
+	},
+	"B0_3": {
+		"name": "Caltrops",
+		"type": "ranged",
+		"skill_ranks": "432",
+		"target_ranks": "34-",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+			"DMG: 1-2",
+			"CRIT: 5%",
+			"+30% $bld RES Piercing when Target  $cmb",
+			"$bld 3"
+		],
+		"skill_u_text": [
+			"DMG: 2-3",
+			"CRIT: 5%",
+			"+30% $bld RES Piercing when Target  $cmb",
+			"-20% $mve RES and -2 $spd  when Target  $cmb",
+			"$bld 3"
+		],
+	},
+	"B0_4": {
+		"name": "Flashbang",
+		"type": "ranged",
+		"skill_ranks": "432",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+			"CRIT: 5%",
+			"$mve Shuffle, $dze",
+		],
+		"skill_u_text": [
+			"CRIT: 10%",
+			"$mve Shuffle, $dze $bln",
+			"$stn when Target  $cmb"
+		],
+	},
+	"B0_5": {
+		"name": "Staredown",
+		"type": "ranged",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "2(1)",
+		"uses": "-",
+		"skill_text": [
+			"CRIT: 5%",
+			"$vvk x2",
+			"Self:  $tnt x2"
+		],
+		"skill_u_text": [
+			"CRIT: 10%",
+			"$vvk x2",
+			"Self:  $tnt x2, Remove  $vln"
+		],
+	},
+	"B0_6": {
+		"name": "Hurlbat",
+		"type": "ranged",
+		"skill_ranks": "34",
+		"target_ranks": "1234",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+			"DMG: 3-5",
+			"CRIT: 5%",
+			"Ignores  $ddg when Target  $cmb",
+			"+50% DMG when Target  $brn",
+		],
+		"skill_u_text": [
+			"DMG: 4-8",
+			"CRIT: 15%",
+			"Ignores  $ddg when Target  $cmb",
+			"+50% DMG when Target  $brn",
+		],
+	},
+	"B0_7": {
+		"name": "No Escape",
+		"type": "ranged",
+		"skill_ranks": "43",
+		"target_ranks": "34",
+		"target_type": "enemy",
+		"cooldown": "3(2)",
+		"uses": "-",
+		"skill_text": [
+			"DMG: 1-3",
+			"CRIT: 5%",
+			"Ignore  $ddg",
+			"$cmb $stn"
+		],
+		"skill_u_text": [
+			"DMG: 2-4",
+			"CRIT: 5%",
+			"Ignore  $ddg $grd",
+			"Remove  $grd",
+			"$cmb $stn"
+		],
+	},
+	"B0_8": {
+		"name": "Finish Him",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "123",
+		"target_type": "enemy",
+		"cooldown": "-",
+		"uses": "-",
+		"skill_text": [
+			"DMG: 4-7",
+			"CRIT: 5%",
+			"+75% DMG when Target  $stn / $dze",
+		],
+		"skill_u_text": [
+			"DMG: 6-9",
+			"CRIT: 10%",
+			"$exe Execution 1",
+			"+75% DMG when Target  $stn / $dze",
+		],
+	},
+	"B0_9": {
+		"name": "Uppercut",
+		"type": "melee",
+		"skill_ranks": "12",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "3(2)",
+		"uses": "-",
+		"skill_text": [
+			"DMG: 1-3",
+			"CRIT: 5%",
+			"$mve Knockback 1",
+			"$stn"
+		],
+		"skill_u_text": [
+			"DMG: 3-5",
+			"CRIT: 10%",
+			"$mve Knockback 1",
+			"$stn"
+		],
+	},
+	"B0_10": {
+		"name": "Bodyguard",
+		"type": "-",
+		"skill_ranks": "1234",
+		"target_ranks": "1234",
+		"target_type": "ally",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+			"$grd x2",
+			"Self:  $blk x2"
+		],
+		"skill_u_text": [
+			"$grd x3",
+			"Self:  $blk x3"
 		],
 	},
 }

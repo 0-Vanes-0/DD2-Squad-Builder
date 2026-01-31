@@ -10,7 +10,9 @@ enum Types {
 	WINDED, RUINING, RUIN, POWER, CONVICTION, CONSECRATION, TOXIC, AGGRESIVE, DEFENSIVE,
 	FAST,
 	SMALL_MELEE, SMALL_RANGED, SMALL_HEAL, SMALL_ANTISTRESS, UPGRADE,
-	DISEASE,
+	DISEASE, HORROR,
+	FORTITUDE, FORTITUDE_PLUS, LIGHT, LIGHT_PLUS,
+	CONTROLLED_BURN, CONTROLLED_BURN_PLUS, PAIN, PAIN_PLUS, RUIN_PLUS,
 }
 
 const ICON_TYPE: Dictionary[StringName, Types] = {
@@ -48,16 +50,26 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$exe": Types.EXECUTE,
 	&"$dth": Types.DEATHSDOOR,
 	&"$dss": Types.DISEASE,
+	&"$hrr": Types.HORROR,
 	
 	&"$wnd": Types.WINDED,
 	&"$rnn": Types.RUINING,
 	&"$rui": Types.RUIN,
+	&"$rui+": Types.RUIN_PLUS,
 	&"$pow": Types.POWER,
 	&"$cnv": Types.CONVICTION,
 	&"$cns": Types.CONSECRATION,
 	&"$tox": Types.TOXIC,
 	&"$agr": Types.AGGRESIVE,
 	&"$def": Types.DEFENSIVE,
+	&"$cof": Types.FORTITUDE,
+	&"$cof+": Types.FORTITUDE_PLUS,
+	&"$col": Types.LIGHT,
+	&"$col+": Types.LIGHT_PLUS,
+	&"$fpn": Types.PAIN,
+	&"$fpn+": Types.PAIN_PLUS,
+	&"$cbn": Types.CONTROLLED_BURN,
+	&"$cbn+": Types.CONTROLLED_BURN_PLUS,
 
 	&"$tml": Types.SMALL_MELEE,
 	&"$trg": Types.SMALL_RANGED,

@@ -64,6 +64,7 @@
 	"health": "$hlh",
 	"execution": "$exe",
 	"door": "$dth",
+	"horror": "$hrr",
 	
 	"winded": "$wnd",
 	"ruining": "$rnn",
@@ -71,7 +72,15 @@
 	"power": "$pow",
 	"conv": "$cnv",
 	"cons": "$cns",
+	"Fortitude": "$cof",
+	"Fortitude+": "$cof+",
+	"Light": "$col",
+	"Light+": "$col+",
 	"toxic": "$tox",
 	"agr": "$agr",
-	"def": "$def"
+	"def": "$def",
+	"controlled_burn": "$cbn",
+	"controlled_burn_u": "$cbn+",
+	"pain": "$fpn",
+	"pain_u": "$fpn+"
 }

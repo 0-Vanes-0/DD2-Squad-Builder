@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SkillsPropsDictionary" load_steps=14 format=3 uid="uid://ckqomysfy7u7m"]
+[gd_resource type="Resource" script_class="SkillsPropsDictionary" format=3 uid="uid://ckqomysfy7u7m"]
 
 [ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="1_4iosv"]
 [ext_resource type="Script" uid="uid://c03w4nq84fgfy" path="res://resources/skills_props_dict.gd" id="2_bgq3d"]
