@@ -38,9 +38,8 @@ func show_skill(hero_path: HeroesPaths.Enum, skill_number: int):
 
 
 func _show_panel(is_hover := false):
+	self.reset_size()
 	self.show()
-	
-	self.reset_size.call_deferred()
 	
 	if not is_hover: # is click
 		await get_tree().create_timer(DURATION_PER_CHARACTER * _label.get_parsed_text().length()).timeout

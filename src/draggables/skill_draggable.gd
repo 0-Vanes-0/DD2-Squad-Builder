@@ -1,5 +1,5 @@
 class_name SkillDraggable
-extends TextureRect
+extends HoverableTextureRect
 
 signal skill_dropped
 signal info_requested(hero_path: HeroesPaths.Enum, skill_number: int)
@@ -8,7 +8,6 @@ signal info_requested(hero_path: HeroesPaths.Enum, skill_number: int)
 var hero_path_assigned: HeroesPaths.Enum = HeroesPaths.Enum.NONE
 var skill_number := -1
 var is_unique := Callable()
-var _is_hovered := false
 
 
 static func create(hero_path: HeroesPaths.Enum, skill_number: int) -> SkillDraggable:
@@ -24,11 +23,12 @@ func _ready() -> void:
 	if not is_slot:
 		is_unique = func() -> bool: return true
 	
-	self.mouse_entered.connect( func(): _is_hovered = true )
-	self.mouse_exited.connect(
-			func(): 
-				_is_hovered = false
-				info_requested.emit(HeroesPaths.Enum.NONE, -1)
+	self.hovered.connect(
+			func(is_hovered: bool):
+				if is_hovered:
+					info_requested.emit(hero_path_assigned, skill_number)
+				else:
+					info_requested.emit(HeroesPaths.Enum.NONE, -1)
 	)
 
 
@@ -79,19 +79,3 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				self.texture = data["texture"]
 
 				skill_dropped.emit()
-
-
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_DRAG_BEGIN:
-		Data.is_dragging = true
-	elif what == NOTIFICATION_DRAG_END:
-		Data.is_dragging = false
-
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if _is_hovered and not Data.is_dragging:
-			if event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
-				info_requested.emit(hero_path_assigned, skill_number)
-			else:
-				info_requested.emit(HeroesPaths.Enum.NONE, -1)

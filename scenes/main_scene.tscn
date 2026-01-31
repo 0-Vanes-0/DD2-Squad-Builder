@@ -516,12 +516,11 @@ close_with_middle_mouse = false
 scrolling_enabled = false
 scroll_to_selected = false
 select_with_rmb = true
-tab_count = 5
-tab_0/title = " Heroes "
-tab_1/title = "  Skills  "
-tab_2/title = "Flame|Act|Pet"
-tab_3/title = "Saved Squads"
-tab_4/title = "    Info    "
+tab_count = 4
+tab_0/title = "      Heroes      "
+tab_1/title = "       Skills       "
+tab_2/title = "Saved Squads"
+tab_3/title = "       Info       "
 script = ExtResource("3_7ykc4")
 tab_container = NodePath("../TabContainer")
 
@@ -529,7 +528,7 @@ tab_container = NodePath("../TabContainer")
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
-current_tab = 2
+current_tab = 1
 tabs_visible = false
 
 [node name="Heroes" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1625220151 node_paths=PackedStringArray("main_scene", "heroes_table")]
@@ -562,7 +561,6 @@ theme_override_constants/v_separation = 20
 columns = 4
 
 [node name="Skills" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=465555806 node_paths=PackedStringArray("main_scene", "no_skills_label", "rank1_grid", "rank2_grid", "rank3_grid", "rank4_grid")]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -633,54 +631,6 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="FlameActPet" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1662409674]
-layout_mode = 2
-metadata/_tab_index = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet" unique_id=855200579]
-layout_mode = 2
-
-[node name="VBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer" unique_id=1174797584]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Flames" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox" unique_id=365391168]
-layout_mode = 2
-
-[node name="HBox" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox/Flames" unique_id=943630246]
-layout_mode = 2
-
-[node name="FlameDraggable" type="TextureRect" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox/Flames/HBox" unique_id=908006334]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox/Flames/HBox" unique_id=168011540]
-layout_mode = 2
-
-[node name="Acts" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox" unique_id=525725463]
-layout_mode = 2
-
-[node name="HBox" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox/Acts" unique_id=1667591729]
-layout_mode = 2
-
-[node name="ActDraggable" type="TextureRect" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox/Acts/HBox" unique_id=1668335085]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox/Acts/HBox" unique_id=25402748]
-layout_mode = 2
-
-[node name="Pets" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox" unique_id=1503246930]
-layout_mode = 2
-
-[node name="HBox" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox/Pets" unique_id=510774340]
-layout_mode = 2
-
-[node name="PetDraggable" type="TextureRect" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox/Pets/HBox" unique_id=964889142]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HSplitContainer/RightVBox/TabContainer/FlameActPet/ScrollContainer/VBox/Pets/HBox" unique_id=1778772240]
-layout_mode = 2
-
 [node name="SavedSquads" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1631774674 node_paths=PackedStringArray("vbox", "no_squads_label")]
 visible = false
 layout_mode = 2
@@ -691,7 +641,7 @@ theme_override_constants/margin_bottom = 24
 script = ExtResource("14_6u1mn")
 vbox = NodePath("ScrollContainer/VBoxContainer/SquadsVBox")
 no_squads_label = NodePath("ScrollContainer/VBoxContainer/NoSquadsLabel")
-metadata/_tab_index = 3
+metadata/_tab_index = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads" unique_id=757748416]
 layout_mode = 2
@@ -723,7 +673,7 @@ theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
-metadata/_tab_index = 4
+metadata/_tab_index = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Info" unique_id=575108688]
 layout_mode = 2
@@ -837,7 +787,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 365.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
