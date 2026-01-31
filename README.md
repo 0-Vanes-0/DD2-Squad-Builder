@@ -34,9 +34,11 @@ you can just send **squad code** that also includes chosen skills for each hero.
 - [x] ~~Do the same for each hero and add switch button~~
 - [x] ~~Show descriptions of heroes-paths~~
 - [ ] Show descriptions of skills
-- [ ] Hook localizations from the game
-- [ ] ~~Paste squad to game????? in HeroSelect scene~~ Canceled
+- [ ] Optional Act + Torch + Pet data (coach stuff)
 - [ ] Visual improvements of UI
+- [ ] ~~Hook localizations from the game~~ Canceled
+- [ ] ~~Paste squad to game????? in HeroSelect scene~~ Canceled
+
 
 ## CREDITS
 
