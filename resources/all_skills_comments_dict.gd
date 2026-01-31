@@ -53,7 +53,7 @@ func assign_comments(in_label: RichTextLabel, hero_path: HeroesPaths.Enum, skill
 		var self_ranks := await viewport.get_image(skill_data["skill_ranks"], true)
 		in_label.add_image(self_ranks, RankSubviewport.IN_TEXT_SIZE.x, RankSubviewport.IN_TEXT_SIZE.y)
 		in_label.push_font_size(32)
-		in_label.append_text("  →  ")
+		in_label.append_text("  —>  ")
 		in_label.pop()
 		if skill_data["target_ranks"] == "self":
 			in_label.append_text("Self")
