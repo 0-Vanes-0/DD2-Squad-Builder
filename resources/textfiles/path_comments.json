@@ -115,7 +115,7 @@
 		"Movement is Forward 2 / Back 2",
 		"#L0 : +Oath% DMG",
 		"#L1 : by default remove 2 $pos but Oath+1% chance to steal all $pos",
-		"#L3 : heal is multiplied by additional Oath% \n(e.g. 40% * Oath=66% = 66% healed)",
+		"#L3 : heal is multiplied by additional Oath% \n(e.g. 40% * (Oath=66%) = 66% healed)",
 	],
 	"O0": [
 		"Each $pow : Round Start: $brn 1 (2 Turns)",
