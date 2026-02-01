@@ -2,24 +2,24 @@
 
 [ext_resource type="Theme" uid="uid://mi0cw2k5bhje" path="res://resources/default_theme.tres" id="1_pw63i"]
 [ext_resource type="Script" uid="uid://cpm3iqqo7lebm" path="res://scenes/main_scene.gd" id="1_w2twt"]
-[ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/menu_tab_bar.gd" id="3_7ykc4"]
-[ext_resource type="Script" uid="uid://b02tbfuh3lwpq" path="res://src/animated_texture_rect.gd" id="3_bcnxi"]
-[ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/buttons/clear_button.gd" id="3_c16ls"]
-[ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/buttons/copy_button.gd" id="4_18nlu"]
-[ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/buttons/paste_button.gd" id="5_6wevv"]
+[ext_resource type="Script" uid="uid://btjcodvd8dcx0" path="res://src/uis/menu_tab_bar.gd" id="3_7ykc4"]
+[ext_resource type="Script" uid="uid://b02tbfuh3lwpq" path="res://src/uis/animated_texture_rect.gd" id="3_bcnxi"]
+[ext_resource type="Script" uid="uid://dajuomrgctx0w" path="res://src/uis/buttons/clear_button.gd" id="3_c16ls"]
+[ext_resource type="Script" uid="uid://cvx2uotuhbaco" path="res://src/uis/buttons/copy_button.gd" id="4_18nlu"]
+[ext_resource type="Script" uid="uid://cg34tk86h84bh" path="res://src/uis/buttons/paste_button.gd" id="5_6wevv"]
 [ext_resource type="SpriteFrames" uid="uid://b7dh45p3o1kxi" path="res://resources/crossroads_frames.tres" id="5_xdqt8"]
-[ext_resource type="Script" uid="uid://bmmtxw6oq3mas" path="res://src/buttons/save_button.gd" id="6_6wevv"]
-[ext_resource type="Script" uid="uid://44iiuuiwrbxx" path="res://src/rank_box.gd" id="7_e1cbu"]
-[ext_resource type="Script" uid="uid://bliqyflsjbkfm" path="res://src/notification_panel.gd" id="8_18nlu"]
-[ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="8_mngbo"]
-[ext_resource type="PackedScene" uid="uid://kyd0io8ylhhl" path="res://src/draggables/skill_draggable.tscn" id="9_e1cbu"]
-[ext_resource type="Script" uid="uid://xfbr4tvv7qkf" path="res://src/properties_label.gd" id="10_4w45t"]
+[ext_resource type="Script" uid="uid://bmmtxw6oq3mas" path="res://src/uis/buttons/save_button.gd" id="6_6wevv"]
+[ext_resource type="Script" uid="uid://44iiuuiwrbxx" path="res://src/uis/rank_box.gd" id="7_e1cbu"]
+[ext_resource type="Script" uid="uid://bliqyflsjbkfm" path="res://src/uis/notification_panel.gd" id="8_18nlu"]
+[ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/uis/draggables/hero_path_draggable.tscn" id="8_mngbo"]
+[ext_resource type="PackedScene" uid="uid://kyd0io8ylhhl" path="res://src/uis/draggables/skill_draggable.tscn" id="9_e1cbu"]
+[ext_resource type="Script" uid="uid://xfbr4tvv7qkf" path="res://src/uis/properties_label.gd" id="10_4w45t"]
 [ext_resource type="Script" uid="uid://bo7er32dyytal" path="res://scenes/skills_menu.gd" id="11_mngbo"]
 [ext_resource type="Script" uid="uid://b8erljir6ou1d" path="res://scenes/heroes_menu.gd" id="12_r6p65"]
-[ext_resource type="Script" uid="uid://bvbjbwsvf42cx" path="res://src/bottom_h_box.gd" id="13_adb74"]
+[ext_resource type="Script" uid="uid://bvbjbwsvf42cx" path="res://src/uis/bottom_h_box.gd" id="13_adb74"]
 [ext_resource type="Script" uid="uid://bu72kudpuaeqo" path="res://scenes/saved_squads.gd" id="14_6u1mn"]
 [ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
-[ext_resource type="Script" uid="uid://2kvb5n432r81" path="res://src/info_label.gd" id="15_6u1mn"]
+[ext_resource type="Script" uid="uid://2kvb5n432r81" path="res://src/uis/info_label.gd" id="15_6u1mn"]
 [ext_resource type="PackedScene" uid="uid://ckcb3pjocibly" path="res://scenes/ranks_sub_viewport.tscn" id="21_xdqt8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb74"]
@@ -94,7 +94,6 @@ theme_override_constants/margin_right = 20
 
 [node name="LeftScrollContainer" type="ScrollContainer" parent="HSplitContainer/LeftMarginContainer" unique_id=1457057732]
 layout_mode = 2
-scroll_vertical = 100
 horizontal_scroll_mode = 0
 
 [node name="LeftVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer" unique_id=1298394004]

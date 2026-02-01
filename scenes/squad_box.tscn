@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://142k2sfw4ijc"]
+[gd_scene format=3 uid="uid://142k2sfw4ijc"]
 
 [ext_resource type="Script" uid="uid://curqrnxbs01ie" path="res://scenes/squad_box.gd" id="1_r3140"]
-[ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="2_k0cq7"]
+[ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/uis/draggables/hero_path_draggable.tscn" id="2_k0cq7"]
 
 [node name="SquadBox" type="VBoxContainer" node_paths=PackedStringArray("squad_name_label", "rank1_hpd", "rank2_hpd", "rank3_hpd", "rank4_hpd")]
 theme_override_constants/separation = 20

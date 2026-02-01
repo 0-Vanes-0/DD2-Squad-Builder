@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://3qfhtjnxlhvg"]
 
 [ext_resource type="Script" uid="uid://cxg75tgd2xc4b" path="res://src/data.gd" id="1_40iss"]
-[ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/draggables/hero_path_draggable.tscn" id="2_en3sy"]
+[ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/uis/draggables/hero_path_draggable.tscn" id="2_en3sy"]
 [ext_resource type="Texture2D" uid="uid://cba4amwubq344" path="res://assets/skills/Skill_NONE.png" id="2_kfl4w"]
 [ext_resource type="Script" uid="uid://cjbqwx47ormi4" path="res://src/hero_skills_textures.gd" id="2_xxa4v"]
 [ext_resource type="Texture2D" uid="uid://e78w3xf0e5fj" path="res://assets/skills/P/Dd2_ability_noxiousblast.png" id="3_1hqj8"]
-[ext_resource type="PackedScene" uid="uid://kyd0io8ylhhl" path="res://src/draggables/skill_draggable.tscn" id="3_e77f5"]
+[ext_resource type="PackedScene" uid="uid://kyd0io8ylhhl" path="res://src/uis/draggables/skill_draggable.tscn" id="3_e77f5"]
 [ext_resource type="Texture2D" uid="uid://dq2tkui8bpmop" path="res://assets/skills/P/Dd2_ability_blindinggas.png" id="4_1cvi3"]
 [ext_resource type="Texture2D" uid="uid://d1oinrg8ei8tl" path="res://assets/skills/P/Dd2_ability_incision.png" id="5_1cvi3"]
 [ext_resource type="Texture2D" uid="uid://denu5ocxpw2wk" path="res://assets/skills/P/Dd2_ability_battlefieldmedicine.png" id="6_6g088"]
