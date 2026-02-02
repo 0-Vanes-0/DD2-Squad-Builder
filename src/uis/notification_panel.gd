@@ -43,6 +43,12 @@ func show_flame(flame: FlameDraggable.Flames):
 	_show_panel(true)
 
 
+func show_act(act: ActDraggable.Acts):
+	_label.clear()
+	Data.all_acts.assign_act(_label, act)
+	_show_panel(true)
+
+
 func _show_panel(is_hover := false):
 	self.reset_size()
 	self.show()

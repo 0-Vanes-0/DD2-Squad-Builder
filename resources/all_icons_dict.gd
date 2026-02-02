@@ -13,6 +13,7 @@ enum Types {
 	DISEASE, HORROR,
 	FORTITUDE, FORTITUDE_PLUS, LIGHT, LIGHT_PLUS,
 	CONTROLLED_BURN, CONTROLLED_BURN_PLUS, PAIN, PAIN_PLUS, RUIN_PLUS,
+	ORDAINMENT,
 }
 
 const ICON_TYPE: Dictionary[StringName, Types] = {
@@ -77,6 +78,7 @@ const ICON_TYPE: Dictionary[StringName, Types] = {
 	&"$tst": Types.SMALL_ANTISTRESS,
 
 	&"$upg": Types.UPGRADE,
+	&"$ord": Types.ORDAINMENT,
 }
 
 @export var dict: Dictionary[Types, Texture2D]

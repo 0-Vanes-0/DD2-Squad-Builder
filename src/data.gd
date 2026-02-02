@@ -94,15 +94,26 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 	FlameDraggable.Flames.STYGIAN: null,
 }
 
+@export var acts_textures: Dictionary[ActDraggable.Acts, Texture2D] = {
+	ActDraggable.Acts.NONE: null,
+	ActDraggable.Acts.ONE: null,
+	ActDraggable.Acts.TWO: null,
+	ActDraggable.Acts.THREE: null,
+	ActDraggable.Acts.FOUR: null,
+	ActDraggable.Acts.FIVE: null,
+}
+
 @export var hero_path_draggable_scene: PackedScene
 @export var skill_draggable_scene: PackedScene
 @export var flame_draggable_scene: PackedScene
+@export var act_draggable_scene: PackedScene
 
 @export_file_path("*.json") var all_props_file_path: String
 @export_file_path("*.json") var all_paths_names_file_path: String
 @export_file_path("*.json") var all_paths_comments_file_path: String
 @export_file_path("*.json") var all_skills_comments_file_path: String
 @export_file_path("*.json") var all_flames_file_path: String
+@export_file_path("*.json") var all_acts_file_path: String
 @export var all_icons: AllIconsDictionary
 @export var all_heroes_skills_properties: AllHeroesSkillsPropertiesDictionary
 const RANKS_TOKENS: Array[String] = ["heal", "calm", "execute", "move_forw", "move_back", "aoe", "selfdmg", "stack"]
@@ -135,6 +146,7 @@ var all_props: AllPropertiesDictionary
 var all_paths_names: AllPathsNamesDictionary
 var all_skills_comments: AllSkillsCommentsDictionary
 var all_flames: AllFlamesDictionary
+var all_acts: AllActsDictionary
 
 
 func _ready() -> void:
@@ -183,6 +195,14 @@ func _ready() -> void:
 	all_flames_file.close()
 	
 	all_flames = AllFlamesDictionary.create(all_flames_text)
+	
+	var all_acts_file := FileAccess.open(all_acts_file_path, FileAccess.READ)
+	error = FileAccess.get_open_error()
+	assert(error == OK, "Error upon reading all_acts file!")
+	var all_acts_text := all_acts_file.get_as_text()
+	all_acts_file.close()
+	
+	all_acts = AllActsDictionary.create(all_acts_text)
 
 
 func get_skill_texture(hero_path: HeroesPaths.Enum, skill_number: int) -> Texture2D:

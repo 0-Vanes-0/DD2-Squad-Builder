@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
 [ext_resource type="Script" uid="uid://2kvb5n432r81" path="res://src/uis/info_label.gd" id="15_6u1mn"]
 [ext_resource type="Script" uid="uid://co3j8kon67bqh" path="res://scenes/coach_menu.gd" id="19_58gk3"]
+[ext_resource type="PackedScene" uid="uid://dmr27joqwj2g0" path="res://src/uis/draggables/act_draggable.tscn" id="19_to7gp"]
 [ext_resource type="PackedScene" uid="uid://ckcb3pjocibly" path="res://scenes/ranks_sub_viewport.tscn" id="21_xdqt8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb74"]
@@ -524,8 +525,9 @@ layout_mode = 2
 text = "Act"
 horizontal_alignment = 1
 
-[node name="FlameDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox" unique_id=435922854 instance=ExtResource("14_adb74")]
+[node name="ActDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox" unique_id=1832434034 instance=ExtResource("19_to7gp")]
 layout_mode = 2
+is_slot = true
 
 [node name="PetVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox" unique_id=597128860]
 layout_mode = 2
@@ -671,7 +673,7 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid")]
+[node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid", "acts_grid")]
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -680,6 +682,7 @@ theme_override_constants/margin_bottom = 24
 script = ExtResource("19_58gk3")
 main_scene = NodePath("../../../..")
 flames_grid = NodePath("ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid")
+acts_grid = NodePath("ScrollContainer/VBoxContainer/ActsVBox/ActsGrid")
 metadata/_tab_index = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach" unique_id=1588330164]
@@ -741,10 +744,25 @@ layout_mode = 2
 text = "Acts"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox" unique_id=1396416314]
+[node name="ActsGrid" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox" unique_id=1396416314]
 layout_mode = 2
 size_flags_horizontal = 4
 columns = 5
+
+[node name="ActDraggable" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=453032118 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="ActDraggable2" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=2061953433 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="ActDraggable3" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1426420231 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="ActDraggable4" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1253145973 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="ActDraggable5" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1216520268 instance=ExtResource("19_to7gp")]
+layout_mode = 2
 
 [node name="SavedSquads" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1631774674 node_paths=PackedStringArray("vbox", "no_squads_label")]
 visible = false

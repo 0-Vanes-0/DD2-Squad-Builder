@@ -193,14 +193,21 @@
 [ext_resource type="Texture2D" uid="uid://b6gi7es0bg6l" path="res://assets/icons/Dd2_token_strength_2.png" id="179_4g8ed"]
 [ext_resource type="Texture2D" uid="uid://c4oocqoum3jbg" path="res://assets/flames/flames_0000_bad_flame9.png" id="179_qlpir"]
 [ext_resource type="Texture2D" uid="uid://rg7qhcbk0wt0" path="res://assets/icons/Dd2_token_crit.png" id="180_ne6rw"]
+[ext_resource type="Texture2D" uid="uid://bvwqxmktcoglf" path="res://assets/acts/act_none.png" id="180_nsg7w"]
 [ext_resource type="Texture2D" uid="uid://cxdpd2b3m7t05" path="res://assets/icons/Dd2_token_buff.png" id="180_u57f6"]
+[ext_resource type="Texture2D" uid="uid://c1vv0eir84us0" path="res://assets/acts/act_0004_act1.png" id="181_qlpir"]
 [ext_resource type="Texture2D" uid="uid://dis7grxppnydb" path="res://assets/icons/Dd2_token_blind.png" id="181_wwpph"]
 [ext_resource type="Texture2D" uid="uid://bppvnadelkk6t" path="res://assets/icons/Dd2_token_daze.png" id="182_f0e13"]
+[ext_resource type="Texture2D" uid="uid://64woruur3udu" path="res://assets/acts/act_0003_act2.png" id="182_nmte6"]
 [ext_resource type="PackedScene" uid="uid://sadtg3dheimo" path="res://src/uis/draggables/flame_draggable.tscn" id="182_rveyq"]
 [ext_resource type="Texture2D" uid="uid://dmxetv75xym5k" path="res://assets/icons/Dd2_token_stun.png" id="182_udnga"]
+[ext_resource type="PackedScene" uid="uid://dmr27joqwj2g0" path="res://src/uis/draggables/act_draggable.tscn" id="183_1ffxf"]
 [ext_resource type="Texture2D" uid="uid://dbbxxmbw0rs14" path="res://assets/icons/Dd2_token_taunt.png" id="183_t3ct6"]
+[ext_resource type="Texture2D" uid="uid://wyr6n72bcme8" path="res://assets/acts/act_0002_act3.png" id="183_wxi5w"]
+[ext_resource type="Texture2D" uid="uid://dkhf6lsxokkd4" path="res://assets/acts/act_0001_act4.png" id="184_2bhi0"]
 [ext_resource type="Texture2D" uid="uid://cpnc7gdsiw4nc" path="res://assets/icons/Dd2_token_vulnerable.png" id="184_q427p"]
 [ext_resource type="Texture2D" uid="uid://6ewbyj2kll3p" path="res://assets/icons/Dd2_token_weak.png" id="185_4afi2"]
+[ext_resource type="Texture2D" uid="uid://b8afvw5m775cu" path="res://assets/acts/act_0000_act5.png" id="185_au8pf"]
 [ext_resource type="Texture2D" uid="uid://dyrbe1ikk616o" path="res://assets/icons/Debuff_dd2.png" id="186_hg1jf"]
 [ext_resource type="Texture2D" uid="uid://d212wr53p27h0" path="res://assets/icons/Dd2_token_combo.png" id="187_jsxhp"]
 [ext_resource type="Texture2D" uid="uid://b2ns0dvdy6af3" path="res://assets/icons/Move_dd2.png" id="188_55l1s"]
@@ -256,6 +263,7 @@
 [ext_resource type="Texture2D" uid="uid://chnpqduu2b3pi" path="res://assets/icons/Token_controlled_burn_u.png" id="222_xwd6v"]
 [ext_resource type="Texture2D" uid="uid://ctf3g5uk03g5" path="res://assets/icons/Token_pain_heal.png" id="223_jcqda"]
 [ext_resource type="Texture2D" uid="uid://ycbfhs5nxv2w" path="res://assets/icons/Token_flagellant_pain_heal_u.png" id="224_6m7ap"]
+[ext_resource type="Texture2D" uid="uid://7nylvq76ht3b" path="res://assets/icons/Ordained_icon_half.png" id="238_74o8n"]
 
 [sub_resource type="Resource" id="Resource_4vye1"]
 script = ExtResource("2_xxa4v")
@@ -394,7 +402,8 @@ dict = Dictionary[int, Texture2D]({
 52: ExtResource("222_xwd6v"),
 53: ExtResource("223_jcqda"),
 54: ExtResource("224_6m7ap"),
-55: ExtResource("202_bd00x")
+55: ExtResource("202_bd00x"),
+56: ExtResource("238_74o8n")
 })
 metadata/_custom_type_script = "uid://4v2ties4ofdd"
 
@@ -2073,13 +2082,23 @@ flames_textures = Dictionary[int, Texture2D]({
 9: ExtResource("178_nsg7w"),
 10: ExtResource("179_qlpir")
 })
+acts_textures = Dictionary[int, Texture2D]({
+0: ExtResource("180_nsg7w"),
+1: ExtResource("181_qlpir"),
+2: ExtResource("182_nmte6"),
+3: ExtResource("183_wxi5w"),
+4: ExtResource("184_2bhi0"),
+5: ExtResource("185_au8pf")
+})
 hero_path_draggable_scene = ExtResource("2_en3sy")
 skill_draggable_scene = ExtResource("3_e77f5")
 flame_draggable_scene = ExtResource("182_rveyq")
+act_draggable_scene = ExtResource("183_1ffxf")
 all_props_file_path = "res://resources/textfiles/all_properties.json"
 all_paths_names_file_path = "res://resources/textfiles/path_names.json"
 all_paths_comments_file_path = "res://resources/textfiles/path_comments.json"
 all_skills_comments_file_path = "res://resources/textfiles/skills_data.json"
 all_flames_file_path = "res://resources/textfiles/all_flames.json"
+all_acts_file_path = "res://resources/textfiles/all_acts.json"
 all_icons = SubResource("Resource_w3bmc")
 all_heroes_skills_properties = SubResource("Resource_f0e13")
