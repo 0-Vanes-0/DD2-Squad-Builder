@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://sadtg3dheimo"]
+
+[ext_resource type="Texture2D" uid="uid://c7ugd1lneiv7y" path="res://assets/flames/flames_empty.png" id="1_et2be"]
+[ext_resource type="Script" uid="uid://c0fc878kuk108" path="res://src/uis/draggables/flame_draggable.gd" id="1_pqcak"]
+
+[node name="FlameDraggable" type="TextureRect" unique_id=1593755461]
+custom_minimum_size = Vector2(65, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_et2be")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("1_pqcak")
+metadata/_custom_type_script = "uid://c0fc878kuk108"

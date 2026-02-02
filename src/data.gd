@@ -79,13 +79,30 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 	"B": null,
 	"-": null,
 }
+
+@export var flames_textures: Dictionary[FlameDraggable.Flames, Texture2D] = {
+	FlameDraggable.Flames.NONE: null,
+	FlameDraggable.Flames.RADIANT: null,
+	FlameDraggable.Flames.FRAGILE: null,
+	FlameDraggable.Flames.DESPAIRING: null,
+	FlameDraggable.Flames.CORPSE: null,
+	FlameDraggable.Flames.KILLER: null,
+	FlameDraggable.Flames.DOOM: null,
+	FlameDraggable.Flames.STAR: null,
+	FlameDraggable.Flames.HATEFUL: null,
+	FlameDraggable.Flames.BASTARD: null,
+	FlameDraggable.Flames.STYGIAN: null,
+}
+
 @export var hero_path_draggable_scene: PackedScene
 @export var skill_draggable_scene: PackedScene
+@export var flame_draggable_scene: PackedScene
 
 @export_file_path("*.json") var all_props_file_path: String
 @export_file_path("*.json") var all_paths_names_file_path: String
 @export_file_path("*.json") var all_paths_comments_file_path: String
 @export_file_path("*.json") var all_skills_comments_file_path: String
+@export_file_path("*.json") var all_flames_file_path: String
 @export var all_icons: AllIconsDictionary
 @export var all_heroes_skills_properties: AllHeroesSkillsPropertiesDictionary
 const RANKS_TOKENS: Array[String] = ["heal", "calm", "execute", "move_forw", "move_back", "aoe", "selfdmg", "stack"]
@@ -117,10 +134,11 @@ var is_dragging := false
 var all_props: AllPropertiesDictionary
 var all_paths_names: AllPathsNamesDictionary
 var all_skills_comments: AllSkillsCommentsDictionary
+var all_flames: AllFlamesDictionary
 
 
 func _ready() -> void:
-	assert(hero_path_draggable_scene and skill_draggable_scene)
+	assert(hero_path_draggable_scene and skill_draggable_scene and flame_draggable_scene)
 	for hst in skills_textures.values():
 		assert(hst is HeroSkillsTextures, "All skills_textures values must be HeroSkillsTextures")
 	
@@ -157,6 +175,14 @@ func _ready() -> void:
 	all_skills_comments_file.close()
 
 	all_skills_comments = AllSkillsCommentsDictionary.create(all_skills_comments_text)
+	
+	var all_flames_file := FileAccess.open(all_flames_file_path, FileAccess.READ)
+	error = FileAccess.get_open_error()
+	assert(error == OK, "Error upon reading all_flames file!")
+	var all_flames_text := all_flames_file.get_as_text()
+	all_flames_file.close()
+	
+	all_flames = AllFlamesDictionary.create(all_flames_text)
 
 
 func get_skill_texture(hero_path: HeroesPaths.Enum, skill_number: int) -> Texture2D:

@@ -27,13 +27,19 @@ func show_hero_path(hero_path: HeroesPaths.Enum):
 	_label.append_text(Data.all_paths_names.get_path_name(hero_path))
 	_label.pop()
 	_label.append_text("\n\n")
-	Data.all_props.append_path_comment(_label, hero_path, true)
+	Data.all_props.append_path_comment(_label, hero_path)
 	_show_panel(true)
 
 
 func show_skill(hero_path: HeroesPaths.Enum, skill_number: int):
 	_label.clear()
 	await Data.all_skills_comments.assign_comments(_label, hero_path, skill_number)
+	_show_panel(true)
+
+
+func show_flame(flame: FlameDraggable.Flames):
+	_label.clear()
+	Data.all_flames.assign_flame(_label, flame)
 	_show_panel(true)
 
 

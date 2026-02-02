@@ -67,7 +67,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				
 				hero_path = data["hero_path"]
 				self.texture = data["texture"]
-
+				
 				if is_slot:
 					hero_dropped.emit(data["rank_number"])
 				else:

@@ -35,7 +35,7 @@ func _ready() -> void:
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	if skill_number == -1:
 		return null
-
+	
 	var drag_preview := TextureRect.new()
 	drag_preview.texture = self.texture
 	drag_preview.scale = Vector2.ONE / 5
@@ -77,5 +77,5 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				hero_path_assigned = data["hero_path_assigned"]
 				skill_number = data["skill_number"]
 				self.texture = data["texture"]
-
+				
 				skill_dropped.emit()

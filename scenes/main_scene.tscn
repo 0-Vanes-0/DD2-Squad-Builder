@@ -18,14 +18,16 @@
 [ext_resource type="Script" uid="uid://b8erljir6ou1d" path="res://scenes/heroes_menu.gd" id="12_r6p65"]
 [ext_resource type="Script" uid="uid://bvbjbwsvf42cx" path="res://src/uis/bottom_h_box.gd" id="13_adb74"]
 [ext_resource type="Script" uid="uid://bu72kudpuaeqo" path="res://scenes/saved_squads.gd" id="14_6u1mn"]
+[ext_resource type="PackedScene" uid="uid://sadtg3dheimo" path="res://src/uis/draggables/flame_draggable.tscn" id="14_adb74"]
 [ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
 [ext_resource type="Script" uid="uid://2kvb5n432r81" path="res://src/uis/info_label.gd" id="15_6u1mn"]
+[ext_resource type="Script" uid="uid://co3j8kon67bqh" path="res://scenes/coach_menu.gd" id="19_58gk3"]
 [ext_resource type="PackedScene" uid="uid://ckcb3pjocibly" path="res://scenes/ranks_sub_viewport.tscn" id="21_xdqt8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb74"]
 bg_color = Color(0, 0, 0, 0.78431374)
 
-[node name="MainScene" type="Control" unique_id=204672176 node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport")]
+[node name="MainScene" type="Control" unique_id=204672176 node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "flame_draggable", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,6 +45,7 @@ rank_boxes = {
 3: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox"),
 4: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox")
 }
+flame_draggable = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/FlameVBox/FlameDraggable")
 bottom_box = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox")
 skills_menu = NodePath("HSplitContainer/RightVBox/TabContainer/Skills")
 saved_squads_menu = NodePath("HSplitContainer/RightVBox/TabContainer/SavedSquads")
@@ -94,6 +97,7 @@ theme_override_constants/margin_right = 20
 
 [node name="LeftScrollContainer" type="ScrollContainer" parent="HSplitContainer/LeftMarginContainer" unique_id=1457057732]
 layout_mode = 2
+scroll_vertical = 100
 horizontal_scroll_mode = 0
 
 [node name="LeftVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer" unique_id=1298394004]
@@ -495,9 +499,44 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "  Switch total/per hero summary  "
 
-[node name="TorchActPetHBox" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox" unique_id=48068520]
+[node name="CoachHBox" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox" unique_id=48068520]
 layout_mode = 2
+theme_override_constants/separation = 60
 alignment = 1
+
+[node name="FlameVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox" unique_id=864976704]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/FlameVBox" unique_id=1910661331]
+layout_mode = 2
+text = "Flame"
+horizontal_alignment = 1
+
+[node name="FlameDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/FlameVBox" unique_id=1593755461 instance=ExtResource("14_adb74")]
+layout_mode = 2
+is_slot = true
+
+[node name="ActVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox" unique_id=1910837619]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox" unique_id=256002325]
+layout_mode = 2
+text = "Act"
+horizontal_alignment = 1
+
+[node name="FlameDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox" unique_id=435922854 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="PetVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox" unique_id=597128860]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/PetVBox" unique_id=469226136]
+layout_mode = 2
+text = "Pet"
+horizontal_alignment = 1
+
+[node name="FlameDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/PetVBox" unique_id=1947352931 instance=ExtResource("14_adb74")]
+layout_mode = 2
 
 [node name="Empty2" type="Control" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox" unique_id=1038436329]
 custom_minimum_size = Vector2(0, 100)
@@ -515,11 +554,12 @@ close_with_middle_mouse = false
 scrolling_enabled = false
 scroll_to_selected = false
 select_with_rmb = true
-tab_count = 4
-tab_0/title = "      Heroes      "
-tab_1/title = "       Skills       "
-tab_2/title = "Saved Squads"
-tab_3/title = "       Info       "
+tab_count = 5
+tab_0/title = "    Heroes    "
+tab_1/title = "    Skills    "
+tab_2/title = "   Coach   "
+tab_3/title = "Saved Squads"
+tab_4/title = "    Info    "
 script = ExtResource("3_7ykc4")
 tab_container = NodePath("../TabContainer")
 
@@ -527,7 +567,7 @@ tab_container = NodePath("../TabContainer")
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
-current_tab = 1
+current_tab = 2
 tabs_visible = false
 
 [node name="Heroes" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1625220151 node_paths=PackedStringArray("main_scene", "heroes_table")]
@@ -560,6 +600,7 @@ theme_override_constants/v_separation = 20
 columns = 4
 
 [node name="Skills" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=465555806 node_paths=PackedStringArray("main_scene", "no_skills_label", "rank1_grid", "rank2_grid", "rank3_grid", "rank4_grid")]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -630,6 +671,81 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
+[node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid")]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+script = ExtResource("19_58gk3")
+main_scene = NodePath("../../../..")
+flames_grid = NodePath("ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid")
+metadata/_tab_index = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach" unique_id=1588330164]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer" unique_id=1802427433]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FlamesVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=2114908039]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox" unique_id=1200600377]
+layout_mode = 2
+text = "Flames"
+horizontal_alignment = 1
+
+[node name="FlamesGrid" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox" unique_id=1385655892]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 5
+
+[node name="FlameDraggable" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=1755541907 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="FlameDraggable2" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=1134863967 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="FlameDraggable3" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=1175692585 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="FlameDraggable4" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=211117047 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="FlameDraggable5" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=788510099 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="FlameDraggable6" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=890132054 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="FlameDraggable7" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=274227481 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="FlameDraggable8" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=508133438 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="FlameDraggable9" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=410873687 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="FlameDraggable10" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=1105115141 instance=ExtResource("14_adb74")]
+layout_mode = 2
+
+[node name="ActsVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=453096580]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox" unique_id=86079121]
+layout_mode = 2
+text = "Acts"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox" unique_id=1396416314]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 5
+
 [node name="SavedSquads" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1631774674 node_paths=PackedStringArray("vbox", "no_squads_label")]
 visible = false
 layout_mode = 2
@@ -640,7 +756,7 @@ theme_override_constants/margin_bottom = 24
 script = ExtResource("14_6u1mn")
 vbox = NodePath("ScrollContainer/VBoxContainer/SquadsVBox")
 no_squads_label = NodePath("ScrollContainer/VBoxContainer/NoSquadsLabel")
-metadata/_tab_index = 2
+metadata/_tab_index = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads" unique_id=757748416]
 layout_mode = 2
@@ -672,7 +788,7 @@ theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
-metadata/_tab_index = 3
+metadata/_tab_index = 4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Info" unique_id=575108688]
 layout_mode = 2
@@ -785,7 +901,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 236.0
+offset_bottom = 365.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10

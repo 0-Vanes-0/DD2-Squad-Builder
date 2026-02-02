@@ -8,7 +8,7 @@ extends MarginContainer
 
 func _ready() -> void:
 	assert(main_scene and heroes_table)
-
+	
 	for node in heroes_table.get_children():
 		node.queue_free()
 	

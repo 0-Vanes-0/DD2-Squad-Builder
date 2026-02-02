@@ -11,6 +11,7 @@ extends Control
 	3: null,
 	4: null,
 }
+@export var flame_draggable: FlameDraggable
 @export var bottom_box: BottomBox
 @export var skills_menu: SkillsMenu
 @export var saved_squads_menu: SavedSquadsMenu
@@ -74,7 +75,7 @@ func _ready() -> void:
 		)
 		
 		for skill_draggable in rank_box.skills:
-			skill_draggable.skill_dropped.connect( func(): update_heroes_in_data() )
+			skill_draggable.skill_dropped.connect(update_heroes_in_data)
 			skill_draggable.info_requested.connect(
 					func(hero_path: HeroesPaths.Enum, skill_number: int):
 						if hero_path == HeroesPaths.Enum.NONE or skill_number == -1:
@@ -82,6 +83,15 @@ func _ready() -> void:
 						else:
 							notification_panel.show_skill(hero_path, skill_number)
 			)
+	
+	flame_draggable.flame_dropped.connect(update_heroes_in_data)
+	flame_draggable.info_requested.connect(
+			func(flame: FlameDraggable.Flames):
+				if flame == FlameDraggable.Flames.NONE:
+					notification_panel.hide()
+				else:
+					notification_panel.show_flame(flame)
+	)
 	
 	popup_panel.save_requested.connect(
 			func(squad_name: String):
@@ -118,6 +128,7 @@ func _on_resized() -> void:
 	split_container.split_offset = int(self.size.x) - tab_container_size
 
 
+## Updates [member Data.current_squad], reading hero paths, skills etc.
 func update_heroes_in_data():
 	for rank_box: RankBox in rank_boxes.values():
 		var rank := str(rank_box.rank)
