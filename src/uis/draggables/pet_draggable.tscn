@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://hmbro6ikuvbm"]
+
+[ext_resource type="Script" uid="uid://bej08mfr41knr" path="res://src/uis/draggables/pet_draggable.gd" id="1_ib62x"]
+[ext_resource type="Texture2D" uid="uid://bwk0b8cuglah7" path="res://assets/pets/pet_none.png" id="1_qriam"]
+
+[node name="PetDraggable" type="TextureRect" unique_id=116471173]
+custom_minimum_size = Vector2(96, 96)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qriam")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("1_ib62x")
+metadata/_custom_type_script = "uid://bej08mfr41knr"

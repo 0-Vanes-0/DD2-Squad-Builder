@@ -49,6 +49,12 @@ func show_act(act: ActDraggable.Acts):
 	_show_panel(true)
 
 
+func show_pet(pet: PetDraggable.Pets):
+	_label.clear()
+	Data.all_pets.assign_pet(_label, pet)
+	_show_panel(true)
+
+
 func _show_panel(is_hover := false):
 	self.reset_size()
 	self.show()

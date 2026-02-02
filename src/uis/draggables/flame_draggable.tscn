@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c0fc878kuk108" path="res://src/uis/draggables/flame_draggable.gd" id="1_pqcak"]
 
 [node name="FlameDraggable" type="TextureRect" unique_id=1593755461]
-custom_minimum_size = Vector2(65, 80)
+custom_minimum_size = Vector2(85, 100)
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_et2be")

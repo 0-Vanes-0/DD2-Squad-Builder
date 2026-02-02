@@ -1,0 +1,62 @@
+{
+	"WOLF": [
+		"Orphan Wolf Cub",
+		"+5% $sts RES per Luxury Gear Equipped",
+		"+10% Positive Relationship Chance"
+	],
+	"PLISKIN": [
+		"Pygmy Pliskin",
+		"+10% Healing Received from Skills per Medical Gear Equipped",
+		"Random Hero after each location: Heal 10%"
+	],
+	"OWL": [
+		"Unnatural Owlet",
+		"+5% $neg RES Piercing per Tinker's Gear Equipped",
+		"Increased chance of producing items from Stagecoach Items"
+	],
+	"RABBIT": [
+		"Reanimated Rabbit",
+		"+1 $spd  per Food Gear Equipped",
+		"+1 $hlh  per 4 Food in Inventory"
+	],
+	"SLIME": [
+		"Mucilaginous Slime",
+		"+5% $neg RES per Road Gear Equipped",
+		"Increased Chance of Looting Items from Road Debris (approx. 11,8% —> 25%)"
+	],
+	"CHICK": [
+		"Shrieker Chick",
+		"+2% CRIT per Scouting Gear Equipped",
+		"+2 quantity of looted BAUBLES"
+	],
+	"LARVA": [
+		"Larval Carrion Eater",
+		"Gain On Killing Corpse (not Clearing): Heal  $hlh 30%,  $blk $crt"
+	],
+	"CROC": [
+		"Hatchling Crocodilian",
+		"When Moving: +3% DMG (1 Battle),  $neg (20%): -1 $spd (1 Battle)"
+	],
+	"TICK": [
+		"Crimson Tick",
+		"Gain On Killing Blow Chance to produce The Blood (8%)"
+	],
+	"SHAMBY": [
+		"Shambler's Spawn",
+		"-100% Location & Route Scouting",
+		"+200% Oblivion Ingress Scouting",
+		"+33% Oblivion Ingresses",
+		"Combat Start: Shambler Gains: +100% DMG, +4 $spd"
+	],
+	"PUSSY": [
+		"Purloiner Felid",
+		"Applies various effects via Cat Food (combat item):",
+		"• $bld 1 (5%)",
+		"• If Food Gear is equipped: +20% $bld $blt $brn RES",
+		"• If Tinker's Gear is equipped: 1 $pos Token",
+		"• If Medical Gear is equipped:  $reg 2",
+		"• If Scouting Gear is equipped: +15 Flame",
+		"• If Road Gear is equipped: +1 Armor or +1 Wheel",
+		"• If Luxury Gear is equipped: -1 $sts",
+	]
+}

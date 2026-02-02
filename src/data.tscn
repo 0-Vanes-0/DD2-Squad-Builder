@@ -208,19 +208,32 @@
 [ext_resource type="Texture2D" uid="uid://cpnc7gdsiw4nc" path="res://assets/icons/Dd2_token_vulnerable.png" id="184_q427p"]
 [ext_resource type="Texture2D" uid="uid://6ewbyj2kll3p" path="res://assets/icons/Dd2_token_weak.png" id="185_4afi2"]
 [ext_resource type="Texture2D" uid="uid://b8afvw5m775cu" path="res://assets/acts/act_0000_act5.png" id="185_au8pf"]
+[ext_resource type="Texture2D" uid="uid://bwk0b8cuglah7" path="res://assets/pets/pet_none.png" id="186_fcu4q"]
 [ext_resource type="Texture2D" uid="uid://dyrbe1ikk616o" path="res://assets/icons/Debuff_dd2.png" id="186_hg1jf"]
 [ext_resource type="Texture2D" uid="uid://d212wr53p27h0" path="res://assets/icons/Dd2_token_combo.png" id="187_jsxhp"]
+[ext_resource type="Texture2D" uid="uid://bkbk4d05enlj" path="res://assets/pets/Pet_wolf.png" id="187_rmwou"]
+[ext_resource type="Texture2D" uid="uid://gse0shdx0gm6" path="res://assets/pets/Pet_snake.png" id="188_2gjin"]
 [ext_resource type="Texture2D" uid="uid://b2ns0dvdy6af3" path="res://assets/icons/Move_dd2.png" id="188_55l1s"]
 [ext_resource type="Texture2D" uid="uid://be5lbft7xd5ap" path="res://assets/icons/Dd2_token_regen.png" id="189_3scyv"]
+[ext_resource type="Texture2D" uid="uid://bwiul8phegol5" path="res://assets/pets/Pet_owl.png" id="189_pfqd1"]
 [ext_resource type="Texture2D" uid="uid://ctiar8v1rytg0" path="res://assets/icons/Dd2_token_stress.png" id="190_a7cu5"]
+[ext_resource type="Texture2D" uid="uid://bcn48gkaew1fp" path="res://assets/pets/Pet_rabbit.png" id="190_hhtk4"]
+[ext_resource type="PackedScene" uid="uid://hmbro6ikuvbm" path="res://src/uis/draggables/pet_draggable.tscn" id="190_qlpir"]
 [ext_resource type="Texture2D" uid="uid://cbu2jgmxp1ygq" path="res://assets/icons/Icon_speed_dd2.png" id="191_n8da0"]
+[ext_resource type="Texture2D" uid="uid://few81eu4w7yq" path="res://assets/pets/Pet_slime.png" id="191_ojstr"]
 [ext_resource type="Script" uid="uid://4v2ties4ofdd" path="res://resources/all_icons_dict.gd" id="192_287w1"]
+[ext_resource type="Texture2D" uid="uid://bx2goh4mayx6w" path="res://assets/pets/Pet_shrieker.png" id="192_undti"]
 [ext_resource type="Script" uid="uid://c03w4nq84fgfy" path="res://resources/skills_props_dict.gd" id="193_0vg06"]
 [ext_resource type="Texture2D" uid="uid://blxuculillgyc" path="res://assets/icons/Icon_HP_dd2.png" id="193_dr7go"]
+[ext_resource type="Texture2D" uid="uid://c82wxjld7bx0l" path="res://assets/pets/Pet_carrion_eater.png" id="193_t8utl"]
 [ext_resource type="Script" uid="uid://bpw62k00huy6s" path="res://resources/proprties_arr.gd" id="194_0w4dv"]
 [ext_resource type="Script" uid="uid://begm6aieeipkh" path="res://resources/all_heroes_skills_properties_dict.gd" id="194_f0e13"]
 [ext_resource type="Texture2D" uid="uid://dwsco5jf11v1x" path="res://assets/icons/Token_deaths_door_armor_broken.png" id="194_ne6rw"]
+[ext_resource type="Texture2D" uid="uid://ruoddaaf8axg" path="res://assets/pets/Pet_croc.png" id="194_vwsvp"]
+[ext_resource type="Texture2D" uid="uid://1myw6ujwmo17" path="res://assets/pets/Pet_tick.png" id="195_g4j57"]
 [ext_resource type="Texture2D" uid="uid://dv43ya8r1oiqu" path="res://assets/icons/Dd2_token_immobilize.png" id="196_4g8ed"]
+[ext_resource type="Texture2D" uid="uid://0trwfot5i02y" path="res://assets/pets/Pet_shambler_.png" id="196_7p1sh"]
+[ext_resource type="Texture2D" uid="uid://b8bhto7q8xl7u" path="res://assets/pets/Catacombs_pet_cat.png" id="197_fuss3"]
 [ext_resource type="Resource" uid="uid://bbmvxji724r2y" path="res://resources/skills_props/skills_P0.tres" id="199_u57f6"]
 [ext_resource type="Texture2D" uid="uid://dtfylpcovygto" path="res://assets/icons/Deathsdoor_dd2.png" id="199_w3bmc"]
 [ext_resource type="Texture2D" uid="uid://06etif2tr5h7" path="res://assets/icons/Dd2_token_winded.png" id="200_bfk0e"]
@@ -2090,15 +2103,31 @@ acts_textures = Dictionary[int, Texture2D]({
 4: ExtResource("184_2bhi0"),
 5: ExtResource("185_au8pf")
 })
+pets_textures = Dictionary[int, Texture2D]({
+0: ExtResource("186_fcu4q"),
+1: ExtResource("187_rmwou"),
+2: ExtResource("188_2gjin"),
+3: ExtResource("189_pfqd1"),
+4: ExtResource("190_hhtk4"),
+5: ExtResource("191_ojstr"),
+6: ExtResource("192_undti"),
+7: ExtResource("193_t8utl"),
+8: ExtResource("194_vwsvp"),
+9: ExtResource("195_g4j57"),
+10: ExtResource("196_7p1sh"),
+11: ExtResource("197_fuss3")
+})
 hero_path_draggable_scene = ExtResource("2_en3sy")
 skill_draggable_scene = ExtResource("3_e77f5")
 flame_draggable_scene = ExtResource("182_rveyq")
 act_draggable_scene = ExtResource("183_1ffxf")
+pet_draggable_scene = ExtResource("190_qlpir")
 all_props_file_path = "res://resources/textfiles/all_properties.json"
 all_paths_names_file_path = "res://resources/textfiles/path_names.json"
 all_paths_comments_file_path = "res://resources/textfiles/path_comments.json"
 all_skills_comments_file_path = "res://resources/textfiles/skills_data.json"
 all_flames_file_path = "res://resources/textfiles/all_flames.json"
 all_acts_file_path = "res://resources/textfiles/all_acts.json"
+all_pets_file_path = "res://resources/textfiles/all_pets.json"
 all_icons = SubResource("Resource_w3bmc")
 all_heroes_skills_properties = SubResource("Resource_f0e13")

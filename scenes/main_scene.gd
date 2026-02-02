@@ -12,6 +12,8 @@ extends Control
 	4: null,
 }
 @export var flame_draggable: FlameDraggable
+@export var act_draggable: ActDraggable
+@export var pet_draggable: PetDraggable
 @export var bottom_box: BottomBox
 @export var skills_menu: SkillsMenu
 @export var saved_squads_menu: SavedSquadsMenu
@@ -91,6 +93,22 @@ func _ready() -> void:
 					notification_panel.hide()
 				else:
 					notification_panel.show_flame(flame)
+	)
+	act_draggable.act_dropped.connect(update_heroes_in_data)
+	act_draggable.info_requested.connect(
+			func(act: ActDraggable.Acts):
+				if act == ActDraggable.Acts.NONE:
+					notification_panel.hide()
+				else:
+					notification_panel.show_act(act)
+	)
+	pet_draggable.pet_dropped.connect(update_heroes_in_data)
+	pet_draggable.info_requested.connect(
+			func(pet: PetDraggable.Pets):
+				if pet == PetDraggable.Pets.NONE:
+					notification_panel.hide()
+				else:
+					notification_panel.show_pet(pet)
 	)
 	
 	popup_panel.save_requested.connect(

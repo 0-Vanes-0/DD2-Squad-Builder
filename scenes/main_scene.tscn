@@ -23,12 +23,13 @@
 [ext_resource type="Script" uid="uid://2kvb5n432r81" path="res://src/uis/info_label.gd" id="15_6u1mn"]
 [ext_resource type="Script" uid="uid://co3j8kon67bqh" path="res://scenes/coach_menu.gd" id="19_58gk3"]
 [ext_resource type="PackedScene" uid="uid://dmr27joqwj2g0" path="res://src/uis/draggables/act_draggable.tscn" id="19_to7gp"]
+[ext_resource type="PackedScene" uid="uid://hmbro6ikuvbm" path="res://src/uis/draggables/pet_draggable.tscn" id="20_u0fll"]
 [ext_resource type="PackedScene" uid="uid://ckcb3pjocibly" path="res://scenes/ranks_sub_viewport.tscn" id="21_xdqt8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb74"]
 bg_color = Color(0, 0, 0, 0.78431374)
 
-[node name="MainScene" type="Control" unique_id=204672176 node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "flame_draggable", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport")]
+[node name="MainScene" type="Control" unique_id=204672176 node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "flame_draggable", "act_draggable", "pet_draggable", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,6 +48,8 @@ rank_boxes = {
 4: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox")
 }
 flame_draggable = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/FlameVBox/FlameDraggable")
+act_draggable = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox/ActDraggable")
+pet_draggable = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/PetVBox/PetDraggable")
 bottom_box = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox")
 skills_menu = NodePath("HSplitContainer/RightVBox/TabContainer/Skills")
 saved_squads_menu = NodePath("HSplitContainer/RightVBox/TabContainer/SavedSquads")
@@ -537,8 +540,9 @@ layout_mode = 2
 text = "Pet"
 horizontal_alignment = 1
 
-[node name="FlameDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/PetVBox" unique_id=1947352931 instance=ExtResource("14_adb74")]
+[node name="PetDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/PetVBox" unique_id=116471173 instance=ExtResource("20_u0fll")]
 layout_mode = 2
+is_slot = true
 
 [node name="Empty2" type="Control" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox" unique_id=1038436329]
 custom_minimum_size = Vector2(0, 100)
@@ -673,16 +677,16 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid", "acts_grid")]
+[node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid", "acts_grid", "pets_grid")]
 layout_mode = 2
 theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
+theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
 script = ExtResource("19_58gk3")
 main_scene = NodePath("../../../..")
 flames_grid = NodePath("ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid")
 acts_grid = NodePath("ScrollContainer/VBoxContainer/ActsVBox/ActsGrid")
+pets_grid = NodePath("ScrollContainer/VBoxContainer/PetsVBox/PetsGrid")
 metadata/_tab_index = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach" unique_id=1588330164]
@@ -695,6 +699,7 @@ size_flags_horizontal = 3
 
 [node name="FlamesVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=2114908039]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox" unique_id=1200600377]
 layout_mode = 2
@@ -738,6 +743,7 @@ layout_mode = 2
 
 [node name="ActsVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=453096580]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox" unique_id=86079121]
 layout_mode = 2
@@ -762,6 +768,52 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ActDraggable5" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1216520268 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="PetsVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=1162691116]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox" unique_id=348967287]
+layout_mode = 2
+text = "Pets"
+horizontal_alignment = 1
+
+[node name="PetsGrid" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox" unique_id=1153025665]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
+
+[node name="PetDraggable" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=1389800076 instance=ExtResource("20_u0fll")]
+layout_mode = 2
+
+[node name="PetDraggable2" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=1395587667 instance=ExtResource("20_u0fll")]
+layout_mode = 2
+
+[node name="PetDraggable3" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=188098897 instance=ExtResource("20_u0fll")]
+layout_mode = 2
+
+[node name="PetDraggable4" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=1680814712 instance=ExtResource("20_u0fll")]
+layout_mode = 2
+
+[node name="PetDraggable5" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=1683819500 instance=ExtResource("20_u0fll")]
+layout_mode = 2
+
+[node name="PetDraggable6" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=1658529576 instance=ExtResource("20_u0fll")]
+layout_mode = 2
+
+[node name="PetDraggable7" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=632619535 instance=ExtResource("20_u0fll")]
+layout_mode = 2
+
+[node name="PetDraggable8" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=1497681202 instance=ExtResource("20_u0fll")]
+layout_mode = 2
+
+[node name="PetDraggable9" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=1448129936 instance=ExtResource("20_u0fll")]
+layout_mode = 2
+
+[node name="PetDraggable10" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=1825552085 instance=ExtResource("20_u0fll")]
+layout_mode = 2
+
+[node name="PetDraggable11" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox/PetsGrid" unique_id=1851650339 instance=ExtResource("20_u0fll")]
 layout_mode = 2
 
 [node name="SavedSquads" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1631774674 node_paths=PackedStringArray("vbox", "no_squads_label")]
@@ -919,7 +971,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 365.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
