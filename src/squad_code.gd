@@ -58,9 +58,12 @@ static func decode_squad(text: String) -> Dictionary:
 	var coach_index := text.find(COACH_PARAM)
 	if coach_index != -1:
 		var fap := text.substr(coach_index + COACH_PARAM.length())
-		coach["flame"] = int(fap.substr(1, 1))
-		coach["act"] = int(fap.substr(3, 1))
-		coach["pet"] = int(fap.substr(5))
+		var f := fap.find("F")
+		var a := fap.find("A")
+		var p := fap.find("P")
+		coach["flame"] = int(fap.substr(f + 1, a - f - 1))
+		coach["act"] = int(fap.substr(a + 1, p - a - 1))
+		coach["pet"] = int(fap.substr(p))
 	else:
 		coach_index = text.length()
 	
