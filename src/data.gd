@@ -152,6 +152,9 @@ var current_squad: Dictionary = {
 		"hero_path": HeroesPaths.Enum.NONE,
 		"skills": [-1, -1, -1, -1, -1, -1, -1, -1, -1],
 	},
+	"flame": FlameDraggable.Flames.NONE,
+	"act": ActDraggable.Acts.NONE,
+	"pet": PetDraggable.Pets.NONE,
 	"squad_name": "",
 }
 var settings: Dictionary

@@ -3,7 +3,7 @@ extends Object
 
 const WEBSITE := "https://0-vanes-0.github.io/DD2-Squad-Builder"
 const SQUAD_PARAM := "?squad="
-const OPTIONAL_PARAM := "&optional="
+const COACH_PARAM := "&coach="
 const B64URL := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
 # TODO: Add additional parameters: &optional=F{1-9}A{1-5}P{1-11}
 
@@ -29,7 +29,14 @@ static func encode_squad(data: Dictionary) -> String:
 		code += _b64_encode_fixed(packed, skill_len)
 	
 	var name := String(data.get("squad_name", ""))
-	return WEBSITE + "?squad=" + code + "|" + name.uri_encode()
+	var flame := int(data.get("flame", 0))
+	var act := int(data.get("act", 0))
+	var pet := int(data.get("pet", 0))
+	
+	var link := WEBSITE + SQUAD_PARAM + code + "|" + name.uri_encode()
+	if flame > 0 or act > 0 or pet > 0:
+		link += COACH_PARAM + "F" + str(flame) + "A" + str(act) + "P" + str(pet)
+	return link
 
 
 ## Converts squad code string into squad data dictionary.
@@ -47,10 +54,23 @@ static func decode_squad(text: String) -> Dictionary:
 		else:
 			text = text.replace("%7C", "|")
 	
+	var coach := {} 
+	var coach_index := text.find(COACH_PARAM)
+	if coach_index != -1:
+		var fap := text.substr(coach_index + COACH_PARAM.length())
+		coach["flame"] = int(fap.substr(1, 1))
+		coach["act"] = int(fap.substr(3, 1))
+		coach["pet"] = int(fap.substr(5))
+	else:
+		coach_index = text.length()
+	
 	var code := text.substr(0, pipe_index - 0)
-	var name := "" if text.length() == pipe_index + 1 else text.substr(pipe_index + 1).uri_decode()
+	var name := "" if text.length() == pipe_index + 1 else text.substr(pipe_index + 1, coach_index - (pipe_index + 1)).uri_decode()
 	
 	var out: Dictionary = { "squad_name": name }
+	out["flame"] = coach["flame"] if not coach.is_empty() else 0
+	out["act"] = coach["act"] if not coach.is_empty() else 0
+	out["pet"] = coach["pet"] if not coach.is_empty() else 0
 	
 	var index := 0
 	for slot in ["1", "2", "3", "4"]:

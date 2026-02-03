@@ -66,3 +66,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				var slot_ref := data["slot_ref"] as PetDraggable
 				slot_ref.pet_assigned = Pets.NONE
 				slot_ref.texture = Data.pets_textures[Pets.NONE]
+				slot_ref.pet_dropped.emit()
+
+
+func set_pet(pet: Pets):
+	self.pet_assigned = pet
+	self.texture = Data.pets_textures[pet]

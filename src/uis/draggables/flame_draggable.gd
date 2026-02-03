@@ -36,7 +36,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	
 	var drag_preview := TextureRect.new()
 	drag_preview.texture = self.texture
-	drag_preview.scale = Vector2.ONE / 2
+	drag_preview.scale = Vector2.ONE / 1.5
 	drag_preview.position = (Vector2.UP + Vector2.LEFT) * drag_preview.texture.get_size() * drag_preview.scale / 2
 	var control := Control.new()
 	control.add_child(drag_preview)
@@ -66,3 +66,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				var slot_ref := data["slot_ref"] as FlameDraggable
 				slot_ref.flame_assigned = Flames.NONE
 				slot_ref.texture = Data.flames_textures[Flames.NONE]
+				slot_ref.flame_dropped.emit()
+
+
+func set_flame(flame: Flames):
+	self.flame_assigned = flame
+	self.texture = Data.flames_textures[flame]

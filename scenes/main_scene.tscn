@@ -101,7 +101,7 @@ theme_override_constants/margin_right = 20
 
 [node name="LeftScrollContainer" type="ScrollContainer" parent="HSplitContainer/LeftMarginContainer" unique_id=1457057732]
 layout_mode = 2
-scroll_vertical = 100
+scroll_vertical = 434
 horizontal_scroll_mode = 0
 
 [node name="LeftVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer" unique_id=1298394004]
@@ -522,6 +522,7 @@ is_slot = true
 
 [node name="ActVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox" unique_id=1910837619]
 layout_mode = 2
+theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox" unique_id=256002325]
 layout_mode = 2
@@ -534,6 +535,7 @@ is_slot = true
 
 [node name="PetVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox" unique_id=597128860]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/PetVBox" unique_id=469226136]
 layout_mode = 2
@@ -971,7 +973,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 236.0
+offset_bottom = 365.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10

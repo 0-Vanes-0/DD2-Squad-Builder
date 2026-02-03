@@ -65,3 +65,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				var slot_ref := data["slot_ref"] as ActDraggable
 				slot_ref.act_assigned = Acts.NONE
 				slot_ref.texture = Data.acts_textures[Acts.NONE]
+				slot_ref.act_dropped.emit()
+
+
+func set_act(act: Acts):
+	self.act_assigned = act
+	self.texture = Data.acts_textures[act]
