@@ -101,7 +101,7 @@ theme_override_constants/margin_right = 20
 
 [node name="LeftScrollContainer" type="ScrollContainer" parent="HSplitContainer/LeftMarginContainer" unique_id=1457057732]
 layout_mode = 2
-scroll_vertical = 434
+scroll_vertical = 100
 horizontal_scroll_mode = 0
 
 [node name="LeftVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer" unique_id=1298394004]
@@ -895,7 +895,7 @@ and instead of writing
 2. In Skills tab, drag&drop skills to one of skill slots. You should fill all 5 slots (in case of Abomination - 9 slots).
 3. Look at the summary below, copy or save your current squad (it will appear in Saved Squads tab).
 
-[left]• Hover mouse on hero-path or skill to see info about it![/left]
+[left]• Hover mouse on hero-path or skill or coach item to see info about it![/left]
 
 • You can move heroes between ranks and even swap between each other. Same for skills slots.
 
@@ -918,7 +918,7 @@ and instead of writing
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Do the same for each hero and add switch button[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Show descriptions of heroes-paths[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Show descriptions of skills[/color][/s]
-[img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Optional Act + Torch + Pet data (coach stuff)
+[img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Optional Act + Torch + Pet data (coach stuff)[/color][/s]
 [img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Visual improvements of UI
 
 [font_size=24]CREDITS[/font_size]
@@ -973,7 +973,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 365.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10

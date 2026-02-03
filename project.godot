@@ -15,12 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="DD2 Squad Builder"
-config/version="0.7.4"
+config/version="0.8.1"
 run/main_scene="uid://c2ktq8osijub2"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
 run/low_processor_mode=true
 boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://cb1jfq0c4qppm"
 config/icon="uid://b8wm135ghenfp"
 
 [autoload]
