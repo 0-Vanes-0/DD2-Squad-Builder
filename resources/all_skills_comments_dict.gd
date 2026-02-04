@@ -38,7 +38,7 @@ func assign_comments(in_label: RichTextLabel, hero_path: HeroesPaths.Enum, skill
 	var key := "%s_%d" % [HeroesPaths.to_text(hero_path), skill_number]
 	var skill_data := dict.get(key, default_skill_data) as Dictionary
 	if not skill_data.is_empty():
-		in_label.push_font_size(32)
+		in_label.push_font(Data.dd_2_font, 40)
 		var image := Data.get_skill_texture(hero_path, skill_number) as Texture2D
 		in_label.add_image(image, 100, 100)
 		in_label.append_text("%s\n" % skill_data["name"])
@@ -52,8 +52,8 @@ func assign_comments(in_label: RichTextLabel, hero_path: HeroesPaths.Enum, skill
 
 		var self_ranks := await viewport.get_image(skill_data["skill_ranks"], true)
 		in_label.add_image(self_ranks, RankSubviewport.IN_TEXT_SIZE.x, RankSubviewport.IN_TEXT_SIZE.y)
-		in_label.push_font_size(32)
-		in_label.append_text("  —>  ")
+		in_label.push_font(Data.dd_2_font, 32)
+		in_label.append_text(" > ")
 		in_label.pop()
 		if skill_data["target_ranks"] == "self":
 			in_label.append_text("Self")

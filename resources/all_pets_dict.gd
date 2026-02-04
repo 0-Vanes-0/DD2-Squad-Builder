@@ -27,7 +27,7 @@ func assign_pet(in_label: RichTextLabel, pet: PetDraggable.Pets):
 	var is_table_now := false
 	for i in pet_texts.size():
 		if i == 0:
-			in_label.push_font_size(32)
+			in_label.push_font(Data.dd_2_font, 32)
 			in_label.append_text(pet_texts[0])
 			in_label.pop()
 			in_label.newline()

@@ -27,7 +27,7 @@ func assign_flame(in_label: RichTextLabel, flame: FlameDraggable.Flames):
 	var is_table_now := false
 	for i in flame_texts.size():
 		if i == 0:
-			in_label.push_font_size(32)
+			in_label.push_font(Data.dd_2_font, 32)
 			in_label.append_text(flame_texts[0])
 			in_label.pop()
 			in_label.newline()

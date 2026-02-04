@@ -23,7 +23,7 @@ func show_message(message: String, is_hover := false):
 
 func show_hero_path(hero_path: HeroesPaths.Enum):
 	_label.clear()
-	_label.push_bold()
+	_label.push_font(Data.dd_2_font, 32)
 	_label.append_text(Data.all_paths_names.get_path_name(hero_path))
 	_label.pop()
 	_label.append_text("\n\n")

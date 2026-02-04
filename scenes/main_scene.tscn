@@ -26,6 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://hmbro6ikuvbm" path="res://src/uis/draggables/pet_draggable.tscn" id="20_u0fll"]
 [ext_resource type="PackedScene" uid="uid://ckcb3pjocibly" path="res://scenes/ranks_sub_viewport.tscn" id="21_xdqt8"]
 
+[sub_resource type="FontVariation" id="FontVariation_6p3nn"]
+
+[sub_resource type="FontVariation" id="FontVariation_u0fll"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb74"]
 bg_color = Color(0, 0, 0, 0.78431374)
 
@@ -101,7 +105,7 @@ theme_override_constants/margin_right = 20
 
 [node name="LeftScrollContainer" type="ScrollContainer" parent="HSplitContainer/LeftMarginContainer" unique_id=1457057732]
 layout_mode = 2
-scroll_vertical = 100
+scroll_vertical = 448
 horizontal_scroll_mode = 0
 
 [node name="LeftVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer" unique_id=1298394004]
@@ -513,6 +517,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/FlameVBox" unique_id=1910661331]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Flame"
 horizontal_alignment = 1
 
@@ -526,6 +531,7 @@ theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox" unique_id=256002325]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Act"
 horizontal_alignment = 1
 
@@ -539,6 +545,7 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/PetVBox" unique_id=469226136]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Pet"
 horizontal_alignment = 1
 
@@ -563,11 +570,11 @@ scrolling_enabled = false
 scroll_to_selected = false
 select_with_rmb = true
 tab_count = 5
-tab_0/title = "    Heroes    "
-tab_1/title = "    Skills    "
-tab_2/title = "   Coach   "
+tab_0/title = " Heroes "
+tab_1/title = "  Skills  "
+tab_2/title = " Coach "
 tab_3/title = "Saved Squads"
-tab_4/title = "    Info    "
+tab_4/title = "  Info  "
 script = ExtResource("3_7ykc4")
 tab_container = NodePath("../TabContainer")
 
@@ -575,7 +582,7 @@ tab_container = NodePath("../TabContainer")
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
-current_tab = 2
+current_tab = 4
 tabs_visible = false
 
 [node name="Heroes" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1625220151 node_paths=PackedStringArray("main_scene", "heroes_table")]
@@ -634,6 +641,7 @@ theme_override_constants/separation = 10
 
 [node name="NoSkillsLabel" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer/VBoxContainer" unique_id=16253236]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_6p3nn")
 text = "No skills.
 Drag & drop heroes to the slots on the left first!"
 horizontal_alignment = 1
@@ -680,6 +688,7 @@ theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid", "acts_grid", "pets_grid")]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 12
@@ -705,6 +714,7 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox" unique_id=1200600377]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Flames"
 horizontal_alignment = 1
 
@@ -749,6 +759,7 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox" unique_id=86079121]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Acts"
 horizontal_alignment = 1
 
@@ -777,6 +788,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/PetsVBox" unique_id=348967287]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Pets"
 horizontal_alignment = 1
 
@@ -842,6 +854,7 @@ theme_override_constants/separation = 0
 
 [node name="NoSquadsLabel" type="Label" parent="HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer/VBoxContainer" unique_id=1891519430]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_u0fll")
 text = "No squads.
 Drag & drop heroes to the slots on the left,
 drag & drop all 5 skills for each one,
@@ -854,7 +867,6 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="Info" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1898666789]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -880,7 +892,7 @@ focus_mode = 2
 bbcode_enabled = true
 text = "[center][wave][url=issues][color=royal_blue]Report issue/suggestion[/color][/url][/wave][/center]
 
-[font_size=24]USAGE[/font_size]
+[font_size=40][font=res://assets/dd2_font.otf]USAGE[/font][/font_size]
 [fill]
 • This web utility helps to build a squad for [color=yellow][url=Steam][shake]Darkest Dungeon 2[/shake][/url][/color] and to share it with anybody.[/fill]
 E.g. someone asks: 
@@ -895,7 +907,7 @@ and instead of writing
 2. In Skills tab, drag&drop skills to one of skill slots. You should fill all 5 slots (in case of Abomination - 9 slots).
 3. Look at the summary below, copy or save your current squad (it will appear in Saved Squads tab).
 
-[left]• Hover mouse on hero-path or skill or coach item to see info about it![/left]
+• Hover mouse on hero-path / skill / coach item to see info about it!
 
 • You can move heroes between ranks and even swap between each other. Same for skills slots.
 
@@ -911,7 +923,7 @@ and instead of writing
 
 • If you've found some bug or if you want to suggest some functional/visual changes — click [url=issues][color=royal_blue]Report issue/suggestion[/color][/url].
 [/fill]
-[font_size=24]ROADMAP (in priority order)[/font_size]
+[font_size=40][font=res://assets/dd2_font.otf]ROADMAP (in priority order)[/font][/font_size]
 
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Create drag & drop system for heroes-paths and skills[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Create automatic properties summary of squad[/color][/s]
@@ -921,9 +933,9 @@ and instead of writing
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Optional Act + Torch + Pet data (coach stuff)[/color][/s]
 [img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Visual improvements of UI
 
-[font_size=24]CREDITS[/font_size]
+[font_size=40][font=res://assets/dd2_font.otf]CREDITS[/font][/font_size]
 
-RedHook — Darkest Dungeon 2 itself, its images and mechanics.
+RedHook — Darkest Dungeon 2 itself, its images and mechanics, their fonts.
 
 Catabbro (me) — DD2 Squad Builder developer.
 
@@ -973,7 +985,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 236.0
+offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10

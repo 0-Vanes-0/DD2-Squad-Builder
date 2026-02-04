@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://142k2sfw4ijc"]
 
+[ext_resource type="Theme" uid="uid://mi0cw2k5bhje" path="res://resources/default_theme.tres" id="1_ntul1"]
 [ext_resource type="Script" uid="uid://curqrnxbs01ie" path="res://scenes/squad_box.gd" id="1_r3140"]
 [ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/uis/draggables/hero_path_draggable.tscn" id="2_k0cq7"]
 
-[node name="SquadBox" type="VBoxContainer" node_paths=PackedStringArray("squad_name_label", "rank1_hpd", "rank2_hpd", "rank3_hpd", "rank4_hpd")]
+[node name="SquadBox" type="VBoxContainer" unique_id=21056186 node_paths=PackedStringArray("squad_name_label", "rank1_hpd", "rank2_hpd", "rank3_hpd", "rank4_hpd")]
+theme = ExtResource("1_ntul1")
 theme_override_constants/separation = 20
 script = ExtResource("1_r3140")
 squad_name_label = NodePath("SquadNameLabel")
@@ -12,52 +14,53 @@ rank2_hpd = NodePath("HBoxContainer/TextureRect3")
 rank3_hpd = NodePath("HBoxContainer/TextureRect2")
 rank4_hpd = NodePath("HBoxContainer/TextureRect")
 
-[node name="SquadNameLabel" type="Label" parent="."]
+[node name="SquadNameLabel" type="Label" parent="." unique_id=930037279]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "Squad Name"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=999463570]
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="TextureRect" parent="HBoxContainer" instance=ExtResource("2_k0cq7")]
+[node name="TextureRect" parent="HBoxContainer" unique_id=259576835 instance=ExtResource("2_k0cq7")]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="TextureRect2" parent="HBoxContainer" instance=ExtResource("2_k0cq7")]
+[node name="TextureRect2" parent="HBoxContainer" unique_id=2016299006 instance=ExtResource("2_k0cq7")]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="TextureRect3" parent="HBoxContainer" instance=ExtResource("2_k0cq7")]
+[node name="TextureRect3" parent="HBoxContainer" unique_id=1419539845 instance=ExtResource("2_k0cq7")]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="TextureRect4" parent="HBoxContainer" instance=ExtResource("2_k0cq7")]
+[node name="TextureRect4" parent="HBoxContainer" unique_id=381716760 instance=ExtResource("2_k0cq7")]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=502558823]
 layout_mode = 2
 alignment = 1
 
-[node name="CopyButton" type="Button" parent="HBoxContainer2"]
+[node name="CopyButton" type="Button" parent="HBoxContainer2" unique_id=185656204]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "     Copy     "
+text = "  Copy  "
 
-[node name="PasteButton" type="Button" parent="HBoxContainer2"]
+[node name="PasteButton" type="Button" parent="HBoxContainer2" unique_id=427867628]
 layout_mode = 2
-text = "    Paste    "
+text = "  Paste  "
 
-[node name="RenameButton" type="Button" parent="HBoxContainer2"]
+[node name="RenameButton" type="Button" parent="HBoxContainer2" unique_id=923158816]
 layout_mode = 2
 text = "  Rename  "
 
-[node name="DeleteButton" type="Button" parent="HBoxContainer2"]
+[node name="DeleteButton" type="Button" parent="HBoxContainer2" unique_id=574012311]
 layout_mode = 2
-text = "   Delete   "
+text = "  Delete  "
 
 [connection signal="pressed" from="HBoxContainer2/CopyButton" to="." method="_on_copy_button_pressed"]
 [connection signal="pressed" from="HBoxContainer2/PasteButton" to="." method="_on_paste_button_pressed"]

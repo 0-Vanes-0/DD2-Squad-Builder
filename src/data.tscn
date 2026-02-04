@@ -277,6 +277,7 @@
 [ext_resource type="Texture2D" uid="uid://ctf3g5uk03g5" path="res://assets/icons/Token_pain_heal.png" id="223_jcqda"]
 [ext_resource type="Texture2D" uid="uid://ycbfhs5nxv2w" path="res://assets/icons/Token_flagellant_pain_heal_u.png" id="224_6m7ap"]
 [ext_resource type="Texture2D" uid="uid://7nylvq76ht3b" path="res://assets/icons/Ordained_icon_half.png" id="238_74o8n"]
+[ext_resource type="FontFile" uid="uid://bexn56nh8xtts" path="res://assets/dd2_font.otf" id="278_rmwou"]
 
 [sub_resource type="Resource" id="Resource_4vye1"]
 script = ExtResource("2_xxa4v")
@@ -2131,3 +2132,4 @@ all_acts_file_path = "res://resources/textfiles/all_acts.json"
 all_pets_file_path = "res://resources/textfiles/all_pets.json"
 all_icons = SubResource("Resource_w3bmc")
 all_heroes_skills_properties = SubResource("Resource_f0e13")
+dd_2_font = ExtResource("278_rmwou")

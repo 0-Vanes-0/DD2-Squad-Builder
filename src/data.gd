@@ -133,6 +133,7 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 @export_file_path("*.json") var all_pets_file_path: String
 @export var all_icons: AllIconsDictionary
 @export var all_heroes_skills_properties: AllHeroesSkillsPropertiesDictionary
+@export var dd_2_font: FontFile
 const RANKS_TOKENS: Array[String] = ["heal", "calm", "execute", "move_forw", "move_back", "aoe", "selfdmg", "stack"]
 
 var current_squad: Dictionary = {
