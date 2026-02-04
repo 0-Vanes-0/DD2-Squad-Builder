@@ -400,6 +400,7 @@ fit_content = true
 scroll_active = false
 selection_enabled = true
 script = ExtResource("10_4w45t")
+does_belong_to_hero = null
 
 [node name="GridContainer" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox" unique_id=1504583087]
 layout_mode = 2

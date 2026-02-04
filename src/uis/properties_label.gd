@@ -52,7 +52,7 @@ func update_skills_props(ranks: Array[String] = ["1", "2", "3", "4"]):
 	self.push_paragraph(HORIZONTAL_ALIGNMENT_CENTER) # [center]
 	if not is_4ranks:
 		var label_rank := ranks[0]
-		has_text = Data.all_props.append_path_comment(self, Data.current_squad[label_rank]["hero_path"])
+		has_text = Data.all_props.append_path_comment(self, Data.current_squad[label_rank]["hero_path"], false)
 	
 	var sorted_tokens_map := _get_sorted_tokens_map(tokens_map)
 	var empty := [""]
