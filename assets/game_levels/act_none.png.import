@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvwqxmktcoglf"
-path="res://.godot/imported/act_none.png-7519b85033fc1871926729c76c3f2fa3.ctex"
+path="res://.godot/imported/act_none.png-aec70b08713944a41050b1c3478a8f1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/acts/act_none.png"
-dest_files=["res://.godot/imported/act_none.png-7519b85033fc1871926729c76c3f2fa3.ctex"]
+source_file="res://assets/game_levels/act_none.png"
+dest_files=["res://.godot/imported/act_none.png-aec70b08713944a41050b1c3478a8f1a.ctex"]
 
 [params]
 

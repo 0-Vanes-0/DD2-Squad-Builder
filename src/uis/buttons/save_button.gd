@@ -13,13 +13,13 @@ func _on_pressed() -> void:
 
 	var heroes_skills: Dictionary[HeroesPaths.Enum, Array] = {}
 	for rankbox: RankBox in main_scene.rank_boxes.values():
-		if rankbox.hero_path_draggable.hero_path == HeroesPaths.Enum.NONE:
+		if rankbox.hero_path_draggable.get_hero_path() == HeroesPaths.Enum.NONE:
 			is_ok = false
 			break
-		heroes_skills[rankbox.hero_path_draggable.hero_path] = []
+		heroes_skills[rankbox.hero_path_draggable.get_hero_path()] = []
 		for i in rankbox.skills.size():
-			var skill := rankbox.skills[i]
-			heroes_skills[rankbox.hero_path_draggable.hero_path].append(skill.skill_number)
+			var skill_drg := rankbox.skills[i]
+			heroes_skills[rankbox.hero_path_draggable.get_hero_path()].append(skill_drg.get_skill())
 		
 	if is_ok:
 		main_scene.popup_panel.show_panel(MyPopupPanel.MessageType.SAVE_SQUAD, Data.current_squad["squad_name"])

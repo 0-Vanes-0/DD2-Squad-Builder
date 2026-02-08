@@ -10,6 +10,7 @@
 [ext_resource type="SpriteFrames" uid="uid://b7dh45p3o1kxi" path="res://resources/crossroads_frames.tres" id="5_xdqt8"]
 [ext_resource type="Script" uid="uid://bmmtxw6oq3mas" path="res://src/uis/buttons/save_button.gd" id="6_6wevv"]
 [ext_resource type="Script" uid="uid://44iiuuiwrbxx" path="res://src/uis/rank_box.gd" id="7_e1cbu"]
+[ext_resource type="Script" uid="uid://dnvcsygi3witc" path="res://src/uis/buttons/export_button.gd" id="8_6p3nn"]
 [ext_resource type="Script" uid="uid://bliqyflsjbkfm" path="res://src/uis/notification_panel.gd" id="8_18nlu"]
 [ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/uis/draggables/hero_path_draggable.tscn" id="8_mngbo"]
 [ext_resource type="PackedScene" uid="uid://kyd0io8ylhhl" path="res://src/uis/draggables/skill_draggable.tscn" id="9_e1cbu"]
@@ -22,7 +23,7 @@
 [ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
 [ext_resource type="Script" uid="uid://2kvb5n432r81" path="res://src/uis/info_label.gd" id="15_6u1mn"]
 [ext_resource type="Script" uid="uid://co3j8kon67bqh" path="res://scenes/coach_menu.gd" id="19_58gk3"]
-[ext_resource type="PackedScene" uid="uid://dmr27joqwj2g0" path="res://src/uis/draggables/act_draggable.tscn" id="19_to7gp"]
+[ext_resource type="PackedScene" uid="uid://dmr27joqwj2g0" path="res://src/uis/draggables/game_level_draggable.tscn" id="19_to7gp"]
 [ext_resource type="PackedScene" uid="uid://hmbro6ikuvbm" path="res://src/uis/draggables/pet_draggable.tscn" id="20_u0fll"]
 [ext_resource type="PackedScene" uid="uid://ckcb3pjocibly" path="res://scenes/ranks_sub_viewport.tscn" id="21_xdqt8"]
 
@@ -118,30 +119,36 @@ layout_mode = 2
 
 [node name="ButtonsHBox" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox" unique_id=1080913749]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="ClearButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" unique_id=924149333 node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
-text = "   Clear   "
+text = " Clear "
 script = ExtResource("3_c16ls")
 main_scene = NodePath("../../../../../..")
 
 [node name="CopyButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" unique_id=948499400 node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
-text = "   Copy   "
+text = " Copy URL "
 script = ExtResource("4_18nlu")
 main_scene = NodePath("../../../../../..")
 
 [node name="PasteButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" unique_id=1051640511 node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
-text = "   Paste   "
+text = " Paste URL "
 script = ExtResource("5_6wevv")
 main_scene = NodePath("../../../../../..")
 
+[node name="ExportButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" unique_id=1908726083]
+visible = false
+layout_mode = 2
+text = " Save image "
+script = ExtResource("8_6p3nn")
+
 [node name="SaveButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" unique_id=1021829790 node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
-text = "   Save   "
+text = " Save squad "
 script = ExtResource("6_6wevv")
 main_scene = NodePath("../../../../../..")
 
@@ -162,8 +169,8 @@ skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"),
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox" unique_id=1279517660 instance=ExtResource("8_mngbo")]
 layout_mode = 2
 stretch_mode = 5
-is_slot = true
 rank_number = 4
+is_slot = true
 
 [node name="Skills" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox" unique_id=546911028]
 layout_mode = 2
@@ -219,8 +226,8 @@ skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"),
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox" unique_id=538240601 instance=ExtResource("8_mngbo")]
 layout_mode = 2
 stretch_mode = 5
-is_slot = true
 rank_number = 3
+is_slot = true
 
 [node name="Skills" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox" unique_id=1943387188]
 layout_mode = 2
@@ -276,8 +283,8 @@ skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"),
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox" unique_id=2105144329 instance=ExtResource("8_mngbo")]
 layout_mode = 2
 stretch_mode = 5
-is_slot = true
 rank_number = 2
+is_slot = true
 
 [node name="Skills" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox" unique_id=2082663768]
 layout_mode = 2
@@ -333,8 +340,8 @@ skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"),
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox" unique_id=1009294786 instance=ExtResource("8_mngbo")]
 layout_mode = 2
 stretch_mode = 5
-is_slot = true
 rank_number = 1
+is_slot = true
 
 [node name="Skills" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox" unique_id=795017579]
 layout_mode = 2
@@ -513,6 +520,22 @@ layout_mode = 2
 theme_override_constants/separation = 60
 alignment = 1
 
+[node name="ActVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox" unique_id=1910837619]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox" unique_id=256002325]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Game Level"
+horizontal_alignment = 1
+
+[node name="ActDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox" unique_id=1832434034 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+size_flags_horizontal = 4
+is_slot = true
+is_single_slot = true
+
 [node name="FlameVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox" unique_id=864976704]
 layout_mode = 2
 
@@ -525,20 +548,7 @@ horizontal_alignment = 1
 [node name="FlameDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/FlameVBox" unique_id=1593755461 instance=ExtResource("14_adb74")]
 layout_mode = 2
 is_slot = true
-
-[node name="ActVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox" unique_id=1910837619]
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="Label" type="Label" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox" unique_id=256002325]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Act"
-horizontal_alignment = 1
-
-[node name="ActDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox" unique_id=1832434034 instance=ExtResource("19_to7gp")]
-layout_mode = 2
-is_slot = true
+is_single_slot = true
 
 [node name="PetVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox" unique_id=597128860]
 layout_mode = 2
@@ -553,6 +563,7 @@ horizontal_alignment = 1
 [node name="PetDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/PetVBox" unique_id=116471173 instance=ExtResource("20_u0fll")]
 layout_mode = 2
 is_slot = true
+is_single_slot = true
 
 [node name="Empty2" type="Control" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox" unique_id=1038436329]
 custom_minimum_size = Vector2(0, 100)
@@ -583,7 +594,7 @@ tab_container = NodePath("../TabContainer")
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
-current_tab = 4
+current_tab = 2
 tabs_visible = false
 
 [node name="Heroes" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1625220151 node_paths=PackedStringArray("main_scene", "heroes_table")]
@@ -689,7 +700,6 @@ theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid", "acts_grid", "pets_grid")]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 12
@@ -708,6 +718,49 @@ horizontal_scroll_mode = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer" unique_id=1802427433]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ActsVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=453096580]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox" unique_id=86079121]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Game Levels"
+horizontal_alignment = 1
+
+[node name="ActsGrid" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox" unique_id=1396416314]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 5
+
+[node name="ActDraggable" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=453032118 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="ActDraggable2" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=2061953433 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="ActDraggable3" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1426420231 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="ActDraggable4" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1253145973 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="ActDraggable5" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1216520268 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=902963375]
+layout_mode = 2
+
+[node name="ActDraggable6" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=2106000260 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="ActDraggable7" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1209127890 instance=ExtResource("19_to7gp")]
+layout_mode = 2
+
+[node name="ActDraggable8" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=564043555 instance=ExtResource("19_to7gp")]
+layout_mode = 2
 
 [node name="FlamesVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=2114908039]
 layout_mode = 2
@@ -752,36 +805,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="FlameDraggable10" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid" unique_id=1105115141 instance=ExtResource("14_adb74")]
-layout_mode = 2
-
-[node name="ActsVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=453096580]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox" unique_id=86079121]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Acts"
-horizontal_alignment = 1
-
-[node name="ActsGrid" type="GridContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox" unique_id=1396416314]
-layout_mode = 2
-size_flags_horizontal = 4
-columns = 5
-
-[node name="ActDraggable" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=453032118 instance=ExtResource("19_to7gp")]
-layout_mode = 2
-
-[node name="ActDraggable2" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=2061953433 instance=ExtResource("19_to7gp")]
-layout_mode = 2
-
-[node name="ActDraggable3" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1426420231 instance=ExtResource("19_to7gp")]
-layout_mode = 2
-
-[node name="ActDraggable4" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1253145973 instance=ExtResource("19_to7gp")]
-layout_mode = 2
-
-[node name="ActDraggable5" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/ActsVBox/ActsGrid" unique_id=1216520268 instance=ExtResource("19_to7gp")]
 layout_mode = 2
 
 [node name="PetsVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=1162691116]
@@ -868,6 +891,7 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="Info" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1898666789]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -893,7 +917,7 @@ focus_mode = 2
 bbcode_enabled = true
 text = "[center][wave][url=issues][color=royal_blue]Report issue/suggestion[/color][/url][/wave][/center]
 
-[font_size=40][font=res://assets/dd2_font.otf]USAGE[/font][/font_size]
+[font_size=40][font=res://assets/dd2_font.otf]* USAGE[/font][/font_size]
 [fill]
 • This web utility helps to build a squad for [color=yellow][url=Steam][shake]Darkest Dungeon 2[/shake][/url][/color] and to share it with anybody.[/fill]
 E.g. someone asks: 
@@ -910,6 +934,8 @@ and instead of writing
 
 • Hover mouse on hero-path / skill / coach item to see info about it!
 
+• To remove single hero-path / skill / coach item, just drag it to empty space.
+
 • You can move heroes between ranks and even swap between each other. Same for skills slots.
 
 • Skills order doesn't matter here. However, I recommend to sort them by upgrade (mastering) priority: skill on the top must be upgraded ASAP, skill on the bottom has the least importance.
@@ -924,7 +950,7 @@ and instead of writing
 
 • If you've found some bug or if you want to suggest some functional/visual changes — click [url=issues][color=royal_blue]Report issue/suggestion[/color][/url].
 [/fill]
-[font_size=40][font=res://assets/dd2_font.otf]ROADMAP (in priority order)[/font][/font_size]
+[font_size=40][font=res://assets/dd2_font.otf]* ROADMAP (in priority order)[/font][/font_size]
 
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Create drag & drop system for heroes-paths and skills[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Create automatic properties summary of squad[/color][/s]
@@ -933,8 +959,9 @@ and instead of writing
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Show descriptions of skills[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Optional Act + Torch + Pet data (coach stuff)[/color][/s]
 [img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Visual improvements of UI
+[img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Randomizer
 
-[font_size=40][font=res://assets/dd2_font.otf]CREDITS[/font][/font_size]
+[font_size=40][font=res://assets/dd2_font.otf]* CREDITS[/font][/font_size]
 
 RedHook — Darkest Dungeon 2 itself, its images and mechanics, their fonts.
 
@@ -985,8 +1012,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = -4.0
-offset_bottom = 100.0
+offset_right = 356.0
+offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
@@ -1056,6 +1083,7 @@ vertical_alignment = 1
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" method="_on_pressed"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/CopyButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/CopyButton" method="_on_pressed"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/PasteButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/PasteButton" method="_on_pressed"]
+[connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ExportButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ExportButton" method="_on_pressed"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" method="_on_pressed"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/SwitchButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox" method="_on_switch_button_pressed"]
 [connection signal="tab_selected" from="HSplitContainer/RightVBox/TabBar" to="HSplitContainer/RightVBox/TabBar" method="_on_tab_selected"]

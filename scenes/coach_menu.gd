@@ -22,25 +22,28 @@ func _ready() -> void:
 		
 		var flame_draggable := FlameDraggable.create(value)
 		flame_draggable.info_requested.connect(
-				func(flame: FlameDraggable.Flames):
-					if flame == FlameDraggable.Flames.NONE:
+				func(main_value: Variant):
+					if main_value == FlameDraggable.Flames.NONE:
 						main_scene.notification_panel.hide()
 					else:
-						main_scene.notification_panel.show_flame(flame)
+						main_scene.notification_panel.show_flame(main_value)
 		)
 		flames_grid.add_child(flame_draggable)
 	
-	for value in ActDraggable.Acts.values():
-		if value == ActDraggable.Acts.NONE:
+	for value in GameLevelDraggable.GameLevels.values():
+		if value == GameLevelDraggable.GameLevels.NONE:
 			continue
 		
-		var act_draggable := ActDraggable.create(value)
+		if value == GameLevelDraggable.GameLevels.KINGDOM_BEAST:
+			acts_grid.add_child(Control.new())
+			
+		var act_draggable := GameLevelDraggable.create(value)
 		act_draggable.info_requested.connect(
-				func(act: ActDraggable.Acts):
-					if act == ActDraggable.Acts.NONE:
+				func(main_value: Variant):
+					if main_value == GameLevelDraggable.GameLevels.NONE:
 						main_scene.notification_panel.hide()
 					else:
-						main_scene.notification_panel.show_act(act)
+						main_scene.notification_panel.show_game_level(main_value)
 		)
 		acts_grid.add_child(act_draggable)
 	
@@ -50,10 +53,10 @@ func _ready() -> void:
 		
 		var pet_draggable := PetDraggable.create(value)
 		pet_draggable.info_requested.connect(
-				func(pet: PetDraggable.Pets):
-					if pet == PetDraggable.Pets.NONE:
+				func(main_value: Variant):
+					if main_value == PetDraggable.Pets.NONE:
 						main_scene.notification_panel.hide()
 					else:
-						main_scene.notification_panel.show_pet(pet)
+						main_scene.notification_panel.show_pet(main_value)
 		)
 		pets_grid.add_child(pet_draggable)

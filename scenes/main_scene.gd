@@ -12,7 +12,7 @@ extends Control
 	4: null,
 }
 @export var flame_draggable: FlameDraggable
-@export var act_draggable: ActDraggable
+@export var act_draggable: GameLevelDraggable
 @export var pet_draggable: PetDraggable
 @export var bottom_box: BottomBox
 @export var skills_menu: SkillsMenu
@@ -34,37 +34,39 @@ func _ready() -> void:
 		rank_box.hero_path_draggable.is_unique = (
 				func(hero_path: HeroesPaths.Enum) -> bool:
 					var hero := HeroesPaths.to_hero(hero_path)
-					var rank_box_hero := HeroesPaths.to_hero(rank_box.hero_path_draggable.hero_path)
+					var rank_box_hero := HeroesPaths.to_hero(rank_box.hero_path_draggable.get_hero_path())
 					return hero == rank_box_hero or rank_boxes.values().all(
 							func(rb: RankBox) -> bool:
-								var rb_hero := HeroesPaths.to_hero(rb.hero_path_draggable.hero_path)
+								var rb_hero := HeroesPaths.to_hero(rb.hero_path_draggable.get_hero_path())
 								return hero != rb_hero 
 					)
 		)
 		rank_box.hero_path_draggable.info_requested.connect(
-				func(hero_path: HeroesPaths.Enum):
-					if hero_path == HeroesPaths.Enum.NONE:
+				func(data: Variant):
+					if data == HeroesPaths.Enum.NONE:
 						notification_panel.hide()
 					else:
-						notification_panel.show_hero_path(hero_path)
+						notification_panel.show_hero_path(data)
 		)
-		rank_box.hero_path_draggable.hero_dropped.connect(
-				func(from_rank: int):
+		rank_box.hero_path_draggable.item_dropped.connect(
+				func(drop_info: Variant):
 					# NOTE: Hero paths are already changed!!!
 					
+					assert(drop_info != null)
+					var from_rank := int(drop_info)
 					# If dropped from another rank box:
 					if from_rank > 0:
 						if from_rank != rank_box.rank:
 							var from_rank_box := rank_boxes[from_rank]
 							var temp_skills := rank_boxes[from_rank].get_skills()
-							from_rank_box.set_skills(rank_box.get_skills(), from_rank_box.hero_path_draggable.hero_path)
-							rank_box.set_skills(temp_skills, rank_box.hero_path_draggable.hero_path)
+							from_rank_box.set_skills(rank_box.get_skills(), from_rank_box.hero_path_draggable.get_hero_path())
+							rank_box.set_skills(temp_skills, rank_box.hero_path_draggable.get_hero_path())
 							from_rank_box.update_skills_visibility()
 					
 					# If dropped from heroes table:
 					else:
 						var hero_path_from_data := Data.current_squad[str(rank_box.rank)]["hero_path"] as HeroesPaths.Enum
-						var hero_path_dropped := rank_box.hero_path_draggable.hero_path
+						var hero_path_dropped := rank_box.hero_path_draggable.get_hero_path() as HeroesPaths.Enum
 						var hero_from_data := HeroesPaths.to_hero(hero_path_from_data)
 						var hero_dropped := HeroesPaths.to_hero(hero_path_dropped)
 						if hero_from_data != hero_dropped:
@@ -77,38 +79,53 @@ func _ready() -> void:
 		)
 		
 		for skill_draggable in rank_box.skills:
-			skill_draggable.skill_dropped.connect(update_heroes_in_data)
+			skill_draggable.item_dropped.connect(
+					func(_drop_info: Variant):
+						update_heroes_in_data()
+			)
 			skill_draggable.info_requested.connect(
-					func(hero_path: HeroesPaths.Enum, skill_number: int):
-						if hero_path == HeroesPaths.Enum.NONE or skill_number == -1:
-							notification_panel.hide()
+					func(data: Variant):
+						if data is Dictionary:
+							if data["hero_path_assigned"] == HeroesPaths.Enum.NONE or data["skill"] == -1:
+								notification_panel.hide()
+							else:
+								notification_panel.show_skill(data["hero_path_assigned"], data["skill"])
 						else:
-							notification_panel.show_skill(hero_path, skill_number)
+							notification_panel.hide()
 			)
 	
-	flame_draggable.flame_dropped.connect(update_heroes_in_data)
+	flame_draggable.item_dropped.connect(
+			func(_drop_info: Variant):
+				update_heroes_in_data()
+	)
 	flame_draggable.info_requested.connect(
-			func(flame: FlameDraggable.Flames):
-				if flame == FlameDraggable.Flames.NONE:
+			func(info: Variant):
+				if info == FlameDraggable.Flames.NONE:
 					notification_panel.hide()
 				else:
-					notification_panel.show_flame(flame)
+					notification_panel.show_flame(info)
 	)
-	act_draggable.act_dropped.connect(update_heroes_in_data)
+	act_draggable.item_dropped.connect(
+			func(_drop_info: Variant):
+				update_heroes_in_data()
+	)
 	act_draggable.info_requested.connect(
-			func(act: ActDraggable.Acts):
-				if act == ActDraggable.Acts.NONE:
+			func(info: Variant):
+				if info == GameLevelDraggable.GameLevels.NONE:
 					notification_panel.hide()
 				else:
-					notification_panel.show_act(act)
+					notification_panel.show_game_level(info)
 	)
-	pet_draggable.pet_dropped.connect(update_heroes_in_data)
+	pet_draggable.item_dropped.connect(
+			func(_drop_info: Variant):
+				update_heroes_in_data()
+	)
 	pet_draggable.info_requested.connect(
-			func(pet: PetDraggable.Pets):
-				if pet == PetDraggable.Pets.NONE:
+			func(info: Variant):
+				if info == PetDraggable.Pets.NONE:
 					notification_panel.hide()
 				else:
-					notification_panel.show_pet(pet)
+					notification_panel.show_pet(info)
 	)
 	
 	popup_panel.save_requested.connect(
@@ -120,11 +137,11 @@ func _ready() -> void:
 				SaveLoad.save_data(user_data)
 				
 				await get_tree().process_frame
-				if tab_bar.current_tab == 2:
+				if tab_bar.current_tab == 3:
 					saved_squads_menu.visibility_changed.emit()
 				else:
-					tab_bar.current_tab = 2
-					tab_container.current_tab = 2
+					tab_bar.current_tab = 3
+					tab_container.current_tab = 3
 	)
 	
 	Data.all_skills_comments.viewport = viewport
@@ -150,12 +167,12 @@ func _on_resized() -> void:
 func update_heroes_in_data():
 	for rank_box: RankBox in rank_boxes.values():
 		var rank := str(rank_box.rank)
-		Data.current_squad[rank]["hero_path"] = rank_box.hero_path_draggable.hero_path
+		Data.current_squad[rank]["hero_path"] = rank_box.hero_path_draggable.get_hero_path()
 		Data.current_squad[rank]["skills"] = rank_box.get_skills()
 	
-	Data.current_squad["flame"] = flame_draggable.flame_assigned
-	Data.current_squad["act"] = act_draggable.act_assigned
-	Data.current_squad["pet"] = pet_draggable.pet_assigned
+	Data.current_squad["flame"] = flame_draggable.get_flame()
+	Data.current_squad["act"] = act_draggable.get_act()
+	Data.current_squad["pet"] = pet_draggable.get_pet()
 	skills_menu.visibility_changed.emit()
 	bottom_box.update()
 
@@ -182,7 +199,7 @@ func paste_squad_data(data: Variant):
 		rank_box.update_skills_visibility()
 	
 	flame_draggable.set_flame(squad_data.get("flame", FlameDraggable.Flames.NONE))
-	act_draggable.set_act(squad_data.get("act", ActDraggable.Acts.NONE))
+	act_draggable.set_act(squad_data.get("act", GameLevelDraggable.GameLevels.NONE))
 	pet_draggable.set_pet(squad_data.get("pet", PetDraggable.Pets.NONE))
 	Data.current_squad["squad_name"] = squad_data["squad_name"]
 	update_heroes_in_data()

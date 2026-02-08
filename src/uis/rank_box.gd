@@ -9,38 +9,39 @@ extends VBoxContainer
 
 func _ready() -> void:
 	assert(hero_path_draggable and grid)
-	for skill in skills:
-		assert(skill)
-		skill.is_unique = (
+	for skill_draggable in skills:
+		assert(skill_draggable)
+		skill_draggable.is_unique = (
 				func(dropped_skill_number: int) -> bool: 
 					return skills.all(
 							func(s: SkillDraggable):
-								return s.skill_number != dropped_skill_number
+								return s.get_skill() != dropped_skill_number
 					)
 		)
-		skill.hide()
+		skill_draggable.hide()
 
 
 func get_skills() -> Array[int]:
 	var skill_numbers: Array[int] = []
-	for skill in skills:
-		skill_numbers.append(skill.skill_number)
+	for skill_drg in skills:
+		skill_numbers.append(skill_drg.get_skill())
 	return skill_numbers
 
 
 func set_skills(skill_numbers: Array[int], hero_path: HeroesPaths.Enum):
 	for i in skill_numbers.size():
-		skills[i].hero_path_assigned = hero_path
-		skills[i].skill_number = skill_numbers[i]
-		skills[i].texture = Data.get_skill_texture(hero_path, skill_numbers[i])
+		skills[i].set_info({
+			skills[i].get_obligatory_key(): hero_path,
+			"skill": skill_numbers[i],
+		})
 
 
 func update_skills_visibility():
-	if hero_path_draggable.hero_path == HeroesPaths.Enum.NONE:
+	if hero_path_draggable.get_hero_path() == HeroesPaths.Enum.NONE:
 		for skill in skills:
 			skill.hide()
 	else:
-		var is_abomination := HeroesPaths.is_abomination(hero_path_draggable.hero_path)
+		var is_abomination := HeroesPaths.is_abomination(hero_path_draggable.get_hero_path())
 		for i in skills.size():
 			skills[i].visible = is_abomination or i < 5
 		

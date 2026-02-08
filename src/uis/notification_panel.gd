@@ -43,9 +43,9 @@ func show_flame(flame: FlameDraggable.Flames):
 	_show_panel(true)
 
 
-func show_act(act: ActDraggable.Acts):
+func show_game_level(game_level: GameLevelDraggable.GameLevels):
 	_label.clear()
-	Data.all_acts.assign_act(_label, act)
+	Data.all_game_levels.assign_game_level(_label, game_level)
 	_show_panel(true)
 
 

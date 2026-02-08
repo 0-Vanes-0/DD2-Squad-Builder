@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dmr27joqwj2g0"]
+
+[ext_resource type="Texture2D" uid="uid://bvwqxmktcoglf" path="res://assets/game_levels/act_none.png" id="1_2v4k3"]
+[ext_resource type="Script" uid="uid://b5wppufylfda8" path="res://src/uis/draggables/game_level_draggable.gd" id="1_7644f"]
+
+[node name="GameLevelDraggable" type="TextureRect" unique_id=1832434034]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2v4k3")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("1_7644f")
+metadata/_custom_type_script = "uid://b5wppufylfda8"

@@ -94,13 +94,16 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 	FlameDraggable.Flames.STYGIAN: null,
 }
 
-@export var acts_textures: Dictionary[ActDraggable.Acts, Texture2D] = {
-	ActDraggable.Acts.NONE: null,
-	ActDraggable.Acts.ONE: null,
-	ActDraggable.Acts.TWO: null,
-	ActDraggable.Acts.THREE: null,
-	ActDraggable.Acts.FOUR: null,
-	ActDraggable.Acts.FIVE: null,
+@export var game_levels_textures: Dictionary[GameLevelDraggable.GameLevels, Texture2D] = {
+	GameLevelDraggable.GameLevels.NONE: null,
+	GameLevelDraggable.GameLevels.ACT_ONE: null,
+	GameLevelDraggable.GameLevels.ACT_TWO: null,
+	GameLevelDraggable.GameLevels.ACT_THREE: null,
+	GameLevelDraggable.GameLevels.ACT_FOUR: null,
+	GameLevelDraggable.GameLevels.ACT_FIVE: null,
+	GameLevelDraggable.GameLevels.KINGDOM_BEAST: null,
+	GameLevelDraggable.GameLevels.KINGDOM_COVEN: null,
+	GameLevelDraggable.GameLevels.KINGDOM_CRIMSON: null,
 }
 
 @export var pets_textures: Dictionary[PetDraggable.Pets, Texture2D] = {
@@ -121,7 +124,7 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 @export var hero_path_draggable_scene: PackedScene
 @export var skill_draggable_scene: PackedScene
 @export var flame_draggable_scene: PackedScene
-@export var act_draggable_scene: PackedScene
+@export var game_level_draggable_scene: PackedScene
 @export var pet_draggable_scene: PackedScene
 
 @export_file_path("*.json") var all_props_file_path: String
@@ -129,7 +132,7 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 @export_file_path("*.json") var all_paths_comments_file_path: String
 @export_file_path("*.json") var all_skills_comments_file_path: String
 @export_file_path("*.json") var all_flames_file_path: String
-@export_file_path("*.json") var all_acts_file_path: String
+@export_file_path("*.json") var all_game_levels_file_path: String
 @export_file_path("*.json") var all_pets_file_path: String
 @export var all_icons: AllIconsDictionary
 @export var all_heroes_skills_properties: AllHeroesSkillsPropertiesDictionary
@@ -154,10 +157,13 @@ var current_squad: Dictionary = {
 		"skills": [-1, -1, -1, -1, -1, -1, -1, -1, -1],
 	},
 	"flame": FlameDraggable.Flames.NONE,
-	"act": ActDraggable.Acts.NONE,
+	"act": GameLevelDraggable.GameLevels.NONE,
 	"pet": PetDraggable.Pets.NONE,
 	"squad_name": "",
 }
+var current_drag_data: Dictionary
+var was_drag_useless := true
+
 var settings: Dictionary
 var DEFAULT_SETTINGS := {
 	"language": "eng",
@@ -167,7 +173,7 @@ var all_props: AllPropertiesDictionary
 var all_paths_names: AllPathsNamesDictionary
 var all_skills_comments: AllSkillsCommentsDictionary
 var all_flames: AllFlamesDictionary
-var all_acts: AllActsDictionary
+var all_game_levels: AllGameLevelsDictionary
 var all_pets: AllPetsDictionary
 
 
@@ -218,13 +224,13 @@ func _ready() -> void:
 	
 	all_flames = AllFlamesDictionary.create(all_flames_text)
 	
-	var all_acts_file := FileAccess.open(all_acts_file_path, FileAccess.READ)
+	var all_acts_file := FileAccess.open(all_game_levels_file_path, FileAccess.READ)
 	error = FileAccess.get_open_error()
-	assert(error == OK, "Error upon reading all_acts file!")
+	assert(error == OK, "Error upon reading all_game_levels file!")
 	var all_acts_text := all_acts_file.get_as_text()
 	all_acts_file.close()
 	
-	all_acts = AllActsDictionary.create(all_acts_text)
+	all_game_levels = AllGameLevelsDictionary.create(all_acts_text)
 	
 	var all_pets_file := FileAccess.open(all_pets_file_path, FileAccess.READ)
 	error = FileAccess.get_open_error()

@@ -27,7 +27,7 @@ func _on_visibility_changed() -> void:
 		
 		var hero_paths: Array[HeroesPaths.Enum] = []
 		for rank_box: RankBox in main_scene.rank_boxes.values():
-			hero_paths.append(rank_box.hero_path_draggable.hero_path)
+			hero_paths.append(rank_box.hero_path_draggable.get_hero_path())
 		
 		if hero_paths.any( func(hp: HeroesPaths.Enum): return hp != HeroesPaths.Enum.NONE ):
 			no_skills_label.hide()
@@ -41,11 +41,14 @@ func _on_visibility_changed() -> void:
 						var skill_draggable := SkillDraggable.create(hero_paths[i], j)
 						rank_grids[i].add_child(skill_draggable)
 						skill_draggable.info_requested.connect(
-								func(hero_path: HeroesPaths.Enum, skill_number: int):
-									if hero_path == HeroesPaths.Enum.NONE or skill_number == -1:
-										main_scene.notification_panel.hide()
+								func(info: Variant):
+									if info is Dictionary:
+										if info[skill_draggable.get_obligatory_key()] == HeroesPaths.Enum.NONE or info["skill"] == -1:
+											main_scene.notification_panel.hide()
+										else:
+											main_scene.notification_panel.show_skill(info["hero_path_assigned"], info["skill"])
 									else:
-										main_scene.notification_panel.show_skill(hero_path, skill_number)
+										main_scene.notification_panel.hide()
 						)
 
 		else:

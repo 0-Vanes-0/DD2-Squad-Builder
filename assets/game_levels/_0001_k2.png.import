@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1vv0eir84us0"
-path="res://.godot/imported/act_0004_act1.png-6695decdfb98d9abb3a9fe7e2ee96a53.ctex"
+uid="uid://1pln4ovqnyoi"
+path="res://.godot/imported/_0001_k2.png-c11a9d626d121f90ef7173b698657741.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/acts/act_0004_act1.png"
-dest_files=["res://.godot/imported/act_0004_act1.png-6695decdfb98d9abb3a9fe7e2ee96a53.ctex"]
+source_file="res://assets/game_levels/_0001_k2.png"
+dest_files=["res://.godot/imported/_0001_k2.png-c11a9d626d121f90ef7173b698657741.ctex"]
 
 [params]
 

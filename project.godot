@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="DD2 Squad Builder"
-config/version="0.9.3"
+config/version="0.9.4"
 run/main_scene="uid://c2ktq8osijub2"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
@@ -27,6 +27,13 @@ config/icon="uid://b8wm135ghenfp"
 [autoload]
 
 Data="*res://src/data.tscn"
+
+[debug]
+
+gdscript/warnings/shadowed_variable=0
+gdscript/warnings/shadowed_variable_base_class=0
+gdscript/warnings/narrowing_conversion=0
+gdscript/warnings/int_as_enum_without_cast=0
 
 [display]
 

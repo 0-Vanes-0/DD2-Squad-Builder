@@ -17,10 +17,10 @@ func _ready() -> void:
 			continue
 		var hero_path_draggable := HeroPathDraggable.create(value)
 		hero_path_draggable.info_requested.connect(
-				func(hero_path: HeroesPaths.Enum):
-					if hero_path == HeroesPaths.Enum.NONE:
+				func(data: Variant):
+					if data == HeroesPaths.Enum.NONE:
 						main_scene.notification_panel.hide()
 					else:
-						main_scene.notification_panel.show_hero_path(hero_path)
+						main_scene.notification_panel.show_hero_path(data)
 		)
 		heroes_table.add_child(hero_path_draggable)
