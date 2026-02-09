@@ -171,7 +171,7 @@ func update_heroes_in_data():
 		Data.current_squad[rank]["skills"] = rank_box.get_skills()
 	
 	Data.current_squad["flame"] = flame_draggable.get_flame()
-	Data.current_squad["act"] = act_draggable.get_act()
+	Data.current_squad["game_level"] = act_draggable.get_game_level()
 	Data.current_squad["pet"] = pet_draggable.get_pet()
 	skills_menu.visibility_changed.emit()
 	bottom_box.update()
@@ -199,7 +199,7 @@ func paste_squad_data(data: Variant):
 		rank_box.update_skills_visibility()
 	
 	flame_draggable.set_flame(squad_data.get("flame", FlameDraggable.Flames.NONE))
-	act_draggable.set_act(squad_data.get("act", GameLevelDraggable.GameLevels.NONE))
+	act_draggable.set_game_level(squad_data.get("game_level", GameLevelDraggable.GameLevels.NONE))
 	pet_draggable.set_pet(squad_data.get("pet", PetDraggable.Pets.NONE))
 	Data.current_squad["squad_name"] = squad_data["squad_name"]
 	update_heroes_in_data()

@@ -17,6 +17,10 @@ func get_pet() -> Pets:
 	return self.data[get_obligatory_key()] as Pets
 
 
+func set_pet(pet: Pets):
+	self.set_info({get_obligatory_key(): pet})
+
+
 func get_obligatory_key() -> String:
 	return "pet"
 

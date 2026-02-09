@@ -44,6 +44,13 @@ func get_skill() -> int:
 	return self.data["skill"] as int
 
 
+func set_skill(hero_path: HeroesPaths.Enum, skill: int):
+	self.set_info({
+		get_obligatory_key(): hero_path,
+		"skill": skill,
+	})
+
+
 func get_obligatory_key() -> String:
 	return "hero_path_assigned"
 

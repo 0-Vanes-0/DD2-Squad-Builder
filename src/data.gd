@@ -157,7 +157,7 @@ var current_squad: Dictionary = {
 		"skills": [-1, -1, -1, -1, -1, -1, -1, -1, -1],
 	},
 	"flame": FlameDraggable.Flames.NONE,
-	"act": GameLevelDraggable.GameLevels.NONE,
+	"game_level": GameLevelDraggable.GameLevels.NONE,
 	"pet": PetDraggable.Pets.NONE,
 	"squad_name": "",
 }

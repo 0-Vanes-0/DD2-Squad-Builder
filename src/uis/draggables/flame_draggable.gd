@@ -17,6 +17,10 @@ func get_flame() -> Flames:
 	return self.data[get_obligatory_key()] as Flames
 
 
+func set_flame(flame: Flames):
+	self.set_info({get_obligatory_key(): flame})
+
+
 func get_obligatory_key() -> String:
 	return "flame"
 

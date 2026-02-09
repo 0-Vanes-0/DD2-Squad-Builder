@@ -48,19 +48,19 @@ alignment = 1
 [node name="CopyButton" type="Button" parent="HBoxContainer2" unique_id=185656204]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "  Copy  "
+text = " Copy URL "
 
 [node name="PasteButton" type="Button" parent="HBoxContainer2" unique_id=427867628]
 layout_mode = 2
-text = "  Paste  "
+text = " Paste to slots "
 
 [node name="RenameButton" type="Button" parent="HBoxContainer2" unique_id=923158816]
 layout_mode = 2
-text = "  Rename  "
+text = " Rename "
 
 [node name="DeleteButton" type="Button" parent="HBoxContainer2" unique_id=574012311]
 layout_mode = 2
-text = "  Delete  "
+text = " Delete "
 
 [connection signal="pressed" from="HBoxContainer2/CopyButton" to="." method="_on_copy_button_pressed"]
 [connection signal="pressed" from="HBoxContainer2/PasteButton" to="." method="_on_paste_button_pressed"]

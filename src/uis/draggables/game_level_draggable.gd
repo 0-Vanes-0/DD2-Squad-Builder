@@ -12,8 +12,12 @@ static func create(game_level: GameLevels) -> GameLevelDraggable:
 	return act_draggable
 
 
-func get_act() -> GameLevels:
+func get_game_level() -> GameLevels:
 	return self.data[get_obligatory_key()] as GameLevels
+
+
+func set_game_level(game_level: GameLevels):
+	self.set_info({get_obligatory_key(): game_level})
 
 
 func get_obligatory_key() -> String:
@@ -22,7 +26,7 @@ func get_obligatory_key() -> String:
 
 func _get_drag_dict() -> Dictionary:
 	Data.current_drag_data = {
-		get_obligatory_key(): get_act(),
+		get_obligatory_key(): get_game_level(),
 		"slot_ref": self if is_slot else null,
 	}
 	return Data.current_drag_data
@@ -50,7 +54,7 @@ func _get_check_for_get_drag_data(data: Dictionary) -> bool:
 
 
 func _get_hover_data() -> Variant:
-	return get_act()
+	return get_game_level()
 
 
 func _is_unique() -> bool:

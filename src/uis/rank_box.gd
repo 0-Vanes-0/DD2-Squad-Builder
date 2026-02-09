@@ -30,10 +30,7 @@ func get_skills() -> Array[int]:
 
 func set_skills(skill_numbers: Array[int], hero_path: HeroesPaths.Enum):
 	for i in skill_numbers.size():
-		skills[i].set_info({
-			skills[i].get_obligatory_key(): hero_path,
-			"skill": skill_numbers[i],
-		})
+		skills[i].set_skill(hero_path, skill_numbers[i])
 
 
 func update_skills_visibility():

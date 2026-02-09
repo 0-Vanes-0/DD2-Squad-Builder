@@ -30,12 +30,12 @@ static func encode_squad(data: Dictionary) -> String:
 	
 	var name := String(data.get("squad_name", ""))
 	var flame := int(data.get("flame", 0))
-	var act := int(data.get("act", 0))
+	var game_level := int(data.get("game_level", 0))
 	var pet := int(data.get("pet", 0))
 	
 	var link := WEBSITE + SQUAD_PARAM + code + "|" + name.uri_encode()
-	if flame > 0 or act > 0 or pet > 0:
-		link += COACH_PARAM + "F" + str(flame) + "A" + str(act) + "P" + str(pet)
+	if flame > 0 or game_level > 0 or pet > 0:
+		link += COACH_PARAM + "F" + str(flame) + "A" + str(game_level) + "P" + str(pet)
 	return link
 
 
@@ -62,7 +62,7 @@ static func decode_squad(text: String) -> Dictionary:
 		var a := fap.find("A")
 		var p := fap.find("P")
 		coach["flame"] = int(fap.substr(f + 1, a - f - 1))
-		coach["act"] = int(fap.substr(a + 1, p - a - 1))
+		coach["game_level"] = int(fap.substr(a + 1, p - a - 1))
 		coach["pet"] = int(fap.substr(p))
 	else:
 		coach_index = text.length()
@@ -72,7 +72,7 @@ static func decode_squad(text: String) -> Dictionary:
 	
 	var out: Dictionary = { "squad_name": name }
 	out["flame"] = coach["flame"] if not coach.is_empty() else 0
-	out["act"] = coach["act"] if not coach.is_empty() else 0
+	out["game_level"] = coach["game_level"] if not coach.is_empty() else 0
 	out["pet"] = coach["pet"] if not coach.is_empty() else 0
 	
 	var index := 0
