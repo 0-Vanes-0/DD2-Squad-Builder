@@ -35,7 +35,9 @@ you can just send **squad code** that also includes chosen skills for each hero.
 - [x] ~~Show descriptions of heroes-paths~~
 - [x] ~~Show descriptions of skills~~
 - [x] ~~Optional Act + Torch + Pet data (coach stuff)~~
+- [ ] Export image
 - [ ] Visual improvements of UI
+- [ ] Android port?
 - [ ] ~~Hook localizations from the game~~ Canceled
 - [ ] ~~Paste squad to game????? in HeroSelect scene~~ Canceled
 
