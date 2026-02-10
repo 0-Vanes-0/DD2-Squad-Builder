@@ -12,7 +12,7 @@ extends Control
 	4: null,
 }
 @export var flame_draggable: FlameDraggable
-@export var act_draggable: GameLevelDraggable
+@export var game_level_draggable: GameLevelDraggable
 @export var pet_draggable: PetDraggable
 @export var bottom_box: BottomBox
 @export var skills_menu: SkillsMenu
@@ -24,6 +24,7 @@ extends Control
 
 func _ready() -> void:
 	assert(tab_bar and tab_container and split_container and popup_panel and bottom_box and skills_menu and notification_panel and popup_panel and viewport)
+	randomize()
 	for rank_box in rank_boxes.values():
 		assert(rank_box)
 	tab_bar.current_tab = 0
@@ -61,7 +62,6 @@ func _ready() -> void:
 							var temp_skills := rank_boxes[from_rank].get_skills()
 							from_rank_box.set_skills(rank_box.get_skills(), from_rank_box.hero_path_draggable.get_hero_path())
 							rank_box.set_skills(temp_skills, rank_box.hero_path_draggable.get_hero_path())
-							from_rank_box.update_skills_visibility()
 					
 					# If dropped from heroes table:
 					else:
@@ -74,7 +74,6 @@ func _ready() -> void:
 						else:
 							rank_box.set_skills(rank_box.get_skills(), hero_path_dropped)
 					
-					rank_box.update_skills_visibility()
 					update_heroes_in_data()
 		)
 		
@@ -105,11 +104,11 @@ func _ready() -> void:
 				else:
 					notification_panel.show_flame(info)
 	)
-	act_draggable.item_dropped.connect(
+	game_level_draggable.item_dropped.connect(
 			func(_drop_info: Variant):
 				update_heroes_in_data()
 	)
-	act_draggable.info_requested.connect(
+	game_level_draggable.info_requested.connect(
 			func(info: Variant):
 				if info == GameLevelDraggable.GameLevels.NONE:
 					notification_panel.hide()
@@ -171,7 +170,7 @@ func update_heroes_in_data():
 		Data.current_squad[rank]["skills"] = rank_box.get_skills()
 	
 	Data.current_squad["flame"] = flame_draggable.get_flame()
-	Data.current_squad["game_level"] = act_draggable.get_game_level()
+	Data.current_squad["game_level"] = game_level_draggable.get_game_level()
 	Data.current_squad["pet"] = pet_draggable.get_pet()
 	skills_menu.visibility_changed.emit()
 	bottom_box.update()
@@ -196,10 +195,9 @@ func paste_squad_data(data: Variant):
 		skills.assign(squad_data[key]["skills"])
 		rank_box.hero_path_draggable.set_hero_path(hp)
 		rank_box.set_skills(skills, hp)
-		rank_box.update_skills_visibility()
 	
 	flame_draggable.set_flame(squad_data.get("flame", FlameDraggable.Flames.NONE))
-	act_draggable.set_game_level(squad_data.get("game_level", GameLevelDraggable.GameLevels.NONE))
+	game_level_draggable.set_game_level(squad_data.get("game_level", GameLevelDraggable.GameLevels.NONE))
 	pet_draggable.set_pet(squad_data.get("pet", PetDraggable.Pets.NONE))
 	Data.current_squad["squad_name"] = squad_data["squad_name"]
 	update_heroes_in_data()

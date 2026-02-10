@@ -39,11 +39,12 @@ static func create(props_json_string: String, path_comments_json_string: String)
 
 func construct_text(in_label: RichTextLabel, tokens: Array[String], is_4rank: bool):
 	for token in tokens:
-		split_and_convert_texts_to_icons(in_label, properties[token])
-		if token in Data.RANKS_TOKENS:
-			if is_4rank:
-				in_label.append_text(tokens[1]) # tokens[1] = " by N heroes"
-			break
+		if not token.is_empty():
+			split_and_convert_texts_to_icons(in_label, properties[token])
+			if token in Data.RANKS_TOKENS:
+				if is_4rank:
+					in_label.append_text(tokens[1]) # tokens[1] = " by N heroes"
+				break
 
 
 func append_path_comment(in_label: RichTextLabel, hero_path: HeroesPaths.Enum, include_diff := true) -> bool:

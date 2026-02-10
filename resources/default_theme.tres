@@ -17,6 +17,7 @@ Button/styles/focus = SubResource("StyleBoxEmpty_k2ngq")
 Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_mwhd1")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_nva1m")
+OptionButton/fonts/font = null
 RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_mwhd1")
 TabBar/font_sizes/font_size = 32
 TabBar/fonts/font = ExtResource("1_mwhd1")

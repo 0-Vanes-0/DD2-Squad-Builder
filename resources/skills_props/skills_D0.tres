@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_1g4ai"]
 script = ExtResource("1_xlgqv")
-properties = Array[String](["pply_hero strength crit agr", "consume_hero agr def"])
+properties = Array[String](["apply_hero strength crit agr", "consume_hero agr def"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_2jlsy"]
@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [sub_resource type="Resource" id="Resource_s1yq2"]
 script = ExtResource("1_xlgqv")
-properties = Array[String](["apply dodge", "ignore blind", "consume_hero agr def"])
+properties = Array[String](["apply_hero dodge", "ignore blind", "consume_hero agr def"])
 metadata/_custom_type_script = "uid://bpw62k00huy6s"
 
 [resource]

@@ -26,8 +26,12 @@
 [ext_resource type="PackedScene" uid="uid://dmr27joqwj2g0" path="res://src/uis/draggables/game_level_draggable.tscn" id="19_to7gp"]
 [ext_resource type="PackedScene" uid="uid://hmbro6ikuvbm" path="res://src/uis/draggables/pet_draggable.tscn" id="20_u0fll"]
 [ext_resource type="PackedScene" uid="uid://ckcb3pjocibly" path="res://scenes/ranks_sub_viewport.tscn" id="21_xdqt8"]
+[ext_resource type="Texture2D" uid="uid://dgm5r8it7xk38" path="res://assets/perspective-dice-six-faces-three.png" id="22_4bgka"]
 [ext_resource type="PackedScene" uid="uid://cqaf1m8bgxsx8" path="res://scenes/export_viewport.tscn" id="26_6p3nn"]
 [ext_resource type="Script" uid="uid://cwd47txqjblcw" path="res://scenes/export_image_texture_rect.gd" id="28_k3g67"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bgka"]
+bg_color = Color(0.025363795, 0.025363805, 0.02536378, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_6p3nn"]
 
@@ -36,7 +40,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb74"]
 bg_color = Color(0, 0, 0, 0.78431374)
 
-[node name="MainScene" type="Control" unique_id=204672176 node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "flame_draggable", "act_draggable", "pet_draggable", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport")]
+[node name="MainScene" type="Control" unique_id=204672176 node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "flame_draggable", "game_level_draggable", "pet_draggable", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,7 +59,7 @@ rank_boxes = {
 4: NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox")
 }
 flame_draggable = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/FlameVBox/FlameDraggable")
-act_draggable = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox/ActDraggable")
+game_level_draggable = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/ActVBox/ActDraggable")
 pet_draggable = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/CoachHBox/PetVBox/PetDraggable")
 bottom_box = NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox")
 skills_menu = NodePath("HSplitContainer/RightVBox/TabContainer/Skills")
@@ -597,6 +601,7 @@ tab_container = NodePath("../TabContainer")
 [node name="TabContainer" type="TabContainer" parent="HSplitContainer/RightVBox" unique_id=1731641618]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4bgka")
 tab_alignment = 1
 current_tab = 2
 tabs_visible = false
@@ -703,7 +708,7 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid", "acts_grid", "pets_grid")]
+[node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid", "acts_grid", "pets_grid", "randomize_option_button", "randomize_button")]
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 12
@@ -713,6 +718,8 @@ main_scene = NodePath("../../../..")
 flames_grid = NodePath("ScrollContainer/VBoxContainer/FlamesVBox/FlamesGrid")
 acts_grid = NodePath("ScrollContainer/VBoxContainer/ActsVBox/ActsGrid")
 pets_grid = NodePath("ScrollContainer/VBoxContainer/PetsVBox/PetsGrid")
+randomize_option_button = NodePath("ScrollContainer/VBoxContainer/RandomizerVBox/RandomizerHBox/RandomizeOptionButton")
+randomize_button = NodePath("ScrollContainer/VBoxContainer/RandomizerVBox/RandomizerHBox/RandomizeButton")
 metadata/_tab_index = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach" unique_id=1588330164]
@@ -723,6 +730,44 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 40
+
+[node name="RandomizerVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=131224037]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/RandomizerVBox" unique_id=1527795800]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Randomizer"
+horizontal_alignment = 1
+
+[node name="RandomizerHBox" type="HBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/RandomizerVBox" unique_id=1637715864]
+layout_mode = 2
+alignment = 1
+
+[node name="RandomizeOptionButton" type="OptionButton" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/RandomizerVBox/RandomizerHBox" unique_id=1876445729]
+layout_mode = 2
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 7
+popup/item_0/text = "Random Heroes"
+popup/item_0/id = 0
+popup/item_1/text = "Random Heroes and Paths"
+popup/item_1/id = 1
+popup/item_2/text = "Mystery skills"
+popup/item_2/id = 2
+popup/item_3/text = "Random skills"
+popup/item_3/id = 3
+popup/item_4/text = "Random pet"
+popup/item_4/id = 5
+popup/item_5/text = "Random flame"
+popup/item_5/id = 4
+popup/item_6/text = "Random act"
+popup/item_6/id = 6
+
+[node name="RandomizeButton" type="Button" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/RandomizerVBox/RandomizerHBox" unique_id=1653194697]
+layout_mode = 2
+icon = ExtResource("22_4bgka")
 
 [node name="ActsVBox" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer" unique_id=453096580]
 layout_mode = 2
@@ -934,7 +979,8 @@ and instead of writing
 [left]• How to form a squad?[/left]
 1. In Heroes tab, drag&drop a hero-path to one of rank slots. You should fill all 4 ranks.
 2. In Skills tab, drag&drop skills to one of skill slots. You should fill all 5 slots (in case of Abomination - 9 slots).
-3. Look at the summary below, copy or save your current squad (it will appear in Saved Squads tab).
+3. In Coach tab, [b]optionally[/b] drag&drop act, kingdom, flame or pet. Also here you can randomize anything you want!
+4. Look at the summary below, copy or save your current squad (it will appear in Saved Squads tab).
 
 • Hover mouse on hero-path / skill / coach item to see info about it!
 
@@ -1016,8 +1062,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 356.0
-offset_bottom = 236.0
+offset_right = -4.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
@@ -1093,8 +1139,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="ExportImageTextureRect" type="TextureRect" parent="CenterContainer" unique_id=645647213]
+visible = false
 layout_mode = 2
 mouse_filter = 0
 script = ExtResource("28_k3g67")
@@ -1108,6 +1156,7 @@ script = ExtResource("28_k3g67")
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/SwitchButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox" method="_on_switch_button_pressed"]
 [connection signal="tab_selected" from="HSplitContainer/RightVBox/TabBar" to="HSplitContainer/RightVBox/TabBar" method="_on_tab_selected"]
 [connection signal="visibility_changed" from="HSplitContainer/RightVBox/TabContainer/Skills" to="HSplitContainer/RightVBox/TabContainer/Skills" method="_on_visibility_changed"]
+[connection signal="pressed" from="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer/VBoxContainer/RandomizerVBox/RandomizerHBox/RandomizeButton" to="HSplitContainer/RightVBox/TabContainer/Coach" method="_on_randomize_button_pressed"]
 [connection signal="visibility_changed" from="HSplitContainer/RightVBox/TabContainer/SavedSquads" to="HSplitContainer/RightVBox/TabContainer/SavedSquads" method="_on_visibility_changed"]
 [connection signal="meta_clicked" from="HSplitContainer/RightVBox/TabContainer/Info/ScrollContainer/MarginContainer/InfoLabel" to="HSplitContainer/RightVBox/TabContainer/Info/ScrollContainer/MarginContainer/InfoLabel" method="_on_meta_clicked"]
 [connection signal="meta_hover_ended" from="HSplitContainer/RightVBox/TabContainer/Info/ScrollContainer/MarginContainer/InfoLabel" to="HSplitContainer/RightVBox/TabContainer/Info/ScrollContainer/MarginContainer/InfoLabel" method="_on_meta_hover_ended"]

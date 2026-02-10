@@ -18,15 +18,17 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	var is_ok := true
 	
-	var heroes_skills: Dictionary[HeroesPaths.Enum, Array] = {}
 	for rankbox: RankBox in main_scene.rank_boxes.values():
-		if rankbox.hero_path_draggable.get_hero_path() == HeroesPaths.Enum.NONE:
+		var hero_path := rankbox.hero_path_draggable.get_hero_path()
+		if hero_path == HeroesPaths.Enum.NONE:
 			is_ok = false
 			break
-		heroes_skills[rankbox.hero_path_draggable.get_hero_path()] = []
+		
 		for i in rankbox.skills.size():
 			var skill_drg := rankbox.skills[i]
-			heroes_skills[rankbox.hero_path_draggable.get_hero_path()].append(skill_drg.get_skill())
+			if skill_drg.get_skill() == -1 and (i < 5 or HeroesPaths.is_abomination(hero_path)):
+				is_ok = false
+				break
 		
 	if is_ok:
 		dialogues.show()

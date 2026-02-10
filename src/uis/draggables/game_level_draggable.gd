@@ -7,9 +7,9 @@ enum GameLevels {
 }
 
 static func create(game_level: GameLevels) -> GameLevelDraggable:
-	var act_draggable := DraggableTextureRect.create_base(Data.game_level_draggable_scene) as GameLevelDraggable
-	act_draggable.set_info({"game_level": game_level})
-	return act_draggable
+	var game_level_draggable := DraggableTextureRect.create_base(Data.game_level_draggable_scene) as GameLevelDraggable
+	game_level_draggable.set_info({"game_level": game_level})
+	return game_level_draggable
 
 
 func get_game_level() -> GameLevels:
