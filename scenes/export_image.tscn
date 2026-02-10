@@ -1,0 +1,339 @@
+[gd_scene format=3 uid="uid://bw0vn6fhimoic"]
+
+[ext_resource type="Script" uid="uid://u8chr5nevkhy" path="res://scenes/export_image.gd" id="1_2grct"]
+[ext_resource type="Theme" uid="uid://mi0cw2k5bhje" path="res://resources/default_theme.tres" id="1_gprjj"]
+[ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/uis/draggables/hero_path_draggable.tscn" id="2_pavpt"]
+[ext_resource type="PackedScene" uid="uid://dmr27joqwj2g0" path="res://src/uis/draggables/game_level_draggable.tscn" id="3_vyksh"]
+[ext_resource type="PackedScene" uid="uid://sadtg3dheimo" path="res://src/uis/draggables/flame_draggable.tscn" id="4_0pyrl"]
+[ext_resource type="PackedScene" uid="uid://kyd0io8ylhhl" path="res://src/uis/draggables/skill_draggable.tscn" id="4_3vlwd"]
+[ext_resource type="PackedScene" uid="uid://hmbro6ikuvbm" path="res://src/uis/draggables/pet_draggable.tscn" id="5_y2el1"]
+
+[node name="ExportImage" type="MarginContainer" unique_id=1877646517 node_paths=PackedStringArray("coach_h_box", "game_level_v_box", "game_level_draggable", "flame_v_box", "flame_draggable", "pet_v_box", "pet_draggable", "ranks")]
+offset_right = 20.0
+offset_bottom = 20.0
+theme = ExtResource("1_gprjj")
+script = ExtResource("1_2grct")
+coach_h_box = NodePath("MarginContainer2/MarginContainer/VBoxContainer/CoachHBox")
+game_level_v_box = NodePath("MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/GameLevelVBox")
+game_level_draggable = NodePath("MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/GameLevelVBox/GameLevelDraggable")
+flame_v_box = NodePath("MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/FlameVBox")
+flame_draggable = NodePath("MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/FlameVBox/FlameDraggable")
+pet_v_box = NodePath("MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/PetVBox")
+pet_draggable = NodePath("MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/PetVBox/PetDraggable")
+ranks = [NodePath("MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4"), NodePath("MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3"), NodePath("MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2"), NodePath("MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1699042946]
+layout_mode = 2
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="ScreenshotMe" type="Label" parent="." unique_id=777640162]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Screenshot me"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=839310843]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2" unique_id=1131617588]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/MarginContainer" unique_id=1223102163]
+layout_mode = 2
+
+[node name="CoachHBox" type="HBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer" unique_id=1483505690]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="GameLevelVBox" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/CoachHBox" unique_id=189575707]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/GameLevelVBox" unique_id=1273472508]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Game Level"
+horizontal_alignment = 1
+
+[node name="GameLevelDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/GameLevelVBox" unique_id=1832434034 instance=ExtResource("3_vyksh")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FlameVBox" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/CoachHBox" unique_id=514059321]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/FlameVBox" unique_id=2042420380]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Flame"
+horizontal_alignment = 1
+
+[node name="FlameDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/FlameVBox" unique_id=1593755461 instance=ExtResource("4_0pyrl")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PetVBox" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/CoachHBox" unique_id=440593524]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/PetVBox" unique_id=1782356159]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Pet"
+horizontal_alignment = 1
+
+[node name="PetDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/CoachHBox/PetVBox" unique_id=116471173 instance=ExtResource("5_y2el1")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="RanksHBox" type="HBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer" unique_id=868387352]
+layout_mode = 2
+
+[node name="Rank4" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox" unique_id=419025388]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4" unique_id=975425614]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Path name"
+horizontal_alignment = 1
+
+[node name="HeroPathDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4" unique_id=573238976 instance=ExtResource("2_pavpt")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4" unique_id=1358639308]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="SkillDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4/GridContainer" unique_id=2261546 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable2" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4/GridContainer" unique_id=1673733851 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable3" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4/GridContainer" unique_id=1768841633 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable4" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4/GridContainer" unique_id=678788884 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable5" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4/GridContainer" unique_id=2035442859 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable6" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4/GridContainer" unique_id=635078984 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable7" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4/GridContainer" unique_id=464445483 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable8" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4/GridContainer" unique_id=176226264 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable9" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank4/GridContainer" unique_id=809827761 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="Rank3" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox" unique_id=288258551]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3" unique_id=218572972]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Path name"
+horizontal_alignment = 1
+
+[node name="HeroPathDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3" unique_id=1462994786 instance=ExtResource("2_pavpt")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3" unique_id=1103430275]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="SkillDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3/GridContainer" unique_id=1566489947 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable2" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3/GridContainer" unique_id=1798305588 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable3" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3/GridContainer" unique_id=1480204499 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable4" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3/GridContainer" unique_id=328142608 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable5" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3/GridContainer" unique_id=704952215 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable6" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3/GridContainer" unique_id=2089910831 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable7" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3/GridContainer" unique_id=1533392364 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable8" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3/GridContainer" unique_id=1771099494 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable9" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank3/GridContainer" unique_id=2073442679 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="Rank2" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox" unique_id=911615663]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2" unique_id=1543136689]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Path name"
+horizontal_alignment = 1
+
+[node name="HeroPathDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2" unique_id=381150000 instance=ExtResource("2_pavpt")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2" unique_id=304427346]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="SkillDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2/GridContainer" unique_id=302241794 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable2" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2/GridContainer" unique_id=1879602692 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable3" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2/GridContainer" unique_id=90929096 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable4" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2/GridContainer" unique_id=561821807 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable5" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2/GridContainer" unique_id=663272305 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable6" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2/GridContainer" unique_id=551468361 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable7" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2/GridContainer" unique_id=1716594708 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable8" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2/GridContainer" unique_id=767412569 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable9" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank2/GridContainer" unique_id=2018657615 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="Rank1" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox" unique_id=867396823]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1" unique_id=2135788476]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Path name"
+horizontal_alignment = 1
+
+[node name="HeroPathDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1" unique_id=872674179 instance=ExtResource("2_pavpt")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1" unique_id=2074192611]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="SkillDraggable" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1/GridContainer" unique_id=378844161 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable2" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1/GridContainer" unique_id=1782188377 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable3" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1/GridContainer" unique_id=714407367 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable4" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1/GridContainer" unique_id=109372094 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable5" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1/GridContainer" unique_id=378680077 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable6" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1/GridContainer" unique_id=1910054570 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable7" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1/GridContainer" unique_id=1711105539 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable8" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1/GridContainer" unique_id=441634751 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="SkillDraggable9" parent="MarginContainer2/MarginContainer/VBoxContainer/RanksHBox/Rank1/GridContainer" unique_id=1450118744 instance=ExtResource("4_3vlwd")]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2" unique_id=863931665]
+custom_minimum_size = Vector2(50, 3)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ColorRect3" type="ColorRect" parent="MarginContainer2" unique_id=1325117443]
+custom_minimum_size = Vector2(50, 3)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="ColorRect4" type="ColorRect" parent="MarginContainer2" unique_id=1756627577]
+custom_minimum_size = Vector2(50, 3)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="ColorRect5" type="ColorRect" parent="MarginContainer2" unique_id=266294873]
+custom_minimum_size = Vector2(50, 3)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer2" unique_id=229038285]
+custom_minimum_size = Vector2(3, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ColorRect6" type="ColorRect" parent="MarginContainer2" unique_id=1158727801]
+custom_minimum_size = Vector2(3, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="ColorRect7" type="ColorRect" parent="MarginContainer2" unique_id=1129648249]
+custom_minimum_size = Vector2(3, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="ColorRect8" type="ColorRect" parent="MarginContainer2" unique_id=1955877179]
+custom_minimum_size = Vector2(3, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8

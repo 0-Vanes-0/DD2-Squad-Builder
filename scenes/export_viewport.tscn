@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cqaf1m8bgxsx8"]
+
+[ext_resource type="Script" uid="uid://dwfjl2ajjx2fu" path="res://scenes/export_sub_viewport.gd" id="1_0qu38"]
+[ext_resource type="PackedScene" uid="uid://bw0vn6fhimoic" path="res://scenes/export_image.tscn" id="2_0qu38"]
+
+[node name="ExportViewport" type="SubViewport" unique_id=113951295 node_paths=PackedStringArray("export_image")]
+disable_3d = true
+size = Vector2i(700, 700)
+render_target_update_mode = 4
+script = ExtResource("1_0qu38")
+export_image = NodePath("ExportImage")
+
+[node name="ExportImage" parent="." unique_id=1877646517 instance=ExtResource("2_0qu38")]

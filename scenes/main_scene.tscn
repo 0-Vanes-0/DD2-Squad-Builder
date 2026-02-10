@@ -10,7 +10,7 @@
 [ext_resource type="SpriteFrames" uid="uid://b7dh45p3o1kxi" path="res://resources/crossroads_frames.tres" id="5_xdqt8"]
 [ext_resource type="Script" uid="uid://bmmtxw6oq3mas" path="res://src/uis/buttons/save_button.gd" id="6_6wevv"]
 [ext_resource type="Script" uid="uid://44iiuuiwrbxx" path="res://src/uis/rank_box.gd" id="7_e1cbu"]
-[ext_resource type="Script" uid="uid://dnvcsygi3witc" path="res://src/uis/buttons/export_button.gd" id="8_6p3nn"]
+[ext_resource type="Script" uid="uid://endb1mwvdpqs" path="res://src/uis/buttons/export_button.gd" id="8_6p3nn"]
 [ext_resource type="Script" uid="uid://bliqyflsjbkfm" path="res://src/uis/notification_panel.gd" id="8_18nlu"]
 [ext_resource type="PackedScene" uid="uid://b04e0rh25wgcs" path="res://src/uis/draggables/hero_path_draggable.tscn" id="8_mngbo"]
 [ext_resource type="PackedScene" uid="uid://kyd0io8ylhhl" path="res://src/uis/draggables/skill_draggable.tscn" id="9_e1cbu"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://dmr27joqwj2g0" path="res://src/uis/draggables/game_level_draggable.tscn" id="19_to7gp"]
 [ext_resource type="PackedScene" uid="uid://hmbro6ikuvbm" path="res://src/uis/draggables/pet_draggable.tscn" id="20_u0fll"]
 [ext_resource type="PackedScene" uid="uid://ckcb3pjocibly" path="res://scenes/ranks_sub_viewport.tscn" id="21_xdqt8"]
+[ext_resource type="PackedScene" uid="uid://cqaf1m8bgxsx8" path="res://scenes/export_viewport.tscn" id="26_6p3nn"]
+[ext_resource type="Script" uid="uid://cwd47txqjblcw" path="res://scenes/export_image_texture_rect.gd" id="28_k3g67"]
 
 [sub_resource type="FontVariation" id="FontVariation_6p3nn"]
 
@@ -106,7 +108,6 @@ theme_override_constants/margin_right = 20
 
 [node name="LeftScrollContainer" type="ScrollContainer" parent="HSplitContainer/LeftMarginContainer" unique_id=1457057732]
 layout_mode = 2
-scroll_vertical = 100
 horizontal_scroll_mode = 0
 
 [node name="LeftVBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer" unique_id=1298394004]
@@ -140,17 +141,20 @@ text = " Paste URL "
 script = ExtResource("5_6wevv")
 main_scene = NodePath("../../../../../..")
 
-[node name="ExportButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" unique_id=1908726083]
-visible = false
-layout_mode = 2
-text = " Save image "
-script = ExtResource("8_6p3nn")
-
 [node name="SaveButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" unique_id=1021829790 node_paths=PackedStringArray("main_scene")]
 layout_mode = 2
 text = " Save squad "
 script = ExtResource("6_6wevv")
 main_scene = NodePath("../../../../../..")
+
+[node name="ExportButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" unique_id=1908726083 node_paths=PackedStringArray("main_scene", "dialogues", "export_image_texture_rect", "export_viewport")]
+layout_mode = 2
+text = " Show image "
+script = ExtResource("8_6p3nn")
+main_scene = NodePath("../../../../../..")
+dialogues = NodePath("../../../../../../Dialogues")
+export_image_texture_rect = NodePath("../../../../../../CenterContainer/ExportImageTextureRect")
+export_viewport = NodePath("../../../../../../ExportViewport")
 
 [node name="HeroesHBox" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox" unique_id=1578165213]
 layout_mode = 2
@@ -1079,12 +1083,28 @@ vertical_alignment = 1
 
 [node name="SubViewport" parent="." unique_id=277428659 instance=ExtResource("21_xdqt8")]
 
+[node name="ExportViewport" parent="." unique_id=113951295 instance=ExtResource("26_6p3nn")]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=663581360]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ExportImageTextureRect" type="TextureRect" parent="CenterContainer" unique_id=645647213]
+layout_mode = 2
+mouse_filter = 0
+script = ExtResource("28_k3g67")
+
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" method="_on_pressed"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/CopyButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/CopyButton" method="_on_pressed"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/PasteButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/PasteButton" method="_on_pressed"]
-[connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ExportButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ExportButton" method="_on_pressed"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/SaveButton" method="_on_pressed"]
+[connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ExportButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ExportButton" method="_on_pressed"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox/SwitchButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox" method="_on_switch_button_pressed"]
 [connection signal="tab_selected" from="HSplitContainer/RightVBox/TabBar" to="HSplitContainer/RightVBox/TabBar" method="_on_tab_selected"]
 [connection signal="visibility_changed" from="HSplitContainer/RightVBox/TabContainer/Skills" to="HSplitContainer/RightVBox/TabContainer/Skills" method="_on_visibility_changed"]
@@ -1097,3 +1117,5 @@ vertical_alignment = 1
 [connection signal="close_requested" from="PopupPanel" to="PopupPanel" method="_on_close_requested"]
 [connection signal="popup_hide" from="PopupPanel" to="PopupPanel" method="_on_popup_hide"]
 [connection signal="pressed" from="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer/OkButton" to="PopupPanel" method="_on_ok_button_pressed"]
+
+[editable path="ExportViewport"]
