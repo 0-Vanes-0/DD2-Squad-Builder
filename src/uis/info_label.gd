@@ -6,6 +6,7 @@ const URLS := {
 	"Steam": "https://store.steampowered.com/app/1940340/Darkest_Dungeon_II/",
 	"Godot": "https://godotengine.org/",
 	"wiki": "https://darkestdungeon.wiki.gg/wiki/Heroes_(Darkest_Dungeon_II)",
+	"gameicons": "https://game-icons.net",
 }
 @export var notification_panel: NotificationPanel
 var _is_mouse_inside := false

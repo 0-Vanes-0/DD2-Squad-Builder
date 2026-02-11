@@ -15,8 +15,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="DD2 Squad Builder"
-config/version="0.9.6"
-run/main_scene="uid://c2ktq8osijub2"
+config/version="0.9.7"
+run/main_scene="uid://x2symnah178y"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
 run/low_processor_mode=true

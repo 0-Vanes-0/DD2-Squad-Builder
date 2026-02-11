@@ -1008,8 +1008,8 @@ and instead of writing
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Show descriptions of heroes-paths[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Show descriptions of skills[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Optional Act + Torch + Pet data (coach stuff)[/color][/s]
-[img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Visual improvements of UI
-[img=20x20]res://assets/icons/checkbox_unchecked.png[/img] Randomizer
+[img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Randomizer[/color][/s]
+[img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Visual improvements of UI[/color][/s]
 
 [font_size=40][font=res://assets/dd2_font.otf]* CREDITS[/font][/font_size]
 
@@ -1017,7 +1017,9 @@ RedHook — Darkest Dungeon 2 itself, its images and mechanics, their fonts.
 
 Catabbro (me) — DD2 Squad Builder developer.
 
-[url=wiki][color=royal_blue]darkestdungeon.wiki.gg[/color][/url] — all the data about heroes, all pngs used in this project
+[url=wiki][color=royal_blue]darkestdungeon.wiki.gg[/color][/url] — all the data about heroes, all pngs used in this project.
+
+[url=gameicons][color=royal_blue]game-icons.net[/color][/url] — dice icon.
 
 GitHub — repository storage and free public hosting of the web page.
 
