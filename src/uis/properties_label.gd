@@ -34,17 +34,18 @@ func update_skills_props(ranks: Array[String] = ["1", "2", "3", "4"]):
 			if not tokens.is_empty():
 				for token in tokens:
 					var words := token.split(" ", false) # 'false' is to prevent accident 2 spaces.
-					if not words[0] in FIRST_WORDS:
-						print_debug("Heropath %s, skill %s has bad properties: %s" % [HeroesPaths.to_text(hero_path), number, tokens])
-					else:
-						if words.size() == 1:
-							if not rank_flags.has(words[0]):
-								_add_to_tokens_map(tokens_map, words[0])
-							elif rank_flags[words[0]] == false:
-								rank_flags[words[0]] = true
-								_add_to_tokens_map(tokens_map, words[0], ["-"])
+					if not words.is_empty():
+						if not words[0] in FIRST_WORDS:
+							print_debug("Heropath %s, skill %s has bad properties: %s" % [HeroesPaths.to_text(hero_path), number, tokens])
 						else:
-							_add_to_tokens_map(tokens_map, words[0], words.slice(1))
+							if words.size() == 1:
+								if not rank_flags.has(words[0]):
+									_add_to_tokens_map(tokens_map, words[0])
+								elif rank_flags[words[0]] == false:
+									rank_flags[words[0]] = true
+									_add_to_tokens_map(tokens_map, words[0], ["-"])
+							else:
+								_add_to_tokens_map(tokens_map, words[0], words.slice(1))
 	
 	var is_4ranks := ranks.size() == 4
 

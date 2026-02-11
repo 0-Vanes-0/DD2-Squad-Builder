@@ -219,10 +219,11 @@ func _on_randomize_button_pressed() -> void:
 					var rank_box := main_scene.rank_boxes.values()[i] as RankBox
 					var hero_path := rank_box.hero_path_draggable.get_hero_path()
 					var skills: Array[int] = []
+					skills.assign(range(0, 11))
 					if HeroesPaths.is_abomination(hero_path):
-						skills.assign(MYSTERY_SKILLS["A"].pick_random())
+						skills.erase(randi_range(0, 4))
+						skills.erase(randi_range(6, 10))
 					else:
-						skills.assign(range(0, 11))
 						skills.shuffle()
 						skills.resize(5)
 					
