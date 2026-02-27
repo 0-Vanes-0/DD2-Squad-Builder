@@ -77,7 +77,7 @@ func _update_position():
 	
 	# Horizontal: prefer right (or left if requested), flip if off-screen.
 	var right_x := mouse_pos.x + 20
-	var left_x := mouse_pos.x - size.x
+	var left_x := mouse_pos.x - size.x - 20
 	var pos_x := right_x
 	
 	if pos_x + size.x > viewport_rect.end.x:

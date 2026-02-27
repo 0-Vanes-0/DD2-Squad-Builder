@@ -105,7 +105,7 @@ func _notification(what: int) -> void:
 	super(what)
 	if what == NOTIFICATION_DRAG_END:
 		if is_slot and Data.was_drag_useless:
-			var slot_ref := Data.current_drag_data["slot_ref"] as DraggableTextureRect
+			var slot_ref := Data.current_drag_data.get("slot_ref") as DraggableTextureRect
 			if slot_ref != null:
 				slot_ref.clear_info()
 				slot_ref.item_dropped.emit(slot_ref.get_drop_info())

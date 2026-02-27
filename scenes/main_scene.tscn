@@ -603,7 +603,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_4bgka")
 tab_alignment = 1
-current_tab = 2
+current_tab = 4
 tabs_visible = false
 
 [node name="Heroes" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1625220151 node_paths=PackedStringArray("main_scene", "heroes_table")]
@@ -709,6 +709,7 @@ theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid", "acts_grid", "pets_grid", "randomize_option_button", "randomize_button")]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 12
@@ -724,7 +725,10 @@ metadata/_tab_index = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach" unique_id=1588330164]
 layout_mode = 2
+follow_focus = true
 horizontal_scroll_mode = 0
+scroll_deadzone = 50
+scroll_hint_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer" unique_id=1802427433]
 layout_mode = 2
@@ -940,7 +944,6 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="Info" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1898666789]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -950,7 +953,10 @@ metadata/_tab_index = 4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/RightVBox/TabContainer/Info" unique_id=575108688]
 layout_mode = 2
+follow_focus = true
 horizontal_scroll_mode = 0
+scroll_deadzone = 50
+scroll_hint_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer/Info/ScrollContainer" unique_id=1057216689]
 layout_mode = 2
@@ -962,7 +968,6 @@ theme_override_constants/margin_right = 20
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-focus_mode = 2
 bbcode_enabled = true
 text = "[center][wave][url=issues][color=royal_blue]Report issue/suggestion[/color][/url][/wave][/center]
 
@@ -1027,7 +1032,6 @@ Powered by [url=Godot][color=royal_blue]Godot Engine[/color][/url], a free open-
 
 [center]Version: %s[/center]"
 fit_content = true
-selection_enabled = true
 script = ExtResource("15_6u1mn")
 notification_panel = NodePath("../../../../../../../NotificationPanel")
 
