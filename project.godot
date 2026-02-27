@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="DD2 Squad Builder"
-config/version="0.9.8"
+config/version="0.9.9"
 run/main_scene="uid://x2symnah178y"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
@@ -42,7 +42,6 @@ window/size/viewport_height=720
 window/energy_saving/keep_screen_on=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/stretch/scale=1.2
 window/handheld/orientation=4
 
 [file_customization]
