@@ -3813,7 +3813,7 @@
 		]
 	  },
 	  "O0_2": {
-		"name": "$vvk ening Curse",
+		"name": "Weakening Curse",
 		"type": "ranged",
 		"skill_ranks": "4321",
 		"target_ranks": "1234",
@@ -3854,7 +3854,7 @@
 		]
 	  },
 	  "O0_4": {
-		"name": "Daemon's Pull",
+		"name": "Daemons Pull",
 		"type": "ranged",
 		"skill_ranks": "432",
 		"target_ranks": "34",
