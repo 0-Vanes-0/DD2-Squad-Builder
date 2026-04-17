@@ -5176,12 +5176,12 @@
 		"skill_text": [
 		  "Ignore  $stl $ddg",
 		  "Remove  $stl",
-		  "Remove 2 $neg Tokens"
+		  "Remove 2 $pos Tokens"
 		],
 		"skill_u_text": [
 		  "Ignore  $stl $ddg",
 		  "Remove  $stl",
-		  "Remove 3 $neg Tokens"
+		  "Remove 3 $pos Tokens"
 		]
 	  },
 	  "V1_2": {
