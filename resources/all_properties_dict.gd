@@ -78,6 +78,10 @@ static func split_and_convert_texts_to_icons(in_label: RichTextLabel, line: Stri
 				var hero := texts[i].substr(1, 1)
 				var skill := int(texts[i].substr(2))
 				in_label.add_image(Data.skills_textures[hero].skills[skill], 50, 50)
+			elif texts[i] == "<>":
+				in_label.push_font(Data.dd_2_font)
+				in_label.append_text(texts[i])
+				in_label.pop()
 			else:
 				texts[i] = texts[i].replace(" ", NBSP)
 				in_label.append_text(texts[i])

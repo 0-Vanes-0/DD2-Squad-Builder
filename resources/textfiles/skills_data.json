@@ -5879,21 +5879,21 @@
 		"skill_text": [
 		  "DMG: 2-4",
 		  "CRIT: 5%",
-		  "Invert  $agr <—> $def",
+		  "Invert  $agr <> $def",
 		  "$rps x2"
 		],
 		"skill_u_text": [
 		  "DMG: 3-6",
 		  "CRIT: 10%",
-		  "Invert  $agr <—> $def",
+		  "Invert  $agr <> $def",
 		  "$rps x3"
 		]
 	  },
 	  "D0_2": {
 		"name": "Disengage",
 		"type": "melee",
-		"skill_ranks": "",
-		"target_ranks": "",
+		"skill_ranks": "123",
+		"target_ranks": "123",
 		"target_type": "enemy",
 		"cooldown": "-",
 		"uses": "-",
@@ -6093,7 +6093,7 @@
 		  "CRIT: 5%",
 		  "Ignores  $rps",
 		  "$mve Back 2",
-		  "Invert  $agr <—> $def",
+		  "Invert  $agr <> $def",
 		  "$ddg"
 		],
 		"skill_u_text": [
@@ -6101,7 +6101,7 @@
 		  "CRIT: 10%",
 		  "Ignores  $rps",
 		  "$mve Back 2",
-		  "Invert  $agr <—> $def",
+		  "Invert  $agr <> $def",
 		  "$ddg+"
 		]
 	  },
@@ -6269,13 +6269,13 @@
 		"skill_text": [
 		  "DMG: 2-4",
 		  "CRIT: 5%",
-		  "Invert  $agr <—> $def",
+		  "Invert  $agr <> $def",
 		  "$ddg x2"
 		],
 		"skill_u_text": [
 		  "DMG: 3-6",
 		  "CRIT: 10%",
-		  "Invert  $agr <—> $def",
+		  "Invert  $agr <> $def",
 		  "$ddg+ x2"
 		]
 	  },

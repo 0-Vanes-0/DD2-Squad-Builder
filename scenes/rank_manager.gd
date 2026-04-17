@@ -27,13 +27,13 @@ func _ready() -> void:
 
 func apply_ranks(ranks_text: String, is_hero: bool):
 	_hide_all()
-
+	
 	var ranks := ranks_text.split()
 	var is_group := false
 	if ranks[ranks.size() - 1] == "-":
 		is_group = true
 		ranks.resize(ranks.size() - 1)
-
+	
 	var all_ranks := ["1", "2", "3", "4"]
 	if is_hero:
 		all_ranks = ["4", "3", "2", "1"]
@@ -50,7 +50,6 @@ func apply_ranks(ranks_text: String, is_hero: bool):
 				points.append(original_points[i])
 		else:
 			_get_empty(all_ranks[i], is_hero).show()
-	
 	
 	if is_group:
 		if is_hero:
