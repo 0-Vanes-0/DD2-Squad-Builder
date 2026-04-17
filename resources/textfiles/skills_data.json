@@ -1387,7 +1387,7 @@
 		"name": "Grapeshot Blast",
 		"type": "ranged",
 		"skill_ranks": "1",
-		"target_ranks": "123",
+		"target_ranks": "123-",
 		"target_type": "enemy",
 		"cooldown": "-",
 		"uses": "-",
