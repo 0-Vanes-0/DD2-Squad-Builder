@@ -1,6 +1,8 @@
 class_name MainScene
 extends Control
 
+const ANDROID_STRETCH_SCALE := 1.1
+
 @export_group("Required Chilren")
 @export var tab_bar: MenuTabBar
 @export var tab_container: TabContainer
@@ -22,9 +24,16 @@ extends Control
 @export var viewport: RankSubviewport
 
 
+func _enter_tree() -> void:
+	if Data.is_android:
+		self.get_window().content_scale_factor = ANDROID_STRETCH_SCALE
+		#ProjectSettings.set_setting("display/window/stretch/scale", 1.2)
+
+
 func _ready() -> void:
 	assert(tab_bar and tab_container and split_container and popup_panel and bottom_box and skills_menu and notification_panel and popup_panel and viewport)
 	randomize()
+	
 	for rank_box in rank_boxes.values():
 		assert(rank_box)
 	tab_bar.current_tab = 0
@@ -57,6 +66,8 @@ func _ready() -> void:
 					var from_rank := int(drop_info)
 					# If dropped from another rank box:
 					if from_rank > 0:
+						if Data.was_drag_useless:
+							rank_box.set_skills(Data.get_empty_skills(), HeroesPaths.Enum.NONE)
 						if from_rank != rank_box.rank:
 							var from_rank_box := rank_boxes[from_rank]
 							var temp_skills := rank_boxes[from_rank].get_skills()

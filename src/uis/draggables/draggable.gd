@@ -37,12 +37,13 @@ static func create_base(scene: PackedScene) -> DraggableTextureRect:
 
 
 func _ready() -> void:
+	super()
 	if is_single_slot:
 		assert(is_slot, "If is_slot = false, is_single_slot can't be true")
 	
 	if data.is_empty():
 		data = { get_obligatory_key(): 0 }
-
+	
 	self.hovered.connect(
 			func(is_hovered: bool):
 				if is_hovered:
@@ -82,8 +83,8 @@ func _drop_data(_at_position: Vector2, drop_data: Variant) -> void:
 		if drop_data.has(get_obligatory_key()) and is_slot:
 			if is_single_slot:
 				set_info(drop_data)
-				item_dropped.emit(get_drop_info())
 				Data.was_drag_useless = false
+				item_dropped.emit(get_drop_info())
 			
 			elif _is_unique() or drop_data["slot_ref"] != null:
 				var slot_ref := drop_data["slot_ref"] as DraggableTextureRect
@@ -93,8 +94,8 @@ func _drop_data(_at_position: Vector2, drop_data: Variant) -> void:
 						#print_debug("Dropped data: %s| Slot ref data: %s" % [data, slot_ref.data])
 				
 				set_info(drop_data)
-				item_dropped.emit(get_drop_info())
 				Data.was_drag_useless = false
+				item_dropped.emit(get_drop_info())
 				
 				#if drop_data.has("skill"):
 					#var slot_data := slot_ref.data if slot_ref else {}
@@ -102,8 +103,12 @@ func _drop_data(_at_position: Vector2, drop_data: Variant) -> void:
 
 
 func _notification(what: int) -> void:
-	super(what)
-	if what == NOTIFICATION_DRAG_END:
+	if what == NOTIFICATION_DRAG_BEGIN:
+		self.is_hoverable = false
+		Data.is_dragging = true
+	elif what == NOTIFICATION_DRAG_END:
+		self.is_hoverable = true
+		Data.is_dragging = false
 		if is_slot and Data.was_drag_useless:
 			var slot_ref := Data.current_drag_data.get("slot_ref") as DraggableTextureRect
 			if slot_ref != null:

@@ -14,7 +14,9 @@ var _is_mouse_inside := false
 
 func _ready() -> void:
 	assert(notification_panel)
-	self.text = self.text % ProjectSettings.get_setting("application/config/version")
+	var version: String = ProjectSettings.get_setting("application/config/version")
+	self.text = self.text % version
+	print_debug("Current version: ", version)
 
 
 func _on_meta_clicked(meta: Variant) -> void:

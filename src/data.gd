@@ -137,6 +137,7 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 @export var all_icons: AllIconsDictionary
 @export var all_heroes_skills_properties: AllHeroesSkillsPropertiesDictionary
 @export var dd_2_font: FontFile
+
 const RANKS_TOKENS: Array[String] = ["heal", "calm", "execute", "move_forw", "move_back", "aoe", "selfdmg", "stack"]
 
 var current_squad: Dictionary = {
@@ -169,12 +170,18 @@ var DEFAULT_SETTINGS := {
 	"language": "eng",
 }
 var is_dragging := false
+var is_android := false
 var all_props: AllPropertiesDictionary
 var all_paths_names: AllPathsNamesDictionary
 var all_skills_comments: AllSkillsCommentsDictionary
 var all_flames: AllFlamesDictionary
 var all_game_levels: AllGameLevelsDictionary
 var all_pets: AllPetsDictionary
+
+
+func _enter_tree() -> void:
+	if OS.has_feature("android"):
+		is_android = true
 
 
 func _ready() -> void:

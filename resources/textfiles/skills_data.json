@@ -316,7 +316,7 @@
 		"type": "-",
 		"skill_ranks": "1234",
 		"target_ranks": "1234",
-		"target_type": "ally",
+		"target_type": "hero",
 		"cooldown": "1",
 		"uses": "-",
 		"skill_text": [
