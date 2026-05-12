@@ -24,6 +24,7 @@ const ANDROID_SCROLL_BAR_WIDTH := 20.0
 @export var notification_panel: NotificationPanel
 @export var popup_panel: MyPopupPanel
 @export var viewport: RankSubviewport
+@export var deeplink: Deeplink
 
 
 func _enter_tree() -> void:
@@ -34,6 +35,8 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	assert(tab_bar and tab_container and split_container and popup_panel and bottom_box and skills_menu and notification_panel and popup_panel and viewport)
 	assert(not scroll_containers.is_empty())
+	deeplink.initialize()
+	
 	randomize()
 	
 	if Data.is_android:
@@ -177,6 +180,17 @@ func _ready() -> void:
 			var squad_code := query.replace("?squad=", "")
 			paste_squad_data(squad_code)
 			print_debug("Loaded squad from URL parameter: %s" % query)
+	
+	elif Data.is_android:
+		deeplink.deeplink_received.connect(
+				func(url: DeeplinkUrl):
+					var query := url.get_query()
+					if query != null and not query.is_empty() and query.begins_with("squad="):
+						var squad_code := query.replace("squad=", "")
+						paste_squad_data(squad_code)
+						print_debug("Loaded squad from URL parameter: %s" % query)
+		)
+		print("is_domain_associated=", deeplink.is_domain_associated("0-vanes-0.github.io"))
 
 
 func _on_resized() -> void:

@@ -15,7 +15,7 @@ func _ready() -> void:
 				export_image_texture_rect.hide()
 	)
 	if Data.is_android:
-		self.text = "Share squad"
+		self.text = " Share squad "
 
 
 func _on_pressed() -> void:
