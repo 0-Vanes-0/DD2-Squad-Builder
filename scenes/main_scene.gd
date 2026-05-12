@@ -2,8 +2,10 @@ class_name MainScene
 extends Control
 
 const ANDROID_STRETCH_SCALE := 1.1
+const ANDROID_SCROLL_BAR_WIDTH := 20.0
 
 @export_group("Required Chilren")
+@export var scroll_containers: Array[ScrollContainer]
 @export var tab_bar: MenuTabBar
 @export var tab_container: TabContainer
 @export var split_container: HSplitContainer
@@ -27,12 +29,21 @@ const ANDROID_STRETCH_SCALE := 1.1
 func _enter_tree() -> void:
 	if Data.is_android:
 		self.get_window().content_scale_factor = ANDROID_STRETCH_SCALE
-		#ProjectSettings.set_setting("display/window/stretch/scale", 1.2)
 
 
 func _ready() -> void:
 	assert(tab_bar and tab_container and split_container and popup_panel and bottom_box and skills_menu and notification_panel and popup_panel and viewport)
+	assert(not scroll_containers.is_empty())
 	randomize()
+	
+	if Data.is_android:
+		for scroll in scroll_containers:
+			scroll.get_v_scroll_bar().custom_minimum_size = Vector2(ANDROID_SCROLL_BAR_WIDTH, 0)
+		Data.dragging_state_changed.connect(
+				func(is_dragging_now: bool):
+					for scroll in scroll_containers:
+						scroll.mouse_filter = Control.MOUSE_FILTER_IGNORE if is_dragging_now else Control.MOUSE_FILTER_PASS
+		)
 	
 	for rank_box in rank_boxes.values():
 		assert(rank_box)

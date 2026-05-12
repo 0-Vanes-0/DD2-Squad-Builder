@@ -76,7 +76,7 @@ func _update_position():
 		pos_y = below_y
 	
 	# Horizontal: prefer right (or left if requested), flip if off-screen.
-	var right_x := mouse_pos.x + 20
+	var right_x := mouse_pos.x + 40
 	var left_x := mouse_pos.x - size.x - 20
 	var pos_x := right_x
 	

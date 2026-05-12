@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dgm5r8it7xk38" path="res://assets/perspective-dice-six-faces-three.png" id="22_4bgka"]
 [ext_resource type="PackedScene" uid="uid://cqaf1m8bgxsx8" path="res://scenes/export_viewport.tscn" id="26_6p3nn"]
 [ext_resource type="Script" uid="uid://cwd47txqjblcw" path="res://scenes/export_image_texture_rect.gd" id="28_k3g67"]
+[ext_resource type="Script" uid="uid://newrygjvhdiq" path="res://addons/SharePlugin/Share.gd" id="30_02d50"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bgka"]
 bg_color = Color(0.025363795, 0.025363805, 0.02536378, 1)
@@ -40,7 +41,7 @@ bg_color = Color(0.025363795, 0.025363805, 0.02536378, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb74"]
 bg_color = Color(0, 0, 0, 0.78431374)
 
-[node name="MainScene" type="Control" unique_id=204672176 node_paths=PackedStringArray("tab_bar", "tab_container", "split_container", "rank_boxes", "flame_draggable", "game_level_draggable", "pet_draggable", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport")]
+[node name="MainScene" type="Control" unique_id=204672176 node_paths=PackedStringArray("scroll_containers", "tab_bar", "tab_container", "split_container", "rank_boxes", "flame_draggable", "game_level_draggable", "pet_draggable", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,6 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_pw63i")
 script = ExtResource("1_w2twt")
+scroll_containers = [NodePath("HSplitContainer/LeftMarginContainer/LeftScrollContainer"), NodePath("HSplitContainer/RightVBox/TabContainer/Heroes/ScrollContainer"), NodePath("HSplitContainer/RightVBox/TabContainer/Skills/ScrollContainer"), NodePath("HSplitContainer/RightVBox/TabContainer/Coach/ScrollContainer"), NodePath("HSplitContainer/RightVBox/TabContainer/SavedSquads/ScrollContainer"), NodePath("HSplitContainer/RightVBox/TabContainer/Info/ScrollContainer")]
 tab_bar = NodePath("HSplitContainer/RightVBox/TabBar")
 tab_container = NodePath("HSplitContainer/RightVBox/TabContainer")
 split_container = NodePath("HSplitContainer")
@@ -151,7 +153,7 @@ text = " Save squad "
 script = ExtResource("6_6wevv")
 main_scene = NodePath("../../../../../..")
 
-[node name="ExportButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" unique_id=1908726083 node_paths=PackedStringArray("main_scene", "dialogues", "export_image_texture_rect", "export_viewport")]
+[node name="ExportButton" type="Button" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox" unique_id=1908726083 node_paths=PackedStringArray("main_scene", "dialogues", "export_image_texture_rect", "export_viewport", "share")]
 layout_mode = 2
 text = " Show image "
 script = ExtResource("8_6p3nn")
@@ -159,6 +161,7 @@ main_scene = NodePath("../../../../../..")
 dialogues = NodePath("../../../../../../Dialogues")
 export_image_texture_rect = NodePath("../../../../../../CenterContainer/ExportImageTextureRect")
 export_viewport = NodePath("../../../../../../ExportViewport")
+share = NodePath("../../../../../../Share")
 
 [node name="HeroesHBox" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox" unique_id=1578165213]
 layout_mode = 2
@@ -1155,6 +1158,10 @@ visible = false
 layout_mode = 2
 mouse_filter = 0
 script = ExtResource("28_k3g67")
+
+[node name="Share" type="Node" parent="." unique_id=1538324310]
+script = ExtResource("30_02d50")
+metadata/_custom_type_script = "uid://newrygjvhdiq"
 
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" method="_on_pressed"]

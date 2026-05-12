@@ -10,9 +10,16 @@ extends MarginContainer
 @export var pet_draggable: PetDraggable
 @export var ranks: Array[VBoxContainer] = [null, null, null, null]
 
+@export var screenshot_me: Label
+@export var bounds: Array[ColorRect]
+
 
 func _ready() -> void:
 	assert(ranks.all( func(rank): return rank != null ))
+	if Data.is_android:
+		screenshot_me.hide()
+		for cr in bounds:
+			cr.hide()
 
 
 func apply_info_and_get_size() -> Vector2:

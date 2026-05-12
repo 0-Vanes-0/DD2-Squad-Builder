@@ -1,5 +1,7 @@
 extends Node
 
+signal dragging_state_changed(is_dragging_now: bool)
+
 var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 	HeroesPaths.Enum.NONE: preload("res://assets/portraits/NONE.png"),
 	HeroesPaths.Enum.A0: preload("res://assets/portraits/A0.png"),
@@ -169,7 +171,9 @@ var settings: Dictionary
 var DEFAULT_SETTINGS := {
 	"language": "eng",
 }
-var is_dragging := false
+var is_dragging := false :
+	set(value):
+		dragging_state_changed.emit(value)
 var is_android := false
 var all_props: AllPropertiesDictionary
 var all_paths_names: AllPathsNamesDictionary
