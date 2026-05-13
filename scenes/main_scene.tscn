@@ -995,7 +995,7 @@ and instead of writing
 3. In Coach tab, [b]optionally[/b] drag&drop act, kingdom, flame or pet. Also here you can randomize anything you want!
 4. Look at the summary below, copy or save your current squad (it will appear in Saved Squads tab).
 
-• Hover mouse on hero-path / skill / coach item to see info about it!
+• Hover mouse on hero-path / skill / coach item to see info about it! On mobile, hold your finger.
 
 • To remove single hero-path / skill / coach item, just drag it to empty space.
 
@@ -1005,7 +1005,9 @@ and instead of writing
 
 • Having a hero with some skills applied, you may replace the hero with another path which preserves skills assigned to the hero. However, if you drag & drop a [b]different[/b] hero — [b]assigned skills will be erased[/b]!
 
-• Once you have all 4 heroes with all skills set, click Save, give your squad a name and it will be saved in Saved Squads. [b]WARNING![/b] The squads are saved in [b]browser's cookies[/b] (you shouold allow them); if you clean them — all squads data will be erased as well!
+• Once you have all 4 heroes with all skills set, click Save, give your squad a name and it will be saved in Saved Squads. [b]WARNING![/b] The squads are saved in [b]browser's cookies[/b] (you shouold allow them); if you clean them — all squads data will be erased as well! On mobile, the squads are saved locally on your device; unistalling app will erase your info too.
+
+• On desktop, there's \"Show image\" button that makes snapshot of your build, just make a screenshot of it. On mobile, there's \"Share squad\" button that generates the snapshot for you and lets you send a message to any social media (e.g. Discord).
 
 • While you're creating a squad, the text below is being updated. It makes a summary of your squad, highlighting its advantages and other properties. Revealing all disadvantages of the squad is your own responsibility.
 
@@ -1038,6 +1040,8 @@ Catabbro (me) — DD2 Squad Builder developer.
 GitHub — repository storage and free public hosting of the web page.
 
 Powered by [url=Godot][color=royal_blue]Godot Engine[/color][/url], a free open-source engine for games and applications.
+
+Godot Mobile Plugins — Share and Deeplink plugins for mobile
 
 [center]Version: %s[/center]"
 fit_content = true

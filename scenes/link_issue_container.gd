@@ -6,8 +6,10 @@ extends MarginContainer
 
 
 func appear():
-	dialogues.show()
-	self.show()
+	var user_data := SaveLoad.load_data()
+	if not user_data.has("refused_links"):
+		dialogues.show()
+		self.show()
 
 
 func _on_yes_button_pressed() -> void:
