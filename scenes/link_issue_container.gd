@@ -22,3 +22,5 @@ func _on_no_button_pressed() -> void:
 	var user_data := SaveLoad.load_data()
 	user_data["refused_links"] = 1
 	SaveLoad.save_data(user_data)
+	dialogues.hide()
+	self.hide()
