@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b80pkxbmvhm4f"]
+
+[ext_resource type="Script" uid="uid://tj5u7ycmqr63" path="res://scenes/google_play_container.gd" id="1_dnq2a"]
+[ext_resource type="Texture2D" uid="uid://bawx8jfxx61nn" path="res://assets/cancel.png" id="2_2n3tk"]
+[ext_resource type="Texture2D" uid="uid://brpkagfdu33yv" path="res://assets/google_play.png" id="3_o4dkq"]
+[ext_resource type="Texture2D" uid="uid://bjsqu34h4dkvm" path="res://assets/play.google.png" id="4_no61p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhwp2"]
+font_size = 48
+
+[node name="GooglePlayContainer" type="MarginContainer" unique_id=686027664 node_paths=PackedStringArray("dialogues")]
+visible = false
+script = ExtResource("1_dnq2a")
+dialogues = NodePath("")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1935991168]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1259377974]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="GooglePlayVBox" type="VBoxContainer" parent="MarginContainer" unique_id=1932375027]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/GooglePlayVBox" unique_id=1858301222]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("2_2n3tk")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/GooglePlayVBox" unique_id=448302892]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "This app is also available for Android!
+Type \"DD2 Squad Builder\" or scan this QR"
+label_settings = SubResource("LabelSettings_lhwp2")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/GooglePlayVBox" unique_id=1216539083]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Image" type="TextureRect" parent="MarginContainer/GooglePlayVBox/HBoxContainer" unique_id=1330476387]
+layout_mode = 2
+texture = ExtResource("3_o4dkq")
+stretch_mode = 5
+
+[node name="QR" type="TextureRect" parent="MarginContainer/GooglePlayVBox/HBoxContainer" unique_id=66719946]
+layout_mode = 2
+texture = ExtResource("4_no61p")

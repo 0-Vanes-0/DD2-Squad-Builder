@@ -25,6 +25,8 @@ const ANDROID_SCROLL_BAR_WIDTH := 20.0
 @export var popup_panel: MyPopupPanel
 @export var viewport: RankSubviewport
 @export var deeplink: Deeplink
+@export var google_play_container: GooglePlayContainer
+@export var link_issue_container: LinkIssueContainer
 
 
 func _enter_tree() -> void:
@@ -190,7 +192,8 @@ func _ready() -> void:
 						paste_squad_data(squad_code)
 						print_debug("Loaded squad from URL parameter: %s" % query)
 		)
-		print("is_domain_associated=", deeplink.is_domain_associated("0-vanes-0.github.io"))
+		if not deeplink.is_domain_associated("0-vanes-0.github.io"):
+			link_issue_container.appear()
 
 
 func _on_resized() -> void:

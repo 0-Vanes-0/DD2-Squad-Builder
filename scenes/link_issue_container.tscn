@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bevmyusv6383f"]
+
+[ext_resource type="Script" uid="uid://cka1eapp0vslk" path="res://scenes/link_issue_container.gd" id="1_a0ltb"]
+
+[node name="LinkIssueContainer" type="MarginContainer" unique_id=1579751608]
+script = ExtResource("1_a0ltb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1566973433]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2060951777]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1926864839]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1700575559]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+text = "This app can share heroes-skills builds via links.
+Do you want to automatically [b]redirect[/b] to this app on clicking such links?
+If so, turn on [color=light-green]\"Open supported links\"[/color]
+and enable [color=light-green]\"0-vanes-0.github.io\"[/color]
+via [color=light-green]\"Supported web addresses\"[/color] or via [color=light-green]\"Add link\"[/color]
+after pressing [color=green]\"Open settings\"[/color] button below."
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=440902442]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="YesButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1603066372]
+layout_mode = 2
+text = " Open settings "
+
+[node name="NoButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1372035065]
+layout_mode = 2
+text = " Close window "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_no_button_pressed"]
