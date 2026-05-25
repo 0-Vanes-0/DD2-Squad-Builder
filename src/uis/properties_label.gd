@@ -69,7 +69,7 @@ func update_skills_props(ranks: Array[String] = ["1", "2", "3", "4"]):
 		
 		tokens.push_front(first_word)
 		Data.all_props.construct_text(self, tokens, is_4ranks)
-		self.append_text(". " if is_4ranks else "\n")
+		self.append_text("\n")
 		has_text = true
 	
 	if not has_text:

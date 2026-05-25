@@ -422,7 +422,6 @@ text = "[center]No squad info yet.[/center]"
 fit_content = true
 scroll_active = false
 script = ExtResource("10_4w45t")
-does_belong_to_hero = null
 
 [node name="GridContainer" type="GridContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/BottomHBox" unique_id=1504583087]
 layout_mode = 2
@@ -1083,7 +1082,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 236.0
+offset_bottom = 424.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
@@ -1189,6 +1188,14 @@ path_prefix = "/DD2-Squad-Builder"
 enabled_platforms = 1
 android_label = "0-vanes-0.github.io"
 metadata/_custom_type_script = "uid://b4e5cor1txeak"
+
+[node name="TODO" type="Label" parent="." unique_id=1851921586]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+text = "- Abom: Transform is locked
+- Mark skill as important on RMB / double tap"
 
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" method="_on_pressed"]
