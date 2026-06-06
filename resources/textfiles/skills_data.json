@@ -1587,12 +1587,15 @@
 		  "DMG: 3-5",
 		  "CRIT: 5%",
 		  "$mve Knockback 1",
+		  "$dze",
 		  "Self:  $mve Forward 1"
 		],
 		"skill_u_text": [
 		  "DMG: 4-6",
 		  "CRIT: 10%",
 		  "$mve Knockback 2",
+		  "$dze",
+		  "$stn when target  $cmb",
 		  "Self:  $mve Forward 1"
 		]
 	  },

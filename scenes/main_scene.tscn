@@ -1194,8 +1194,6 @@ visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 28.0
-text = "- Abom: Transform is locked
-- Mark skill as important on RMB / double tap"
 
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" to="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/ButtonsHBox/ClearButton" method="_on_pressed"]
