@@ -35,7 +35,7 @@ func _on_visibility_changed() -> void:
 				if hero_paths[i] != HeroesPaths.Enum.NONE:
 					rank_grids[i].get_parent().show()
 					rank_grids[i].add_child(Control.new())
-
+					
 					var hero := HeroesPaths.to_hero(hero_paths[i])
 					for j in Data.skills_textures[hero].skills.size():
 						var skill_draggable := SkillDraggable.create(hero_paths[i], j)
@@ -50,6 +50,8 @@ func _on_visibility_changed() -> void:
 									else:
 										main_scene.notification_panel.hide()
 						)
-
+						if HeroesPaths.is_abomination(skill_draggable.get_hero_path_assigned()):
+							skill_draggable.is_dragging_enabled = j != 5
+		
 		else:
 			no_skills_label.show()

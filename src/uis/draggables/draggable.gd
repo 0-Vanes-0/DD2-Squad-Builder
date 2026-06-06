@@ -29,6 +29,8 @@ var data: Dictionary = {}
 
 @abstract func _is_unique() -> bool
 
+var is_dragging_enabled := true
+
 
 static func create_base(scene: PackedScene) -> DraggableTextureRect:
 	var draggable := scene.instantiate() as DraggableTextureRect
@@ -54,7 +56,7 @@ func _ready() -> void:
 
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
-	if data.is_empty() or not _get_check_for_get_drag_data(data):
+	if not is_dragging_enabled or data.is_empty() or not _get_check_for_get_drag_data(data):
 		return null
 	
 	var drag_preview := TextureRect.new()
@@ -73,8 +75,9 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 
 
 func _can_drop_data(_at_position: Vector2, drop_data: Variant) -> bool:
-	if drop_data is Dictionary:
-		return drop_data.has(get_obligatory_key()) and _get_check_for_can_drop_data(drop_data)
+	if is_dragging_enabled:
+		if drop_data is Dictionary:
+			return drop_data.has(get_obligatory_key()) and _get_check_for_can_drop_data(drop_data)
 	return false
 
 

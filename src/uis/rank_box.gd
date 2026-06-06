@@ -45,3 +45,8 @@ func update_skills_visibility():
 			skills[i].visible = is_abomination or i < 5
 		
 		grid.columns = 2 if is_abomination else 1
+		
+		if is_abomination:
+			var last_skill := skills.back() as SkillDraggable
+			last_skill.set_skill(hero_path_draggable.get_hero_path(), 5)
+			last_skill.is_dragging_enabled = false
