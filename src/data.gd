@@ -123,6 +123,9 @@ var heroes_textures: Dictionary[HeroesPaths.Enum, Texture2D] = {
 	PetDraggable.Pets.PUSSY: null,
 }
 
+@export var self_ranks_images: Array[Texture2D] = [null, null, null, null, null, null]
+@export var target_ranks_images: Array[Texture2D] = [null, null, null, null, null, null]
+
 @export var hero_path_draggable_scene: PackedScene
 @export var skill_draggable_scene: PackedScene
 @export var flame_draggable_scene: PackedScene
