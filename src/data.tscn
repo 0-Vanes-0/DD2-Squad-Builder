@@ -242,27 +242,39 @@
 [ext_resource type="Texture2D" uid="uid://06etif2tr5h7" path="res://assets/icons/Dd2_token_winded.png" id="200_bfk0e"]
 [ext_resource type="Resource" uid="uid://s3p83cnlxtl" path="res://resources/skills_props/skills_G0.tres" id="201_3scyv"]
 [ext_resource type="Texture2D" uid="uid://c8d0t8xaxe5rx" path="res://assets/icons/Dd2_token_lep_ruination.png" id="201_itvf4"]
+[ext_resource type="Texture2D" uid="uid://c46y3yujbsnl" path="res://assets/dots/dots_06.png" id="201_xm8x8"]
 [ext_resource type="Texture2D" uid="uid://bww3gtss74ymh" path="res://assets/icons/Dd2_token_lep_ruin_has_come.png" id="202_4edd1"]
 [ext_resource type="Resource" uid="uid://ctdnrsowiktyh" path="res://resources/skills_props/skills_W0.tres" id="202_a7cu5"]
 [ext_resource type="Texture2D" uid="uid://dbbubj4hpjsqw" path="res://assets/icons/Dd2_token_lep_ruin_has_come_u.png" id="202_bd00x"]
+[ext_resource type="Texture2D" uid="uid://dxkvi7x05ll5o" path="res://assets/dots/dots_05.png" id="202_uheyd"]
+[ext_resource type="Texture2D" uid="uid://dyqhm7r6q517h" path="res://assets/dots/dots_04.png" id="203_5lkvp"]
 [ext_resource type="Texture2D" uid="uid://bf7hlc2np50qu" path="res://assets/icons/Dd2_token_uncheckedpower.png" id="203_bd00x"]
 [ext_resource type="Resource" uid="uid://ckqomysfy7u7m" path="res://resources/skills_props/skills_M0.tres" id="203_n8da0"]
 [ext_resource type="Resource" uid="uid://c3jqihbsy4oxo" path="res://resources/skills_props/skills_H0.tres" id="204_287w1"]
+[ext_resource type="Texture2D" uid="uid://cubkccfooltcn" path="res://assets/dots/dots_03.png" id="204_vpqgi"]
 [ext_resource type="Texture2D" uid="uid://0pfmus3d7shs" path="res://assets/icons/Token_conviction.png" id="204_xousx"]
 [ext_resource type="Resource" uid="uid://cng1tm4rlotaq" path="res://resources/skills_props/skills_J0.tres" id="205_7pwgp"]
+[ext_resource type="Texture2D" uid="uid://d0irqfvxjry0a" path="res://assets/dots/dots_02.png" id="205_a7uwe"]
 [ext_resource type="Texture2D" uid="uid://secyba50tfoh" path="res://assets/icons/Token_consecration.png" id="205_vtfoi"]
 [ext_resource type="Texture2D" uid="uid://bfv7u8hifa0p" path="res://assets/icons/Token_dul_aggressive_stance.png" id="206_0lgwh"]
+[ext_resource type="Texture2D" uid="uid://doapu237nwuxv" path="res://assets/dots/dots_01.png" id="206_4n3lm"]
 [ext_resource type="Resource" uid="uid://0o133uxa2dcd" path="res://resources/skills_props/skills_L0.tres" id="206_e6gft"]
 [ext_resource type="Texture2D" uid="uid://ds6x770rkxnye" path="res://assets/icons/Token_dul_defensive_stance.png" id="207_ejl4u"]
+[ext_resource type="Texture2D" uid="uid://c0emwnqudeqbp" path="res://assets/dots/dots_12.png" id="207_r0oh6"]
 [ext_resource type="Resource" uid="uid://dsu7blc3vvq3s" path="res://resources/skills_props/skills_O0.tres" id="207_t30pe"]
 [ext_resource type="Resource" uid="uid://djyd7ucjed56t" path="res://resources/skills_props/skills_R0.tres" id="208_1g4ai"]
 [ext_resource type="Texture2D" uid="uid://cjvmqejvrg2ib" path="res://assets/icons/Token_toxic.png" id="208_ejl4u"]
+[ext_resource type="Texture2D" uid="uid://cg2b8wj2o8yqw" path="res://assets/dots/dots_11.png" id="208_l6lml"]
 [ext_resource type="Resource" uid="uid://b63gif5ll4jro" path="res://resources/skills_props/skills_V0.tres" id="209_2jlsy"]
 [ext_resource type="Texture2D" uid="uid://ipqs0rq3q0kx" path="res://assets/icons/Dd2_token_speed.png" id="209_5yibu"]
+[ext_resource type="Texture2D" uid="uid://c3ifdbsw7royd" path="res://assets/dots/dots_10.png" id="209_tit4o"]
+[ext_resource type="Texture2D" uid="uid://bbfjfr1dd8gpa" path="res://assets/dots/dots_09.png" id="210_5eh4d"]
 [ext_resource type="Texture2D" uid="uid://s737p302yruf" path="res://assets/icons/Dd2_melee_icon.png" id="210_8ekij"]
 [ext_resource type="Resource" uid="uid://beukrkyok0wfd" path="res://resources/skills_props/skills_F0.tres" id="210_a7cu5"]
 [ext_resource type="Texture2D" uid="uid://csivxg5jk22j2" path="res://assets/icons/Dd2_ranged_icon.png" id="211_0m3og"]
 [ext_resource type="Resource" uid="uid://ch3qjvxrrlkrm" path="res://resources/skills_props/skills_D0.tres" id="211_n8da0"]
+[ext_resource type="Texture2D" uid="uid://boq14hx0muv7g" path="res://assets/dots/dots_08.png" id="211_vmv24"]
+[ext_resource type="Texture2D" uid="uid://cbkia1lgsibtj" path="res://assets/dots/dots_07.png" id="212_5au8u"]
 [ext_resource type="Resource" uid="uid://c3j37xvbps00l" path="res://resources/skills_props/skills_C0.tres" id="212_287w1"]
 [ext_resource type="Texture2D" uid="uid://br0iul3cgo3po" path="res://assets/icons/Dd2_heal_icon.png" id="212_kogbc"]
 [ext_resource type="Resource" uid="uid://c2ot8ks58v4ii" path="res://resources/skills_props/skills_A0.tres" id="213_e6gft"]
@@ -2124,6 +2136,8 @@ pets_textures = Dictionary[int, Texture2D]({
 10: ExtResource("196_7p1sh"),
 11: ExtResource("197_fuss3")
 })
+self_ranks_images = Array[Texture2D]([ExtResource("201_xm8x8"), ExtResource("202_uheyd"), ExtResource("203_5lkvp"), ExtResource("204_vpqgi"), ExtResource("205_a7uwe"), ExtResource("206_4n3lm")])
+target_ranks_images = Array[Texture2D]([ExtResource("207_r0oh6"), ExtResource("208_l6lml"), ExtResource("209_tit4o"), ExtResource("210_5eh4d"), ExtResource("211_vmv24"), ExtResource("212_5au8u")])
 hero_path_draggable_scene = ExtResource("2_en3sy")
 skill_draggable_scene = ExtResource("3_e77f5")
 flame_draggable_scene = ExtResource("182_rveyq")

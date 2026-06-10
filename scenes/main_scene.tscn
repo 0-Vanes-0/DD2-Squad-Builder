@@ -16,12 +16,19 @@
 [ext_resource type="PackedScene" uid="uid://kyd0io8ylhhl" path="res://src/uis/draggables/skill_draggable.tscn" id="9_e1cbu"]
 [ext_resource type="Script" uid="uid://xfbr4tvv7qkf" path="res://src/uis/properties_label.gd" id="10_4w45t"]
 [ext_resource type="Script" uid="uid://bo7er32dyytal" path="res://scenes/skills_menu.gd" id="11_mngbo"]
+[ext_resource type="Texture2D" uid="uid://c46y3yujbsnl" path="res://assets/dots/dots_06.png" id="11_p27gv"]
+[ext_resource type="Texture2D" uid="uid://doapu237nwuxv" path="res://assets/dots/dots_01.png" id="12_cn4eu"]
 [ext_resource type="Script" uid="uid://b8erljir6ou1d" path="res://scenes/heroes_menu.gd" id="12_r6p65"]
+[ext_resource type="Texture2D" uid="uid://d0irqfvxjry0a" path="res://assets/dots/dots_02.png" id="13_0wyf6"]
 [ext_resource type="Script" uid="uid://bvbjbwsvf42cx" path="res://src/uis/bottom_h_box.gd" id="13_adb74"]
 [ext_resource type="Script" uid="uid://bu72kudpuaeqo" path="res://scenes/saved_squads.gd" id="14_6u1mn"]
 [ext_resource type="PackedScene" uid="uid://sadtg3dheimo" path="res://src/uis/draggables/flame_draggable.tscn" id="14_adb74"]
+[ext_resource type="Texture2D" uid="uid://dxkvi7x05ll5o" path="res://assets/dots/dots_05.png" id="14_xp01v"]
 [ext_resource type="Script" uid="uid://b2dml8lo7cfbv" path="res://scenes/popup_panel.gd" id="15_01n6w"]
 [ext_resource type="Script" uid="uid://2kvb5n432r81" path="res://src/uis/info_label.gd" id="15_6u1mn"]
+[ext_resource type="Texture2D" uid="uid://cbkia1lgsibtj" path="res://assets/dots/dots_07.png" id="15_jix7a"]
+[ext_resource type="Texture2D" uid="uid://c3ifdbsw7royd" path="res://assets/dots/dots_10.png" id="16_segjr"]
+[ext_resource type="Texture2D" uid="uid://cg2b8wj2o8yqw" path="res://assets/dots/dots_11.png" id="17_beobj"]
 [ext_resource type="Script" uid="uid://co3j8kon67bqh" path="res://scenes/coach_menu.gd" id="19_58gk3"]
 [ext_resource type="PackedScene" uid="uid://dmr27joqwj2g0" path="res://src/uis/draggables/game_level_draggable.tscn" id="19_to7gp"]
 [ext_resource type="PackedScene" uid="uid://hmbro6ikuvbm" path="res://src/uis/draggables/pet_draggable.tscn" id="20_u0fll"]
@@ -174,13 +181,57 @@ size_flags_vertical = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Rank4VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" unique_id=603650527 node_paths=PackedStringArray("hero_path_draggable", "grid", "skills")]
+[node name="Rank4VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" unique_id=603650527 node_paths=PackedStringArray("hero_path_draggable", "grid", "skills", "self_ranks", "target_ranks")]
 layout_mode = 2
 script = ExtResource("7_e1cbu")
 rank = 4
 hero_path_draggable = NodePath("HeroPathDraggable")
 grid = NodePath("Skills")
 skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5"), NodePath("Skills/SkillDraggable6"), NodePath("Skills/SkillDraggable7"), NodePath("Skills/SkillDraggable8"), NodePath("Skills/SkillDraggable9")]
+self_ranks = NodePath("SelfRanks")
+target_ranks = NodePath("TargetRanks")
+
+[node name="SelfRanks" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox" unique_id=1312897573]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/SelfRanks" unique_id=509006252]
+layout_mode = 2
+texture = ExtResource("11_p27gv")
+
+[node name="TextureRect2" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/SelfRanks" unique_id=949736260]
+layout_mode = 2
+texture = ExtResource("12_cn4eu")
+
+[node name="TextureRect3" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/SelfRanks" unique_id=1711097625]
+layout_mode = 2
+texture = ExtResource("13_0wyf6")
+
+[node name="TextureRect4" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/SelfRanks" unique_id=739011254]
+layout_mode = 2
+texture = ExtResource("14_xp01v")
+
+[node name="TargetRanks" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox" unique_id=1146307717]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/TargetRanks" unique_id=2073693232]
+layout_mode = 2
+texture = ExtResource("15_jix7a")
+
+[node name="TextureRect2" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/TargetRanks" unique_id=2025321111]
+layout_mode = 2
+texture = ExtResource("15_jix7a")
+
+[node name="TextureRect3" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/TargetRanks" unique_id=1028981605]
+layout_mode = 2
+texture = ExtResource("16_segjr")
+
+[node name="TextureRect4" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox/TargetRanks" unique_id=304471545]
+layout_mode = 2
+texture = ExtResource("17_beobj")
 
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank4VBox" unique_id=1279517660 instance=ExtResource("8_mngbo")]
 layout_mode = 2
@@ -231,13 +282,57 @@ is_slot = true
 layout_mode = 2
 is_slot = true
 
-[node name="Rank3VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" unique_id=633898011 node_paths=PackedStringArray("hero_path_draggable", "grid", "skills")]
+[node name="Rank3VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" unique_id=633898011 node_paths=PackedStringArray("hero_path_draggable", "grid", "skills", "self_ranks", "target_ranks")]
 layout_mode = 2
 script = ExtResource("7_e1cbu")
 rank = 3
 hero_path_draggable = NodePath("HeroPathDraggable")
 grid = NodePath("Skills")
 skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5"), NodePath("Skills/SkillDraggable6"), NodePath("Skills/SkillDraggable7"), NodePath("Skills/SkillDraggable8"), NodePath("Skills/SkillDraggable9")]
+self_ranks = NodePath("SelfRanks")
+target_ranks = NodePath("TargetRanks")
+
+[node name="SelfRanks" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox" unique_id=1516850397]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/SelfRanks" unique_id=581697391]
+layout_mode = 2
+texture = ExtResource("11_p27gv")
+
+[node name="TextureRect2" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/SelfRanks" unique_id=1763807214]
+layout_mode = 2
+texture = ExtResource("12_cn4eu")
+
+[node name="TextureRect3" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/SelfRanks" unique_id=1507810197]
+layout_mode = 2
+texture = ExtResource("13_0wyf6")
+
+[node name="TextureRect4" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/SelfRanks" unique_id=718261567]
+layout_mode = 2
+texture = ExtResource("14_xp01v")
+
+[node name="TargetRanks" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox" unique_id=1865157018]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/TargetRanks" unique_id=1984529763]
+layout_mode = 2
+texture = ExtResource("15_jix7a")
+
+[node name="TextureRect2" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/TargetRanks" unique_id=665062656]
+layout_mode = 2
+texture = ExtResource("15_jix7a")
+
+[node name="TextureRect3" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/TargetRanks" unique_id=825050643]
+layout_mode = 2
+texture = ExtResource("16_segjr")
+
+[node name="TextureRect4" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox/TargetRanks" unique_id=1201408860]
+layout_mode = 2
+texture = ExtResource("17_beobj")
 
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank3VBox" unique_id=538240601 instance=ExtResource("8_mngbo")]
 layout_mode = 2
@@ -288,13 +383,57 @@ is_slot = true
 layout_mode = 2
 is_slot = true
 
-[node name="Rank2VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" unique_id=1566681322 node_paths=PackedStringArray("hero_path_draggable", "grid", "skills")]
+[node name="Rank2VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" unique_id=1566681322 node_paths=PackedStringArray("hero_path_draggable", "grid", "skills", "self_ranks", "target_ranks")]
 layout_mode = 2
 script = ExtResource("7_e1cbu")
 rank = 2
 hero_path_draggable = NodePath("HeroPathDraggable")
 grid = NodePath("Skills")
 skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5"), NodePath("Skills/SkillDraggable6"), NodePath("Skills/SkillDraggable7"), NodePath("Skills/SkillDraggable8"), NodePath("Skills/SkillDraggable9")]
+self_ranks = NodePath("SelfRanks")
+target_ranks = NodePath("TargetRanks")
+
+[node name="SelfRanks" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox" unique_id=1308186879]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/SelfRanks" unique_id=27395177]
+layout_mode = 2
+texture = ExtResource("11_p27gv")
+
+[node name="TextureRect2" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/SelfRanks" unique_id=1194156105]
+layout_mode = 2
+texture = ExtResource("12_cn4eu")
+
+[node name="TextureRect3" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/SelfRanks" unique_id=213274560]
+layout_mode = 2
+texture = ExtResource("13_0wyf6")
+
+[node name="TextureRect4" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/SelfRanks" unique_id=930487024]
+layout_mode = 2
+texture = ExtResource("14_xp01v")
+
+[node name="TargetRanks" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox" unique_id=1686371793]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/TargetRanks" unique_id=986722204]
+layout_mode = 2
+texture = ExtResource("15_jix7a")
+
+[node name="TextureRect2" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/TargetRanks" unique_id=229244901]
+layout_mode = 2
+texture = ExtResource("15_jix7a")
+
+[node name="TextureRect3" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/TargetRanks" unique_id=987874928]
+layout_mode = 2
+texture = ExtResource("16_segjr")
+
+[node name="TextureRect4" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox/TargetRanks" unique_id=1513801080]
+layout_mode = 2
+texture = ExtResource("17_beobj")
 
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank2VBox" unique_id=2105144329 instance=ExtResource("8_mngbo")]
 layout_mode = 2
@@ -345,13 +484,57 @@ is_slot = true
 layout_mode = 2
 is_slot = true
 
-[node name="Rank1VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" unique_id=1671904889 node_paths=PackedStringArray("hero_path_draggable", "grid", "skills")]
+[node name="Rank1VBox" type="VBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox" unique_id=1671904889 node_paths=PackedStringArray("hero_path_draggable", "grid", "skills", "self_ranks", "target_ranks")]
 layout_mode = 2
 script = ExtResource("7_e1cbu")
 rank = 1
 hero_path_draggable = NodePath("HeroPathDraggable")
 grid = NodePath("Skills")
 skills = [NodePath("Skills/SkillDraggable"), NodePath("Skills/SkillDraggable2"), NodePath("Skills/SkillDraggable3"), NodePath("Skills/SkillDraggable4"), NodePath("Skills/SkillDraggable5"), NodePath("Skills/SkillDraggable6"), NodePath("Skills/SkillDraggable7"), NodePath("Skills/SkillDraggable8"), NodePath("Skills/SkillDraggable9")]
+self_ranks = NodePath("SelfRanks")
+target_ranks = NodePath("TargetRanks")
+
+[node name="SelfRanks" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox" unique_id=814084490]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/SelfRanks" unique_id=636902675]
+layout_mode = 2
+texture = ExtResource("11_p27gv")
+
+[node name="TextureRect2" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/SelfRanks" unique_id=1401585088]
+layout_mode = 2
+texture = ExtResource("12_cn4eu")
+
+[node name="TextureRect3" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/SelfRanks" unique_id=850231916]
+layout_mode = 2
+texture = ExtResource("13_0wyf6")
+
+[node name="TextureRect4" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/SelfRanks" unique_id=1423689856]
+layout_mode = 2
+texture = ExtResource("14_xp01v")
+
+[node name="TargetRanks" type="HBoxContainer" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox" unique_id=1460428406]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/TargetRanks" unique_id=1927753424]
+layout_mode = 2
+texture = ExtResource("15_jix7a")
+
+[node name="TextureRect2" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/TargetRanks" unique_id=84096309]
+layout_mode = 2
+texture = ExtResource("15_jix7a")
+
+[node name="TextureRect3" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/TargetRanks" unique_id=1806073845]
+layout_mode = 2
+texture = ExtResource("16_segjr")
+
+[node name="TextureRect4" type="TextureRect" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox/TargetRanks" unique_id=976061260]
+layout_mode = 2
+texture = ExtResource("17_beobj")
 
 [node name="HeroPathDraggable" parent="HSplitContainer/LeftMarginContainer/LeftScrollContainer/LeftVBox/HeroesHBox/Rank1VBox" unique_id=1009294786 instance=ExtResource("8_mngbo")]
 layout_mode = 2
@@ -606,7 +789,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_4bgka")
 tab_alignment = 1
-current_tab = 2
+current_tab = 4
 tabs_visible = false
 
 [node name="Heroes" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1625220151 node_paths=PackedStringArray("main_scene", "heroes_table")]
@@ -712,6 +895,7 @@ theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid", "acts_grid", "pets_grid", "randomize_option_button", "randomize_button")]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 12
@@ -949,7 +1133,6 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="Info" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1898666789]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -1025,6 +1208,7 @@ and instead of writing
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Randomizer[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Visual improvements of UI[/color][/s]
 [img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Android port[/color][/s]
+[img=20x20]res://assets/icons/checbox_checked.png[/img] [s][color=gray]Ranks map[/color][/s]
 
 [font_size=40][font=res://assets/dd2_font.otf]* CREDITS[/font][/font_size]
 
@@ -1041,6 +1225,8 @@ GitHub — repository storage and free public hosting of the web page.
 Powered by [url=Godot][color=royal_blue]Godot Engine[/color][/url], a free open-source engine for games and applications.
 
 Godot Mobile Plugins — Share and Deeplink plugins for mobile
+
+[img=192x57]res://assets/google_play.png[/img]
 
 [center]Version: %s[/center]"
 fit_content = true
