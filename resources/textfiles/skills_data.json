@@ -6215,8 +6215,8 @@
 	  "D2_5": {
 		"name": "The Boot",
 		"type": "melee",
-		"skill_ranks": "",
-		"target_ranks": "",
+		"skill_ranks": "123",
+		"target_ranks": "12",
 		"target_type": "enemy",
 		"cooldown": "-",
 		"uses": "-",
@@ -6240,8 +6240,8 @@
 	  "D2_9": {
 		"name": "Coup de Grâce",
 		"type": "ranged",
-		"skill_ranks": "",
-		"target_ranks": "",
+		"skill_ranks": "1234",
+		"target_ranks": "234",
 		"target_type": "enemy",
 		"cooldown": "2",
 		"uses": "-",
