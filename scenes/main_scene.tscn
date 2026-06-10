@@ -789,7 +789,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_4bgka")
 tab_alignment = 1
-current_tab = 2
+current_tab = 4
 tabs_visible = false
 
 [node name="Heroes" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1625220151 node_paths=PackedStringArray("main_scene", "heroes_table")]
@@ -895,6 +895,7 @@ theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Coach" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1977057891 node_paths=PackedStringArray("main_scene", "flames_grid", "acts_grid", "pets_grid", "randomize_option_button", "randomize_button")]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 12
@@ -1132,7 +1133,6 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="Info" type="MarginContainer" parent="HSplitContainer/RightVBox/TabContainer" unique_id=1898666789]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -1225,6 +1225,8 @@ GitHub — repository storage and free public hosting of the web page.
 Powered by [url=Godot][color=royal_blue]Godot Engine[/color][/url], a free open-source engine for games and applications.
 
 Godot Mobile Plugins — Share and Deeplink plugins for mobile
+
+[img=192x57]res://assets/google_play.png[/img]
 
 [center]Version: %s[/center]"
 fit_content = true
