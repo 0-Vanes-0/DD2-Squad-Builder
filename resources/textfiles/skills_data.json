@@ -682,11 +682,11 @@
 		"uses": "3",
 		"skill_text": [
 		  "If  $hlh  < 33%: Heal  $hlh 33%",
-		  "$ddg x3  $spd"
+		  "$ddg x3  $fst"
 		],
 		"skill_u_text": [
 		  "If  $hlh  < 33%: Heal  $hlh 33%",
-		  "$ddg+ x3  $spd"
+		  "$ddg+ x3  $fst"
 		]
 	  },
 	  "G0_5": {
@@ -1374,11 +1374,11 @@
 		"cooldown": "3",
 		"uses": "-",
 		"skill_text": [
-		  "$spd $rps x2",
+		  "$fst $rps x2",
 		  "$pos Round Start:  $rps (3 Turns)"
 		],
 		"skill_u_text": [
-		  "$spd $rps x2",
+		  "$fst $rps x2",
 		  "$pos Round Start:  $rps (3 Turns)",
 		  "Riposte: +25% DMG (4 Turns)"
 		]
@@ -3904,8 +3904,8 @@
 	  "O0_6": {
 		"name": "Binding Shadows",
 		"type": "melee",
-		"skill_ranks": "21",
-		"target_ranks": "1234",
+		"skill_ranks": "234",
+		"target_ranks": "123",
 		"target_type": "enemy",
 		"cooldown": "-",
 		"uses": "-",
@@ -5951,10 +5951,10 @@
 		"cooldown": "1",
 		"uses": "-",
 		"skill_text": [
-		  "$agr $str $spd"
+		  "$agr $str $fst"
 		],
 		"skill_u_text": [
-		  "$agr $str $spd",
+		  "$agr $str $fst",
 		  "+50% $rps  DMG (4 Turns) When $def",
 		  "$crt When  $agr"
 		]
@@ -6315,10 +6315,10 @@
 		"cooldown": "1",
 		"uses": "-",
 		"skill_text": [
-		  "$agr $str $spd"
+		  "$agr $str $fst"
 		],
 		"skill_u_text": [
-		  "$agr $str $spd",
+		  "$agr $str $fst",
 		  "Remove  $bld $blt $brn When  $def",
 		  "$crt When  $agr"
 		]
