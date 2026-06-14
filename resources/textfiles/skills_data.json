@@ -527,7 +527,7 @@
 		"skill_u_text": [
 		  "+30% $bld $blt $brn RES",
 		  "+30% $dss RES",
-		  "+10% $sts RES"
+		  "+20% $sts RES"
 		]
 	  },
 	  "P3_6": {
@@ -2696,7 +2696,7 @@
 		  "DMG: 3-4",
 		  "CRIT: 10%",
 		  "$bld 3",
-		  "$cmb (50%)"
+		  "$cmb (33%)"
 		]
 	  },
 	  "J0_6": {
