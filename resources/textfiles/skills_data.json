@@ -1767,13 +1767,13 @@
 		  "DMG: 3-6",
 		  "CRIT: 5%",
 		  "$cmb",
-		  "Self:  $mve Back 2"
+		  "Self:  $mve Back 1"
 		],
 		"skill_u_text": [
 		  "DMG: 4-7",
 		  "CRIT: 10%",
 		  "$cmb",
-		  "Self:  $mve Back 2,  $fst",
+		  "Self:  $mve Back 1,  $fst",
 		  "Self: While on  $dth : $blk+ , Heal  $hlh 33% "
 		]
 	  },
