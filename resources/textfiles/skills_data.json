@@ -7045,8 +7045,8 @@
 	  "A1_4": {
 		"name": "Absolution",
 		"type": "heal",
-		"skill_ranks": "",
-		"target_ranks": "",
+		"skill_ranks": "1234",
+		"target_ranks": "self",
 		"target_type": "hero",
 		"cooldown": "3",
 		"uses": "2(3)",
@@ -7273,8 +7273,8 @@
 	  "A3_6": {
 		"name": "Rake",
 		"type": "melee",
-		"skill_ranks": "",
-		"target_ranks": "",
+		"skill_ranks": "12",
+		"target_ranks": "12-",
 		"target_type": "enemy",
 		"cooldown": "-",
 		"uses": "-",
