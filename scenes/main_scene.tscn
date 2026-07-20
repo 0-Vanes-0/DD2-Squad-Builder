@@ -51,7 +51,7 @@ bg_color = Color(0.025363795, 0.025363805, 0.02536378, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb74"]
 bg_color = Color(0, 0, 0, 0.78431374)
 
-[node name="MainScene" type="Control" unique_id=204672176 node_paths=PackedStringArray("scroll_containers", "tab_bar", "tab_container", "split_container", "rank_boxes", "flame_draggable", "game_level_draggable", "pet_draggable", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport", "deeplink", "link_issue_container")]
+[node name="MainScene" type="Control" unique_id=204672176 node_paths=PackedStringArray("scroll_containers", "tab_bar", "tab_container", "split_container", "rank_boxes", "flame_draggable", "game_level_draggable", "pet_draggable", "bottom_box", "skills_menu", "saved_squads_menu", "notification_panel", "popup_panel", "viewport", "deeplink", "google_play_container", "link_issue_container", "share")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,7 +80,9 @@ notification_panel = NodePath("NotificationPanel")
 popup_panel = NodePath("PopupPanel")
 viewport = NodePath("SubViewport")
 deeplink = NodePath("Deeplink")
+google_play_container = NodePath("CenterContainer/GooglePlayContainer")
 link_issue_container = NodePath("CenterContainer/LinkIssueContainer")
+share = NodePath("Share")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=562411568]
 layout_mode = 1
@@ -1268,7 +1270,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 356.0
-offset_bottom = 424.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10

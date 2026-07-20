@@ -8,15 +8,14 @@ const _HOVER_WAIT_TIME := 0.35 # sec
 @export var is_hoverable := true
 
 var _timer: Timer
-var _tracking := false          # we started a hover attempt
-var _hover_active := false      # hovered(true) already emitted
+var _tracking := false
+var _hover_active := false
 var _is_mouse_within := false
 
-# Touch tracking (Android)
 var _touch_down := false
 var _touch_index := -1
-var _saw_real_touch := false    # if we get ScreenTouch, prefer it over emulated mouse
-
+var _saw_real_touch := false
+# TODO: REVISION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 func _ready() -> void:
 	_timer = Timer.new()
@@ -32,7 +31,6 @@ func _gui_input(event: InputEvent) -> void:
 		return
 	
 	if Data.is_android:
-		# Prefer real touch events (more deterministic than emulated mouse hover).
 		if event is InputEventScreenTouch:
 			_saw_real_touch = true
 			_handle_screen_touch(event)

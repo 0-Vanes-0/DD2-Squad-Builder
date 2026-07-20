@@ -89,13 +89,19 @@ func _update_ranks_map():
 		},
 	}
 	for skill in skills:
-		if skill.get_hero_path_assigned() == HeroesPaths.Enum.NONE or skill.get_skill() == -1:
+		var skill_hero_path_assigned := skill.get_hero_path_assigned()
+		var skill_number := skill.get_skill()
+		if (
+				skill_hero_path_assigned == HeroesPaths.Enum.NONE or skill_number == -1
+				or
+				HeroesPaths.is_abomination(skill_hero_path_assigned) and skill_number > 5
+		):
 			continue
 		
-		var skill_data = Data.all_skills_comments.get_skill_data(skill.get_hero_path_assigned(), skill.get_skill())
-		var self_ranks := (skill_data["skill_ranks"] as String).split()
-		var target_ranks := (skill_data["target_ranks"] as String).split()
-		for text in self_ranks:
+		var skill_data = Data.all_skills_comments.get_skill_data(skill_hero_path_assigned, skill_number)
+		var self_ranks_numbers := (skill_data["skill_ranks"] as String).split()
+		var target_ranks_numbers := (skill_data["target_ranks"] as String).split()
+		for text in self_ranks_numbers:
 			if text == "1":
 				dict["self"]["count_1"] += 1
 			elif text == "2":
@@ -106,7 +112,7 @@ func _update_ranks_map():
 				dict["self"]["count_4"] += 1
 		
 		if skill_data["target_type"] == "enemy":
-			for text in target_ranks:
+			for text in target_ranks_numbers:
 				if text == "1":
 					dict["target"]["count_1"] += 1
 				elif text == "2":

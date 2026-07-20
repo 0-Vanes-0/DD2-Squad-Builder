@@ -28,6 +28,9 @@ const ANDROID_SCROLL_BAR_WIDTH := 20.0
 @export var google_play_container: GooglePlayContainer
 @export var link_issue_container: LinkIssueContainer
 
+@export var share: Share
+
+
 
 func _enter_tree() -> void:
 	if Data.is_android:
@@ -159,7 +162,8 @@ func _ready() -> void:
 				print("Saved squad: %s" % squad_name)
 				Data.current_squad["squad_name"] = squad_name
 				var user_data := SaveLoad.load_data()
-				user_data[squad_name] = Data.current_squad.duplicate(true)
+				var key := str(user_data.size() + 1)
+				user_data[key] = Data.current_squad.duplicate(true)
 				SaveLoad.save_data(user_data)
 				
 				await get_tree().process_frame
@@ -168,6 +172,29 @@ func _ready() -> void:
 				else:
 					tab_bar.current_tab = 3
 					tab_container.current_tab = 3
+	)
+	popup_panel.rename_requested.connect(
+			func(from_squad_name: String, to_squad_name: String):
+				if from_squad_name != to_squad_name:
+					print("Renamed squad %s to: %s" % [from_squad_name, to_squad_name])
+					var user_data := SaveLoad.load_data()
+					for key in user_data.keys():
+						if user_data[key] is Dictionary:
+							if user_data[key]["squad_name"] == from_squad_name:
+								user_data[key]["squad_name"] = to_squad_name
+								SaveLoad.save_data(user_data)
+								saved_squads_menu.visibility_changed.emit()
+	)
+	popup_panel.delete_requested.connect(
+			func(squad_name: String):
+				print("Deleted squad: %s" % squad_name)
+				var user_data := SaveLoad.load_data()
+				for key in user_data.keys():
+					if user_data[key] is Dictionary:
+						if user_data[key]["squad_name"] and user_data[key]["squad_name"] == squad_name:
+							user_data.erase(key)
+							SaveLoad.save_data(user_data)
+							saved_squads_menu.visibility_changed.emit()
 	)
 	
 	Data.all_skills_comments.viewport = viewport

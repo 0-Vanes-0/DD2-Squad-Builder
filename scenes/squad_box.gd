@@ -1,8 +1,6 @@
 class_name SquadBox
 extends VBoxContainer
 
-signal changed
-
 @export_group("Required Children")
 @export var squad_name_label: Label
 @export var rank1_hpd: HeroPathDraggable
@@ -34,46 +32,21 @@ func _ready() -> void:
 	
 	main_scene = get_tree().current_scene as MainScene
 	assert(main_scene)
-	main_scene.popup_panel.rename_requested.connect(
-			func(from_squad_name: String, to_squad_name: String):
-				if from_squad_name != to_squad_name:
-					print("Renamed squad %s to: %s" % [from_squad_name, to_squad_name])
-					squad_name_label.text = to_squad_name
-					
-					var user_data := SaveLoad.load_data()
-					user_data[to_squad_name] = squad_data.duplicate(true)
-					user_data[to_squad_name]["squad_name"] = to_squad_name
-					user_data.erase(from_squad_name)
-					SaveLoad.save_data(user_data)
-					
-					changed.emit()
-	)
-	main_scene.popup_panel.delete_requested.connect(
-			func(squad_name: String):
-				print("Deleted squad: %s" % squad_name)
-				var user_data := SaveLoad.load_data()
-				user_data.erase(squad_name)
-				SaveLoad.save_data(user_data)
-				
-				changed.emit()
-				
-				self.queue_free()
-	)
 
 
 func _on_paste_button_pressed() -> void:
-	main_scene.paste_squad_data(squad_data)
+	main_scene.paste_squad_data(squad_data) # Ne delaj tak bolshe
 
 
 func _on_copy_button_pressed() -> void:
 	var code := SquadCode.encode_squad(squad_data)
 	DisplayServer.clipboard_set(code)
-	main_scene.notification_panel.show_message("Copied!")
+	main_scene.notification_panel.show_message("Copied!") # Ne delaj tak bolshe
 
 
 func _on_rename_button_pressed() -> void:
-	main_scene.popup_panel.show_panel(MyPopupPanel.MessageType.RENAME_SQUAD, squad_name_label.text)
+	main_scene.popup_panel.show_panel(MyPopupPanel.MessageType.RENAME_SQUAD, squad_name_label.text) # Ne delaj tak bolshe
 
 
 func _on_delete_button_pressed() -> void:
-	main_scene.popup_panel.show_panel(MyPopupPanel.MessageType.DELETE_SQUAD, squad_name_label.text)
+	main_scene.popup_panel.show_panel(MyPopupPanel.MessageType.DELETE_SQUAD, squad_name_label.text) # Ne delaj tak bolshe
