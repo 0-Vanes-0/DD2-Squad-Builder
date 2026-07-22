@@ -63,32 +63,49 @@ func _on_popup_hide() -> void:
 
 
 func _on_ok_button_pressed() -> void:
+	var user_data := SaveLoad.load_data()
 	match current_type:
 		MessageType.SAVE_SQUAD:
-			var no_spaces_text := line_edit.text.replace(" ", "_")
+			var name_text := line_edit.text.strip_edges()
+			var no_spaces_text := name_text.replace(" ", "_")
 			if no_spaces_text.substr(0, 1).is_valid_int():
 				no_spaces_text[0] = "_"
 			
-			if line_edit.text.strip_edges() == "":
+			for value in user_data.values():
+				if value is Dictionary:
+					var saved_name := value["squad_name"] as String
+					if saved_name.to_lower() == name_text.to_lower():
+						message_label.text = "Squad name already existing!"
+						return
+			
+			if name_text == "":
 				message_label.text = "Squad name cannot be empty!"
 				return
 			if not no_spaces_text.is_valid_ascii_identifier():
 				message_label.text = "The name may contain only letters, digits and spaces."
 				return
-			save_requested.emit(line_edit.text)
+			save_requested.emit(name_text)
 			close_requested.emit()
 		
 		MessageType.RENAME_SQUAD:
-			if line_edit.text.strip_edges() == "":
+			var name_text := line_edit.text.strip_edges()
+			for value in user_data.values():
+				if value is Dictionary:
+					var saved_name := value["squad_name"] as String
+					if saved_name.to_lower() == name_text.to_lower():
+						message_label.text = "Squad name already existing!"
+						return
+			
+			if name_text == "":
 				message_label.text = "Squad name cannot be empty!"
 				return
-			if line_edit.text.strip_edges() == squad_name:
+			if name_text == squad_name:
 				message_label.text = "Squad name is same as previous!"
 				return
-			if line_edit.text.contains("|"):
+			if name_text.contains("|"):
 				message_label.text = "The symbol | is prohibited due to its usage in codes."
 				return
-			rename_requested.emit(squad_name, line_edit.text)
+			rename_requested.emit(squad_name, name_text)
 			close_requested.emit()
 		
 		MessageType.DELETE_SQUAD:
