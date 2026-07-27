@@ -165,6 +165,7 @@ func _ready() -> void:
 				var key := str(user_data.size() + 1)
 				user_data[key] = Data.current_squad.duplicate(true)
 				SaveLoad.save_data(user_data)
+				Data.current_squad["squad_name"] = ""
 				
 				await get_tree().process_frame
 				if tab_bar.current_tab == 3:

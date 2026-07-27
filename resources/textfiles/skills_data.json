@@ -5627,7 +5627,7 @@
 	  "F1_5": {
 		"name": "Acid Rain",
 		"type": "ranged",
-		"skill_ranks": "21",
+		"skill_ranks": "321",
 		"target_ranks": "34-",
 		"target_type": "enemy",
 		"cooldown": "-",

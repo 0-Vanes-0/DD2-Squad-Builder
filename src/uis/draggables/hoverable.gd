@@ -25,7 +25,7 @@ func _ready() -> void:
 	self.add_child(_timer)
 
 
-func _gui_input(event: InputEvent) -> void:
+func _gui_input(event: InputEvent) -> void:	
 	if not is_hoverable or not self.is_visible_in_tree():
 		_cancel_hover()
 		return
@@ -41,6 +41,9 @@ func _gui_input(event: InputEvent) -> void:
 
 
 func _process(_delta: float) -> void:
+	if not self.is_visible_in_tree():
+		return
+	
 	if _timer == null:
 		return
 	
