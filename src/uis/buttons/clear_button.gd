@@ -15,6 +15,7 @@ func _on_pressed() -> void:
 		for skill in rank_box.skills:
 			skill.hide()
 	
+	Data.current_squad["squad_name"] = ""
 	main_scene.update_heroes_in_data()
 	if main_scene.tab_container.current_tab == 1:
 		main_scene.tab_container.current_tab = 0

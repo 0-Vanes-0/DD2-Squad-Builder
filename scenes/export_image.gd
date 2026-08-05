@@ -1,6 +1,7 @@
 class_name ExportImage
 extends MarginContainer
 
+@export var squad_name_label: Label
 @export var coach_h_box: HBoxContainer
 @export var game_level_v_box: VBoxContainer
 @export var game_level_draggable: GameLevelDraggable
@@ -23,11 +24,13 @@ func _ready() -> void:
 
 
 func apply_info_and_get_size() -> Vector2:
+	squad_name_label.visible = _is_squad_name_not_blank()
 	coach_h_box.visible = _is_flame_not_none() or _is_pet_not_none() or _is_game_level_not_none()
 	game_level_v_box.visible = _is_game_level_not_none()
 	flame_v_box.visible = _is_flame_not_none()
 	pet_v_box.visible = _is_pet_not_none()
 
+	squad_name_label.text = (Data.current_squad["squad_name"] as String).strip_edges()
 	game_level_draggable.set_game_level(Data.current_squad["game_level"])
 	flame_draggable.set_flame(Data.current_squad["flame"])
 	pet_draggable.set_pet(Data.current_squad["pet"])
@@ -65,3 +68,9 @@ func _is_pet_not_none() -> bool:
 
 func _is_game_level_not_none() -> bool:
 	return Data.current_squad["game_level"] != GameLevelDraggable.GameLevels.NONE
+
+
+func _is_squad_name_not_blank() -> bool:
+	var squad_name := Data.current_squad["squad_name"] as String
+	squad_name = squad_name.strip_edges()
+	return not squad_name.is_empty()
