@@ -2101,13 +2101,14 @@
 		  "DMG: 3-5",
 		  "CRIT: 5%",
 		  "Self:  $mve Forward 1, $imm",
-		  "Self: Convert $wnd to $tnt"
+		  "Self: Convert $wnd to  $tnt"
 		],
 		"skill_u_text": [
 		  "DMG: 4-6",
 		  "CRIT: 5%",
+		  "Ignores  $wnd DMG penalty",
 		  "Self:  $mve Forward 1, $imm x2",
-		  "Self: Convert $wnd to $tnt"
+		  "Self: Convert  $wnd to  $tnt"
 		]
 	  },
 	  "H0_5": {
@@ -2276,6 +2277,28 @@
 		  "Self:  $wnd"
 		]
 	  },
+	  "H1_4": {
+		"name": "Toe to Toe",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Self:  $mve Forward 1, $imm",
+		  "Self: Convert $wnd to $tnt"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "Self: +4% $dth RES per  $wnd",
+		  "Self:  $mve Forward 1, $imm x2",
+		  "Self: Convert  $wnd to  $tnt"
+		]
+	  },
 	  "H1_5": {
 		"name": "Adrenaline Rush",
 		"type": "heal",
@@ -2389,6 +2412,28 @@
 		  "CRIT: 10%",
 		  "$bld 4, $mve Pull 1",
 		  "Self:  $mve Back 1"
+		]
+	  },
+	  "H2_4": {
+		"name": "Toe to Toe",
+		"type": "melee",
+		"skill_ranks": "123",
+		"target_ranks": "12",
+		"target_type": "enemy",
+		"cooldown": "1",
+		"uses": "-",
+		"skill_text": [
+		  "DMG: 3-5",
+		  "CRIT: 5%",
+		  "Self:  $mve Forward 1, $imm",
+		  "Self: Convert $wnd to  $tnt"
+		],
+		"skill_u_text": [
+		  "DMG: 4-6",
+		  "CRIT: 5%",
+		  "+3% CRIT per  $wnd",
+		  "Self:  $mve Forward 1, $imm x2",
+		  "Self: Convert  $wnd to  $tnt"
 		]
 	  },
 	  "H2_6": {
